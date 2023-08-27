@@ -1,16 +1,17 @@
 import Navbar from './Pages/Home/Navbar'
 import "./App.css";
 import { Router, Routes, Route, Link } from "react-router-dom";
-import { Home } from './Pages/Home/Home';
+import {  Landing } from './Pages/Home/Landing';
+import Home from './Pages/Home/Home';
 function App() {
   return (
     
       <div className="App">
         
         <Navbar />
-          <Home />
+          {/* <Home /> */}
         <Routes>
-          {/* <Route path="/" element={<AllProducts/>} /> */}
+          <Route path="/" element={<Home/>} />
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}
   
