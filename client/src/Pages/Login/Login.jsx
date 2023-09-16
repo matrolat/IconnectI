@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css'
-import Logo from '../../Assets/Main_Logo.png'
+import MainLogo from '../../Components/Main_Logo/MainLogo'
 import eyeLogo from '../../Assets/eye.svg'
 import { useState } from 'react'
 
@@ -12,12 +12,7 @@ export default function Login() {
         <div className="frame6-frame6">
           <div className="frame6-social"></div>
           <div className="frame6-frame4">
-            <img
-              src={Logo}
-              alt="Logo-img"
-              className="frame6-image18"
-            />
-            
+            <MainLogo height={81} width={93}/>            
             <div className="frame6-frame7">
               <span className="frame6-text"><span>Welcome back</span></span>
               <span className="frame6-text02">

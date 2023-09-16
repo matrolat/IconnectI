@@ -6,6 +6,7 @@ import { styled,Button } from "@mui/material";
 import logo from '../../Assets/landingLogo.png'
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from "@mui/material/Typography";
+import { Link } from 'react-router-dom';
 
 
 
@@ -107,7 +108,7 @@ export const Landing = () => {
                 <LoginButton
                     key="Login"
                     >
-                 Company
+                 <Link to='/Registration/Company'>Company </Link>
                 </LoginButton>
                 <LoginButton
                     key="Login"
