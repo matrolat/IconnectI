@@ -93,7 +93,7 @@
     text-transform: none;
     text-decoration: none;
   }
-  
+
 
 
 /* login.css */
@@ -147,6 +147,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
   }
   .frame6-text {
     color: rgba(68, 68, 68, 1);
@@ -182,6 +183,7 @@
     z-index: 2;
     align-items: flex-start;
     flex-direction: column;
+
   }
   .frame6-email {
     width: 400px;
@@ -212,9 +214,9 @@
     top: 29px;
     left: 0px;
     color: rgba(166, 160, 160, 1);
-    width: 400px;
+    width: 340px;
+    padding: 15px 30px;
     display: flex;
-    padding: 15px 21px 15px 30px;
     overflow: hidden;
     position: absolute;
     font-size: 12px;
@@ -242,6 +244,7 @@
     position: relative;
     align-items: flex-start;
     flex-shrink: 1;
+
   }
   .frame6-text07 {
     color: rgba(68, 68, 68, 1);
@@ -263,7 +266,7 @@
     gap: 10px;
     top: 27px;
     left: 0px;
-    width: 400px;
+    width: 340px;
     display: flex;
     padding: 15px 30px;
     overflow: hidden;
@@ -288,6 +291,7 @@
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
+
   }
   .frame6-vector {
     width: 15px;
@@ -317,14 +321,15 @@
   .frame6-frame1 {
     gap: 10px;
     width: 400px;
+    height: 47px;
     display: flex;
-    padding: 10px 78px;
     overflow: hidden;
     align-items: center;
     flex-shrink: 0;
     border-radius: 25px;
     justify-content: center;
     background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
+    border: 0;
   }
   .frame6-text13 {
     color: rgba(255, 255, 255, 1);
