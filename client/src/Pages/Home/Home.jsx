@@ -335,7 +335,7 @@ export default function Home() {
                                     color: "#4CAF4F",
                                     textDecoration: "none",
                                     }}
-                                >  Tim Smith  </Typography>
+                                >  xyz  </Typography>
                                 <p style={{fontSize:16,color:"#717171"}} >British Dragon Boat Racing Association</p>
                                 <div>
                                     <img src={logo1} alt="" style={{marginRight:30}} />

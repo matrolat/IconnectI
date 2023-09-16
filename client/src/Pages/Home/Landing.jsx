@@ -100,12 +100,21 @@ export const Landing = () => {
             }}
           >from x years</Typography>
 
-                <p style={{color:"#717171",fontSize:17,marginBottom:30}}>Want to use your skills as an intern</p>
+                <p style={{color:"#717171",fontSize:17,marginBottom:30}}>xyz tagline</p>
+
+                <p style={{color:"#717171",fontSize:25,marginBottom:30}}>Register as</p>
+                <div className="regBtn" style={{display:"flex"}}>
                 <LoginButton
                     key="Login"
                     >
-                Register
+                 Company
                 </LoginButton>
+                <LoginButton
+                    key="Login"
+                    >
+                College
+                </LoginButton>
+                </div>
             </div>
             <div className={classes.right}>
                 <img src={logo} alt="" className={classes.landingImg} />
