@@ -113,7 +113,7 @@ export const Landing = () => {
                 <LoginButton
                     key="Login"
                     >
-                College
+                <Link to='/Registration/College'>College</Link>
                 </LoginButton>
                 </div>
             </div>

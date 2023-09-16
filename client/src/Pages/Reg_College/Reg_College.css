@@ -1,0 +1,783 @@
+.college-registration-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.college-registration-college-registration {
+    width: 1570px;
+    height: 864px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 52px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1);   
+}
+
+.college-registration-frame4 {
+    gap: 15.8203125px;
+    top: 100px;
+    left: 62px;
+    width: 1485px;
+    width: 100%;
+    height: 195px;
+    display: flex;
+    /* position: absolute; */
+    align-self: flex-start;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    margin-top: 0;
+}
+.college-registration-frame7 {
+    gap: 1.58203125px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.college-registration-text32 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    font-size: 26.89453125px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.college-registration-text34 {
+    color: rgba(134, 131, 131, 1);
+    height: auto;
+    font-size: 11.865234375px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.college-registration-text35 {
+    color: rgba(134, 131, 131, 1);
+    font-weight: 400;
+}
+
+
+.college-registration-frame2 {
+    gap: 7.91015625px;
+    /* left: 620px; */
+    width: 389px;
+    bottom: 75px;
+    height: 80px;
+    display: flex;
+    /* padding: 7.91015625px 61.69921875px; */
+    overflow: hidden;
+    /* position: absolute; */
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 19.775390625px;
+    justify-content: center;
+    background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
+}
+.college-registration-text {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    font-size: 14.23828125px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.outer-container{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    width: 85%;
+    height: 60vh;
+    /* margin-top: 0; */
+    margin: 0 500px;
+    /* background-color: blue; */
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 70px;
+      width: 316px;
+      height: 330px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-shrink: 1;
+      /* background-color: aqua; */
+    }
+    .name {
+        top: 82px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    align-items: flex-start;
+    flex-shrink: 1;
+    /* background-color: yellow; */
+}
+.text {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    /* position: absolute; */
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.head-text {
+    color: rgba(68, 68, 68, 1);
+}
+.input-box {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 268px;
+    display: flex;
+    padding: 12px 24px;
+    overflow: hidden;
+    /* position: absolute; */
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.college-registration-check {
+    left: 723px;
+    width: 170.357421875px;
+    bottom: 200px;
+    height: 13.447265625px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-rectangle3 {
+    top: 0px;
+    left: 0px;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    border-color: rgba(68, 68, 68, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 3.1640625px;
+  }
+  .college-registration-text18 {
+    left: 21.357421875px;
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 8.701171875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  /* .college-registration-email {
+    top: 173px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text04 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text05 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input01 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-name1 {
+    top: 269px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text06 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text07 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input02 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-name2 {
+    top: 0px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text08 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text09 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input03 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-group1 {
+    top: 300px;
+    left: 650px;
+    width: 316.40625px;
+    height: 324.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-email1 {
+    top: 82px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text10 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text11 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input04 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-email2 {
+    top: 0px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text12 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text13 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input05 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-name3 {
+    top: 172px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text14 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text15 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input06 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-name4 {
+    top: 264px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text16 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text17 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input07 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  .college-registration-group2 {
+    top: 300px;
+    left: 200px;
+    width: 316.40625px;
+    height: 326.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-name5 {
+    top: 79px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text20 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text21 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input08 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-pass {
+    top: 170px;
+    left: 0px;
+    width: 316.40625px;
+    height: 59.087890625px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text22 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text23 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input09 {
+    gap: 7.91015625px;
+    top: 21.357421875px;
+    left: -9.094947017729282e-13px;
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 210px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-text24 {
+    color: rgba(166, 160, 160, 1);
+    height: auto;
+    font-size: 9.4921875px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-vector {
+    width: 12px;
+    height: 9px;
+  }
+  .college-registration-name6 {
+    top: 0px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text26 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text27 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input10 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-name7 {
+    top: 266px;
+    left: 0px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .college-registration-text28 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-text29 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .college-registration-input11 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .college-registration-text30 {
+    color: rgba(166, 160, 160, 1);
+    height: auto;
+    font-size: 9.4921875px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .college-registration-vector1 {
+    width: 12px;
+    height: 9px;
+  } */
