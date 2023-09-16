@@ -1,706 +1,1280 @@
-/* style.css */
-:root {
-  --dl-color-gray-500: #595959;
-  --dl-color-gray-700: #999999;
-  --dl-color-gray-900: #D9D9D9;
-  --dl-size-size-large: 144px;
-  --dl-size-size-small: 48px;
-  --dl-color-danger-300: #A22020;
-  --dl-color-danger-500: #BF2626;
-  --dl-color-danger-700: #E14747;
-  --dl-color-gray-black: #000000;
-  --dl-color-gray-white: #FFFFFF;
-  --dl-size-size-medium: 96px;
-  --dl-size-size-xlarge: 192px;
-  --dl-size-size-xsmall: 16px;
-  --dl-space-space-unit: 16px;
-  --dl-color-primary-100: #003EB3;
-  --dl-color-primary-300: #0074F0;
-  --dl-color-primary-500: #14A9FF;
-  --dl-color-primary-700: #85DCFF;
-  --dl-color-success-300: #199033;
-  --dl-color-success-500: #32A94C;
-  --dl-color-success-700: #4CC366;
-  --dl-size-size-xxlarge: 288px;
-  --dl-size-size-maxwidth: 1400px;
-  --dl-radius-radius-round: 50%;
-  --dl-space-space-halfunit: 8px;
-  --dl-space-space-sixunits: 96px;
-  --dl-space-space-twounits: 32px;
-  --dl-radius-radius-radius2: 2px;
-  --dl-radius-radius-radius4: 4px;
-  --dl-radius-radius-radius8: 8px;
-  --dl-space-space-fiveunits: 80px;
-  --dl-space-space-fourunits: 64px;
-  --dl-space-space-threeunits: 48px;
-  --dl-space-space-oneandhalfunits: 24px;
-}
-.button {
-  color: var(--dl-color-gray-black);
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-color: var(--dl-color-gray-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-gray-white);
-}
-.input {
-  color: var(--dl-color-gray-black);
-  cursor: auto;
-  padding: 0.5rem 1rem;
-  border-color: var(--dl-color-gray-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-gray-white);
-}
-.textarea {
-  color: var(--dl-color-gray-black);
-  cursor: auto;
-  padding: 0.5rem;
-  border-color: var(--dl-color-gray-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-gray-white);
-}
-.list {
-  width: 100%;
-  margin: 1em 0px 1em 0px;
-  display: block;
-  padding: 0px 0px 0px 1.5rem;
-  list-style-type: none;
-  list-style-position: outside;
-}
-.list-item {
-  display: list-item;
-}
-.teleport-show {
-  display: flex !important;
-  transform: none !important;
-}
-.Content {
-  font-size: 16px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 1.15;
-  text-transform: none;
-  text-decoration: none;
-}
-.Heading {
-  font-size: 32px;
-  font-family: Inter;
-  font-weight: 700;
-  line-height: 1.15;
-  text-transform: none;
-  text-decoration: none;
-}
-
-
-/* index.css */
 .company-registration-container {
-    width: 100%;
-    display: flex;
-    overflow: auto;
-    min-height: 100vh;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.company-registration-company-registration {
+  width: 100%;
+  height: 847px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-self: center;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-frame4 {
+  gap: 15.8203125px;
+  top: 70px;
+  left: 56px;
+  width: 1485px;
+  height: 195px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.company-registration-image19 {
+  width: 74px;
+  height: 64px;
+}
+.company-registration-frame7 {
+  gap: 1.58203125px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.company-registration-text {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  font-size: 26.89453125px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text02 {
+  color: rgba(134, 131, 131, 1);
+  height: auto;
+  font-size: 11.865234375px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text03 {
+  color: rgba(134, 131, 131, 1);
+  font-weight: 400;
+}
+.company-registration-frame2 {
+  gap: 7.91015625px;
+  /* left: 600px; */
+  width: 389px;
+  bottom: 62px;
+  height: 80px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 7.91015625px 61.69921875px;
+  /* padding-left: var(--dl-space-space-fourunits); */
+  border-radius: 19.775390625px;
+  /* padding-right: var(--dl-space-space-fourunits); */
+  padding-bottom: 7.91015625px 61.69921875px;
+  justify-content: center;
+  background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
+}
+.company-registration-text05 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 14.23828125px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.outer-container {
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 50vh;
+  margin-top: 50px;
+}
+.inner-container {
+  display: flex;
+  justify-content: space-around;
+  /* width: 90%; */
+  /* height: 55%; */
+  /* background-color: aqua; */
+  /* margin: 0 100px; */
+  padding: 10px 90px;
+}
+
+.container {
+  /* margin: 140px; */
+  top: 270px;
+  /* left: 140px; */
+  width: 316px;
+  height: 60px;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* position: absolute; */
+  /* align-items: flex-start; */
+  /* flex-shrink: 1; */
+  /* background-color: yellow; */
+}
+ .head {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.input {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 268px;
+  height: 38px;
+  display: flex;
+  padding: 0 24px;
+  margin-top: 20px;
+  overflow: hidden;
+  /* position: absolute; */
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+  /* background-color: green; */
+}
+/* .container2 {
+  top: 267px;
+  left: 635px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  
+} */
+
+
+
+/* 
+
+
+
+.company-registration-text09 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text10 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input1 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-pass {
+  top: 389px;
+  left: 140px;
+  width: 316.40625px;
+  height: 59.087890625px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text11 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text12 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input2 {
+  gap: 7.91015625px;
+  top: 21.357421875px;
+  left: -9.094947017729282e-13px;
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 210px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-text13 {
+  color: rgba(166, 160, 160, 1);
+  height: auto;
+  font-size: 9.4921875px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-vector {
+  width: 12px;
+  height: 9px;
+}
+.company-registration-name1 {
+  top: 392px;
+  left: 635px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text15 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text16 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input3 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-name2 {
+  top: 553px;
+  left: 635px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text17 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text18 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input4 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-email1 {
+  top: 266px;
+  right: 140px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  padding-right: 150px;
+}
+.company-registration-text19 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text20 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input5 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-name3 {
+  top: 387px;
+  right: 150px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text21 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text22 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input6 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-name4 {
+  top: 556px;
+  right: 150px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text23 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text24 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input7 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-check {
+  top: 653px;
+  left: 690px;
+  width: 170.357421875px;
+  height: 13.447265625px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-rectangle3 {
+  top: 0px;
+  left: 0px;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  border-color: rgba(68, 68, 68, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 3.1640625px;
+}
+.company-registration-text25 {
+  left: 21.357421875px;
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 8.701171875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-name5 {
+  top: 546px;
+  left: 140px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text27 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text28 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input8 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-text29 {
+  color: rgba(166, 160, 160, 1);
+  height: auto;
+  font-size: 9.4921875px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-vector1 {
+  width: 12px;
+  height: 9px;
+}
+@media(max-width: 1200px) {
   .company-registration-company-registration {
-    width: 100%;
-    height: 847px;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    align-self: center;
-    align-items: center;
-    flex-shrink: 0;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-registration-frame4 {
-    gap: 15.8203125px;
-    top: 70px;
-    left: 56px;
-    width: 1485px;
-    height: 195px;
-    margin: auto;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    flex-shrink: 0;
-    flex-direction: column;
-  }
-  /* .company-registration-image19 {
-    width: 74px;
-    height: 64px;
-  } */
-  .company-registration-frame7 {
-    gap: 1.58203125px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .company-registration-text {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    font-size: 26.89453125px;
-    font-style: SemiBold;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 600;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text02 {
-    color: rgba(134, 131, 131, 1);
-    height: auto;
-    font-size: 11.865234375px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text03 {
-    color: rgba(134, 131, 131, 1);
-    font-weight: 400;
-  }
-  .company-registration-frame2 {
-    gap: 7.91015625px;
-    left: 600px;
-    width: 389px;
-    bottom: 62px;
-    height: 80px;
-    display: flex;
-    overflow: hidden;
-    position: absolute;
-    align-items: center;
-    flex-shrink: 0;
-    padding-top: 7.91015625px 61.69921875px;
-    padding-left: var(--dl-space-space-fourunits);
-    border-radius: 19.775390625px;
-    padding-right: var(--dl-space-space-fourunits);
-    padding-bottom: 7.91015625px 61.69921875px;
-    justify-content: center;
-    background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
-  }
-  .company-registration-text05 {
-    color: rgba(255, 255, 255, 1);
-    height: auto;
-    font-size: 14.23828125px;
-    font-style: SemiBold;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 600;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
+    height: 811px;
   }
   .company-registration-name {
     top: 270px;
-    left: 140px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-text07 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text08 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-registration-input {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    color: rgba(166, 160, 160, 1);
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    font-size: 9.4921875px;
-    text-align: left;
-    align-items: center;
-    flex-shrink: 0;
-    font-family: Poppins;
-    font-weight: 500;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-registration-email {
-    top: 267px;
-    left: 635px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-text09 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text10 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-registration-input1 {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    color: rgba(166, 160, 160, 1);
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    font-size: 9.4921875px;
-    text-align: left;
-    align-items: center;
-    flex-shrink: 0;
-    font-family: Poppins;
-    font-weight: 500;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-registration-pass {
-    top: 389px;
-    left: 140px;
-    width: 316.40625px;
-    height: 59.087890625px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-text11 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text12 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-registration-input2 {
-    gap: 7.91015625px;
-    top: 21.357421875px;
-    left: -9.094947017729282e-13px;
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 210px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    align-items: center;
-    flex-shrink: 0;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-registration-text13 {
-    color: rgba(166, 160, 160, 1);
-    height: auto;
-    font-size: 9.4921875px;
-    font-style: Medium;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 500;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-vector {
-    width: 12px;
-    height: 9px;
-  }
-  .company-registration-name1 {
-    top: 392px;
-    left: 635px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-text15 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text16 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-registration-input3 {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    color: rgba(166, 160, 160, 1);
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    font-size: 9.4921875px;
-    text-align: left;
-    align-items: center;
-    flex-shrink: 0;
-    font-family: Poppins;
-    font-weight: 500;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-registration-name2 {
-    top: 553px;
-    left: 635px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-text17 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text18 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-registration-input4 {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    color: rgba(166, 160, 160, 1);
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    font-size: 9.4921875px;
-    text-align: left;
-    align-items: center;
-    flex-shrink: 0;
-    font-family: Poppins;
-    font-weight: 500;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
+    left: 73px;
   }
   .company-registration-email1 {
-    top: 266px;
-    right: 140px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-    padding-right: 150px;
+    top: 261px;
+    right: 42px;
   }
-  .company-registration-text19 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
+}.company-registration-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.company-registration-company-registration {
+  width: 100%;
+  height: 847px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-self: center;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-frame4 {
+  gap: 15.8203125px;
+  top: 70px;
+  left: 56px;
+  width: 1485px;
+  height: 195px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.company-registration-image19 {
+  width: 74px;
+  height: 64px;
+}
+.company-registration-frame7 {
+  gap: 1.58203125px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.company-registration-text {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  font-size: 26.89453125px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text02 {
+  color: rgba(134, 131, 131, 1);
+  height: auto;
+  font-size: 11.865234375px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text03 {
+  color: rgba(134, 131, 131, 1);
+  font-weight: 400;
+}
+.company-registration-frame2 {
+  gap: 7.91015625px;
+  left: 600px;
+  width: 389px;
+  bottom: 62px;
+  height: 80px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 7.91015625px 61.69921875px;
+  padding-left: var(--dl-space-space-fourunits);
+  border-radius: 19.775390625px;
+  padding-right: var(--dl-space-space-fourunits);
+  padding-bottom: 7.91015625px 61.69921875px;
+  justify-content: center;
+  background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
+}
+.company-registration-text05 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 14.23828125px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-name {
+  top: 270px;
+  left: 140px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text07 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text08 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-email {
+  top: 267px;
+  left: 635px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text09 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text10 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input1 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-pass {
+  top: 389px;
+  left: 140px;
+  width: 316.40625px;
+  height: 59.087890625px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text11 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text12 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input2 {
+  gap: 7.91015625px;
+  top: 21.357421875px;
+  left: -9.094947017729282e-13px;
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 210px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-text13 {
+  color: rgba(166, 160, 160, 1);
+  height: auto;
+  font-size: 9.4921875px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-vector {
+  width: 12px;
+  height: 9px;
+}
+.company-registration-name1 {
+  top: 392px;
+  left: 635px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text15 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text16 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input3 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-name2 {
+  top: 553px;
+  left: 635px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text17 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text18 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input4 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-email1 {
+  top: 266px;
+  right: 140px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  padding-right: 150px;
+}
+.company-registration-text19 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text20 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input5 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-name3 {
+  top: 387px;
+  right: 150px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text21 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text22 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input6 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-name4 {
+  top: 556px;
+  right: 150px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text23 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text24 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input7 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-check {
+  top: 653px;
+  left: 690px;
+  width: 170.357421875px;
+  height: 13.447265625px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-rectangle3 {
+  top: 0px;
+  left: 0px;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  border-color: rgba(68, 68, 68, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 3.1640625px;
+}
+.company-registration-text25 {
+  left: 21.357421875px;
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 8.701171875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-name5 {
+  top: 546px;
+  left: 140px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-text27 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-text28 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-registration-input8 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-registration-text29 {
+  color: rgba(166, 160, 160, 1);
+  height: auto;
+  font-size: 9.4921875px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-registration-vector1 {
+  width: 12px;
+  height: 9px;
+}
+@media(max-width: 1200px) {
+  .company-registration-company-registration {
+    height: 811px;
   }
-  .company-registration-text20 {
-    color: rgba(68, 68, 68, 1);
+  .company-registration-name {
+    top: 270px;
+    left: 73px;
   }
-  .company-registration-input5 {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    color: rgba(166, 160, 160, 1);
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    font-size: 9.4921875px;
-    text-align: left;
-    align-items: center;
-    flex-shrink: 0;
-    font-family: Poppins;
-    font-weight: 500;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
+  .company-registration-email1 {
+    top: 261px;
+    right: 42px;
   }
-  .company-registration-name3 {
-    top: 387px;
-    right: 150px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-text21 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text22 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-registration-input6 {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    color: rgba(166, 160, 160, 1);
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    font-size: 9.4921875px;
-    text-align: left;
-    align-items: center;
-    flex-shrink: 0;
-    font-family: Poppins;
-    font-weight: 500;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-registration-name4 {
-    top: 556px;
-    right: 150px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-text23 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text24 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-registration-input7 {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    color: rgba(166, 160, 160, 1);
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    font-size: 9.4921875px;
-    text-align: left;
-    align-items: center;
-    flex-shrink: 0;
-    font-family: Poppins;
-    font-weight: 500;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-registration-check {
-    top: 653px;
-    left: 690px;
-    width: 170.357421875px;
-    height: 13.447265625px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-rectangle3 {
-    top: 0px;
-    left: 0px;
-    width: 13px;
-    height: 13px;
-    position: absolute;
-    border-color: rgba(68, 68, 68, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 3.1640625px;
-  }
-  .company-registration-text25 {
-    left: 21.357421875px;
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 8.701171875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-name5 {
-    top: 546px;
-    left: 140px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-registration-text27 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-text28 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-registration-input8 {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    align-items: center;
-    flex-shrink: 0;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-registration-text29 {
-    color: rgba(166, 160, 160, 1);
-    height: auto;
-    font-size: 9.4921875px;
-    font-style: Medium;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 500;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-registration-vector1 {
-    width: 12px;
-    height: 9px;
-  }
-  @media(max-width: 1200px) {
-    .company-registration-company-registration {
-      height: 811px;
-    }
-    .company-registration-name {
-      top: 270px;
-      left: 73px;
-    }
-    .company-registration-email1 {
-      top: 261px;
-      right: 42px;
-    }
-  }
-  
+} */
+.company-registration-check {
+  top: 653px;
+  left: 690px;
+  width: 170.357421875px;
+  height: 13.447265625px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-registration-rectangle3 {
+  top: 0px;
+  left: 0px;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  border-color: rgba(68, 68, 68, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 3.1640625px;
+}
+.company-registration-text25 {
+  left: 21.357421875px;
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 8.701171875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

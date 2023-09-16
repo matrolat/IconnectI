@@ -1,16 +1,15 @@
-import React from 'react'
-import './Reg_Company.css'
-import MainLogo from '../../Components/Main_Logo/MainLogo'
-
+import React from "react";
+import "./Reg_Company.css";
+import MainLogo from "../../Components/Main_Logo/MainLogo";
+import Checkbox from "../../Assets/Checkbox.png";
 
 export default function Reg_Company() {
   return (
     <div>
-
-<div class="company-registration-container">
+      <div class="company-registration-container">
         <div class="company-registration-company-registration">
           <div class="company-registration-frame4">
-           <MainLogo height={64} width={74} />
+            <MainLogo/>
             <div class="company-registration-frame7">
               <span class="company-registration-text">
                 <span>Register your account.</span>
@@ -23,22 +22,134 @@ export default function Reg_Company() {
               </span>
             </div>
           </div>
-          <div class="company-registration-frame2">
-            <span class="company-registration-text05">
-              <span>Sign Up</span>
-            </span>
-          </div>
-          <div class="company-registration-name">
-            <span class="company-registration-text07">
-              <span class="company-registration-text08">User name *</span>
+
+          
+
+      <div className="outer-container">
+        
+        <div className="inner-container">
+
+          <div class="container">
+            <span class="head">
+              <span class="head-text">User name *</span>
             </span>
             <input
               type="text"
               placeholder="Steven Stallion"
-              class="company-registration-input"
+              class="input"
             />
           </div>
-          <div class="company-registration-email">
+          <div class="container">
+            <span class="head">
+              <span class="head-text">Email address *</span>
+            </span>
+            <input
+              type="text"
+              placeholder="Example@gmail.com"
+              class="input"
+            />
+          </div>
+          <div class="container">
+            <span class="head">
+              <span class="head-text">SPOC Email address *</span>
+            </span>
+            <input
+              type="text"
+              placeholder="Example@gmail.com"
+              class="input"
+            />
+          </div>
+
+          </div>
+
+        <div className="inner-container">
+            <div class="container">
+            <span class="head">
+              <span class="head-text">User name *</span>
+            </span>
+            <input
+              type="text"
+              placeholder="Steven Stallion"
+              class="input"
+            />
+            </div>
+            <div class="container">
+            <span class="head">
+              <span class="head-text">Email address *</span>
+            </span>
+            <input
+              type="text"
+              placeholder="Example@gmail.com"
+              class="input"
+            />
+            </div>
+            <div class="container">
+            <span class="head">
+              <span class="head-text">SPOC Email address *</span>
+            </span>
+            <input
+              type="text"
+              placeholder="Example@gmail.com"
+              class="input"
+            />
+            </div>
+
+            </div>
+
+        <div className="inner-container">
+          <div class="container">
+            <span class="head">
+              <span class="head-text">User name *</span>
+            </span>
+            <input
+              type="text"
+              placeholder="Steven Stallion"
+              class="input"
+            />
+          </div>
+          <div class="container">
+            <span class="head">
+              <span class="head-text">Email address *</span>
+            </span>
+            <input
+              type="text"
+              placeholder="Example@gmail.com"
+              class="input"
+            />
+          </div>
+          <div class="container">
+            <span class="head">
+              <span class="head-text">SPOC Email address *</span>
+            </span>
+            <input
+              type="text"
+              placeholder="Example@gmail.com"
+              class="input"
+            />
+          </div>
+
+            </div>
+
+        <div className="company-registration-check">
+            <img
+              src={Checkbox}
+              alt="Rectangle"
+              className="company-registration-rectangle3"
+            />
+            <span className="company-registration-text25">
+              <span>I agree to the terms and condition</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="company-registration-frame2">
+            <span class="company-registration-text05">
+              <span>Sign Up</span>
+            </span>            
+          </div>
+          
+
+          {/* <div class="company-registration-email">
             <span class="company-registration-text09">
               <span class="company-registration-text10">Email address *</span>
             </span>
@@ -141,10 +252,10 @@ export default function Reg_Company() {
                 class="company-registration-vector1"
               />
             </div>
-          </div>
+          </div> */}
+           
         </div>
       </div>
-
     </div>
-  )
+  );
 }
