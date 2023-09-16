@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from './Navbar'
 import { Landing } from './Landing'
 import Footer from './Footer'
 import Box from "@mui/material/Box";
@@ -72,6 +73,7 @@ export default function Home() {
     const classes = useStyles();
   return (
     <div>
+        <Navbar/>
         <Landing />
 
         <StyledBox maxWidth="xl" sx={{display:"flex",alignItems:"center"}}>
