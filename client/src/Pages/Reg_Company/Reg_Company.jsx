@@ -6,16 +6,16 @@ import Checkbox from "../../Assets/Checkbox.png";
 export default function Reg_Company() {
   return (
     <div>
-      <div class="company-registration-container">
-        <div class="company-registration-company-registration">
-          <div class="company-registration-frame4">
+      <div className="company-registration-container">
+        <div className="company-registration-company-registration">
+          <div className="company-registration-frame4">
             <MainLogo/>
-            <div class="company-registration-frame7">
-              <span class="company-registration-text">
+            <div className="company-registration-frame7">
+              <span className="company-registration-text">
                 <span>Register your account.</span>
               </span>
-              <span class="company-registration-text02">
-                <span class="company-registration-text03">
+              <span className="company-registration-text02">
+                <span className="company-registration-text03">
                   Already have an account?
                 </span>
                 <span>log In</span>
@@ -29,227 +29,229 @@ export default function Reg_Company() {
         
         <div className="inner-container">
 
-          <div class="container">
-            <span class="head">
-              <span class="head-text">User name *</span>
+          <div className="container">
+            <span className="head">
+              <span className="head-text">User name *</span>
             </span>
             <input
               type="text"
               placeholder="Steven Stallion"
-              class="input"
+              className="input"
             />
           </div>
-          <div class="container">
-            <span class="head">
-              <span class="head-text">Email address *</span>
+          <div className="container">
+            <span className="head">
+              <span className="head-text">Password *</span>
             </span>
             <input
-              type="text"
-              placeholder="Example@gmail.com"
-              class="input"
+              type="password"
+              placeholder="Enter Password"
+              className="input"
             />
           </div>
-          <div class="container">
-            <span class="head">
-              <span class="head-text">SPOC Email address *</span>
+          <div className="container">
+            <span className="head">
+              <span className="head-text">Re Type Password *</span>
             </span>
             <input
-              type="text"
-              placeholder="Example@gmail.com"
-              class="input"
+              type="password"
+              placeholder="Enter Password"
+              className="input"
             />
           </div>
 
           </div>
 
         <div className="inner-container">
-            <div class="container">
-            <span class="head">
-              <span class="head-text">User name *</span>
-            </span>
-            <input
-              type="text"
-              placeholder="Steven Stallion"
-              class="input"
-            />
-            </div>
-            <div class="container">
-            <span class="head">
-              <span class="head-text">Email address *</span>
+            <div className="container">
+            <span className="head">
+              <span className="head-text">Email address *</span>
             </span>
             <input
               type="text"
               placeholder="Example@gmail.com"
-              class="input"
+              className="input"
             />
             </div>
-            <div class="container">
-            <span class="head">
-              <span class="head-text">SPOC Email address *</span>
+            <div className="container">
+            <span className="head">
+              <span className="head-text">Company name*</span>
+            </span>
+            <input
+              type="text"
+              placeholder=""
+              className="input"
+            />
+            </div>
+            <div className="container">
+            <span className="head">
+              <span className="head-text">SPOC name*</span>
             </span>
             <input
               type="text"
               placeholder="Example@gmail.com"
-              class="input"
+              className="input"
             />
             </div>
 
             </div>
 
         <div className="inner-container">
-          <div class="container">
-            <span class="head">
-              <span class="head-text">User name *</span>
+          <div className="container">
+            <span className="head">
+              <span className="head-text">SPOC Email address*</span>
             </span>
             <input
-              type="text"
-              placeholder="Steven Stallion"
-              class="input"
+              type="email"
+              placeholder="Example@gmail.com"
+              className="input"
             />
           </div>
-          <div class="container">
-            <span class="head">
-              <span class="head-text">Email address *</span>
+          <div className="container">
+            <span className="head">
+              <span className="head-text">SPOC Phone Number *</span>
             </span>
             <input
               type="text"
-              placeholder="Example@gmail.com"
-              class="input"
+              placeholder=""
+              className="input"
             />
           </div>
-          <div class="container">
-            <span class="head">
-              <span class="head-text">SPOC Email address *</span>
+          <div className="container">
+            <span className="head">
+              <span className="head-text">SPOC ID *</span>
             </span>
             <input
               type="text"
-              placeholder="Example@gmail.com"
-              class="input"
+              placeholder=""
+              className="input"
             />
           </div>
 
             </div>
 
         <div className="company-registration-check">
-            <img
+            {/* <img
               src={Checkbox}
               alt="Rectangle"
               className="company-registration-rectangle3"
-            />
+            /> */}
+            <input type="checkbox" className="company-registration-rectangle3"/>
             <span className="company-registration-text25">
               <span>I agree to the terms and condition</span>
             </span>
           </div>
-        </div>
-
-        <div class="company-registration-frame2">
-            <span class="company-registration-text05">
+        
+        <div className="company-registration-frame2">
+            <span className="company-registration-text05">
               <span>Sign Up</span>
             </span>            
           </div>
+        </div>
+
           
 
-          {/* <div class="company-registration-email">
-            <span class="company-registration-text09">
-              <span class="company-registration-text10">Email address *</span>
+          {/* <div className="company-registration-email">
+            <span className="company-registration-text09">
+              <span className="company-registration-text10">Email address *</span>
             </span>
             <input
               type="text"
               placeholder="Example@gmail.com"
-              class="company-registration-input1"
+              className="company-registration-input1"
             />
           </div>
-          <div class="company-registration-pass">
-            <span class="company-registration-text11">
-              <span class="company-registration-text12">Password *</span>
+          <div className="company-registration-pass">
+            <span className="company-registration-text11">
+              <span className="company-registration-text12">Password *</span>
             </span>
-            <div class="company-registration-input2">
-              <span class="company-registration-text13">
+            <div className="company-registration-input2">
+              <span className="company-registration-text13">
                 <span>*************</span>
               </span>
               <img
                 src="public/external/vector0316-9tqo.svg"
                 alt="Vector0316"
-                class="company-registration-vector"
+                className="company-registration-vector"
               />
             </div>
           </div>
-          <div class="company-registration-name1">
-            <span class="company-registration-text15">
-              <span class="company-registration-text16">Company name *</span>
+          <div className="company-registration-name1">
+            <span className="company-registration-text15">
+              <span className="company-registration-text16">Company name *</span>
             </span>
             <input
               type="text"
               placeholder="Steven Stallion"
-              class="company-registration-input3"
+              className="company-registration-input3"
             />
           </div>
-          <div class="company-registration-name2">
-            <span class="company-registration-text17">
-              <span class="company-registration-text18">SPOC name *</span>
+          <div className="company-registration-name2">
+            <span className="company-registration-text17">
+              <span className="company-registration-text18">SPOC name *</span>
             </span>
             <input
               type="text"
               placeholder="Steven Stallion"
-              class="company-registration-input4"
+              className="company-registration-input4"
             />
           </div>
-          <div class="company-registration-email1">
-            <span class="company-registration-text19">
-              <span class="company-registration-text20">
+          <div className="company-registration-email1">
+            <span className="company-registration-text19">
+              <span className="company-registration-text20">
                 SPOC Email address *
               </span>
             </span>
             <input
               type="text"
               placeholder="Example@gmail.com"
-              class="company-registration-input5"
+              className="company-registration-input5"
             />
           </div>
-          <div class="company-registration-name3">
-            <span class="company-registration-text21">
-              <span class="company-registration-text22">SPOC Phn Number *</span>
+          <div className="company-registration-name3">
+            <span className="company-registration-text21">
+              <span className="company-registration-text22">SPOC Phn Number *</span>
             </span>
             <input
               type="text"
               placeholder="Steven Stallion"
-              class="company-registration-input6"
+              className="company-registration-input6"
             />
           </div>
-          <div class="company-registration-name4">
-            <span class="company-registration-text23">
-              <span class="company-registration-text24">SPOC ID *</span>
+          <div className="company-registration-name4">
+            <span className="company-registration-text23">
+              <span className="company-registration-text24">SPOC ID *</span>
             </span>
             <input
               type="text"
               placeholder="Steven Stallion"
-              class="company-registration-input7"
+              className="company-registration-input7"
             />
           </div>
-          <div class="company-registration-check">
+          <div className="company-registration-check">
             <img
               src="public/external/rectangle30318-se6-200h.png"
               alt="Rectangle30318"
-              class="company-registration-rectangle3"
+              className="company-registration-rectangle3"
             />
-            <span class="company-registration-text25">
+            <span className="company-registration-text25">
               <span>I agree to the terms and condition</span>
             </span>
           </div>
-          <div class="company-registration-name5">
-            <span class="company-registration-text27">
-              <span class="company-registration-text28">
+          <div className="company-registration-name5">
+            <span className="company-registration-text27">
+              <span className="company-registration-text28">
                 Re Type Password *
               </span>
             </span>
-            <div class="company-registration-input8">
-              <span class="company-registration-text29">
+            <div className="company-registration-input8">
+              <span className="company-registration-text29">
                 <span>***************</span>
               </span>
               <img
                 src="public/external/vector0319-by3.svg"
                 alt="Vector0319"
-                class="company-registration-vector1"
+                className="company-registration-vector1"
               />
             </div>
           </div> */}

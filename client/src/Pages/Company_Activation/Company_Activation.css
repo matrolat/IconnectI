@@ -1,0 +1,581 @@
+.company-activation-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .company-activation-company-activation {
+    width: 100%;
+    height: 848px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-frame4 {
+    gap: 15.8203125px;
+    top: 70px;
+    left: 70px;
+    width: 1485px;
+    height: 195px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+  .company-activation-image19 {
+    width: 74px;
+    height: 64px;
+  }
+  .company-activation-frame7 {
+    gap: 1.58203125px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .company-activation-text {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    font-size: 26.89453125px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-name {
+    top: 300px;
+    left: 200px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text02 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text03 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-email {
+    top: 300px;
+    left: 650px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text04 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text05 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input1 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-pass {
+    top: 450px;
+    left: 200px;
+    width: 316.40625px;
+    height: 59.087890625px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text06 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text07 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input2 {
+    gap: 7.91015625px;
+    top: 21.357421875px;
+    left: -9.094947017729282e-13px;
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 210px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-text08 {
+    color: rgba(166, 160, 160, 1);
+    height: auto;
+    font-size: 9.4921875px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-vector {
+    width: 12px;
+    height: 9px;
+  }
+  .company-activation-name1 {
+    top: 450px;
+    left: 650px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text10 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text11 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input3 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-name2 {
+    top: 600px;
+    left: 650px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text12 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text13 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input4 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-email1 {
+    top: 300px;
+    right: 150px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text14 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text15 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input5 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-name3 {
+    top: 450px;
+    right: 150px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text16 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text17 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input6 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-name4 {
+    top: 600px;
+    right: 150px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text18 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text19 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input7 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    color: rgba(166, 160, 160, 1);
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 9.4921875px;
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: Poppins;
+    font-weight: 500;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-group1 {
+    left: 600px;
+    width: 389px;
+    bottom: 30px;
+    height: 112px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-frame6 {
+    gap: 7.91015625px;
+    top: 32px;
+    left: 0px;
+    width: 389px;
+    height: 80px;
+    display: flex;
+    padding: 7.91015625px 61.69921875px;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 19.775390625px;
+    justify-content: center;
+    background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
+  }
+  .company-activation-text20 {
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    font-size: 14.23828125px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-check {
+    top: 0px;
+    left: 92px;
+    width: 170.357421875px;
+    height: 13.447265625px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-rectangle3 {
+    top: 0px;
+    left: 0px;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    border-color: rgba(68, 68, 68, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 3.1640625px;
+  }
+  .company-activation-text22 {
+    left: 21.357421875px;
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 8.701171875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-name5 {
+    top: 600px;
+    left: 200px;
+    width: 316.40625px;
+    height: 60.669921875px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .company-activation-text24 {
+    color: rgba(68, 68, 68, 1);
+    height: auto;
+    position: absolute;
+    font-size: 11.07421875px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-text25 {
+    color: rgba(68, 68, 68, 1);
+  }
+  .company-activation-input8 {
+    gap: 7.91015625px;
+    top: 22.939453125px;
+    left: -9.094947017729282e-13px;
+    width: 316.40625px;
+    display: flex;
+    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(210, 205, 205, 1);
+    border-style: solid;
+    border-width: 0.791015625px;
+    border-radius: 19.775390625px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .company-activation-text26 {
+    color: rgba(166, 160, 160, 1);
+    height: auto;
+    font-size: 9.4921875px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .company-activation-vector1 {
+    width: 12px;
+    height: 9px;
+  }
+  
