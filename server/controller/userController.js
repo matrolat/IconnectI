@@ -253,7 +253,75 @@ const companyRegistration = async (req, res) =>{
     }
   }
 
+  const allUsers = async(req, res) => {
+    try {
+      const allUsers = await companyUser.find({});
+      res.json(allUsers);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const otpVerify = async(req, res) => {
+    const { email, otp } = req.body;
+    console.log(req.body);
+    
+
+  const user = await companyUser.findOne({ companyspocemail: email });
+  // const collegeUser = await College.findOne({collegesopcemail : email});
+  //const collegeUser = await College.findOne({ collegespocemail: email });
+  const collegeUser = false;
+  const userExist = await UserOtp.find({ email: email });
+  console.log(userExist);
+  console.log(user);
+  console.log(collegeUser);
+  if (user && !collegeUser) {
+    if (userExist[0].emailotp === otp) {
+      token = await user.generateAuthToken();
+      res.cookie("jwtoken", token, {
+        expires: new Date(Date.now() + 14400000),
+        httpOnly: true,
+      });
+      await companyUser.updateOne(
+        { companyspocemail: email },
+        { $set: { loggedin: "YES", count: 0 } }
+      );
+
+      return res.status(200).json({ message: "Company" });
+    } else {
+      return res.status(422).json({ error: "Invalid OTP" });
+    }
+  } else if (!user && collegeUser) {
+    console.log("inside college");
+    if (userExist[0].emailotp === otp) {
+      token = await collegeUser.generateAuthToken();
+      res.cookie("collegetoken", token, {
+        expires: new Date(Date.now() + 14400000),
+        httpOnly: true,
+      });
+      // await College.updateOne(
+      //   { collegespocemail: email },
+      //   { $set: { loggedin: "YES", count: 0 } }
+      // );
+
+      return res.status(200).json({ message: "College" });
+    } else {
+      return res.status(422).json({ error: "Invalid OTP" });
+    }
+  }
+  }
+
+  const logout = async(req, res) =>{
+    res.clearCookie("jwtoken");
+    res.send("Cookie deleted");
+  }
+  
   module.exports = {
     companyRegistration,
-    login
+    login,
+    allUsers,
+    otpVerify,
+    logout
   };
+
+
