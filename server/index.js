@@ -1,26 +1,23 @@
-import express, { Router } from 'express';
-import dotenv from 'dotenv';
-import connection from './database/db.js';
-import bodyParser from 'body-parser'
-// import DefaultData from './default.js';
-import router from './routes/route.js';
-import cors from 'cors';
-import multer from 'multer';
-const upload = multer({ dest: 'uploads/' })
+const express = require("express");
+const bodyParser = require('body-parser')
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
+// app.use(bodyParser.urlencoded({ extended: false}));
+// app.use(express.json());
+// app.use(express.urlencoded());
 
-dotenv.config();
-app.use('/uploads',express.static('uploads'))
-app.use(cors());
-app.use(bodyParser.json({extended:true}));
-app.use(bodyParser.urlencoded({extended:true}));
-app.use('/',router)
-const PORT = 8000;
+const PORT = 4000;
+app.use("public/uploads/", express.static("public/uploads/"));
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 
-// const username = process.env.DB_USERNAME;
-// const password = process.env.DB_PASSWORD;
+app.use(require("./routes/route.js"));
 
+
+const {connection} = require("./database/db");
 
 connection();
-app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
-// DefaultData();
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});

@@ -1,7 +1,9 @@
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
+require("dotenv").config();
+const { MONGO_URL } = process.env;
 
 const connection =()=>{
-    mongoose.connect("mongodb+srv://sameerswankar:sourabh123@mernproducts.nq4jlba.mongodb.net/",{}).then(
+    mongoose.connect(MONGO_URL,{}).then(
     // mongoose.connect("mongodb://0.0.0.0:27017/Mern_product",{}).then(
         (data)=>{
             console.log(`mongodb connected with server ${data.connection.host}`)
@@ -13,4 +15,6 @@ const connection =()=>{
         }
     )
 }
-export default connection;
+
+module.exports  = {connection};
+
