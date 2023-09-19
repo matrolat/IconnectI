@@ -17,7 +17,6 @@ const transporter = nodemailer.createTransport({
   });
 
 const companyRegistration = async (req, res) =>{
-
     try {
       console.log(req.file);
       const logo = req.file ? req.file.filename : null;
@@ -62,27 +61,17 @@ const companyRegistration = async (req, res) =>{
         console.log(password);
         res.status(201).json({ message: "user registered successfully" });
       }
-
-      // if(userRegister){
-      //     res.status(201).json({message : "user registered successfully"});
-      // }else{
-      //     res.status(500).json({error : "Failed to register"});
-      // }
     } catch (err) {
       console.log(err);
     }
   }
+
+
  // login=========================================================
  const login = async (req, res) =>{
      console.log("jere");
-    //  const { email, password } = req.body;
-    //  console.log(req.body);
-     
-    // return;
     try {
       let token;
-    //   res.send(req.body);
-    //   return;
       const { email, password } = req.body;
       console.log(req.body);
   
@@ -90,8 +79,8 @@ const companyRegistration = async (req, res) =>{
         return res.status(422).json({ error: "Please Fill the fields" });
       }
       const userExist = await companyUser.findOne({ companyspocemail: email });
+      //   const collegeUser = await College.findOne({ collegespocemail: email });
       collegeUser= false;
-    //   const collegeUser = await College.findOne({ collegespocemail: email });
       console.log("hell");
       console.log(userExist);
       if (userExist && !collegeUser) {
@@ -269,7 +258,6 @@ const companyRegistration = async (req, res) =>{
 
   const user = await companyUser.findOne({ companyspocemail: email });
   // const collegeUser = await College.findOne({collegesopcemail : email});
-  //const collegeUser = await College.findOne({ collegespocemail: email });
   const collegeUser = false;
   const userExist = await UserOtp.find({ email: email });
   console.log(userExist);
@@ -316,12 +304,18 @@ const companyRegistration = async (req, res) =>{
     res.send("Cookie deleted");
   }
   
+  const mainScreen = async(req,res)=>{
+    console.log("lol");
+    res.send(req.rootUser);
+  }
+  
   module.exports = {
     companyRegistration,
     login,
     allUsers,
     otpVerify,
-    logout
+    logout,
+    mainScreen
   };
 
 
