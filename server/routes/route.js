@@ -18,6 +18,6 @@ router.get('/allUsers', allUsers);
 router.post('/otpVerify', otpVerify);
 router.get('/logout',logout);
 router.get('/mainscreen',Authenticate, mainScreen);
-
+router.post('/collegesignup',)
 
 module.exports = router;

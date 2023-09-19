@@ -1,4 +1,5 @@
 const companyUser = require("../models/companyUserSchema");
+const College = require("../models/collegeUserSchema")
 const UserOtp = require("../models/userOtp");
 const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
@@ -79,8 +80,8 @@ const companyRegistration = async (req, res) =>{
         return res.status(422).json({ error: "Please Fill the fields" });
       }
       const userExist = await companyUser.findOne({ companyspocemail: email });
-      //   const collegeUser = await College.findOne({ collegespocemail: email });
-      collegeUser= false;
+        const collegeUser = await College.findOne({ collegespocemail: email });
+      // collegeUser= false;
       console.log("hell");
       console.log(userExist);
       if (userExist && !collegeUser) {
@@ -257,8 +258,7 @@ const companyRegistration = async (req, res) =>{
     
 
   const user = await companyUser.findOne({ companyspocemail: email });
-  // const collegeUser = await College.findOne({collegesopcemail : email});
-  const collegeUser = false;
+  const collegeUser = await College.findOne({collegesopcemail : email});
   const userExist = await UserOtp.find({ email: email });
   console.log(userExist);
   console.log(user);
@@ -287,10 +287,10 @@ const companyRegistration = async (req, res) =>{
         expires: new Date(Date.now() + 14400000),
         httpOnly: true,
       });
-      // await College.updateOne(
-      //   { collegespocemail: email },
-      //   { $set: { loggedin: "YES", count: 0 } }
-      // );
+      await College.updateOne(
+        { collegespocemail: email },
+        { $set: { loggedin: "YES", count: 0 } }
+      );
 
       return res.status(200).json({ message: "College" });
     } else {
@@ -309,13 +309,76 @@ const companyRegistration = async (req, res) =>{
     res.send(req.rootUser);
   }
   
+  const collegeRegistration = async(req,res)=>{
+    try {
+      const {
+        collegespocemail,
+        password,
+        confirmPassword,
+        collegename,
+        collegeaddress,
+        collegespocname,
+        collegespocphone,
+        collegeregid,
+        degreeoffered,
+      } = req.body;
+  
+      if (
+        !password ||
+        !confirmPassword ||
+        !collegename ||
+        !collegeaddress ||
+        !collegespocemail ||
+        !collegespocname ||
+        !collegespocphone ||
+        !collegeregid ||
+        !degreeoffered ||
+        confirmPassword != password
+      ) {
+        return res.status(422).json({ error: "Please Fill the fields" });
+      }
+      const userExists = await College.findOne({
+        collegespocemail: collegespocemail,
+      });
+  
+      if (userExists) {
+        return res.status(422).json({ error: "User already Exists" });
+      } else {
+        const user = new College({
+          collegespocemail,
+          password,
+          confirmPassword,
+          collegename,
+          collegeaddress,
+          collegespocname,
+          collegespocphone,
+          collegeregid,
+          degreeoffered,
+        });
+  
+        await user.save();
+        console.log(password);
+        res.status(201).json({ message: "user registered successfully" });
+      }
+  
+      // if(userRegister){
+      //     res.status(201).json({message : "user registered successfully"});
+      // }else{
+      //     res.status(500).json({error : "Failed to register"});
+      // }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   module.exports = {
     companyRegistration,
     login,
     allUsers,
     otpVerify,
     logout,
-    mainScreen
+    mainScreen,
+    collegeRegistration
   };
 
 
