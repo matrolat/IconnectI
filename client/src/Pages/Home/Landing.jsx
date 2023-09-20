@@ -105,16 +105,23 @@ export const Landing = () => {
 
                 <p style={{color:"#717171",fontSize:25,marginBottom:30}}>Register as</p>
                 <div className="regBtn" style={{display:"flex"}}>
+                  <Link to='/Registration/Company' style={{textDecoration:"none"}}>
                 <LoginButton
                     key="Login"
                     >
-                 <Link to='/Registration/Company'>Company </Link>
+                  Company
                 </LoginButton>
+                   </Link>
+
+
+
+                   <Link to='/Registration/College' style={{textDecoration:"none"}}>
                 <LoginButton
                     key="Login"
                     >
-                <Link to='/Registration/College'>College</Link>
+                  College
                 </LoginButton>
+                  </Link>
                 </div>
             </div>
             <div className={classes.right}>

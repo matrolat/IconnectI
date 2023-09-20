@@ -172,22 +172,24 @@ function Navbar() {
 
           <Box sx={{ flexGrow: 0, mr: 7,display: { xs: "none", md: "flex" },
               justifyContent: "center ", }}>
+                <Link to='/Login' style={{textDecoration:"none"}}>
             <LoginButtom
                 key="Login"
                 onClick={handleCloseNavMenu}
 
               //   sx={{ my: 2, color: "#4CAF4F", display: "block", }}
               >
-                <Link to='/Login'>Login</Link>
+                  Login
             </LoginButtom>
+                  </Link>
 
-            <LoginButtom
+            {/* <LoginButtom
               key="Sign Up"
               onClick={handleCloseNavMenu}
             //   sx={{ my: 2, color: "#4CAF4F", display: "block", mx: 2 }}
             >
               Sign Up
-            </LoginButtom>
+            </LoginButtom> */}
           </Box>
         </Toolbar>
       </Container>
