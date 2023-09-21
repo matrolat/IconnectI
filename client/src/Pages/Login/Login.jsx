@@ -4,7 +4,7 @@ import MainLogo from '../../Components/Main_Logo/MainLogo'
 import eyeLogo from '../../Assets/eye.svg'
 import { useState } from 'react'
 import { login } from '../../Service/Api'
-import { useNavigate , useParams} from "react-router-dom";
+import { Link, useNavigate , useParams} from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ export default function Login() {
               <span className="frame6-text"><span>Welcome back</span></span>
               <span className="frame6-text02">
                 <span className="frame6-text03">Don’t have an account?</span>
-                <span> Sign UP</span>
+                <Link to={'/'}> Sign UP</Link>
               </span>
             </div>
           </div>

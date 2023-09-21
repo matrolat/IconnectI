@@ -18,11 +18,11 @@ export default function
             </div>
           </div>
 
-          <div className="outer-container">
-            <div className="inner-container">
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
+          <div className="activation-outer-container">
+            <div className="activation-inner-container">
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
               </span>
               <input
                 type="text"
@@ -30,9 +30,9 @@ export default function
                 class="activation-input"
               />
             </div>
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
               </span>
               <input
                 type="text"
@@ -40,41 +40,9 @@ export default function
                 class="activation-input"
               />
             </div>
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
-              </span>
-              <input
-                type="text"
-                placeholder="Steven Stallion"
-                class="activation-input"
-              />
-            </div>
-            </div>
-            <div className="inner-container">
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
-              </span>
-              <input
-                type="text"
-                placeholder="Steven Stallion"
-                class="activation-input"
-              />
-            </div>
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
-              </span>
-              <input
-                type="text"
-                placeholder="Steven Stallion"
-                class="activation-input"
-              />
-            </div>
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
               </span>
               <input
                 type="text"
@@ -83,10 +51,10 @@ export default function
               />
             </div>
             </div>
-            <div className="inner-container">
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
+            <div className="activation-inner-container">
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
               </span>
               <input
                 type="text"
@@ -94,9 +62,9 @@ export default function
                 class="activation-input"
               />
             </div>
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
               </span>
               <input
                 type="text"
@@ -104,9 +72,9 @@ export default function
                 class="activation-input"
               />
             </div>
-            <div class="container">
-              <span class="container-text">
-                <span class="text">Company Website *</span>
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
               </span>
               <input
                 type="text"
@@ -114,6 +82,52 @@ export default function
                 class="activation-input"
               />
             </div>
+            </div>
+            <div className="activation-inner-container">
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            </div>
+        </div>
+            <div class="company-activation-group1">
+            <div class="company-activation-check">
+             <input type="checkbox" className="company-activation-rectangle3"/>
+
+              <span class="company-activation-text22">
+                <span>I agree to the terms and condition</span>
+              </span>
+            </div>
+            <div class="company-activation-frame6">
+              <span class="company-activation-text20">
+                <span>Activate Account</span>
+              </span>
             </div>
           </div>
           
@@ -210,23 +224,7 @@ export default function
             </div>
           </div> */}
           
-          <div class="company-activation-group1">
-            <div class="company-activation-frame6">
-              <span class="company-activation-text20">
-                <span>Activate Account</span>
-              </span>
-            </div>
-            <div class="company-activation-check">
-              <img
-                src="public/external/rectangle30310-k93-200h.png"
-                alt="Rectangle30310"
-                class="company-activation-rectangle3"
-              />
-              <span class="company-activation-text22">
-                <span>I agree to the terms and condition</span>
-              </span>
-            </div>
-          </div>
+          
           
         </div>
       </div>

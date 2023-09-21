@@ -16,7 +16,6 @@ const StyledBox = styled(Box)`
 `
 const LoginButton = styled(Button)`
   
-
   display: block;
   margin:2px 5px 0px 5px;
     height:51px;

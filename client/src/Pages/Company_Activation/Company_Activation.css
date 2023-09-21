@@ -8,27 +8,31 @@
 }
 .company-activation-company-activation {
   width: 100%;
-  height: 848px;
+  height: 100vh;
   display: flex;
+  justify-content: space-between;
   overflow: hidden;
   position: relative;
-  align-items: flex-start;
-  flex-shrink: 0;
+  /* align-items: flex-start; */
+  /* flex-shrink: 0; */
   background-color: rgba(255, 255, 255, 1);
   background-color: aquamarine;
 }
 .company-activation-header {
   gap: 15.8203125px;
-  top: 70px;
-  left: 70px;
+  /* top: 70px; */
+  /* left: 70px; */
   width: 100%;
-  height: 195px;
+  height: 26%;
   display: flex;
-  /* position: absolute; */
+  position: absolute;
   align-items: center;
   flex-shrink: 0;
   flex-direction: column;
   background-color: red;
+  margin: 5%;
+  margin-left: 0;
+  /* margin-top: 70px; */
 }
 .company-activation-image19 {
   width: 74px;
@@ -53,23 +57,36 @@
   text-decoration: none;
 }
 
-.outer-container{
-  background-color: aqua;
-  height: 100vh;
+.activation-outer-container{
+  background-color: pink;
+  height: 70%;
   width: 100%;
+  margin-top: 20%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.container {
+.activation-inner-container{
+  background-color: purple;
+  /* height: 74%; */
+  /* width: 100%;
+  margin-top: 20%; */
+}
+.activation-container {
   top: 300px;
   left: 200px;
   width: 316.40625px;
   height: 60.669921875px;
   display: flex;
+  margin: 70px;
   /* position: absolute; */
   align-items: flex-start;
   flex-shrink: 1;
   background-color: yellowgreen;
+  /* background-color: blue; */
 }
-.container-text {
+.activation-container-text {
   color: rgba(68, 68, 68, 1);
   height: auto;
   position: absolute;
@@ -82,7 +99,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.text {
+.activation-text {
   color: rgba(68, 68, 68, 1);
 }
 .activation-input {
@@ -94,7 +111,7 @@
   display: flex;
   padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
   overflow: hidden;
-  position: absolute;
+  /* position: absolute; */
   font-size: 9.4921875px;
   text-align: left;
   align-items: center;
@@ -106,6 +123,147 @@
   border-width: 0.791015625px;
   border-radius: 19.775390625px;
   background-color: rgba(255, 255, 255, 1);
+}
+
+.company-activation-group1 {
+  /* left: ; */
+  /* width: 389px; */
+  width: 100%;
+  /* bottom: 30px; */
+  height: 112px;
+  margin-top: 40%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* align-items: flex-start; */
+  /* flex-shrink: 1; */
+  background-color: yellow;
+  /* padding: 0;
+  margin: 0; */
+}
+.company-activation-frame6 {
+  gap: 7.91015625px;
+  top: 32px;
+  left: 0px;
+  width: 389px;
+  height: 80px;
+  display: flex;
+  /* padding: 7.91015625px 61.69921875px; */
+  /* overflow: hidden; */
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 19.775390625px;
+  justify-content: center;
+  background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
+}
+.company-activation-text20 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 14.23828125px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-activation-check {
+  top: 0px;
+  left: 92px;
+  width: 170.357421875px;
+  height: 13.447265625px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-activation-rectangle3 {
+  top: 0px;
+  left: 0px;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  border-color: rgba(68, 68, 68, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 3.1640625px;
+}
+.company-activation-text22 {
+  left: 21.357421875px;
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 8.701171875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-activation-name5 {
+  top: 600px;
+  left: 200px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.company-activation-text24 {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-activation-text25 {
+  color: rgba(68, 68, 68, 1);
+}
+.company-activation-input8 {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  /* position: absolute; */
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.company-activation-text26 {
+  color: rgba(166, 160, 160, 1);
+  height: auto;
+  font-size: 9.4921875px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.company-activation-vector1 {
+  width: 12px;
+  height: 9px;
 }
 
 /* 
@@ -459,135 +617,4 @@
   }
  
    */
-   .company-activation-group1 {
-    left: 600px;
-    width: 389px;
-    bottom: 30px;
-    height: 112px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-activation-frame6 {
-    gap: 7.91015625px;
-    top: 32px;
-    left: 0px;
-    width: 389px;
-    height: 80px;
-    display: flex;
-    padding: 7.91015625px 61.69921875px;
-    overflow: hidden;
-    position: absolute;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 19.775390625px;
-    justify-content: center;
-    background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
-  }
-  .company-activation-text20 {
-    color: rgba(255, 255, 255, 1);
-    height: auto;
-    font-size: 14.23828125px;
-    font-style: SemiBold;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 600;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-activation-check {
-    top: 0px;
-    left: 92px;
-    width: 170.357421875px;
-    height: 13.447265625px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-activation-rectangle3 {
-    top: 0px;
-    left: 0px;
-    width: 13px;
-    height: 13px;
-    position: absolute;
-    border-color: rgba(68, 68, 68, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 3.1640625px;
-  }
-  .company-activation-text22 {
-    left: 21.357421875px;
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 8.701171875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-activation-name5 {
-    top: 600px;
-    left: 200px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-activation-text24 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-activation-text25 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-activation-input8 {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    align-items: center;
-    flex-shrink: 0;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-activation-text26 {
-    color: rgba(166, 160, 160, 1);
-    height: auto;
-    font-size: 9.4921875px;
-    font-style: Medium;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 500;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-activation-vector1 {
-    width: 12px;
-    height: 9px;
-  }
+   
