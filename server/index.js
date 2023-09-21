@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const bodyParser = require('body-parser')
 const app = express();
 app.use(bodyParser.json());
@@ -6,6 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 const PORT = 4000;
 app.use("public/uploads/", express.static("public/uploads/"));
+app.use(cors());
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 

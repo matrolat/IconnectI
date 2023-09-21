@@ -1,9 +1,46 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Reg_Company.css";
 import MainLogo from "../../Components/Main_Logo/MainLogo";
 import Checkbox from "../../Assets/Checkbox.png";
+import { companyRegistration } from "../../Service/Api";
+import { useNavigate } from "react-router-dom";
 
 export default function Reg_Company() {
+  const navigate = useNavigate();
+  const [values , setValues] = useState({
+    username : "",
+    password :"",
+    confirmPassword: "",
+    companyname : "",
+    companyspocname:"",
+    companyspocemail : "",
+    companyspocphone : "",
+    logo : ""
+  });
+
+  const onChange =  (e) =>{
+    setValues ({...values , [e.target.name]: e.target.value});
+  };
+
+  const imageUpload = (e) =>{
+    console.log(e.target.files[0]);
+    setValues ({...values , logo: e.target.files[0]});
+  }
+
+  const postData = async()=>{
+    const res = await companyRegistration(values);
+    const data = JSON.stringify(res);
+    console.log(data);
+    if(res.status === 422 || !data){
+      window.alert("Invalid Registration");
+      console.log("Invalid Registration");
+     }else{
+      window.alert("Registration Successful");
+      console.log("Registration Successful");
+      navigate('/');
+     }
+  }
+
   return (
     <div>
       <div className="company-registration-container">
@@ -31,32 +68,40 @@ export default function Reg_Company() {
 
           <div className="container">
             <span className="head">
-              <span className="head-text">User name *</span>
+              <label className="head-text">User name *</label>
             </span>
             <input
+            style={{zIndex:1}}
               type="text"
               placeholder="Steven Stallion"
+              name="username"
               className="input"
+              onChange = {onChange}
+            />
+            
+          </div>
+          <div className="container">
+            <span className="head">
+              <label className="head-text">Password *</label>
+            </span>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              className="input"
+              onChange = {onChange}
             />
           </div>
           <div className="container">
             <span className="head">
-              <span className="head-text">Password *</span>
+              <label className="head-text">Re Type Password *</label>
             </span>
             <input
               type="password"
+              name="confirmPassword"
               placeholder="Enter Password"
               className="input"
-            />
-          </div>
-          <div className="container">
-            <span className="head">
-              <span className="head-text">Re Type Password *</span>
-            </span>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              className="input"
+              onChange = {onChange}
             />
           </div>
 
@@ -65,32 +110,39 @@ export default function Reg_Company() {
         <div className="inner-container">
             <div className="container">
             <span className="head">
-              <span className="head-text">Email address *</span>
+              <label className="head-text">Email address *</label>
             </span>
             <input
+            style={{zIndex:1}}
               type="text"
+              name="companyspocemail"
               placeholder="Example@gmail.com"
               className="input"
+              onChange = {onChange}
             />
             </div>
             <div className="container">
             <span className="head">
-              <span className="head-text">Company name*</span>
+              <label className="head-text">Company name*</label>
             </span>
             <input
               type="text"
               placeholder=""
+              name="companyname"
               className="input"
+              onChange = {onChange}
             />
             </div>
             <div className="container">
             <span className="head">
-              <span className="head-text">SPOC name*</span>
+              <label className="head-text">SPOC name*</label>
             </span>
             <input
               type="text"
               placeholder="Example@gmail.com"
+              name="companyspocname"
               className="input"
+              onChange = {onChange}
             />
             </div>
 
@@ -99,30 +151,36 @@ export default function Reg_Company() {
         <div className="inner-container">
           <div className="container">
             <span className="head">
-              <span className="head-text">SPOC Email address*</span>
+              <label className="head-text">SPOC Email address*</label>
             </span>
             <input
-              type="email"
+            style={{zIndex:1}}
+              type="text"
               placeholder="Example@gmail.com"
               className="input"
+              onChange = {onChange}
             />
           </div>
           <div className="container">
             <span className="head">
-              <span className="head-text">SPOC Phone Number *</span>
+              <label className="head-text">SPOC Phone Number *</label>
             </span>
             <input
               type="text"
               placeholder=""
+              name="companyspocphone"
               className="input"
+              onChange = {onChange}
             />
           </div>
           <div className="container">
             <span className="head">
-              <span className="head-text">SPOC ID *</span>
+              <label className="head-text">Company Logo</label>
             </span>
             <input
-              type="text"
+            onChange={imageUpload}
+              type="file"
+              name="logo"
               placeholder=""
               className="input"
             />
@@ -139,7 +197,7 @@ export default function Reg_Company() {
         
         <div className="company-registration-frame2">
             <span className="company-registration-text05">
-              <span>Sign Up</span>
+              <span onClick={postData}>Sign Up</span>
             </span>            
           </div>
         </div>
