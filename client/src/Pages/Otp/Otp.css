@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,9 +12,9 @@ section{
     width: 100%;
     padding: 10px;
     min-height:calc(100vh - 80px);
-}
+} */
 
-section .form_data{
+.form_data{
     max-width: 550px;
     margin: 25px auto;
     padding: 35px 10px;
@@ -97,7 +97,7 @@ section .form_data{
     cursor: pointer;
 }
 
-form .btn{
+.btn{
     display:block;
     width: 100%;
     padding: 15px;
@@ -114,10 +114,10 @@ form .btn{
 }
 
 
-form .btn:hover{
+.btn:hover{
     background-color: #97a1b1;
 }
-form .btnload{
+.btnload{
     background-color: #97a1b1;
 }
 

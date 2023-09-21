@@ -22,7 +22,7 @@ function App() {
           <Route path="/Registration/Company" element={<Reg_Company/>} />
           <Route path="/Registration/College" element={<Reg_College/>} />
           <Route path="/Activation" element={<Company_Activation/>} />
-          <Route path="/Otp" element={<Otp/>} />
+          <Route path='/otp/:email' element={<Otp/>} />
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}
   

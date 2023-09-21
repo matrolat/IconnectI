@@ -4,8 +4,10 @@ import MainLogo from '../../Components/Main_Logo/MainLogo'
 import eyeLogo from '../../Assets/eye.svg'
 import { useState } from 'react'
 import { login } from '../../Service/Api'
+import { useNavigate , useParams} from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
     const [eye, setEye] = useState(false);
     const [values, setValues] = useState({
       email: "",
@@ -19,17 +21,18 @@ export default function Login() {
 
     const handleSubmit =async()=>{
       const res = await login(values);
-      const data = JSON.stringify(res);
-      if (res.status === 422 || !data) {
+      console.log(res);
+      const data = res.data;
+      if ( !data || res.status === 422 ) {
         window.alert("Invalid Credentials");
         console.log("Invalid Credentials");
       } else {
         if(!data.companyspocemail){
-          window.alert("company");
-          // navigate(`otp/${data.collegespocemail}`);
-        }else{
           window.alert("college");
-          // navigate(`otp/${data.companyspocemail}`);
+          navigate(`/otp/${data.collegespocemail}`);
+        }else{
+          window.alert("company");
+          navigate(`/otp/${data.companyspocemail}`);
         }
         
       }

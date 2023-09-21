@@ -1,5 +1,5 @@
 import React , {useState , useEffect } from 'react'
-import './otp.css';
+import './Otp.css';
 import { useNavigate , useParams} from "react-router-dom";
 
 
@@ -38,7 +38,7 @@ const [otp , setOtp] = useState(0);
 
       const verifyOTP = async (email , otp)=>{
              
-        const res = await fetch("/otpverify", {
+        const res = await fetch("http://localhost:4000/otpVerify", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -54,10 +54,14 @@ const [otp , setOtp] = useState(0);
             window.alert('Invalid OTP');
           }else{
             if(data.message === "Company")
-            navigate(`/MainScreen/${email}`);
+            {
+              window.alert("company otp verified");
+              // navigate(`/MainScreen/${email}`);
+            }
 
             else if(data.message === "College"){
-              navigate(`/collegeMainScreen/${email}`);
+              window.alert("college otp verified")
+              // navigate(`/collegeMainScreen/${email}`);
             }
           }
 
