@@ -1,103 +1,114 @@
 .company-activation-container {
-    width: 100%;
-    display: flex;
-    overflow: auto;
-    min-height: 100vh;
-    align-items: center;
-    flex-direction: column;
-  }
-  .company-activation-company-activation {
-    width: 100%;
-    height: 848px;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    align-items: flex-start;
-    flex-shrink: 0;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  .company-activation-frame4 {
-    gap: 15.8203125px;
-    top: 70px;
-    left: 70px;
-    width: 1485px;
-    height: 195px;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    flex-shrink: 0;
-    flex-direction: column;
-  }
-  .company-activation-image19 {
-    width: 74px;
-    height: 64px;
-  }
-  .company-activation-frame7 {
-    gap: 1.58203125px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .company-activation-text {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    font-size: 26.89453125px;
-    font-style: SemiBold;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 600;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-activation-name {
-    top: 300px;
-    left: 200px;
-    width: 316.40625px;
-    height: 60.669921875px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .company-activation-text02 {
-    color: rgba(68, 68, 68, 1);
-    height: auto;
-    position: absolute;
-    font-size: 11.07421875px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .company-activation-text03 {
-    color: rgba(68, 68, 68, 1);
-  }
-  .company-activation-input {
-    gap: 7.91015625px;
-    top: 22.939453125px;
-    left: -9.094947017729282e-13px;
-    color: rgba(166, 160, 160, 1);
-    width: 316.40625px;
-    display: flex;
-    padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
-    overflow: hidden;
-    position: absolute;
-    font-size: 9.4921875px;
-    text-align: left;
-    align-items: center;
-    flex-shrink: 0;
-    font-family: Poppins;
-    font-weight: 500;
-    border-color: rgba(210, 205, 205, 1);
-    border-style: solid;
-    border-width: 0.791015625px;
-    border-radius: 19.775390625px;
-    background-color: rgba(255, 255, 255, 1);
-  }
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.company-activation-company-activation {
+  width: 100%;
+  height: 848px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+  background-color: aquamarine;
+}
+.company-activation-header {
+  gap: 15.8203125px;
+  top: 70px;
+  left: 70px;
+  width: 100%;
+  height: 195px;
+  display: flex;
+  /* position: absolute; */
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  background-color: red;
+}
+.company-activation-image19 {
+  width: 74px;
+  height: 64px;
+}
+.company-activation-frame7 {
+  gap: 1.58203125px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.company-activation-text {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  font-size: 26.89453125px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.outer-container{
+  background-color: aqua;
+  height: 100vh;
+  width: 100%;
+}
+.container {
+  top: 300px;
+  left: 200px;
+  width: 316.40625px;
+  height: 60.669921875px;
+  display: flex;
+  /* position: absolute; */
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: yellowgreen;
+}
+.container-text {
+  color: rgba(68, 68, 68, 1);
+  height: auto;
+  position: absolute;
+  font-size: 11.07421875px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text {
+  color: rgba(68, 68, 68, 1);
+}
+.activation-input {
+  gap: 7.91015625px;
+  top: 22.939453125px;
+  left: -9.094947017729282e-13px;
+  color: rgba(166, 160, 160, 1);
+  width: 316.40625px;
+  display: flex;
+  padding: 11.865234375px 16.611328125px 11.865234375px 23.73046875px;
+  overflow: hidden;
+  position: absolute;
+  font-size: 9.4921875px;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  border-color: rgba(210, 205, 205, 1);
+  border-style: solid;
+  border-width: 0.791015625px;
+  border-radius: 19.775390625px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* 
   .company-activation-email {
     top: 300px;
     left: 650px;
@@ -446,7 +457,9 @@
     border-radius: 19.775390625px;
     background-color: rgba(255, 255, 255, 1);
   }
-  .company-activation-group1 {
+ 
+   */
+   .company-activation-group1 {
     left: 600px;
     width: 389px;
     bottom: 30px;
@@ -578,4 +591,3 @@
     width: 12px;
     height: 9px;
   }
-  

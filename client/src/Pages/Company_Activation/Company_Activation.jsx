@@ -9,7 +9,7 @@ export default function
     <div>
         <div class="company-activation-container">
         <div class="company-activation-company-activation">
-          <div class="company-activation-frame4">
+          <div class="company-activation-header">
             <MainLogo />
             <div class="company-activation-frame7">
               <span class="company-activation-text">
@@ -17,17 +17,107 @@ export default function
               </span>
             </div>
           </div>
-          <div class="company-activation-name">
-            <span class="company-activation-text02">
-              <span class="company-activation-text03">Company Website *</span>
-            </span>
-            <input
-              type="text"
-              placeholder="Steven Stallion"
-              class="company-activation-input"
-            />
+
+          <div className="outer-container">
+            <div className="inner-container">
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            </div>
+            <div className="inner-container">
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            </div>
+            <div className="inner-container">
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            <div class="container">
+              <span class="container-text">
+                <span class="text">Company Website *</span>
+              </span>
+              <input
+                type="text"
+                placeholder="Steven Stallion"
+                class="activation-input"
+              />
+            </div>
+            </div>
           </div>
-          <div class="company-activation-email">
+          
+          {/* <div class="company-activation-email">
             <span class="company-activation-text04">
               <span class="company-activation-text05">
                 company Registration id *
@@ -104,6 +194,22 @@ export default function
               class="company-activation-input7"
             />
           </div>
+          <div class="company-activation-name5">
+            <span class="company-activation-text24">
+              <span class="company-activation-text25">Work Location *</span>
+            </span>
+            <div class="company-activation-input8">
+              <span class="company-activation-text26">
+                <span>efegregrgreg</span>
+              </span>
+              <img
+                src="public/external/vector0311-bqt.svg"
+                alt="Vector0311"
+                class="company-activation-vector1"
+              />
+            </div>
+          </div> */}
+          
           <div class="company-activation-group1">
             <div class="company-activation-frame6">
               <span class="company-activation-text20">
@@ -121,21 +227,7 @@ export default function
               </span>
             </div>
           </div>
-          <div class="company-activation-name5">
-            <span class="company-activation-text24">
-              <span class="company-activation-text25">Work Location *</span>
-            </span>
-            <div class="company-activation-input8">
-              <span class="company-activation-text26">
-                <span>efegregrgreg</span>
-              </span>
-              <img
-                src="public/external/vector0311-bqt.svg"
-                alt="Vector0311"
-                class="company-activation-vector1"
-              />
-            </div>
-          </div>
+          
         </div>
       </div>
 
