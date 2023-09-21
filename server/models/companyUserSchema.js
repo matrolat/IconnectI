@@ -54,5 +54,5 @@ userSchema.methods.generateAuthToken = async function () {
   }
 };
 
-const companyUser = mongoose.model("compnayusers", userSchema);
+const companyUser = mongoose.model("companyusers", userSchema);
 module.exports = companyUser;
