@@ -50,3 +50,41 @@ export const companyRegistration = async(values) => {
         console.log(" Error in login API : "+error);
     }
   }
+  export const collegeSignup =async(values)=>{
+    const {
+      collegespocemail,
+      password,
+      confirmPassword,
+      collegename,
+      collegeaddress,
+      collegespocname,
+      collegespocphone,
+      collegeregid,
+      degreeoffered,
+    } = values;
+
+    try{
+      const json = JSON.stringify({
+        collegespocemail,
+        password,
+        confirmPassword,
+        collegename,
+        collegeaddress,
+        collegespocname,
+        collegespocphone,
+        collegeregid,
+        degreeoffered,
+      });
+      return await axios.post(`${URL}/collegesignup`, json, {
+        headers: {
+          // Overwrite Axios's automatically set Content-Type
+          'Content-Type': 'application/json'
+        }
+      });
+    }
+    catch(error){
+        console.log(" Error in login API : "+error);
+    }
+  }
+
+
