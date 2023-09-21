@@ -131,11 +131,6 @@ export default function Reg_Company() {
             </div>
 
         <div className="company-registration-check">
-            {/* <img
-              src={Checkbox}
-              alt="Rectangle"
-              className="company-registration-rectangle3"
-            /> */}
             <input type="checkbox" className="company-registration-rectangle3"/>
             <span className="company-registration-text25">
               <span>I agree to the terms and condition</span>
