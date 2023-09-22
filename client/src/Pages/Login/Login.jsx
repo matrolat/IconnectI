@@ -5,8 +5,16 @@ import eyeLogo from '../../Assets/eye.svg'
 import { useState } from 'react'
 import { login } from '../../Service/Api'
 import { Link, useNavigate , useParams} from "react-router-dom";
+import { makeStyles } from '@material-ui/core'
+import { buttonStyles } from '../../Constants/Css'
+
+const useStyles = makeStyles((theme) => ({
+  btnStyles: buttonStyles
+}));
 
 export default function Login() {
+  const classes = useStyles();
+
   const navigate = useNavigate();
     const [eye, setEye] = useState(false);
     const [values, setValues] = useState({
@@ -91,8 +99,12 @@ export default function Login() {
                 </span>
               </div>
             </div>
-            <button className='frame6-frame1' onClick={handleSubmit}>
+            
+            {/* <button className='frame6-frame1' onClick={handleSubmit}>
                 <span className="frame6-text13"><span>Log In</span></span>
+            </button> */}
+            <button onClick={handleSubmit} className={classes.btnStyles} style={{height:47, width:400}}>
+                <span><span>Log In</span></span>
             </button>
           </div>
         </div>

@@ -9,15 +9,17 @@
 }
 .company-registration-company-registration {
   width: 100%;
-  height: 847px;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
   align-self: center;
   align-items: center;
   flex-shrink: 0;
-  justify-content: center;
+  /* justify-content: space-between; */
   background-color: rgba(255, 255, 255, 1);
+  margin-top: 70px;
 }
 .company-registration-frame4 {
   gap: 15.8203125px;
@@ -25,9 +27,9 @@
   left: 56px;
   width: 1485px;
   height: 195px;
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  position: absolute;
+  /* position: absolute; */
   align-items: center;
   flex-shrink: 0;
   flex-direction: column;
@@ -108,31 +110,20 @@
   /* align-items: center; */
   /* position: absolute; */
   width: 80%;
-  /* height: 50vh; */
-  margin: 0;;
+  height: 50%;
 }
 .company-inner-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
-  /* width: 90%; */
-   height: 55%;
-  /*margin: 0 100px;
-  padding: 10px 90px; */
+  justify-content: space-between;
 }
 
 .company-container {
-  height: 80px;
+  height: 60px;
   margin: 20px 0;
   display: flex; 
   flex-direction: column;
   justify-content: space-around;
-  /* top: 270px; */
-  /* left: 140px; */
-  /* width: 316px;
-  /* flex-direction: column; */
-  /* position: absolute; */
-  /* flex-shrink: 1; */
 }
  .head {
   color: rgba(68, 68, 68, 1);
@@ -174,21 +165,22 @@
 }
 
 .company-registration-check {
-  top: 653px;
-  left: 690px;
-  width: 170.357421875px;
-  height: 13.447265625px;
+  /* top: 653px; */
+  /* left: 690px; */
+  width: 100%;
+  height: 25%;
   display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  /* position: absolute; */
+  align-items: center;
 }
 .company-registration-rectangle3 {
   top: 0px;
   left: 0px;
   width: 13px;
   height: 13px;
-  position: absolute;
+  /* position: absolute; */
   border-color: rgba(68, 68, 68, 1);
   border-style: solid;
   border-width: 0.791015625px;
@@ -198,7 +190,10 @@
   left: 21.357421875px;
   color: rgba(68, 68, 68, 1);
   height: auto;
-  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* position: absolute; */
   font-size: 8.701171875px;
   font-style: Regular;
   text-align: left;

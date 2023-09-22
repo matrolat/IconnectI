@@ -14,11 +14,6 @@ const useStyles = makeStyles((theme) => ({
 export default function 
 () {
 
-
-  
-
-
-
   const classes = useStyles();
 
   const navigate = useNavigate();
@@ -114,44 +109,6 @@ export default function
               />
             </div>
            
-            {/* <div class="college-registration-email">
-              <span class="college-registration-text04">
-                <span class="college-registration-text05">
-                  SPOC Email address *
-                </span>
-              </span>
-              <input
-                type="text"
-                placeholder="Example@gmail.com"
-                class="college-registration-input01"
-              />
-            </div>
-
-            <div class="college-registration-name1">
-              <span class="college-registration-text06">
-                <span class="college-registration-text07">
-                  SPOC Phn Number *
-                </span>
-              </span>
-              <input
-                type="text"
-                placeholder="Steven Stallion"
-                class="college-registration-input02"
-              />
-            </div>
-
-            <div class="college-registration-name2">
-              <span class="college-registration-text08">
-                <span class="college-registration-text09">
-                  Courses Offered *
-                </span>
-              </span>
-              <input
-                type="text"
-                placeholder="Steven Stallion"
-                class="college-registration-input03"
-              />
-            </div> */}
           </div>
           <div class="container">
            
@@ -160,11 +117,14 @@ export default function
                 <span class="head-text"> SPOC name *</span>
               </span>
               <input
-                type="text"
+                // type="text"
                 name='collegespocname'
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                type= "email"
+                errorMessage= "Not a valid email"
+                required= "true"
               />
             </div>
             <div class="name">
@@ -247,22 +207,13 @@ export default function
           </div>
 
           <div class="college-registration-check">
-            {/* <img
-              alt="Rectangle30286"
-              src={Checkbox}
-              class="college-registration-rectangle3"
-            /> */}
             <input type="checkbox" className="college-registration-rectangle3"/>
-
             <span class="college-registration-text18">
               <span>I agree to the terms and condition</span>
             </span>
           </div>
-{/* 
-          <div class="college-registration-frame2" onClick={postData}>
-            <span class="college-registration-text"><span>Sign Up</span></span>
-          </div> */}
-          <button className={classes.btnStyles} onClick={postData}>
+
+          <button className={classes.btnStyles} onClick={postData}style={{height:80, width:389}}>
             <span ><span>Sign Up</span></span>
           </button>
 
