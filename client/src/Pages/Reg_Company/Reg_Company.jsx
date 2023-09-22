@@ -52,7 +52,7 @@ export default function Reg_Company() {
     <div>
       <div className="company-registration-container">
         <div className="company-registration-company-registration">
-          
+
           <div className="company-registration-frame4">
             <MainLogo/>
             <div className="company-registration-frame7">
@@ -96,6 +96,9 @@ export default function Reg_Company() {
               placeholder="Enter Password"
               className="input"
               onChange = {onChange}
+              errorMessage = "Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
+              required= "true"
+              pattern= "`^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`"           
             />
           </div>
           <div className="company-container">
@@ -108,6 +111,9 @@ export default function Reg_Company() {
               placeholder="Enter Password"
               className="input"
               onChange = {onChange}
+              errorMessage = "Passwords don't match!"
+              required= "true"
+              pattern = "values.password"
             />
           </div>
 
@@ -120,11 +126,13 @@ export default function Reg_Company() {
             </span>
             <input
             style={{zIndex:1}}
-              type="text"
+              type="email"
               name="companyspocemail"
               placeholder="Example@gmail.com"
               className="input"
               onChange = {onChange}
+              errorMessage = "Not a valid email"
+              required = "true"
             />
             </div>
             <div className="company-container">
@@ -137,6 +145,8 @@ export default function Reg_Company() {
               name="companyname"
               className="input"
               onChange = {onChange}
+              errorMessage = ""
+              required = "true"
             />
             </div>
             <div className="company-container">
@@ -145,10 +155,13 @@ export default function Reg_Company() {
             </span>
             <input
               type="text"
-              placeholder="Example@gmail.com"
+              placeholder="ompany SPOC Name"
               name="companyspocname"
               className="input"
               onChange = {onChange}
+              errorMessage = "Username should be of at least 3 letters and shouldn't include any special character!"
+              required = "true"
+              pattern = "^[A-Za-z0-9]{3-}$"
             />
             </div>
 
@@ -161,10 +174,12 @@ export default function Reg_Company() {
             </span>
             <input
             style={{zIndex:1}}
-              type="text"
+              type="email"
               placeholder="Example@gmail.com"
               className="input"
               onChange = {onChange}
+              errorMessage = "Not a valid email"
+              required = "true"
             />
           </div>
           <div className="company-container">
@@ -177,6 +192,9 @@ export default function Reg_Company() {
               name="companyspocphone"
               className="input"
               onChange = {onChange}
+              errorMessage = "Phone number should be of 10 digits!"
+              required = "true"
+              pattern = "^[0-9]{10}$"
             />
           </div>
           <div className="company-container">
