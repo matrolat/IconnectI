@@ -18,11 +18,13 @@ const LoginButton = styled(Button)`
   
   display: block;
   margin:2px 5px 0px 5px;
-    height:51px;
-    width:128px;
-    color:white;
-
-    background: #4CAF4F;
+  height:51px;
+  width:128px;
+  color:white;
+  background: #4CAF4F;
+  &:hover {
+    color: #4CAF4F
+  }
 
 `
 

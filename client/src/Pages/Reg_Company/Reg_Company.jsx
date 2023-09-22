@@ -4,6 +4,7 @@ import MainLogo from "../../Components/Main_Logo/MainLogo";
 import Checkbox from "../../Assets/Checkbox.png";
 import { companyRegistration } from "../../Service/Api";
 import { useNavigate } from "react-router-dom";
+import { buttonStyles } from "../../Constants/Css";
 
 export default function Reg_Company() {
   const navigate = useNavigate();
@@ -62,25 +63,25 @@ export default function Reg_Company() {
 
           
 
-      <div className="outer-container">
+      <div className="company-outer-container">
         
-        <div className="inner-container">
+        <div className="company-inner-container">
 
-          <div className="container">
+          <div className="company-container">
             <span className="head">
               <label className="head-text">User name *</label>
             </span>
             <input
             style={{zIndex:1}}
               type="text"
-              placeholder="Steven Stallion"
+              placeholder=""
               name="username"
               className="input"
               onChange = {onChange}
             />
             
           </div>
-          <div className="container">
+          <div className="company-container">
             <span className="head">
               <label className="head-text">Password *</label>
             </span>
@@ -92,7 +93,7 @@ export default function Reg_Company() {
               onChange = {onChange}
             />
           </div>
-          <div className="container">
+          <div className="company-container">
             <span className="head">
               <label className="head-text">Re Type Password *</label>
             </span>
@@ -107,8 +108,8 @@ export default function Reg_Company() {
 
           </div>
 
-        <div className="inner-container">
-            <div className="container">
+        <div className="company-inner-container">
+            <div className="company-container">
             <span className="head">
               <label className="head-text">Email address *</label>
             </span>
@@ -121,7 +122,7 @@ export default function Reg_Company() {
               onChange = {onChange}
             />
             </div>
-            <div className="container">
+            <div className="company-container">
             <span className="head">
               <label className="head-text">Company name*</label>
             </span>
@@ -133,7 +134,7 @@ export default function Reg_Company() {
               onChange = {onChange}
             />
             </div>
-            <div className="container">
+            <div className="company-container">
             <span className="head">
               <label className="head-text">SPOC name*</label>
             </span>
@@ -148,8 +149,8 @@ export default function Reg_Company() {
 
             </div>
 
-        <div className="inner-container">
-          <div className="container">
+        <div className="company-inner-container">
+          <div className="company-container">
             <span className="head">
               <label className="head-text">SPOC Email address*</label>
             </span>
@@ -161,7 +162,7 @@ export default function Reg_Company() {
               onChange = {onChange}
             />
           </div>
-          <div className="container">
+          <div className="company-container">
             <span className="head">
               <label className="head-text">SPOC Phone Number *</label>
             </span>
@@ -173,7 +174,7 @@ export default function Reg_Company() {
               onChange = {onChange}
             />
           </div>
-          <div className="container">
+          <div className="company-container">
             <span className="head">
               <label className="head-text">Company Logo</label>
             </span>
@@ -195,11 +196,17 @@ export default function Reg_Company() {
             </span>
           </div>
         
-        <div className="company-registration-frame2">
+        {/* <div className="company-registration-frame2">
             <span className="company-registration-text05">
               <span onClick={postData}>Sign Up</span>
             </span>            
-          </div>
+          </div> */}
+        <button style={buttonStyles.base}>
+            <span>
+              <span onClick={postData}>Sign Up</span>
+            </span>            
+          </button>
+
         </div>
 
           
