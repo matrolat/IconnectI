@@ -4,9 +4,23 @@ import MainLogo from '../../Components/Main_Logo/MainLogo'
 import Checkbox  from '../../Assets/Checkbox.png'
 import { Link, useNavigate } from "react-router-dom";
 import { collegeSignup } from '../../Service/Api';
+import { makeStyles } from '@material-ui/core/styles';
+import { buttonStyles } from "../../Constants/Css";
+
+const useStyles = makeStyles((theme) => ({
+  btnStyles: buttonStyles
+}));
 
 export default function 
 () {
+
+
+  
+
+
+
+  const classes = useStyles();
+
   const navigate = useNavigate();
   const [values , setValues] = useState({
     username: "",
@@ -244,10 +258,13 @@ export default function
               <span>I agree to the terms and condition</span>
             </span>
           </div>
-
+{/* 
           <div class="college-registration-frame2" onClick={postData}>
             <span class="college-registration-text"><span>Sign Up</span></span>
-          </div>
+          </div> */}
+          <button className={classes.btnStyles} onClick={postData}>
+            <span ><span>Sign Up</span></span>
+          </button>
 
           </div>
       </div>

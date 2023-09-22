@@ -1,5 +1,4 @@
 export const buttonStyles = {
-    base: {
       backgroundImage: 'linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%)',
       margin: '10px',
       padding: '15px 45px',
@@ -11,13 +10,14 @@ export const buttonStyles = {
       boxShadow: '0 0 20px #eee',
       borderRadius: '10px',
       display: 'block',
+      border:0,
       "&:hover": {
      backgroundImage: 'linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%)',
       backgroundPosition: 'right center',
       color: '#fff',
       textDecoration: 'none',   
       }
-    }
+
   };
   
   // You can access the styles like this:
