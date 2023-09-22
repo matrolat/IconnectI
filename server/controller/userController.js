@@ -245,7 +245,7 @@ const companyRegistration = async (req, res) =>{
 
   const allUsers = async(req, res) => {
     try {
-      const allUsers = await companyUser.find({});
+      const allUsers = await College.find({});
       res.json(allUsers);
     } catch (error) {
       console.log(error);
@@ -254,15 +254,17 @@ const companyRegistration = async (req, res) =>{
 
   const otpVerify = async(req, res) => {
     const { email, otp } = req.body;
-    console.log(req.body);
+    console.log("test");
+    console.log(email);
     
 
   const user = await companyUser.findOne({ companyspocemail: email });
-  const collegeUser = await College.findOne({collegesopcemail : email});
+  const collegeUser = await College.findOne({collegespocemail : email});
   const userExist = await UserOtp.find({ email: email });
-  console.log(userExist);
-  console.log(user);
-  console.log(collegeUser);
+  console.log("userexits ====="+userExist);
+  console.log("comp ====="+user);
+  console.log("college ====="+collegeUser);
+  // return;
   if (user && !collegeUser) {
     if (userExist[0].emailotp === otp) {
       token = await user.generateAuthToken();
@@ -283,7 +285,7 @@ const companyRegistration = async (req, res) =>{
     console.log("inside college");
     if (userExist[0].emailotp === otp) {
       token = await collegeUser.generateAuthToken();
-      res.cookie("collegetoken", token, {
+      res.cookie("jwtoken", token, {
         expires: new Date(Date.now() + 14400000),
         httpOnly: true,
       });
