@@ -5,6 +5,18 @@ const URL = "http://localhost:4000";
 
 export const companyRegistration = async(values) => {
   const {companyspocemail , password , confirmPassword , companyname ,companyspocname , companyspocphone } = values;
+  if (
+    !password ||
+    !confirmPassword ||
+    !companyname ||
+    !companyspocemail ||
+    !companyspocname ||
+    !companyspocphone ||
+    confirmPassword != password
+  ) {
+    window.alert("Pls enter all the fields");
+    return;
+  }
   const logo = values.logo;
    const formData = new FormData();
    formData.append('companyspocemail', companyspocemail);
@@ -51,6 +63,7 @@ export const companyRegistration = async(values) => {
     }
   }
   export const collegeSignup =async(values)=>{
+
     const {
       collegespocemail,
       password,
@@ -62,6 +75,22 @@ export const companyRegistration = async(values) => {
       collegeregid,
       degreeoffered,
     } = values;
+
+    if (
+      !password ||
+      !confirmPassword ||
+      !collegename ||
+      !collegeaddress ||
+      !collegespocemail ||
+      !collegespocname ||
+      !collegespocphone ||
+      !collegeregid ||
+      !degreeoffered ||
+      confirmPassword != password
+    ) {
+      window.alert("Pls enter all the fields");
+      return;
+    }
 
     try{
       const json = JSON.stringify({

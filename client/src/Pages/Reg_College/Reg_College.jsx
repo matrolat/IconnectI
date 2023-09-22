@@ -39,7 +39,7 @@ export default function
     const res = await collegeSignup(values);
     const data = JSON.stringify(res);
     console.log(data);
-    if(data.status === 422 || !data){
+    if( !data || data.status === 422){
       window.alert("Invalid Registration");
       console.log("Invalid Registration");
      }else{
@@ -49,7 +49,7 @@ export default function
      }
   }
   return (
-    <div>
+    <form>
         <div class="college-registration-container">
         <div class="college-registration-college-registration">
 
@@ -94,6 +94,8 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                errorMessage="Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
+                required="true"
               />
             </div>
             <div class="name">
@@ -106,6 +108,9 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                errorMessage="Passwords don't match!"
+                required={true}
+                pattern={values.password}
               />
             </div>
            
@@ -124,7 +129,7 @@ export default function
                 class="input-box"
                 type= "email"
                 errorMessage= "Not a valid email"
-                required= "true"
+                required= {true}
               />
             </div>
             <div class="name">
@@ -137,6 +142,9 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                errorMessage="Not a valid email"
+                required={true}
+                label="College SPOC Email"
               />
             </div>
             <div class="name">
@@ -149,6 +157,11 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                errorMessage="Phone number should be of 10 digits!"
+                required={true}
+                pattern='^[0-9]{10}$'
+                label="College SPOC phone"
+              
               />
             </div>
          
@@ -164,6 +177,9 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                errorMessage="Pls enter college name"
+                required={true}
+                label="College name"
               />
             </div>
             <div class="name">
@@ -176,6 +192,8 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                required={true}
+                label="College Registration ID"
               />
             </div>
             <div class="name">
@@ -188,6 +206,9 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                errorMessage=""
+                required={true}
+
               />
             </div>
             <div class="name">
@@ -200,6 +221,8 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                errorMessage=""
+                required={true}
               />
             </div>
             
@@ -213,12 +236,12 @@ export default function
             </span>
           </div>
 
-          <button className={classes.btnStyles} onClick={postData}style={{height:80, width:389}}>
+          <button type='submit' className={classes.btnStyles} onClick={postData}style={{height:80, width:389}}>
             <span ><span>Sign Up</span></span>
           </button>
 
           </div>
       </div>
-    </div>
+    </form>
   )
 }
