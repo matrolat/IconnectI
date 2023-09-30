@@ -56,7 +56,7 @@ const [otp , setOtp] = useState(0);
             if(data.message === "Company")
             {
               window.alert("company otp verified");
-              // navigate(`/MainScreen/${email}`);
+              navigate(`/dashboard/${email}`);
             }
 
             else if(data.message === "College"){
