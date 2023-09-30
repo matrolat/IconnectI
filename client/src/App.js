@@ -9,6 +9,7 @@ import Reg_College from "./Pages/Reg_College/Reg_College";
 import Company_Activation from "./Pages/Company_Activation/Company_Activation";
 import Otp from "./Pages/Otp/Otp";
 import Intern_Posting from "./Pages/Intern_Posting.jsx/Intern_Posting";
+import Company_Dashboard from "./Pages/Company_Dashboard/Company_Dashboard";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="/Activation" element={<Company_Activation/>} />
           <Route path='/otp/:email' element={<Otp/>} />
           <Route path="/Intern_Posting" element={<Intern_Posting/>} />
+          <Route path="/dashboard/:email" element={<Company_Dashboard/>} />
+
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}
   
