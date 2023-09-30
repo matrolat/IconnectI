@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         // flexDirection : 'column',
         alignItems : "center",
         justifyContent : "space-around",
-        backgroundColor : "aqua",
+        // backgroundColor : "aqua",
         height : 500,
         // width : "100%",
         // borderBottomRightRadius : 62,
@@ -66,9 +66,25 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#FFFFFF",
        },
        right : {
+        height: 500,
         display: "flex",
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-around',
+        // backgroundColor: "red",
+        
+    },
+    rightinpContainer:{
+        //    backgroundColor: "yellow",
+        //    width: 350,
+            // height: 250,
+            display: "flex",
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            margin: 60,
+            alignItems: "flex-start",
+            
+        // marginTop: 45,
+        // marginBottom: 0,
 
        }
 
@@ -89,103 +105,106 @@ export default function Intern_Posting() {
                 <div className={classes.head}>Internship Name *</div>
                 <input
                 type="text"
-                placeholder="abc"
+                placeholder=""
                 class={classes.inpText}
               />
 
             </div>
             <div className={classes.inpContainer}>
-                <div className={classes.head}>Internship Name *</div>
+                <div className={classes.head}>Area of Work * *</div>
                 <input
                 type="text"
-                placeholder="abc"
+                placeholder=""
                 class={classes.inpText}
               />
 
             </div>
             <div className={classes.inpContainer}>
-                <div className={classes.head}>Internship Name *</div>
+                <div className={classes.head}>No of Vacancies *</div>
                 <input
                 type="text"
-                placeholder="abc"
+                placeholder=""
                 class={classes.inpText}
               />
 
             </div>
             <div className={classes.inpContainer}>
-                <div className={classes.head}>Internship Name *</div>
+                <div className={classes.head}>Type of Engagement *</div>
                 <input
                 type="text"
-                placeholder="abc"
+                placeholder=""
                 class={classes.inpText}
               />
 
             </div>
         </div>
         <div className="left">
+        
             <div className={classes.inpContainer}>
-                <div className={classes.head}>Internship Name *</div>
+                <div className={classes.head}>Start Date *</div>
                 <input
                 type="text"
-                placeholder="abc"
+                placeholder=""
                 class={classes.inpText}
               />
 
             </div>
             <div className={classes.inpContainer}>
-                <div className={classes.head}>Internship Name *</div>
+                <div className={classes.head}>Duration *</div>
                 <input
                 type="text"
-                placeholder="abc"
+                placeholder=""
                 class={classes.inpText}
               />
 
             </div>
             <div className={classes.inpContainer}>
-                <div className={classes.head}>Internship Name *</div>
+                <div className={classes.head}>No of hrs per week *</div>
                 <input
                 type="text"
-                placeholder="abc"
+                placeholder=""
                 class={classes.inpText}
               />
 
             </div>
             <div className={classes.inpContainer}>
-                <div className={classes.head}>Internship Name *</div>
+                <div className={classes.head}>Location of Work *</div>
                 <input
                 type="text"
-                placeholder="abc"
+                placeholder=""
                 class={classes.inpText}
               />
 
             </div>
         </div>
         <div className={classes.right}>
-            <div className={classes.inpContainer}>
-                <div className={classes.head}>Job Description in Detail *</div>
-                <input 
+            <div className={classes.rightinpContainer}>
+                <div className={classes.head} >Job Description in Detail *</div>
+                <input style={{height:200, width:345}}
                 type="text"
                 placeholder="abc"
                 class={classes.inpText}
               />
             </div>
-            <div className={classes.inpContainer}>
-                <div className={classes.head}>Stipend *</div>
+            <div className={classes.rightinpContainer}>
+                <div className={classes.head} >Stipend *</div>
+                <div >
+                    <input
+                    type="Checkbox"
+                    placeholder="Yes"
+                />
                 <input
-                type="Checkbox"
-                placeholder="Yes"
-                // class={classes.inpText}
-              />
-              <input
-                type="Checkbox"
-                placeholder="No"
-                // class={classes.inpText}
-              />
+                    type="Checkbox"
+                    placeholder="No"
+                />
+                </div> 
+                  
                 <input
                 type="text"
                 placeholder="Enter amount"
                 class={classes.inpText}
               />
+            
             
         </div>
             
