@@ -138,7 +138,6 @@
   position: absolute;
   /* align-items: flex-start; */
   /* flex-shrink: 1; */
-  background-color: yellow;
   /* padding: 0;
   margin: 0; */
 }
@@ -176,6 +175,7 @@
   width: 170.357421875px;
   height: 13.447265625px;
   display: flex;
+  flex-direction: row;
   position: absolute;
   align-items: flex-start;
   flex-shrink: 1;

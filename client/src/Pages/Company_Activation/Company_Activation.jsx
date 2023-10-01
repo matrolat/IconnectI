@@ -1,10 +1,17 @@
 import React from 'react'
 import './Company_Activation.css'
 import MainLogo from "../../Components/Main_Logo/MainLogo";
+import { makeStyles } from '@material-ui/core/styles';
+import { buttonStyles } from '../../Constants/Css';
 
+const useStyles = makeStyles((theme) => ({
+  btnStyles: buttonStyles
+}));
 
 export default function 
 () {
+  const classes = useStyles();
+
   return (
     <div>
         <div class="company-activation-container">
@@ -124,10 +131,12 @@ export default function
                 <span>I agree to the terms and condition</span>
               </span>
             </div>
+            
+            
             <div class="company-activation-frame6">
-              <span class="company-activation-text20">
-                <span>Activate Account</span>
-              </span>
+            <button type='submit' className={classes.btnStyles} style={{height:80, width:389}}>
+            <span ><span>Activate Account</span></span>
+            </button>
             </div>
           </div>
           
