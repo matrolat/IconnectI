@@ -206,7 +206,7 @@
               </div>
           </div>
           <div className={classes.right}>
-              <div className={classes.rightinpContainer} style={{height:800,marginBottom:40}}>
+              <div className={classes.rightinpContainer} style={{height:800,marginBottom:20}}>
                   <div className={classes.head} 
                   // style={{marginBottom:30}}
                   >Job Description in Detail *</div>
@@ -221,8 +221,8 @@
               </div>
               <div className={classes.rightinpContainer} 
               style={{marginTop:0}}>
-                  <div className={classes.head} >Stipend *</div>
-                  <div style={{display:"flex",alignItems:"center",margin:20,marginLeft:0}}>
+                  <div className={classes.head} style={{marginBottom:0}} >Stipend *</div>
+                  <div style={{display:"flex",alignItems:"center",margin:20,marginLeft:0,marginTop:10,marginBottom:10}}>
                       <input
                       className={classes.radio}
                       type="radio"
