@@ -1,7 +1,5 @@
 export const buttonStyles = {
-    //   backgroundImage: 'linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%)',
     backgroundImage: 'linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%)',
-    //   margin: '10px',
       padding: '15px 45px',
       textAlign: 'center',
       textTransform: 'uppercase',
@@ -13,7 +11,6 @@ export const buttonStyles = {
       display: 'block',
       border:0,
       "&:hover": {
-    //  backgroundImage: 'linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%)',
     backgroundImage: 'linear-gradient(to right, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%)',
       backgroundPosition: 'right center',
       color: '#fff',
@@ -23,7 +20,23 @@ export const buttonStyles = {
 
   };
   
-  // You can access the styles like this:
-//   console.log(buttonStyles.base.backgroundImage); // Output: "linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%)"
-//   console.log(buttonStyles.hover.color); // Output: "#fff"
-  
+export const inputStyles = {
+    color: "#A7A1A1",
+    // height: 32,
+    // width: 309,
+    display: "flex",
+    padding: "11 16",
+    overflow: "hidden",
+    fontSize: 9.5,
+    textAlign: "left",
+    alignItems: "center",
+    flexShrink: 0,
+    // fontFamily: Poppins,
+    fontWeight: 500,
+    borderColor: "#D2CECE",
+    borderStyle: "solid",
+    bordeWidth: 0.791015625,
+    borderRadius: 19.775390625,
+    backgroundColor: "#FFFFFF",
+
+};

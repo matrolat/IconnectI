@@ -84,9 +84,9 @@ export default function Company_Dashboard(){
            < MainLogo height={104} width={118}/>
            <button className={classes.btn} onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>
            <button className={classes.btn}>Reset Password</button>
-           <button className={classes.btn}>New Posting</button>
+           <button className={classes.btn} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
            <button className={classes.btn}>Update Posting</button>
-           <button className={classes.btn}>Search Candidate</button>
+           <button className={classes.btn} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
            <button className={classes.btn}>View active Working Profiles</button>
            <button className={classes.btn}>View Earlier Postings</button>
         </div>

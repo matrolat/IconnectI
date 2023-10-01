@@ -9,7 +9,7 @@ import Company_Activation from "./Pages/Company_Activation/Company_Activation";
 import Otp from "./Pages/Otp/Otp";
 import Intern_Posting from "./Pages/Intern_Posting.jsx/Intern_Posting";
 import Company_Dashboard from "./Pages/Company_Dashboard/Company_Dashboard";
-
+import SearchCandidates from "./Pages/Search Candidates/SearchCandidates";
 function App() {
   return (
     
@@ -24,8 +24,9 @@ function App() {
           <Route path="/Registration/College" element={<Reg_College/>} />
           <Route path="/Activation/:email" element={<Company_Activation/>} />
           <Route path='/otp/:email' element={<Otp/>} />
-          <Route path="/Intern_Posting" element={<Intern_Posting/>} />
+          <Route path="/Intern_Posting/:email" element={<Intern_Posting/>} />
           <Route path="/dashboard/:email" element={<Company_Dashboard/>} />
+          <Route path="/SearchCandidates/:email" element={<SearchCandidates/>} />
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}
