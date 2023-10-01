@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
+import { useNavigate , useParams} from "react-router-dom";
 
 const useStyles = makeStyles((theme)=>({
     outer:{
@@ -17,7 +18,6 @@ const useStyles = makeStyles((theme)=>({
     },
     right:{
         width:"70%",
-        // height:"100%",
         // backgroundColor:"yellow",
     },
     btn:{
@@ -75,11 +75,14 @@ const useStyles = makeStyles((theme)=>({
 export default function Company_Dashboard(){
 
     const classes = useStyles();
+    const navigate = useNavigate();
+    const { email } = useParams();
+
   return (
     <div className={classes.outer}>
         <div className={classes.left}>
            < MainLogo height={104} width={118}/>
-           <button className={classes.btn}>Activate Profile</button>
+           <button className={classes.btn} onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>
            <button className={classes.btn}>Reset Password</button>
            <button className={classes.btn}>New Posting</button>
            <button className={classes.btn}>Update Posting</button>
