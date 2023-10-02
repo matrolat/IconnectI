@@ -5,6 +5,7 @@ const Activation = require("../models/activationSchema")
 const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const dotenv = require('dotenv');
+const Posting = require("../models/internPostingSchema")
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
@@ -17,6 +18,84 @@ const transporter = nodemailer.createTransport({
       pass: "txaqbvsawqudiiht",
     },
   });
+
+  const internPosting = async(req,res)=>{
+      console.log(req.body.postingemail);
+      try {
+        const {
+          areaofwork,
+          startdate,
+          enddate,
+          stipend,
+          hoursweek,
+          typeofengagement,
+          locationofwork,
+          vacancy,
+          skills,
+          jobdescription,
+          userID,
+          uniqueID,
+          postdate,
+          postingemail,
+        } = req.body;
+    
+        if (
+          !areaofwork ||
+          !startdate ||
+          !enddate ||
+          !stipend ||
+          !hoursweek ||
+          !typeofengagement ||
+          !locationofwork ||
+          !vacancy ||
+          !skills ||
+          !jobdescription ||
+          !userID
+        ) {
+          return res.status(422).json({ error: "Please Fill the fields" });
+        } else {
+          const user = new Posting({
+            areaofwork,
+            startdate,
+            enddate,
+            stipend,
+            hoursweek,
+            typeofengagement,
+            locationofwork,
+            vacancy,
+            skills,
+            jobdescription,
+            userID,
+            uniqueID,
+            postdate,
+          });
+    
+          await user.save();
+          const mailOptions = {
+            from: process.env.EMAIL,
+            to: postingemail,
+            subject: "Posting confirmation email",
+            text: `Congratulations!!
+      You successfully posted about the Internship🙌🙌.
+      Your posting ID is ${uniqueID}`,
+          };
+          transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+              console.log(error);
+              res.status(422).json({ error: "email not send" });
+            } else {
+              console.log("email sent");
+              res.status(200).json({ message: "email sent Successfully" });
+            }
+          });
+    
+          res.status(201).json({ message: "Internship Posted successfully" });
+        }
+      } catch (err) {
+        console.log(err);
+      }
+
+  }
 
 const companyActivation = async(req,res)=>{
 
@@ -101,6 +180,7 @@ const companyActivation = async(req,res)=>{
 
   module.exports = {
     companyActivation,
+    internPosting,
   };
 
 
