@@ -8,6 +8,7 @@ const router = express.Router();
 const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration} = require("../controller/userController")
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
+const { companyActivation } = require('../controller/companyController');
 const upload = multer({ dest: 'public/uploads/' })
 
 
@@ -18,6 +19,8 @@ router.get('/allUsers', allUsers);
 router.post('/otpVerify', otpVerify);
 router.get('/logout',logout);
 router.get('/mainscreen',Authenticate, mainScreen);
-router.post('/collegesignup',collegeRegistration)
+router.post('/collegesignup',collegeRegistration);
+router.post('/activate',companyActivation);
+
 
 module.exports = router;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Header from '../../Components/Header/Header'
 import { makeStyles } from '@material-ui/core/styles';
 import { inputStyles,buttonStyles } from '../../Constants/Css'
@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SearchCandidates() {
   const classes = useStyles();
+
+  
 
   return (
     <div>

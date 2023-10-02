@@ -117,3 +117,56 @@ export const companyRegistration = async(values) => {
   }
 
 
+export const companyActivate = async(values,companysopcemail)=>{
+  const {
+    websiteinfo,
+    industrytype,
+    areaofwork,
+    registeredoffice,
+    companyregno,
+    currentlocation,
+    locationofwork,
+    employeecount,
+    compdescription
+  } = values;
+
+  const email = companysopcemail;
+
+
+  try{
+    const json = JSON.stringify({
+      websiteinfo,
+      industrytype,
+      areaofwork,
+      registeredoffice,
+      companyregno,
+      currentlocation,
+      locationofwork,
+      employeecount,
+      compdescription,
+      email
+    });
+    return await axios.post(`${URL}/activation`, json, {
+      headers: {
+        // Overwrite Axios's automatically set Content-Type
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in activation API : "+error);
+  }
+
+
+
+  // const data = await res.json();
+
+  // if (res.status === 422 || !data) {
+  //   window.alert("Invalid Registration");
+  //   console.log("Invalid Registration");
+  // } else {
+  //   window.alert("Registration Successful");
+  //   console.log("Registration Successful");
+  //   navigate(`/MainScreen/${email}`);
+  // }
+}
