@@ -245,4 +245,25 @@ export const internPosting = async(values, userID, uniqueID, postdate, postingem
       console.log(" Error in activation API : "+error);
   }
 
+
+
 }
+export const getAllPosting = async(userID)=>{
+  
+
+  try{
+    const json = JSON.stringify({
+      userID
+    });
+    return await axios.post(`${URL}/getAllPosting`, json, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in get all postings API : "+error);
+  }
+
+}
+

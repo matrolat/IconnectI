@@ -181,9 +181,24 @@ const companyActivation = async(req,res)=>{
     
 }
 
+
+const getAllPosting=async(req,res)=>{
+  try {
+    const { userID } = req.body;
+    console.log(userID);
+
+    const allUsers = await Posting.find({ userID: userID });
+    // console.log(allUsers);
+    res.json(allUsers);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
   module.exports = {
     companyActivation,
     internPosting,
+    getAllPosting,
   };
 
 

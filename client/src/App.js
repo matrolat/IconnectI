@@ -28,7 +28,7 @@ function App() {
           <Route path="/Intern_Posting/:email" element={<Intern_Posting/>} />
           <Route path="/dashboard/:email" element={<Company_Dashboard/>} />
           <Route path="/SearchCandidates/:email" element={<SearchCandidates/>} />
-          <Route path="/ViewPosting" element={<ViewPosting/>} />
+          <Route path="/ViewPosting/:email" element={<ViewPosting/>} />
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}
