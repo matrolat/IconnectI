@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const postingSchema = new mongoose.Schema({
+    name:String,
     areaofwork: String,
     startdate:String,
     enddate:String,

@@ -23,6 +23,7 @@ const transporter = nodemailer.createTransport({
       console.log(req.body.postingemail);
       try {
         const {
+          name,
           areaofwork,
           startdate,
           enddate,
@@ -40,6 +41,7 @@ const transporter = nodemailer.createTransport({
         } = req.body;
     
         if (
+          !name ||
           !areaofwork ||
           !startdate ||
           !enddate ||
@@ -55,6 +57,7 @@ const transporter = nodemailer.createTransport({
           return res.status(422).json({ error: "Please Fill the fields" });
         } else {
           const user = new Posting({
+            name,
             areaofwork,
             startdate,
             enddate,
