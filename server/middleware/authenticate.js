@@ -4,8 +4,8 @@ const companyUser = require('../models/companyUserSchema');
 
 const Authenticate = async (req,res ,next)=>{
     
+  console.log("token:"+JSON.stringify(req.jwtoken));
   try {
-    
     const token = req.cookies.jwtoken;
     
     const verifyToken = jwt.verify(token ,process.env.SECRET_KEY);

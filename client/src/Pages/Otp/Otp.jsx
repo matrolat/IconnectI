@@ -3,6 +3,7 @@ import './Otp.css';
 import { useNavigate , useParams} from "react-router-dom";
 
 
+
 const Otp = () => {
   const { email } = useParams();
     const navigate = useNavigate();
@@ -43,6 +44,7 @@ const [otp , setOtp] = useState(0);
             headers: {
               "Content-Type": "application/json",
             },
+            credentials: "include",
             body: JSON.stringify({
               email,
              otp,
@@ -50,6 +52,10 @@ const [otp , setOtp] = useState(0);
           });
           const data = await res.json();
             console.log(data);
+            console.log("otp verifited heres cookie");
+            const value = `${document.cookie}`;
+            console.log(value);
+
           if(res.status === 422){
             window.alert('Invalid OTP');
           }else{

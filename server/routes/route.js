@@ -5,7 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
 const router = express.Router();
-const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration} = require("../controller/userController")
+const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration, deleteData} = require("../controller/userController")
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
 const { companyActivation, internPosting } = require('../controller/companyController');
@@ -18,10 +18,14 @@ router.post('/signup/', upload.single('logo'), companyRegistration);
 router.get('/allUsers', allUsers);
 router.post('/otpVerify', otpVerify);
 router.get('/logout',logout);
-router.get('/mainscreen',Authenticate, mainScreen);
+router.get('/getLoginDetails',Authenticate, mainScreen);
 router.post('/collegesignup',collegeRegistration);
 router.post('/activate',companyActivation);
 router.post('/internPosting',internPosting);
+// router.post('/getLoginDetails',);
 
+
+//Tesing APi
+router.post('/deleteUserData',deleteData);
 
 module.exports = router;

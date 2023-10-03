@@ -268,10 +268,13 @@ const companyRegistration = async (req, res) =>{
   if (user && !collegeUser) {
     if (userExist[0].emailotp === otp) {
       token = await user.generateAuthToken();
+      console.log("tokencreate:"+token);
       res.cookie("jwtoken", token, {
         expires: new Date(Date.now() + 14400000),
-        httpOnly: true,
+        httpOnly: false,
+        SameSite:"None"
       });
+      // res.cookie("KEY", "Value", { expires: new Date((new Date()).getTime() + (10 * 86400000))});
       await companyUser.updateOne(
         { companyspocemail: email },
         { $set: { loggedin: "YES", count: 0 } }
@@ -373,6 +376,14 @@ const companyRegistration = async (req, res) =>{
     }
   }
 
+  const deleteData = async(req,res)=>{
+    const email = req.body.email;
+    console.log(email);
+    await companyUser.deleteOne({ companyspocemail: email });
+    await UserOtp.deleteOne({ email: email });
+    res.send("deleted");
+  }
+
   module.exports = {
     companyRegistration,
     login,
@@ -380,7 +391,8 @@ const companyRegistration = async (req, res) =>{
     otpVerify,
     logout,
     mainScreen,
-    collegeRegistration
+    collegeRegistration,
+    deleteData
   };
 
 

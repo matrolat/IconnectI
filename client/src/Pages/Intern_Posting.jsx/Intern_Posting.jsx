@@ -1,8 +1,9 @@
-  import React from 'react'
+  import React,{useEffect} from 'react'
   import { makeStyles } from '@material-ui/core/styles';
   import Header from '../../Components/Header/Header';
   import { buttonStyles } from '../../Constants/Css';
-
+  import { checkLogin } from '../../utils/checkLogin';
+  import { useNavigate , useParams} from "react-router-dom";
 
 
   const useStyles = makeStyles((theme) => ({
@@ -121,7 +122,19 @@
     }));
 
   export default function Intern_Posting() {
+    const navigate = useNavigate();
+    const {email} = useParams();
+
+    useEffect(()=>{
+      const res = checkLogin(email);
+      if(!res){
+        navigate('/');
+      }
+      },[]);
         const classes = useStyles();
+        
+
+
 
     return (
       <div className={classes.page}>

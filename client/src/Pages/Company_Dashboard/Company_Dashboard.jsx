@@ -1,7 +1,9 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { makeStyles } from '@material-ui/core';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate , useParams} from "react-router-dom";
+import { GetLoginDetails } from '../../Service/Api';
+import { setUserSession,getToken } from '../../utils/session';
 
 const useStyles = makeStyles((theme)=>({
     outer:{
@@ -73,10 +75,45 @@ const useStyles = makeStyles((theme)=>({
 }));
 
 export default function Company_Dashboard(){
+    const {email} = useParams();
 
+
+    useEffect(()=>{
+		getData();
+	  },[]);
+
+    const getData =async()=>{
+        const data = await GetLoginDetails();
+        console.log(data);
+        if(data && data.companyspocemail === email){
+            if( data.loggedin === 'YES' && data.count === 1){
+              try {
+                  const response = await fetch('/logout', {
+                    method: 'GET',
+                  });
+              
+                  if (response.ok) {
+                    console.log('Cookie deleted successfully');
+                    navigate('/');
+                  } else {
+                    console.log('Failed to delete cookie');
+                  }
+                } catch (error) {
+                  console.error('Error occurred while deleting cookie:', error);
+                }
+            }
+            else if (data && data.deactivate === 'YES'){
+                const token = `${document.cookie}`;
+                setUserSession(token,data);
+              navigate(`/dashboard/${data.companyspocemail}`);
+            }
+          }else{
+            navigate('/');
+          }
+    }
     const classes = useStyles();
     const navigate = useNavigate();
-    const { email } = useParams();
+
 
   return (
     <div className={classes.outer}>

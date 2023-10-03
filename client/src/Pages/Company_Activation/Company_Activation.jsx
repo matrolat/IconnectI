@@ -1,10 +1,12 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './Company_Activation.css'
 import MainLogo from "../../Components/Main_Logo/MainLogo";
 import { makeStyles } from '@material-ui/core/styles';
 import { buttonStyles } from '../../Constants/Css';
 import { useNavigate , useParams} from "react-router-dom";
 import { companyActivate } from '../../Service/Api';
+// import { getToken, getUser } from '../../utils/session';
+import { checkLogin } from '../../utils/checkLogin';
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
@@ -12,8 +14,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function 
 () {
+  
+  const {email} = useParams();
   const navigate = useNavigate();
+  useEffect(()=>{
+		const res = checkLogin(email);
+    if(!res){
+      navigate('/');
+    }
+	  },[]);
+
+
   const classes = useStyles();
+
+
+
+  
+
+
   const [values, setValues] = useState({
     websiteinfo: "",
     industrytype: "",
@@ -25,7 +43,6 @@ export default function
     employeecount: "",
     compdescription : ""
   });
-  const {email} = useParams();
   const companysopcemail = email;
 
 
@@ -39,6 +56,9 @@ export default function
       [name]: value,
     });
   };
+
+  
+
 
   const postData = async()=>{
     const res = await companyActivate(values,companysopcemail);

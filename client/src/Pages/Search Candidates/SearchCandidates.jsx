@@ -1,8 +1,10 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Header from '../../Components/Header/Header'
 import { makeStyles } from '@material-ui/core/styles';
 import { inputStyles,buttonStyles } from '../../Constants/Css'
 import StickyHeadTable from '../../Components/Table/StickyHeadTable';
+import { checkLogin } from '../../utils/checkLogin';
+import { useNavigate , useParams} from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
 
   inp: inputStyles,
@@ -33,6 +35,16 @@ const useStyles = makeStyles((theme) => ({
 export default function SearchCandidates() {
   const classes = useStyles();
 
+
+  const navigate = useNavigate();
+  const {email} = useParams();
+
+  useEffect(()=>{
+    const res = checkLogin(email);
+    if(!res){
+      navigate('/');
+    }
+    },[]);
   
 
   return (

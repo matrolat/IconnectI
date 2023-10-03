@@ -170,3 +170,23 @@ export const companyActivate = async(values,companysopcemail)=>{
   //   navigate(`/MainScreen/${email}`);
   // }
 }
+
+export const GetLoginDetails =async()=>{
+  
+  try{
+    // return await axios.get(`${URL}/getLoginDetails`, { withCredentials: true });
+    const res = await fetch(`${URL}/getLoginDetails`,{
+      method: 'GET',
+      headers:{
+        Accept: "application/json",
+        "Content-Type" : "application/json"
+      },
+      credentials: "include"
+    });
+     return await res.json();
+    // console.log(data);
+  }
+  catch(error){
+      console.log(" Error in get login details API : "+error);
+  }
+}

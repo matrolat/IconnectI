@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const cors = require('cors');
 const bodyParser = require('body-parser')
 const app = express();
@@ -7,9 +8,19 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 const PORT = 4000;
 app.use("public/uploads/", express.static("public/uploads/"));
-app.use(cors());
-const cookieParser = require("cookie-parser");
+// const corsOptions = {
+//      origin: '', 
+//     credentials: true, 
+//   };
+//   const corsConfig = {
+//   credentials: true,
+ 
+// };
+// app.use(cors());
 app.use(cookieParser());
+app.use(cors({origin:"http://localhost:3002",credentials:true}));
+// app.use(cors(corsOptions));
+// app.use(cors({credentials:true}));
 
 app.use(require("./routes/route.js"));
 
