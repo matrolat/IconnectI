@@ -6,6 +6,7 @@ import CustomTable from '../../Components/Table/CustomTable';
 import { checkLogin } from '../../utils/checkLogin';
 
 import { useNavigate , useParams} from "react-router-dom";
+import { getUser } from '../../utils/session';
 
 export default function ViewPosting() {
   const navigate = useNavigate();
@@ -24,7 +25,8 @@ export default function ViewPosting() {
     const [data,setData] = useState();
 
     const getData=async()=>{
-      const res = await getAllPosting("651bda1b097635f703c05115");
+      const val =getUser();
+      const res = await getAllPosting(val._id);
       // const datal = JSON.stringify(res.data);
       console.log(res.data);
       setData(res.data);

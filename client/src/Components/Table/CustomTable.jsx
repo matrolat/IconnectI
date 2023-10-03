@@ -33,7 +33,7 @@ const columns = [
     // format: (value) => value.toFixed(2),
   },
   {
-    id: 'density',
+    id: 'test',
     label: 'Skills',
     minWidth: 170,
     align: 'right',
