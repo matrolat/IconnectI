@@ -9,9 +9,24 @@ const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, coll
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
 const { companyActivation, internPosting, getAllPosting } = require('../controller/companyController');
-const upload = multer({ dest: 'public/uploads/' })
 
 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "public/uploads");
+    },
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + "_" + file.originalname);
+    },
+  });
+  
+  const upload = multer({ storage: storage });
+// const upload = multer({ dest: 'public/uploads/' })
+
+
+router.get("/", (req, res) => {
+    res.send("Hello router");
+  });
 
 router.post('/login/',  login);
 router.post('/signup/', upload.single('logo'), companyRegistration);

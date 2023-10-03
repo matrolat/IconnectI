@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 const PORT = 4000;
-app.use("public/uploads/", express.static("public/uploads/"));
+app.use('/public', express.static('public'));
 // const corsOptions = {
 //      origin: '', 
 //     credentials: true, 

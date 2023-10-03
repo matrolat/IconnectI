@@ -81,6 +81,8 @@ const useStyles = makeStyles((theme)=>({
 export default function Company_Dashboard(){
     const {email} = useParams();
     const [activate,setActivate] = useState(false);
+    const [imageURL,setImageURL] = useState("");
+    const [userInfo,setUserInfo] = useState("");
 
     useEffect(()=>{
 		getData();
@@ -128,10 +130,14 @@ export default function Company_Dashboard(){
 
     const checkActivation=async()=>{
         const user = getUser();
+        setUserInfo(user);
+        console.log("user"+user.logo);
         if(user.deactivate=="NO")
         {
             setActivate(true);
         }
+        setImageURL("http://localhost:4000/public/uploads/" +user.logo);
+        console.log(imageURL);
     }
     const classes = useStyles();
     const navigate = useNavigate();
@@ -154,10 +160,11 @@ export default function Company_Dashboard(){
         
             <h1>Company Dashboard</h1>
             <div className={classes.details}>
-                <MainLogo height={180}  />
+                {/* <MainLogo height={180}  /> */}
+                <img src={imageURL} alt="Logo" className="logo-image" height={150} />
 
                 <div className={classes.comp_details}>
-                    <span style={{fontSize:36}}>Company Name  </span>
+                    <span style={{fontSize:36}}>{userInfo.companyname}  </span>
                     <h5>Company Activated : {activate?"true":"false"}</h5>
                     <h5>Other details</h5>
                 </div>
