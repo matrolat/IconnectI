@@ -30,7 +30,7 @@ export default function Login() {
     const handleSubmit =async()=>{
       const res = await login(values);
       console.log(res);
-      const data = res.data;
+      const data = await res.data;
       if ( !data || res.status === 422 ) {
         window.alert("Invalid Credentials");
         console.log("Invalid Credentials");

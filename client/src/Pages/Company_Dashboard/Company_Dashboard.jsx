@@ -141,7 +141,7 @@ export default function Company_Dashboard(){
     <div className={classes.outer}>
         <div className={classes.left}>
            < MainLogo height={104} width={118}/>
-           <button className={classes.btn}  onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>
+           <button className={classes.btn}  disabled={activate} onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>
            <button className={classes.btn}>Reset Password</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
            <button className={classes.btn} disabled={!activate} >Update Posting</button>

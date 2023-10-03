@@ -1,9 +1,14 @@
-  import React,{useEffect} from 'react'
+  import React,{useEffect, useState} from 'react'
   import { makeStyles } from '@material-ui/core/styles';
   import Header from '../../Components/Header/Header';
   import { buttonStyles } from '../../Constants/Css';
   import { checkLogin } from '../../utils/checkLogin';
   import { useNavigate , useParams} from "react-router-dom";
+  import { getUser } from '../../utils/session';
+  import { v4 as uuid } from "uuid";
+import { internPosting } from '../../Service/Api';
+
+
 
 
   const useStyles = makeStyles((theme) => ({
@@ -58,7 +63,6 @@
           textAlign: "left",
           alignItems: "center",
           flexShrink: 0,
-          // fontFamily: Poppins,
           fontWeight: 500,
           borderColor: "#D2CECE",
           borderStyle: "solid",
@@ -68,7 +72,6 @@
         },
         inpTextArea: {
           color: "#A7A1A1",
-          // height: 32,
           width: 309,
           display: "flex",
           padding: "11 16",
@@ -78,7 +81,6 @@
           textAlign: "left",
           alignItems: "center",
           flexShrink: 0,
-          // fontFamily: Poppins,
           fontWeight: 500,
           borderColor: "#D2CECE",
           borderStyle: "solid",
@@ -91,22 +93,15 @@
           height: 500,
           display: "flex",
           flexDirection: 'column',
-          justifyContent: 'space-around',
-          // backgroundColor: "red",
+          justifyContent: 'space-between',
           
       },
       rightinpContainer:{
-          //    backgroundColor: "yellow",
-          //    width: 350,
-              // height: 250,
               display: "flex",
               flexDirection: 'column',
               justifyContent: 'space-between',
               margin: 60,
               alignItems: "flex-start",
-              
-          // marginTop: 45,
-          // marginBottom: 0,
 
         },
         radio:{
@@ -116,8 +111,6 @@
 	        borderRadius: "50%", 
           accentColor:"#026E78"
         }
-
-      
 
     }));
 
@@ -134,7 +127,59 @@
         const classes = useStyles();
         
 
+        const [values, setValues] = useState({
+          name: "",
+          areaofwork: "",
+          startdate: "",
+          enddate: "",
+          stipend: "",
+          hoursweek: "",
+          locationofwork: "",
+          typeofengagement: "",
+          vacancy: "",
+          skills: "",
+          jobdescription: "",
+        });
+        const postingemail = email;
+        // const userID = userData._id;
+        const user = getUser();
+        const userID = user._id;
+        console.log(userID);
+        const unique_id = uuid();
+        const small_id = unique_id.slice(0, 8);
+        const uniqueID = user.companyname + "_" + small_id;
+        console.log(uniqueID);
+        const current = new Date();
+        const postdate = `${current.getDate()}/${
+          current.getMonth() + 1
+        }/${current.getFullYear()}`;
 
+
+        let name, value;
+        const onChange = (e) => {
+        name = e.target.name;
+        value = e.target.value;
+
+        setValues({
+          ...values,
+          [name]: value,
+        });
+      };
+
+
+      const postData = async()=>{
+        const res = await internPosting(values, userID, uniqueID, postdate, postingemail);
+        const data = JSON.stringify(res);
+        // console.log(data);
+        if(!data || data.status === 422 ){
+          window.alert("Invalid Registration");
+          console.log("Invalid Registration");
+         }else{
+          window.alert("Internship Posting Successful");
+          console.log("Internship Posting Successful");
+          navigate('/dashboard/'+email);
+         }
+      }
 
     return (
       <div className={classes.page}>
@@ -145,6 +190,8 @@
               <div className={classes.inpContainer}>
                   <div className={classes.head}>Internship Name *</div>
                   <input
+                  onChange={onChange}
+                  name='name'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
@@ -152,8 +199,10 @@
 
               </div>
               <div className={classes.inpContainer}>
-                  <div className={classes.head}>Area of Work * *</div>
-                  <input
+                  <div className={classes.head}>Area of Work *</div>
+                  <input 
+                  onChange={onChange}
+                  name='areaofwork'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
@@ -163,19 +212,23 @@
               <div className={classes.inpContainer}>
                   <div className={classes.head}>No of Vacancies *</div>
                   <input
+                  onChange={onChange}
+                  name='vacancy'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
-                />
+                  />
 
               </div>
               <div className={classes.inpContainer}>
                   <div className={classes.head}>Type of Engagement *</div>
                   <input
+                  onChange={onChange}
+                  name='typeofengagement'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
-                />
+                  />
 
               </div>
           </div>
@@ -184,24 +237,30 @@
               <div className={classes.inpContainer}>
                   <div className={classes.head}>Start Date *</div>
                   <input
+                  onChange={onChange}
+                  name='startdate'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
-                />
+                  />
 
               </div>
               <div className={classes.inpContainer}>
-                  <div className={classes.head}>Duration *</div>
+                  <div className={classes.head}>End date *</div>
                   <input
+                  onChange={onChange}
+                  name='enddate'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
-                />
+                  />
 
               </div>
               <div className={classes.inpContainer}>
                   <div className={classes.head}>No of hrs per week *</div>
                   <input
+                  onChange={onChange}
+                  name='hoursweek'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
@@ -211,35 +270,49 @@
               <div className={classes.inpContainer}>
                   <div className={classes.head}>Location of Work *</div>
                   <input
+                  onChange={onChange}
+                  name='locationofwork'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
-                />
+                  />
 
               </div>
           </div>
           <div className={classes.right}>
-              <div className={classes.rightinpContainer} style={{height:800,marginBottom:20}}>
+              <div className={classes.rightinpContainer} style={{height:220,marginBottom:0, marginTop:37}}>
                   <div className={classes.head} 
-                  // style={{marginBottom:30}}
                   >Job Description in Detail *</div>
                   <textarea
+                  onChange={onChange}
+                  name='jobdescription'
                   type="text"
                   // placeholder="abc"
-                  rows="25"
+                  rows="20"
                   class={classes.inpTextArea}
                 >
 
                 </textarea>
               </div>
+              <div className={classes.inpContainer}  style={{marginBottom:20}}>
+                  <div className={classes.head}>Required Skills *</div>
+                  <input
+                  onChange={onChange}
+                  name='skills'
+                  type="text"
+                  placeholder=""
+                  class={classes.inpText}
+                  />
+              </div>
+
               <div className={classes.rightinpContainer} 
               style={{marginTop:0}}>
                   <div className={classes.head} style={{marginBottom:0}} >Stipend *</div>
                   <div style={{display:"flex",alignItems:"center",margin:20,marginLeft:0,marginTop:10,marginBottom:10}}>
                       <input
-                      className={classes.radio}
-                      type="radio"
                       name='stipend'
+                      type="radio"
+                      className={classes.radio}
                   />
                   <label htmlFor="" style={{marginRight:10}}>Yes</label>
                  
@@ -252,6 +325,8 @@
                   <label htmlFor="">No</label>
                   </div> 
                   <input
+                  onChange={onChange}
+                  name='stipend'
                   type="text"
                   placeholder="Enter amount"
                   class={classes.inpText}
@@ -263,7 +338,7 @@
           </div>
 
       </div>
-      <button type='submit' className={classes.btnStyles} style={{height:80, width:389}}>
+      <button type='submit' onClick={postData} className={classes.btnStyles} style={{height:80, width:389}}>
               <span ><span>Sign Up</span></span>
       </button>
 

@@ -10,6 +10,7 @@ import Otp from "./Pages/Otp/Otp";
 import Intern_Posting from "./Pages/Intern_Posting.jsx/Intern_Posting";
 import Company_Dashboard from "./Pages/Company_Dashboard/Company_Dashboard";
 import SearchCandidates from "./Pages/Search Candidates/SearchCandidates";
+import ViewPosting from "./Pages/ViewPosting/ViewPosting";
 function App() {
   return (
     
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Intern_Posting/:email" element={<Intern_Posting/>} />
           <Route path="/dashboard/:email" element={<Company_Dashboard/>} />
           <Route path="/SearchCandidates/:email" element={<SearchCandidates/>} />
+          <Route path="/ViewPosting" element={<ViewPosting/>} />
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}

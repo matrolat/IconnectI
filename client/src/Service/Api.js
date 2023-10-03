@@ -190,3 +190,59 @@ export const GetLoginDetails =async()=>{
       console.log(" Error in get login details API : "+error);
   }
 }
+
+
+
+export const internPosting = async(values, userID, uniqueID, postdate, postingemail)=>{
+  const {
+          name,
+          areaofwork,
+          startdate,
+          enddate,
+          stipend,
+          hoursweek,
+          typeofengagement,
+          locationofwork,
+          vacancy,
+          skills,
+          jobdescription,
+          // userID,
+          // uniqueID,
+          // postdate,
+          // postingemail,
+  } = values;
+
+
+  // const email = companysopcemail;
+
+
+  try{
+    const json = JSON.stringify({
+        name,
+        areaofwork,
+        startdate,
+        enddate,
+        stipend,
+        hoursweek,
+        typeofengagement,
+        locationofwork,
+        vacancy,
+        skills,
+        jobdescription,
+        userID,
+        uniqueID,
+        postdate,
+        postingemail,
+    });
+    return await axios.post(`${URL}/internPosting`, json, {
+      headers: {
+        // Overwrite Axios's automatically set Content-Type
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in activation API : "+error);
+  }
+
+}

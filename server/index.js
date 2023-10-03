@@ -18,7 +18,7 @@ app.use("public/uploads/", express.static("public/uploads/"));
 // };
 // app.use(cors());
 app.use(cookieParser());
-app.use(cors({origin:"http://localhost:3002",credentials:true}));
+app.use(cors({origin:"http://localhost:3000",credentials:true}));
 // app.use(cors(corsOptions));
 // app.use(cors({credentials:true}));
 
