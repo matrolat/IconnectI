@@ -1,9 +1,9 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate , useParams} from "react-router-dom";
 import { GetLoginDetails } from '../../Service/Api';
-import { setUserSession,getToken } from '../../utils/session';
+import { setUserSession,getToken, getUser } from '../../utils/session';
 
 const useStyles = makeStyles((theme)=>({
     outer:{
@@ -32,11 +32,15 @@ const useStyles = makeStyles((theme)=>({
         fontSize:15,
         fontWeight:"bold",
         transition: "background-color 0.3s, box-shadow 0.3s",
+        "&:disabled":{
+            backgroundImage:"none",
+          backgroundColor:"lightgrey"
+        },
         "&:hover": {
             backgroundImage: "none", // Change to your desired hover background color
             backgroundColor:"#92F7CD",
             boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-          }
+          },
      },
 
      row:{
@@ -76,10 +80,11 @@ const useStyles = makeStyles((theme)=>({
 
 export default function Company_Dashboard(){
     const {email} = useParams();
-
+    const [activate,setActivate] = useState(false);
 
     useEffect(()=>{
 		getData();
+        // checkActivation();
 	  },[]);
 
     const getData =async()=>{
@@ -105,11 +110,28 @@ export default function Company_Dashboard(){
             else if (data && data.deactivate === 'YES'){
                 const token = `${document.cookie}`;
                 setUserSession(token,data);
-              navigate(`/dashboard/${data.companyspocemail}`);
+                navigate(`/dashboard/${data.companyspocemail}`);
+            }
+            else{
+                const token = `${document.cookie}`;
+                setUserSession(token,data);
+               
             }
           }else{
             navigate('/');
           }
+
+          await checkActivation();
+          
+    }
+
+
+    const checkActivation=async()=>{
+        const user = getUser();
+        if(user.deactivate=="NO")
+        {
+            setActivate(true);
+        }
     }
     const classes = useStyles();
     const navigate = useNavigate();
@@ -119,13 +141,13 @@ export default function Company_Dashboard(){
     <div className={classes.outer}>
         <div className={classes.left}>
            < MainLogo height={104} width={118}/>
-           <button className={classes.btn} onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>
+           <button className={classes.btn}  onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>
            <button className={classes.btn}>Reset Password</button>
-           <button className={classes.btn} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
-           <button className={classes.btn}>Update Posting</button>
-           <button className={classes.btn} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
-           <button className={classes.btn}>View active Working Profiles</button>
-           <button className={classes.btn}>View Earlier Postings</button>
+           <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
+           <button className={classes.btn} disabled={!activate} >Update Posting</button>
+           <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
+           <button className={classes.btn} disabled={!activate}>View active Working Profiles</button>
+           <button className={classes.btn} disabled={!activate}>View Earlier Postings</button>
         </div>
         <div className={classes.right}><div style={{paddingLeft:100,paddingRight:100,paddingTop:50,display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
 
@@ -135,8 +157,8 @@ export default function Company_Dashboard(){
                 <MainLogo height={180}  />
 
                 <div className={classes.comp_details}>
-                    <span style={{fontSize:36}}>Company Name</span>
-                    <h5>Other details</h5>
+                    <span style={{fontSize:36}}>Company Name  </span>
+                    <h5>Company Activated : {activate?"true":"false"}</h5>
                     <h5>Other details</h5>
                 </div>
 

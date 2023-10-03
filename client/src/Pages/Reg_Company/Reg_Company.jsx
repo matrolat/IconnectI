@@ -37,8 +37,8 @@ export default function Reg_Company() {
   const postData = async()=>{
     const res = await companyRegistration(values);
     const data = JSON.stringify(res);
-    console.log(data);
-    if(data.status === 422 || !data){
+    // console.log(data);
+    if(!data || data.status === 422 ){
       window.alert("Invalid Registration");
       console.log("Invalid Registration");
      }else{

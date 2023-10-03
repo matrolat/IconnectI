@@ -57,20 +57,22 @@ export default function
     });
   };
 
+
+  
   
 
 
   const postData = async()=>{
     const res = await companyActivate(values,companysopcemail);
     const data = JSON.stringify(res);
-    console.log(data);
-    if(data.status === 422 || !data){
+    // console.log(data);
+    if(!data || data.status === 422 ){
       window.alert("Invalid Registration");
       console.log("Invalid Registration");
      }else{
-      window.alert("Registration Successful");
-      console.log("Registration Successful");
-      navigate(`/Activation/${email}`);
+      window.alert("Activation Successful");
+      console.log("Activation Successful");
+      navigate(`/dashboard/${email}`);
      }
   }
 
@@ -97,7 +99,8 @@ export default function
                 type="text"
                 placeholder=""
                 class="activation-input"
-                value={values.websiteinfo}              
+                name='websiteinfo'
+                // value={values.websiteinfo}              
                 onChange={onChange}
               />
             </div>
@@ -112,7 +115,7 @@ export default function
               /> */}
               <select
                 name="areaofwork"
-                value={values.areaofwork}
+                // value={values.areaofwork}
                 class="activation-input"
                 onChange={onChange}
               >
@@ -137,10 +140,10 @@ export default function
               /> */}
               <select
                 name="locationofwork"
-                value={values.locationofwork}
-                id="locationofwork"
+                // value={values.locationofwork}
                 onChange={onChange}
                 class="activation-input"
+
               >
                 <option value="" selected>
                   --select--
@@ -160,8 +163,9 @@ export default function
               <input
                 type="text"
                 placeholder=""
+                name='companyregno'
                 class="activation-input"
-                value={values.companyregno}
+                // value={values.companyregno}
                 
                 onChange={onChange}
               />
@@ -177,8 +181,7 @@ export default function
               /> */}
               <select
                 name="industrytype"
-                value={values.industrytype}
-        
+              
                 onChange={onChange}
                 class="activation-input"
               >
@@ -198,7 +201,8 @@ export default function
                 type="text"
                 placeholder=""
                 class="activation-input"
-                value={values.registeredoffice}
+                name='registeredoffice'
+                // value={values.registeredoffice}
         
                 onChange={onChange}
               />
@@ -213,7 +217,8 @@ export default function
                 type="text"
                 placeholder=""
                 class="activation-input"
-                value={values.employeecount}
+                name='employeecount'
+                // value={values.employeecount}
                
                 onChange={onChange}
               />
@@ -226,7 +231,8 @@ export default function
                 type="text"
                 placeholder=""
                 class="activation-input"
-                value={values.currentlocation}               
+                name='currentlocation'
+                // name={values.currentlocation}               
                 onChange={onChange}
               />
             </div>
@@ -248,9 +254,26 @@ export default function
               <option value="Google Pay">Google Pay</option>
             </select>
             </div>
+            
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Description *</span>
+              </span>
+              <input
+                type="text"
+                placeholder=""
+                class="activation-input"
+                name='compdescription'
+                // value={values.currentlocation}               
+                onChange={onChange}
+              />
+            </div>
+
             </div>
         </div>
+        
             <div class="company-activation-group1">
+              
             <div class="company-activation-check">
              <input type="checkbox" className="company-activation-rectangle3"/>
 

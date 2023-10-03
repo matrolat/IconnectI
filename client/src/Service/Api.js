@@ -146,7 +146,7 @@ export const companyActivate = async(values,companysopcemail)=>{
       compdescription,
       email
     });
-    return await axios.post(`${URL}/activation`, json, {
+    return await axios.post(`${URL}/activate`, json, {
       headers: {
         // Overwrite Axios's automatically set Content-Type
         'Content-Type': 'application/json'
