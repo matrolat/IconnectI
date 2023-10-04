@@ -70,7 +70,7 @@ const companyRegistration = async (req, res) =>{
 
  // login=========================================================
  const login = async (req, res) =>{
-     console.log("jere");
+     console.log("here");
     try {
       let token;
       const { email, password } = req.body;
@@ -384,6 +384,84 @@ const companyRegistration = async (req, res) =>{
     res.send("deleted");
   }
 
+  const forgotPassword = async(req,res)=>{
+    const email = req.body.email;
+    
+    try{
+      if (!email) {
+        return res.status(422).json({ error: "Please Fill the fields" });
+      }
+      const userExist = await companyUser.findOne({ companyspocemail: email });
+        const collegeUser = await College.findOne({ collegespocemail: email });
+      if(!userExist && !collegeUser) {
+        res.status(422).json({ error: "User does not exist" });
+      }
+      else{
+        const mailOptions = {
+          from: process.env.EMAIL,
+          to: email,
+          subject: "Sending Email for setting new password",
+          text: `please click on this link to reset your password : ${process.env.CLIENT}${email}` 
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.log(error);
+            res.status(422).json({ error: "email not send" });
+          } else {
+            console.log("email sent");
+            res.status(200).json("emial sent successfullly");
+          }
+        });
+      }
+    }
+    
+    catch (err) {
+      console.log(err);
+    }
+  }
+
+  const resetPassword = async(req, res) => {
+    let email = req.body.email;
+    let password = req.body.password;
+    let confirmPassword = req.body.confirmPassword;
+   
+
+
+    try{
+      if (!email || !password || !confirmPassword) {
+        return res.status(422).json({ error: "Please Fill the fields" });
+      }
+      password = await bcrypt.hash(password, 12);
+      confirmPassword = await bcrypt.hash(confirmPassword, 12);
+      const userExist = await companyUser.findOne({ companyspocemail: email });
+        const collegeUser = await College.findOne({ collegespocemail: email });
+      if(!userExist && !collegeUser) {
+        res.status(422).json({ error: "User does not exist" });
+      }
+      else if(userExist){
+        await companyUser.updateOne(
+          { companyspocemail: email },
+          { $set: { 'password': password,'confirmPassword':confirmPassword } }
+        );
+        res.status(200).json({ message: "passworrd changed successfully" }); 
+      }
+      else{
+        await College.updateOne(
+          { collegespocemail: email },
+          { $set: { 'password': password,'confirmPassword':confirmPassword } }
+        );
+        res.status(200).json({ message: "passworrd changed successfully" }); 
+      }
+    }
+    
+    catch (err) {
+      console.log(err);
+    }
+    
+
+    
+  }
+
   module.exports = {
     companyRegistration,
     login,
@@ -392,7 +470,9 @@ const companyRegistration = async (req, res) =>{
     logout,
     mainScreen,
     collegeRegistration,
-    deleteData
+    deleteData,
+    forgotPassword,
+    resetPassword,
   };
 
 

@@ -5,7 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
 const router = express.Router();
-const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration, deleteData} = require("../controller/userController")
+const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration, deleteData, forgotPassword,resetPassword} = require("../controller/userController")
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
 const { companyActivation, internPosting, getAllPosting } = require('../controller/companyController');
@@ -38,6 +38,8 @@ router.post('/collegesignup',collegeRegistration);
 router.post('/activate',companyActivation);
 router.post('/internPosting',internPosting);
 router.post('/getAllPosting',getAllPosting);
+router.post('/forgotPassword',forgotPassword);
+router.post('/resetPassword',resetPassword);
 // router.post('/getLoginDetails',);
 
 
@@ -45,3 +47,4 @@ router.post('/getAllPosting',getAllPosting);
 router.post('/deleteUserData',deleteData);
 
 module.exports = router;
+
