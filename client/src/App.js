@@ -35,8 +35,8 @@ function App() {
           <Route path="/ViewPosting/:email" element={<ViewPosting/>} />
 
           <Route path="/ActiveProfiles" element={<ActiveProfiles/>} />
-          <Route path="/ResetPassword" element={<ResetPassword/>} />
           <Route path="/ForgotPassword" element={<ForgotPassword/>} />
+          <Route path="/ResetPassword/:email" element={<ResetPassword/>} />
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}

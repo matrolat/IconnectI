@@ -39,13 +39,11 @@ const useStyles = makeStyles((theme) => ({
     },
     left:{
         width:"45%",
-        // backgroundColor:"blue",
         textAlign:"left",
 
     },
     right:{
         width:"45%",
-        // backgroundColor:"pink",
         display:"flex",
         justifyContent:"flex-end"
     },

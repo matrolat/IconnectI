@@ -267,3 +267,42 @@ export const getAllPosting = async(userID)=>{
 
 }
 
+
+export const ResetPWD =async(values, email)=>{
+  const { password, confirmPassword } = values;
+  try{
+    const json = JSON.stringify({
+      email,
+      password,
+      confirmPassword,
+    });
+    return await axios.post(`${URL}/resetPassword`, json, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in login API : "+error);
+  }
+}
+
+export const logout =async()=>{
+  
+  try{
+    // return await axios.get(`${URL}/getLoginDetails`, { withCredentials: true });
+    const res = await fetch(`${URL}/logout`,{
+      method: 'GET',
+      headers:{
+        Accept: "application/json",
+        "Content-Type" : "application/json"
+      },
+      credentials: "include"
+    });
+     return await res.json();
+    // console.log(data);
+  }
+  catch(error){
+      console.log(" Error in logout API : "+error);
+  }
+}
