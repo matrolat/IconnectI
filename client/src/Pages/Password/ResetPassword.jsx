@@ -4,7 +4,7 @@ import { buttonStyles } from '../../Constants/Css';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ResetPWD, logout } from '../../Service/Api';
-
+import { BeatLoader } from "react-spinners";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -74,6 +74,7 @@ export default function ResetPassword() {
     const {email} = useParams();
     
     const [pwd, setPwd] = useState();
+    let [loading, setLoading] = useState(false);
 
     
     const [values, setValues] = useState({
@@ -97,13 +98,16 @@ export default function ResetPassword() {
         }
 
         const postData = async() =>{
+            setLoading(true);
             if(values.password != values.confirmPassword){
+                setLoading(false);
                 window.alert("Password doesn't matched");
             }
             else{
                 const res = await ResetPWD(values, email);
                 const data = JSON.stringify(res);
-                if(!data || data.status === 422 ){
+                if(!data || res.data.status === 422 ){
+                setLoading(false);
                 window.alert("Invalid Registration");
                 console.log("Invalid Registration");
                 }else{
@@ -150,8 +154,21 @@ export default function ResetPassword() {
 
    
       </div>
-            <button type='submit' onClick={postData} className={classes.btnStyles} style={{height:60, width:400, borderRadius:5}}>
-              Update Password
+            <button type='submit' onClick={postData} disabled={loading} className={classes.btnStyles} style={{height:60, width:400, borderRadius:5}}>
+              {/* Update Password */}
+              { loading?  
+                 <BeatLoader 
+                //  color="#36d7b7"
+                 color="white"
+                 loading={loading}
+                 // cssOverride={override}
+                 size={10}
+                 aria-label="Loading Spinner"
+                 data-testid="loader"
+                 />
+                 : "Update Password"
+                
+                }
             </button>
     </div>
   )

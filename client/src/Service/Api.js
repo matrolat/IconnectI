@@ -14,7 +14,7 @@ export const companyRegistration = async(values) => {
     !companyspocphone ||
     confirmPassword != password
   ) {
-    window.alert("Pls enter all the fields");
+    // window.alert("Pls enter all the fields");
     return;
   }
   const logo = values.logo;

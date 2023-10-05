@@ -7,6 +7,7 @@ import { login } from '../../Service/Api'
 import { Link, useNavigate , useParams} from "react-router-dom";
 import { makeStyles } from '@material-ui/core'
 import { buttonStyles } from '../../Constants/Css'
+import { BeatLoader } from "react-spinners";
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
@@ -16,6 +17,7 @@ export default function Login() {
   const classes = useStyles();
 
   const navigate = useNavigate();
+  let [loading, setLoading] = useState(false);
     const [eye, setEye] = useState(false);
     const [values, setValues] = useState({
       email: "",
@@ -28,22 +30,27 @@ export default function Login() {
     };
 
     const handleSubmit =async()=>{
+      setLoading(true);
+      // return;
       const res = await login(values);
       console.log(res);
-      const data = await res.data;
+      // const data = await res.data;
+      const data = JSON.stringify(res);
       if ( !data || res.status === 422 ) {
         window.alert("Invalid Credentials");
         console.log("Invalid Credentials");
       } else {
-        if(!data.companyspocemail){
+        if(!res.data.companyspocemail){
           window.alert("college");
-          navigate(`/otp/${data.collegespocemail}`);
+          navigate(`/otp/${res.data.collegespocemail}`);
         }else{
           window.alert("company");
-          navigate(`/otp/${data.companyspocemail}`);
+          navigate(`/otp/${res.data.companyspocemail}`);
         }
         
       }
+      setLoading(false);
+
     }
 
 
@@ -103,8 +110,20 @@ export default function Login() {
             {/* <button className='frame6-frame1' onClick={handleSubmit}>
                 <span className="frame6-text13"><span>Log In</span></span>
             </button> */}
-            <button onClick={handleSubmit} className={classes.btnStyles} style={{height:47, width:400}}>
-                <span><span>Log In</span></span>
+            <button onClick={handleSubmit} disabled={loading} className={classes.btnStyles} style={{height:47, width:400}}>
+                <span><span>{ loading?  
+                 <BeatLoader 
+                //  color="#36d7b7"
+                 color="white"
+                 loading={loading}
+                 // cssOverride={override}
+                 size={10}
+                 aria-label="Loading Spinner"
+                 data-testid="loader"
+                 />
+                 : "Log In"
+                
+                }</span></span>
             </button>
           </div>
         </div>

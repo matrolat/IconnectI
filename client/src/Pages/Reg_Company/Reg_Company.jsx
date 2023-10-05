@@ -6,13 +6,14 @@ import { companyRegistration } from "../../Service/Api";
 import { useNavigate } from "react-router-dom";
 import { buttonStyles } from "../../Constants/Css";
 import { makeStyles } from "@material-ui/core";
+import { BeatLoader } from "react-spinners";
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
 }));
 export default function Reg_Company() {
   const classes = useStyles();
-
+  let [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [values , setValues] = useState({
     username : "",
@@ -35,17 +36,21 @@ export default function Reg_Company() {
   }
 
   const postData = async()=>{
+    setLoading(true);
     const res = await companyRegistration(values);
     const data = JSON.stringify(res);
+    
     // console.log(data);
-    if(!data || data.status === 422 ){
+    if(!data || res.data.status === 422 ){
+      //  setLoading(!loading);
       window.alert("Invalid Registration");
       console.log("Invalid Registration");
-     }else{
+    }else{
       window.alert("Registration Successful");
       console.log("Registration Successful");
       navigate('/');
-     }
+    }
+    setLoading(false);
   }
 
   return (
@@ -218,8 +223,22 @@ export default function Reg_Company() {
             <div><input type="checkbox" className="company-registration-rectangle3"/></div>
               <div><span>I agree to the terms and condition</span></div>
             </div>
-          <button className={classes.btnStyles} onClick={postData}style={{height:80, width:389}}>
-            <span ><span>Sign Up</span></span>
+          <button className={classes.btnStyles} disabled={loading} onClick={postData} style={{height:80, width:389}}>
+            <span ><span>
+            { loading?  
+                 <BeatLoader 
+                //  color="#36d7b7"
+                 color="white"
+                 loading={loading}
+                 // cssOverride={override}
+                 size={10}
+                 aria-label="Loading Spinner"
+                 data-testid="loader"
+                 />
+                 : "Sign Up"
+                
+                }
+              </span></span>
           </button>
           </div>
 

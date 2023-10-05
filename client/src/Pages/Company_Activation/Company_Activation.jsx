@@ -7,6 +7,7 @@ import { useNavigate , useParams} from "react-router-dom";
 import { companyActivate } from '../../Service/Api';
 // import { getToken, getUser } from '../../utils/session';
 import { checkLogin } from '../../utils/checkLogin';
+import { BeatLoader } from "react-spinners";
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
@@ -17,6 +18,7 @@ export default function
   
   const {email} = useParams();
   const navigate = useNavigate();
+  let [loading, setLoading] = useState(false);
   useEffect(()=>{
 		const res = checkLogin(email);
     if(!res){
@@ -63,10 +65,12 @@ export default function
 
 
   const postData = async()=>{
+    setLoading(true);
     const res = await companyActivate(values,companysopcemail);
     const data = JSON.stringify(res);
+    setLoading(false);
     // console.log(data);
-    if(!data || data.status === 422 ){
+    if(!data || res.data.status === 422 ){
       window.alert("Invalid Registration");
       console.log("Invalid Registration");
      }else{
@@ -284,10 +288,25 @@ export default function
             
             
             <div class="company-activation-frame6">
-            <button type='submit' className={classes.btnStyles} style={{height:80, width:389}}
+            <button type='submit' disabled={loading} className={classes.btnStyles} style={{height:80, width:389}}
             onClick={postData}
             >
-            <span ><span>Activate Account</span></span>
+            <span ><span>
+            { loading?  
+                 <BeatLoader 
+                //  color="#36d7b7"
+                 color="white"
+                 loading={loading}
+                 // cssOverride={override}
+                 size={10}
+                 aria-label="Loading Spinner"
+                 data-testid="loader"
+                 />
+                 : "Activate Account"
+                
+                }
+              
+              </span></span>
             </button>
             </div>
           </div>

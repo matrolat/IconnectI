@@ -4,6 +4,7 @@ import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { buttonStyles } from '../../Constants/Css';
 import { forgotPWD } from '../../Service/Api';
 import { useNavigate, useParams } from 'react-router-dom';
+import { BeatLoader } from "react-spinners";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -78,7 +79,7 @@ export default function ForgotPassword() {
     
 	const classes = useStyles();
 	const navigate = useNavigate();
-
+	let [loading, setLoading] = useState(false);
 
 	const [values, setValues] = useState({
         email:""
@@ -98,10 +99,11 @@ export default function ForgotPassword() {
         }
 
 		const postData = async() =>{
-            
+            setLoading(true);
                 const res = await forgotPWD(values);
                 const data = JSON.stringify(res);
-                if(!data || data.status === 422 ){
+                if(!data || res.data.status === 422 ){
+					setLoading(false);
                 window.alert("Invalid email");
                 console.log("Invalid email");
                 }else{
@@ -140,7 +142,21 @@ export default function ForgotPassword() {
 
               </div>
 			
-			<button class={classes.btnStyles} onClick={postData} style={{borderRadius:0,width: 400,height:60}}>CONTINUE</button>
+			<button class={classes.btnStyles} disabled={loading} onClick={postData} style={{borderRadius:0,width: 400,height:60}}>
+			{ loading?  
+                 <BeatLoader 
+                //  color="#36d7b7"
+                 color="white"
+                 loading={loading}
+                 // cssOverride={override}
+                 size={10}
+                 aria-label="Loading Spinner"
+                 data-testid="loader"
+                 />
+                 : "CONTINUE"
+                
+                }
+			</button>
 
 		</div>
 

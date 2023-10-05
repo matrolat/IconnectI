@@ -7,6 +7,7 @@
   import { getUser } from '../../utils/session';
   import { v4 as uuid } from "uuid";
 import { internPosting } from '../../Service/Api';
+import { BeatLoader } from "react-spinners";
 
 
 
@@ -117,6 +118,7 @@ import { internPosting } from '../../Service/Api';
   export default function Intern_Posting() {
     const navigate = useNavigate();
     const {email} = useParams();
+    let [loading, setLoading] = useState(false);
 
     useEffect(()=>{
       const res = checkLogin(email);
@@ -168,10 +170,12 @@ import { internPosting } from '../../Service/Api';
 
 
       const postData = async()=>{
+        setLoading(true);
         const res = await internPosting(values, userID, uniqueID, postdate, postingemail);
         const data = JSON.stringify(res);
+        setLoading(false);
         // console.log(data);
-        if(!data || data.status === 422 ){
+        if(!data || res.data.status === 422 ){
           window.alert("Invalid Registration");
           console.log("Invalid Registration");
          }else{
@@ -338,8 +342,23 @@ import { internPosting } from '../../Service/Api';
           </div>
 
       </div>
-      <button type='submit' onClick={postData} className={classes.btnStyles} style={{height:80, width:389}}>
-              <span ><span>Sign Up</span></span>
+      <button type='submit' disabled={loading} onClick={postData} className={classes.btnStyles} style={{height:80, width:389}}>
+              <span ><span>
+              { loading?  
+                 <BeatLoader 
+                //  color="#36d7b7"
+                 color="white"
+                 loading={loading}
+                 // cssOverride={override}
+                 size={10}
+                 aria-label="Loading Spinner"
+                 data-testid="loader"
+                 />
+                 : "Post"
+                
+                }
+                
+                </span></span>
       </button>
 
   </div>

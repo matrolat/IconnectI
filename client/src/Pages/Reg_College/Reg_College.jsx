@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { collegeSignup } from '../../Service/Api';
 import { makeStyles } from '@material-ui/core/styles';
 import { buttonStyles } from "../../Constants/Css";
+import { BeatLoader } from "react-spinners";
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
@@ -15,6 +16,7 @@ export default function
 () {
 
   const classes = useStyles();
+  let [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   const [values , setValues] = useState({
@@ -36,10 +38,12 @@ export default function
   };
 
   const postData = async()=>{
+    setLoading(!loading);
     const res = await collegeSignup(values);
     const data = JSON.stringify(res);
-    console.log(data);
-    if( !data || data.status === 422){
+    setLoading(!loading);
+    // console.log(data);
+    if( !data || res.data.status === 422){
       window.alert("Invalid Registration");
       console.log("Invalid Registration");
      }else{
@@ -236,8 +240,22 @@ export default function
             </span>
           </div>
 
-          <button type='submit' className={classes.btnStyles} onClick={postData}style={{height:80, width:389}}>
-            <span ><span>Sign Up</span></span>
+          <button type='submit' disabled={loading} className={classes.btnStyles} onClick={postData}style={{height:80, width:389}}>
+            <span ><span>
+            { loading?  
+                 <BeatLoader 
+                //  color="#36d7b7"
+                 color="white"
+                 loading={loading}
+                 // cssOverride={override}
+                 size={10}
+                 aria-label="Loading Spinner"
+                 data-testid="loader"
+                 />
+                 : "Sign Up"
+                
+                }
+              </span></span>
           </button>
 
           </div>
