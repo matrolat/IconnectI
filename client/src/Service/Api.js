@@ -306,3 +306,20 @@ export const logout =async()=>{
       console.log(" Error in logout API : "+error);
   }
 }
+
+export const forgotPWD =async(values)=>{
+  const { email } = values;
+  try{
+    const json = JSON.stringify({
+      email,
+    });
+    return await axios.post(`${URL}/forgotPassword`, json, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in Forget Password API : "+error);
+  }
+}

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { buttonStyles } from '../../Constants/Css';
+import { forgotPWD } from '../../Service/Api';
+import { useNavigate, useParams } from 'react-router-dom';
+
 const useStyles = makeStyles((theme) => ({
 
 	btnStyles: buttonStyles,
@@ -24,9 +27,6 @@ const useStyles = makeStyles((theme) => ({
 		fontSize:40,
 		color:"rgba(56,142,59,1)"
 	}
-  },
-  text:{
-
   },
   inpContainer: {
 	// width: 316,
@@ -77,11 +77,41 @@ const useStyles = makeStyles((theme) => ({
 export default function ForgotPassword() {
     
 	const classes = useStyles();
+	const navigate = useNavigate();
 
 
-	const onChange =()=>{
+	const [values, setValues] = useState({
+        email:""
+    });
 
-	}
+    
+    let name, value;
+    const onChange = (e) => {
+        name = e.target.name;
+        value = e.target.value;
+        
+        setValues({
+            ...values,
+            [name]: value,
+        })
+		console.log(name);
+        }
+
+		const postData = async() =>{
+            
+                const res = await forgotPWD(values);
+                const data = JSON.stringify(res);
+                if(!data || data.status === 422 ){
+                window.alert("Invalid email");
+                console.log("Invalid email");
+                }else{
+                window.alert("Email has been sent Successfully");
+                console.log("Email has been sent Successfully");
+                // await logout();
+                navigate('/');
+
+            }
+        }
 
 
   
@@ -101,7 +131,7 @@ export default function ForgotPassword() {
                   <div className={classes.head}>Email</div>
                   <input
                   onChange={onChange}
-                  name='name'
+                  name='email'
 				  
                   type="text"
                   placeholder="Enter Email"
@@ -110,7 +140,7 @@ export default function ForgotPassword() {
 
               </div>
 			
-			<button class={classes.btnStyles} style={{borderRadius:0,width: 400,height:60}}>CONTINUE</button>
+			<button class={classes.btnStyles} onClick={postData} style={{borderRadius:0,width: 400,height:60}}>CONTINUE</button>
 
 		</div>
 
