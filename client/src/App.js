@@ -11,6 +11,9 @@ import Intern_Posting from "./Pages/Intern_Posting.jsx/Intern_Posting";
 import Company_Dashboard from "./Pages/Company_Dashboard/Company_Dashboard";
 import SearchCandidates from "./Pages/Search Candidates/SearchCandidates";
 import ViewPosting from "./Pages/ViewPosting/ViewPosting";
+import ActiveProfiles from "./Pages/ActiveProfiles/ActiveProfiles";
+import ResetPassword from "./Pages/Password/ResetPassword";
+
 function App() {
   return (
     
@@ -29,6 +32,9 @@ function App() {
           <Route path="/dashboard/:email" element={<Company_Dashboard/>} />
           <Route path="/SearchCandidates/:email" element={<SearchCandidates/>} />
           <Route path="/ViewPosting/:email" element={<ViewPosting/>} />
+
+          <Route path="/ActiveProfiles" element={<ActiveProfiles/>} />
+          <Route path="/ResetPassword" element={<ResetPassword/>} />
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}
