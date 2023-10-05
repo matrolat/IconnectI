@@ -13,6 +13,7 @@ import SearchCandidates from "./Pages/Search Candidates/SearchCandidates";
 import ViewPosting from "./Pages/ViewPosting/ViewPosting";
 import ActiveProfiles from "./Pages/ActiveProfiles/ActiveProfiles";
 import ResetPassword from "./Pages/Password/ResetPassword";
+import ForgotPassword from "./Pages/Password/ForgotPassword";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
 
           <Route path="/ActiveProfiles" element={<ActiveProfiles/>} />
           <Route path="/ResetPassword" element={<ResetPassword/>} />
+          <Route path="/ForgotPassword" element={<ForgotPassword/>} />
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}
