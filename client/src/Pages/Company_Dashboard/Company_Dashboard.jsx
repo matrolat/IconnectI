@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate , useParams} from "react-router-dom";
-import { GetLoginDetails } from '../../Service/Api';
+import { GetLoginDetails, logout } from '../../Service/Api';
 import { setUserSession,getToken, getUser } from '../../utils/session';
 
 const useStyles = makeStyles((theme)=>({
@@ -150,10 +150,11 @@ export default function Company_Dashboard(){
            <button className={classes.btn}  disabled={activate} onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>
            <button className={classes.btn} onClick={()=>{navigate(`/ForgotPassword/${email}`)}}>Reset Password</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
-           <button className={classes.btn} disabled={!activate} >Update Posting</button>
+           {/* <button className={classes.btn} disabled={!activate} >Update Posting</button> */}
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
            <button className={classes.btn} disabled={!activate}>View active Working Profiles</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View Earlier Postings</button>
+           <button className={classes.btn} onClick={()=>{logout}} >Logout</button>
         </div>
         <div className={classes.right}><div style={{paddingLeft:100,paddingRight:100,paddingTop:50,display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
 
