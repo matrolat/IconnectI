@@ -305,7 +305,7 @@ export default function
 
             <textarea
                 onChange={onChange}
-                name='jobdescription'
+                name='compdescription'
                 type="text"
                 // placeholder="abc"
                 rows="12"
