@@ -8,6 +8,22 @@ import { companyActivate } from '../../Service/Api';
 // import { getToken, getUser } from '../../utils/session';
 import { checkLogin } from '../../utils/checkLogin';
 import { BeatLoader } from "react-spinners";
+import Button from '@mui/material/Button';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload'
+import { styled } from '@mui/material/styles';
+const VisuallyHiddenInput = styled('input')({
+  clip: 'rect(0 0 0 0)',
+  clipPath: 'inset(50%)',
+  height: 1,
+  overflow: 'hidden',
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  whiteSpace: 'nowrap',
+  width: 1,
+ 
+});
+
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
@@ -60,7 +76,10 @@ export default function
   };
 
 
-  
+  const imageUpload = (e) =>{
+    console.log(e.target.files[0]);
+    // setValues ({...values , logo: e.target.files[0]});
+  }
   
 
 
@@ -152,9 +171,7 @@ export default function
                   --select--
                 </option>
                 <option value="On Site">On Site</option>
-                {/* <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option> */}
+                
               </select>
             </div>
             </div>
@@ -320,13 +337,13 @@ export default function
 
             </div>
 
-            {/* <div class="company-activation-check">
-             <input type="checkbox" className="company-activation-rectangle3"/>
+                <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
+             {/* {values.logo ?  values.logo.name :" Upload file"} */}
+             Upload file
+              <VisuallyHiddenInput name="logo" onChange={imageUpload} type="file" />
+            </Button>
 
-              <span class="company-activation-text22">
-                <span>I agree to the terms and condition</span>
-              </span>
-            </div> */}
+       
 
 
             </div>

@@ -3,13 +3,12 @@ import "./Reg_Company.css";
 import MainLogo from "../../Components/Main_Logo/MainLogo";
 import Checkbox from "../../Assets/Checkbox.png";
 import { companyRegistration } from "../../Service/Api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { buttonStyles } from "../../Constants/Css";
 import { makeStyles } from "@material-ui/core";
 import { BeatLoader } from "react-spinners";
 import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload'
+
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
@@ -86,63 +85,15 @@ export default function Reg_Company() {
                 <span className="company-registration-text03">
                   Already have an account?
                 </span>
-                <span>log In</span>
+                
+                <span><Link to={'/Login'}>   log In</Link></span>
               </span>
             </div>
           </div>
 
       <div className="company-outer-container">
         
-        <div className="company-inner-container">
-
-          {/* <div className="company-container">
-            <span className="head">
-              <label className="head-text">User name *</label>
-            </span>
-            <input
-            style={{zIndex:1}}
-              type="text"
-              placeholder=""
-              name="username"
-              className="input"
-              onChange = {onChange}
-            />
-            
-          </div> */}
-          <div className="company-container">
-            <span className="head">
-              <label className="head-text">Password *</label>
-            </span>
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter Password"
-              className="input"
-              onChange = {onChange}
-              errorMessage = "Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
-              required= "true"
-              pattern= "`^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`"           
-            />
-          </div>
-          <div className="company-container">
-            <span className="head">
-              <label className="head-text">Re Type Password *</label>
-            </span>
-            <input
-              type="password"
-              name="confirmPassword"
-              placeholder="Enter Password"
-              className="input"
-              onChange = {onChange}
-              errorMessage = "Passwords don't match!"
-              required= "true"
-              pattern = "values.password"
-            />
-          </div>
-
-          </div>
-
-        <div className="company-inner-container">
+      <div className="company-inner-container">
             <div className="company-container">
             <span className="head">
               <label className="head-text">Email address *</label>
@@ -151,7 +102,7 @@ export default function Reg_Company() {
             style={{zIndex:1}}
               type="email"
               name="companyspocemail"
-              placeholder="Example@gmail.com"
+              placeholder=""
               className="input"
               onChange = {onChange}
               errorMessage = "Not a valid email"
@@ -174,7 +125,6 @@ export default function Reg_Company() {
             </div>
           
 
-
             <div className="company-container">
             {/* <span className="head">
               <label className="head-text">Company Logo</label>
@@ -186,29 +136,53 @@ export default function Reg_Company() {
               placeholder=""
               className="input"
             /> */}
-             <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
+             {/* <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
              {values.logo ?  values.logo.name :" Upload file"}
               <VisuallyHiddenInput name="logo" onChange={imageUpload} type="file" />
-            </Button>
+            </Button> */}
           </div>
 
             </div>
-
         <div className="company-inner-container">
-          {/* <div className="company-container">
+
+        
+          <div className="company-container">
             <span className="head">
-              <label className="head-text">SPOC Email address*</label>
+              <label className="head-text">Password *</label>
             </span>
             <input
-            style={{zIndex:1}}
-              type="email"
-              placeholder="Example@gmail.com"
+              type="password"
+              name="password"
+              placeholder=""
               className="input"
               onChange = {onChange}
-              errorMessage = "Not a valid email"
-              required = "true"
+              errorMessage = "Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
+              required= "true"
+              pattern= "`^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`"           
             />
-          </div> */}
+          </div>
+          <div className="company-container">
+            <span className="head">
+              <label className="head-text">Re Type Password *</label>
+            </span>
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder=""
+              className="input"
+              onChange = {onChange}
+              errorMessage = "Passwords don't match!"
+              required= "true"
+              pattern = "values.password"
+            />
+          </div>
+
+          </div>
+
+        
+
+        <div className="company-inner-container">
+          
 
           <div className="company-container">
             <span className="head">
@@ -216,7 +190,7 @@ export default function Reg_Company() {
             </span>
             <input
               type="text"
-              placeholder="ompany SPOC Name"
+              placeholder=""
               name="companyspocname"
               className="input"
               onChange = {onChange}
@@ -231,7 +205,7 @@ export default function Reg_Company() {
               <label className="head-text">SPOC Phone Number *</label>
             </span>
             <input
-              type="text"
+              type="number"
               placeholder=""
               name="companyspocphone"
               className="input"
@@ -247,18 +221,13 @@ export default function Reg_Company() {
         </div>
 
         <div className="company-registration-check">
-            <div className="company-registration-text25">
-            <div><input type="checkbox" className="company-registration-rectangle3"/></div>
-              <div><span>I agree to the terms and condition</span></div>
-            </div>
+            
           <button className={classes.btnStyles} disabled={loading} onClick={postData} style={{height:80, width:389,margin:30}}>
             <span ><span>
             { loading?  
                  <BeatLoader 
-                //  color="#36d7b7"
                  color="white"
                  loading={loading}
-                 // cssOverride={override}
                  size={10}
                  aria-label="Loading Spinner"
                  data-testid="loader"
