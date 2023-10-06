@@ -277,14 +277,47 @@ export default function
               <span class="activation-container-text">
                 <span class="activation-text">Description *</span>
               </span>
-              <input
+              {/* <input
                 type="text"
                 placeholder=""
                 class="activation-input"
                 name='compdescription'
                 // value={values.currentlocation}               
                 onChange={onChange}
-              />
+              /> */}
+
+            <textarea
+                onChange={onChange}
+                name='jobdescription'
+                type="text"
+                // placeholder="abc"
+                rows="12"
+                // class={classes.inpTextArea}
+                style={{
+                  boxSizing:"border-box",
+          paddingLeft:12,
+          color: "#A7A1A1",
+          // height: 32,
+          width: 309,
+          display: "flex",
+          padding: "11 16",
+          overflow: "hidden",
+          fontSize: 12,
+          textAlign: "left",
+          alignItems: "center",
+          flexShrink: 0,
+          fontWeight: 500,
+          borderColor: "#D2CECE",
+          borderStyle: "solid",
+          bordeWidth: 0.791015625,
+          borderRadius: 19.775390625,
+          backgroundColor: "#FFFFFF",
+                }}
+              >
+
+              </textarea>
+
+
             </div>
 
             {/* <div class="company-activation-check">
