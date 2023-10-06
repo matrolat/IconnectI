@@ -54,13 +54,15 @@ import { BeatLoader } from "react-spinners";
           textDecoration: "none",
         },
         inpText: {
+          boxSizing:"border-box",
+          paddingLeft:12,
           color: "#A7A1A1",
           height: 32,
           width: 309,
           display: "flex",
           padding: "11 16",
           overflow: "hidden",
-          fontSize: 9.5,
+          fontSize: 12,
           textAlign: "left",
           alignItems: "center",
           flexShrink: 0,
@@ -72,13 +74,21 @@ import { BeatLoader } from "react-spinners";
           backgroundColor: "#FFFFFF",
         },
         inpTextArea: {
+          boxSizing:"border-box",
           color: "#A7A1A1",
-          width: 309,
+          minWidth: 289,
+          minHeight:208,
+          maxHeight: 218,
+          paddingTop:10,
+          paddingBottom:10,
+          paddingLeft:10,
+          paddingRight:10,
+
           display: "flex",
-          padding: "11 16",
+          // padding: "11 16",
           overflow: "hidden",
           overflowY:"scroll",
-          fontSize: 9.5,
+          fontSize: 12,
           textAlign: "left",
           alignItems: "center",
           flexShrink: 0,
@@ -88,6 +98,7 @@ import { BeatLoader } from "react-spinners";
           bordeWidth: 0.791015625,
           borderRadius: 19.775390625,
           backgroundColor: "#FFFFFF",
+          // backgroundColor:"red",
           marginTop:10
         },
         right : {
@@ -243,9 +254,10 @@ import { BeatLoader } from "react-spinners";
                   <input
                   onChange={onChange}
                   name='startdate'
-                  type="text"
+                  type="date"
                   placeholder=""
                   class={classes.inpText}
+                  style={{paddingRight:10}}
                   />
 
               </div>
@@ -254,9 +266,11 @@ import { BeatLoader } from "react-spinners";
                   <input
                   onChange={onChange}
                   name='enddate'
-                  type="text"
+                  type="date"
+                  // type="text"
                   placeholder=""
                   class={classes.inpText}
+                  style={{paddingRight:10}}
                   />
 
               </div>

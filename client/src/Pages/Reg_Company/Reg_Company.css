@@ -107,6 +107,7 @@
   display: flex;
   /* flex-direction: column; */
   justify-content: space-between;
+  /* background-color: red; */
   /* align-items: center; */
   /* position: absolute; */
   width: 80%;
@@ -115,12 +116,13 @@
 .company-inner-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-; */
+
 }
 
 .company-container {
   height: 60px;
-  margin: 20px 0;
+  margin: 50px 0;
   display: flex; 
   flex-direction: column;
   justify-content: space-around;
@@ -174,6 +176,7 @@
   justify-content: space-around;
   /* position: absolute; */
   align-items: center;
+  margin: 50px;
 }
 .company-registration-rectangle3 {
   top: 0px;

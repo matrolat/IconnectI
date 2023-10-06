@@ -84,7 +84,7 @@ export default function
     <div>
         <div class="company-activation-container">
         <div class="company-activation-company-activation">
-          <div class="company-activation-header">
+          <div class="company-activation-header" >
             <MainLogo />
             <div class="company-activation-frame7">
               <span class="company-activation-text">
@@ -126,10 +126,9 @@ export default function
                 <option value="" selected>
                   --select--
                 </option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                <option value="Software">Software</option>
+                <option value="Hardware">Hardware</option>
+                
               </select>
             </div>
             <div class="activation-container">
@@ -152,10 +151,10 @@ export default function
                 <option value="" selected>
                   --select--
                 </option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
+                <option value="On Site">On Site</option>
+                {/* <option value="saab">Saab</option>
                 <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                <option value="audi">Audi</option> */}
               </select>
             </div>
             </div>
@@ -211,6 +210,11 @@ export default function
                 onChange={onChange}
               />
             </div>
+
+
+           
+
+
             </div>
             <div className="activation-inner-container">
             <div class="activation-container">
@@ -259,7 +263,17 @@ export default function
             </select>
             </div>
             
-            <div class="activation-container">
+            
+
+            </div>
+        </div>
+        
+            <div class="company-activation-group1">
+              
+            
+            
+            <div>
+            <div class="activation-container" style={{position:"absolute",top:-60}}>
               <span class="activation-container-text">
                 <span class="activation-text">Description *</span>
               </span>
@@ -273,20 +287,16 @@ export default function
               />
             </div>
 
-            </div>
-        </div>
-        
-            <div class="company-activation-group1">
-              
-            <div class="company-activation-check">
+            {/* <div class="company-activation-check">
              <input type="checkbox" className="company-activation-rectangle3"/>
 
               <span class="company-activation-text22">
                 <span>I agree to the terms and condition</span>
               </span>
+            </div> */}
+
+
             </div>
-            
-            
             <div class="company-activation-frame6">
             <button type='submit' disabled={loading} className={classes.btnStyles} style={{height:80, width:389}}
             onClick={postData}

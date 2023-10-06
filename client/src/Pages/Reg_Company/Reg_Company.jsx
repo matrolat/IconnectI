@@ -7,10 +7,28 @@ import { useNavigate } from "react-router-dom";
 import { buttonStyles } from "../../Constants/Css";
 import { makeStyles } from "@material-ui/core";
 import { BeatLoader } from "react-spinners";
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
 }));
+
+const VisuallyHiddenInput = styled('input')({
+  clip: 'rect(0 0 0 0)',
+  clipPath: 'inset(50%)',
+  height: 1,
+  overflow: 'hidden',
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  whiteSpace: 'nowrap',
+  width: 1,
+ 
+});
+
+
 export default function Reg_Company() {
   const classes = useStyles();
   let [loading, setLoading] = useState(false);
@@ -77,7 +95,7 @@ export default function Reg_Company() {
         
         <div className="company-inner-container">
 
-          <div className="company-container">
+          {/* <div className="company-container">
             <span className="head">
               <label className="head-text">User name *</label>
             </span>
@@ -90,7 +108,7 @@ export default function Reg_Company() {
               onChange = {onChange}
             />
             
-          </div>
+          </div> */}
           <div className="company-container">
             <span className="head">
               <label className="head-text">Password *</label>
@@ -154,7 +172,45 @@ export default function Reg_Company() {
               required = "true"
             />
             </div>
+          
+
+
             <div className="company-container">
+            {/* <span className="head">
+              <label className="head-text">Company Logo</label>
+            </span>
+            <input
+            onChange={imageUpload}
+              type="file"
+              name="logo"
+              placeholder=""
+              className="input"
+            /> */}
+             <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
+             {values.logo ?  values.logo.name :" Upload file"}
+              <VisuallyHiddenInput name="logo" onChange={imageUpload} type="file" />
+            </Button>
+          </div>
+
+            </div>
+
+        <div className="company-inner-container">
+          {/* <div className="company-container">
+            <span className="head">
+              <label className="head-text">SPOC Email address*</label>
+            </span>
+            <input
+            style={{zIndex:1}}
+              type="email"
+              placeholder="Example@gmail.com"
+              className="input"
+              onChange = {onChange}
+              errorMessage = "Not a valid email"
+              required = "true"
+            />
+          </div> */}
+
+          <div className="company-container">
             <span className="head">
               <label className="head-text">SPOC name*</label>
             </span>
@@ -170,23 +226,6 @@ export default function Reg_Company() {
             />
             </div>
 
-            </div>
-
-        <div className="company-inner-container">
-          <div className="company-container">
-            <span className="head">
-              <label className="head-text">SPOC Email address*</label>
-            </span>
-            <input
-            style={{zIndex:1}}
-              type="email"
-              placeholder="Example@gmail.com"
-              className="input"
-              onChange = {onChange}
-              errorMessage = "Not a valid email"
-              required = "true"
-            />
-          </div>
           <div className="company-container">
             <span className="head">
               <label className="head-text">SPOC Phone Number *</label>
@@ -202,18 +241,7 @@ export default function Reg_Company() {
               pattern = "^[0-9]{10}$"
             />
           </div>
-          <div className="company-container">
-            <span className="head">
-              <label className="head-text">Company Logo</label>
-            </span>
-            <input
-            onChange={imageUpload}
-              type="file"
-              name="logo"
-              placeholder=""
-              className="input"
-            />
-          </div>
+          
 
             </div>
         </div>
@@ -223,7 +251,7 @@ export default function Reg_Company() {
             <div><input type="checkbox" className="company-registration-rectangle3"/></div>
               <div><span>I agree to the terms and condition</span></div>
             </div>
-          <button className={classes.btnStyles} disabled={loading} onClick={postData} style={{height:80, width:389}}>
+          <button className={classes.btnStyles} disabled={loading} onClick={postData} style={{height:80, width:389,margin:30}}>
             <span ><span>
             { loading?  
                  <BeatLoader 

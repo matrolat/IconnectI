@@ -29,6 +29,7 @@
   flex-direction: column;
   margin: 5%;
   margin-left: 0;
+  /* margin-bottom: 0; */
   /* margin-top: 70px; */
 }
 .company-activation-image19 {
@@ -61,6 +62,7 @@
   /* margin: 0 5; */
   margin-top: 17%;
   /* padding: 0 5%; */
+  margin-bottom: 1%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -122,6 +124,14 @@
   border-radius: 19.775390625px;
   background-color: rgba(255, 255, 255, 1);
 }
+select option{
+  /* background-color: red; */
+  /* min-height: 100px; */
+  font-size: 20px;
+  /* border-radius: 50px; */
+}
+
+
 
 .company-activation-group1 {
   left: 37%;
@@ -143,10 +153,10 @@
 }
 .company-activation-frame6 {
   gap: 7.91015625px;
-  top: 32px;
-  left: 0px;
+  top: 90px;
+  left: 30px;
   width: 389px;
-  height: 80px;
+  height: 150px;
   display: flex;
   /* padding: 7.91015625px 61.69921875px; */
   /* overflow: hidden; */
@@ -155,7 +165,8 @@
   flex-shrink: 0;
   border-radius: 19.775390625px;
   justify-content: center;
-  background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%);
+  /* background-image: linear-gradient(180deg, rgba(29, 166, 132, 1) 0%, rgba(190, 220, 124, 0.9900000095367432) 100%); */
+  margin-bottom: 100px;
 }
 .company-activation-text20 {
   color: rgba(255, 255, 255, 1);
