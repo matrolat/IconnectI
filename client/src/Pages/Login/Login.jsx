@@ -62,7 +62,7 @@ export default function Login() {
           <div className="frame6-frame4">
             <MainLogo height={81} width={93}/>            
             <div className="frame6-frame7">
-              <span className="frame6-text"><span>Welcome back</span></span>
+              <span className="frame6-text"><span>Welcome</span></span>
               <span className="frame6-text02">
                 <span className="frame6-text03">Don’t have an account?</span>
                 <Link to={'/'}> Sign UP</Link>
