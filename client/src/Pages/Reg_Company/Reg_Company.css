@@ -111,7 +111,7 @@
   /* align-items: center; */
   /* position: absolute; */
   width: 80%;
-  height: 50%;
+  height: 40%;
 }
 .company-inner-container {
   display: flex;
@@ -183,11 +183,11 @@ input[type=number]::-webkit-outer-spin-button {
   top: 480px;
   /* left: 690px; */
   width: 100%;
-  height: 25%;
+  height: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  position: absolute;
+  /* position: absolute; */
   align-items: center;
   margin: 50px;
 }

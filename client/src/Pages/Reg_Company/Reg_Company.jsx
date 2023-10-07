@@ -91,7 +91,7 @@ export default function Reg_Company() {
             </div>
           </div>
 
-      <div className="company-outer-container">
+      <div className="company-outer-container" >
         
       <div className="company-inner-container">
             <div className="company-container">
@@ -220,7 +220,7 @@ export default function Reg_Company() {
             </div>
         </div>
 
-        <div className="company-registration-check">
+        <div className="company-registration-check" >
             
           <button className={classes.btnStyles} disabled={loading} onClick={postData} style={{height:80, width:389,margin:30}}>
             <span ><span>
