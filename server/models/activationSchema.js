@@ -14,7 +14,9 @@ const activationSchema = new mongoose.Schema({
     ref: "Posting",
   },
   compdescription : String,
-  email:String
+  email:String,
+  logo: String,
+  
 });
 
 const Activation = mongoose.model("activationdata", activationSchema);

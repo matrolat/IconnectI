@@ -59,7 +59,8 @@ export default function
     currentlocation: "",
     locationofwork: "",
     employeecount: "",
-    compdescription : ""
+    compdescription : "",
+    logo:""
   });
   const companysopcemail = email;
 
@@ -78,7 +79,7 @@ export default function
 
   const imageUpload = (e) =>{
     console.log(e.target.files[0]);
-    // setValues ({...values , logo: e.target.files[0]});
+    setValues ({...values , logo: e.target.files[0]});
   }
   
 
@@ -174,6 +175,19 @@ export default function
                 
               </select>
             </div>
+            <div class="activation-container">
+              <span class="activation-container-text">
+                <span class="activation-text">Current Location *</span>
+              </span>
+              <input
+                type="text"
+                placeholder=""
+                class="activation-input"
+                name='currentlocation'
+                // name={values.currentlocation}               
+                onChange={onChange}
+              />
+            </div>
             </div>
             <div className="activation-inner-container">
             <div class="activation-container">
@@ -215,7 +229,7 @@ export default function
             </div>
             <div class="activation-container">
               <span class="activation-container-text">
-                <span class="activation-text">Registerd office *</span>
+                <span class="activation-text">Registered office *</span>
               </span>
               <input
                 type="text"
@@ -227,13 +241,21 @@ export default function
                 onChange={onChange}
               />
             </div>
+            <div style={{display:"flex",width:"50%",justifyContent:"flex-end"}}>
+
+            <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
+             {values.logo ?  values.logo.name :" Upload file"}
+          
+              <VisuallyHiddenInput name="logo" onChange={imageUpload} type="file" />
+            </Button>
+            </div>
 
 
            
 
 
             </div>
-            <div className="activation-inner-container">
+            <div className="activation-inner-container" style={{display:"flex",justifyContent:"space-evenly"}}>
             <div class="activation-container">
               <span class="activation-container-text">
                 <span class="activation-text">No of Employees *</span>
@@ -248,18 +270,50 @@ export default function
                 onChange={onChange}
               />
             </div>
-            <div class="activation-container">
+            <div class="activation-container" style={{position:"realtive",height:200,justifyContent:"flex-start"}}>
               <span class="activation-container-text">
-                <span class="activation-text">Current Location *</span>
+                <span class="activation-text">Description *</span>
               </span>
-              <input
+              {/* <input
                 type="text"
                 placeholder=""
                 class="activation-input"
-                name='currentlocation'
-                // name={values.currentlocation}               
+                name='compdescription'
+                // value={values.currentlocation}               
                 onChange={onChange}
-              />
+              /> */}
+
+            <textarea
+                onChange={onChange}
+                name='compdescription'
+                type="text"
+                // placeholder="abc"
+                rows="12"
+                // class={classes.inpTextArea}
+                style={{
+                  boxSizing:"border-box",
+          paddingLeft:12,
+          color: "#A7A1A1",
+          // height: 100,
+          width: 370,
+          // display: "block",
+          // overflow: "hidden",
+          fontSize: 12,
+          textAlign: "left",
+          alignItems: "center",
+          flexShrink: 0,
+          fontWeight: 500,
+          borderColor: "#D2CECE",
+          borderStyle: "solid",
+          bordeWidth: 0.791015625,
+          borderRadius: 19.775390625,
+          backgroundColor: "#FFFFFF",
+                }}
+              >
+
+              </textarea>
+
+
             </div>
             <div class="activation-container">
               <span class="activation-container-text">
@@ -290,58 +344,9 @@ export default function
             
             
             <div>
-            <div class="activation-container" style={{position:"absolute",top:-60}}>
-              <span class="activation-container-text">
-                <span class="activation-text">Description *</span>
-              </span>
-              {/* <input
-                type="text"
-                placeholder=""
-                class="activation-input"
-                name='compdescription'
-                // value={values.currentlocation}               
-                onChange={onChange}
-              /> */}
+          
 
-            <textarea
-                onChange={onChange}
-                name='compdescription'
-                type="text"
-                // placeholder="abc"
-                rows="12"
-                // class={classes.inpTextArea}
-                style={{
-                  boxSizing:"border-box",
-          paddingLeft:12,
-          color: "#A7A1A1",
-          // height: 32,
-          width: 309,
-          display: "flex",
-          padding: "11 16",
-          overflow: "hidden",
-          fontSize: 12,
-          textAlign: "left",
-          alignItems: "center",
-          flexShrink: 0,
-          fontWeight: 500,
-          borderColor: "#D2CECE",
-          borderStyle: "solid",
-          bordeWidth: 0.791015625,
-          borderRadius: 19.775390625,
-          backgroundColor: "#FFFFFF",
-                }}
-              >
-
-              </textarea>
-
-
-            </div>
-
-                <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
-             {/* {values.logo ?  values.logo.name :" Upload file"} */}
-             Upload file
-              <VisuallyHiddenInput name="logo" onChange={imageUpload} type="file" />
-            </Button>
+               
 
        
 

@@ -9,12 +9,75 @@
 import { internPosting } from '../../Service/Api';
 import { BeatLoader } from "react-spinners";
 
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Chip from '@mui/material/Chip';
+import { alpha, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+   
+  },
+};
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffffff',
+    },
+ 
+  },
+});
+
+const names = [
+  'Oliver Hansen',
+  'Van Henry',
+  'April Tucker',
+  'Ralph Hubbard',
+  'Omar Alexander',
+  'Carlos Abbott',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder',
+];
+
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+       
+
+  };
+}
+
 
 
 
   const useStyles = makeStyles((theme) => ({
       btnStyles: buttonStyles,
-
+      root: {
+        '&.Mui-focused': {
+          // Add your focused styles here
+          borderColor: 'white', // Change the border color when focused
+        },
+      },
       page: {
           display : "flex",
           flexDirection : 'column',
@@ -43,8 +106,10 @@ import { BeatLoader } from "react-spinners";
           alignItems: "flex-start",
         },
         head: {
-          color: "#444444",
-          fontSize: 11,
+          // color: "#444444",
+          color: "black",
+          // fontSize: 11,
+          fontSize: 13,
           fontStyle: "Regular",
           textAlign: "left",
           fontFamily: "Poppins",
@@ -56,13 +121,16 @@ import { BeatLoader } from "react-spinners";
         inpText: {
           boxSizing:"border-box",
           paddingLeft:12,
-          color: "#A7A1A1",
-          height: 32,
-          width: 309,
+          // color: "#A7A1A1",
+          color: "black",
+          // height: 32,
+          // width: 309,
+          height:40,
+          width:318,
           display: "flex",
           padding: "11 16",
           overflow: "hidden",
-          fontSize: 12,
+          fontSize: 14,
           textAlign: "left",
           alignItems: "center",
           flexShrink: 0,
@@ -75,10 +143,12 @@ import { BeatLoader } from "react-spinners";
         },
         inpTextArea: {
           boxSizing:"border-box",
-          color: "#A7A1A1",
+          // color: "#A7A1A1",
+          color: "black",
           minWidth: 289,
           minHeight:208,
-          maxHeight: 218,
+          // maxHeight: 218,
+          maxHeight: 210,
           paddingTop:10,
           paddingBottom:10,
           paddingLeft:10,
@@ -139,6 +209,19 @@ import { BeatLoader } from "react-spinners";
       },[]);
         const classes = useStyles();
         
+
+        // const theme = useTheme();
+        const [personName, setPersonName] = React.useState([]);
+
+        const handleChange = (event) => {
+          const {
+            target: { value },
+          } = event;
+          setPersonName(
+            // On autofill we get a stringified value.
+            typeof value === 'string' ? value.split(',') : value,
+          );
+        };
 
         const [values, setValues] = useState({
           name: "",
@@ -306,27 +389,84 @@ import { BeatLoader } from "react-spinners";
                   name='jobdescription'
                   type="text"
                   // placeholder="abc"
-                  rows="20"
+                  rows="18"
                   class={classes.inpTextArea}
                 >
 
                 </textarea>
               </div>
-              <div className={classes.inpContainer}  style={{marginBottom:20}}>
-                  <div className={classes.head}>Required Skills *</div>
-                  <input
+              <div className={classes.inpContainer}  style={{marginBottom:10,marginTop:40}}>
+                  <div className={classes.head} style={{marginBottom:5}}>Required Skills *</div>
+                  {/* <input
                   onChange={onChange}
                   name='skills'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
-                  />
+                  /> */}
+                            {/* <InputLabel id="demo-multiple-chip-label">Chip</InputLabel> */}
+                  <Select
+                
+                    // id="demo-multiple-chip"
+                    //  class={classes.root}
+
+                    style={{
+                      boxSizing:"border-box",
+                      paddingLeft:12,
+                      // color: "#A7A1A1",
+                      color: "black",
+                      // height: 32,
+                      // width: 309,
+                      height:40,
+                      width:318,
+                      display: "flex",
+                      padding: "11 16",
+                      overflow: "hidden",
+                      fontSize: 14,
+                      textAlign: "left",
+                      alignItems: "center",
+                      flexShrink: 0,
+                      fontWeight: 500,
+                      borderColor: "#D2CECE",
+                      borderStyle: "solid",
+                      bordeWidth: 0.791015625,
+                      borderRadius: 19.775390625,
+                      backgroundColor: "#FFFFFF",
+                      
+                    }}
+
+
+
+                    // labelId="demo-multiple-name-label"
+                    // id="demo-multiple-name"
+                    multiple
+                    value={personName}
+                    onChange={handleChange}
+                    input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                    MenuProps={MenuProps}
+                    // color="white"
+            
+                  >
+                    {names.map((name) => (
+                      <MenuItem
+                        key={name}
+                        
+                        value={name}
+                        style={getStyles(name, personName, theme)}
+                     
+                      >
+                        {name}
+                      </MenuItem>
+                    ))}
+                  </Select>
               </div>
 
               <div className={classes.rightinpContainer} 
               style={{marginTop:0}}>
                   <div className={classes.head} style={{marginBottom:0}} >Stipend *</div>
-                  <div style={{display:"flex",alignItems:"center",margin:20,marginLeft:0,marginTop:10,marginBottom:10}}>
+                  <div style={{display:"flex",alignItems:"center",margin:20,marginLeft:0,marginTop:10,marginBottom:10}}
+                  onChange={(e)=>{console.log(e.target.value);}}
+                  >
                       <input
                       name='stipend'
                       type="radio"

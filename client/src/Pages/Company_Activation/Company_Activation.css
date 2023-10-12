@@ -57,12 +57,14 @@
 
 .activation-outer-container{
   height: 60%;
-  width: 80%;
+  width: 100%;
   margin: 10%;
+  /* background-color: red; */
   /* margin: 0 5; */
   margin-top: 17%;
   /* padding: 0 5%; */
   margin-bottom: 1%;
+  margin-left: 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -72,6 +74,12 @@
   /* position: relative; */
   /* height: 80%; */
   width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
   /* margin-top: 20%; */
 }
 .activation-container {
@@ -82,7 +90,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 60px;
+  /* margin: 60px;
+  margin-left: 0; */
   /* position: absolute; */
   align-items: flex-start;
 }
@@ -106,13 +115,15 @@
   /* gap: 7.91015625px; */
   /* top: 22.939453125px; */
   /* left: -9.094947017729282e-13px; */
-  color: rgba(166, 160, 160, 1);
-  width: 290.40625px;
+  /* color: rgba(166, 160, 160, 1); */
+  /* width: 290.40625px; */
+  min-width: 340px;
   display: flex;
   padding: 11px 16px;
   overflow: hidden;
   /* position: absolute; */
-  font-size: 9.4921875px;
+  /* font-size: 9.4921875px; */
+  font-size: 14;
   text-align: left;
   align-items: center;
   flex-shrink: 0;
@@ -153,7 +164,7 @@ select option{
 }
 .company-activation-frame6 {
   gap: 7.91015625px;
-  top: 200px;
+  /* top: 200px; */
   left: 30px;
   width: 389px;
   height: 150px;

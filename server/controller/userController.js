@@ -4,6 +4,8 @@ const UserOtp = require("../models/userOtp");
 const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const dotenv = require('dotenv');
+const Activation = require("../models/activationSchema");
+const InternPosting = require("../models/internPostingSchema")
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
@@ -20,7 +22,7 @@ const transporter = nodemailer.createTransport({
 const companyRegistration = async (req, res) =>{
     try {
       console.log(req.file);
-      const logo = req.file ? req.file.filename : null;
+      // const logo = req.file ? req.file.filename : null;
       const {
         companyspocemail,
         password,
@@ -55,7 +57,7 @@ const companyRegistration = async (req, res) =>{
           companyname,
           companyspocname,
           companyspocphone,
-          logo,
+          
         });
 
         await user.save();
@@ -379,8 +381,15 @@ const companyRegistration = async (req, res) =>{
   const deleteData = async(req,res)=>{
     const email = req.body.email;
     console.log(email);
+    const userExist = await companyUser.findOne({ companyspocemail: email });
     await companyUser.deleteOne({ companyspocemail: email });
     await UserOtp.deleteOne({ email: email });
+    await Activation.deleteOne({ email: email });
+    // console.log(userExist._id.toString());
+    // const intern = await InternPosting.findOne({ userID: userExist._id.toString() });
+    // console.log(intern);
+    await InternPosting.deleteMany({ userID: userExist._id.toString() });
+
     res.send("deleted");
   }
 

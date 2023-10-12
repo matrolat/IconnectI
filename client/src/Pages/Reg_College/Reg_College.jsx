@@ -76,16 +76,19 @@ export default function
           
 
           <div class="container">
-            <div class="name">
+          <div class="name">
               <span class="text">
-                <span class="head-text">Username *</span>
+                <span class="head-text">College name *</span>
               </span>
               <input
                 type="text"
-                name='username'
+                name='collegename'
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
+                errorMessage="Pls enter college name"
+                required={true}
+                label="College name"
               />
             </div>
             <div class="name">
@@ -171,21 +174,7 @@ export default function
          
           </div>
           <div class="container">
-          <div class="name">
-              <span class="text">
-                <span class="head-text">College name *</span>
-              </span>
-              <input
-                type="text"
-                name='collegename'
-                onChange = {onChange}
-                placeholder=""
-                class="input-box"
-                errorMessage="Pls enter college name"
-                required={true}
-                label="College name"
-              />
-            </div>
+         
             <div class="name">
               <span class="text">
                 <span class="head-text">College Registration ID *</span>
@@ -233,12 +222,12 @@ export default function
           </div>
           </div>
 
-          <div class="college-registration-check">
+          {/* <div class="college-registration-check">
             <input type="checkbox" className="college-registration-rectangle3"/>
             <span class="college-registration-text18">
               <span>I agree to the terms and condition</span>
             </span>
-          </div>
+          </div> */}
 
           <button type='submit' disabled={loading} className={classes.btnStyles} onClick={postData}style={{height:80, width:389}}>
             <span ><span>

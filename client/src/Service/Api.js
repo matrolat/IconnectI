@@ -17,29 +17,27 @@ export const companyRegistration = async(values) => {
     // window.alert("Pls enter all the fields");
     return;
   }
-  const logo = values.logo;
-   const formData = new FormData();
-   formData.append('companyspocemail', companyspocemail);
-   formData.append('password', password);
-   formData.append('confirmPassword', confirmPassword);
-   formData.append('companyname', companyname);
-   formData.append('companyspocname', companyspocname);
-   formData.append('companyspocphone', companyspocphone);
-   formData.append('logo', values.logo, values.logo.name);
-    
-   console.log(formData);
-  //  return;
-   try{
-        return await axios.post(`${URL}/signup`,formData,{
-        headers: {
-            "Content-Type": "multipart/form-data"
-        }}
-      
-            )
-    }
-    catch(error){
-        console.log(" Error in signup API : "+error);
-    }
+
+   
+  try{
+    const json = JSON.stringify({
+      companyspocemail,
+      password,
+      confirmPassword,
+      companyname,
+      companyspocname,
+      companyspocphone,
+    });
+    return await axios.post(`${URL}/signup`, json, {
+      headers: {
+        // Overwrite Axios's automatically set Content-Type
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in login API : "+error);
+  }
     
     
   }
@@ -88,7 +86,7 @@ export const companyRegistration = async(values) => {
       !degreeoffered ||
       confirmPassword != password
     ) {
-      window.alert("Pls enter all the fields");
+      // window.alert("Pls enter all the fields");
       return;
     }
 
@@ -127,11 +125,38 @@ export const companyActivate = async(values,companysopcemail)=>{
     currentlocation,
     locationofwork,
     employeecount,
-    compdescription
+    compdescription,
   } = values;
 
   const email = companysopcemail;
 
+
+  const formData = new FormData();
+   formData.append('websiteinfo', websiteinfo);
+   formData.append('industrytype', industrytype);
+   formData.append('areaofwork', areaofwork);
+   formData.append('registeredoffice', registeredoffice);
+   formData.append('companyregno', companyregno);
+   formData.append('currentlocation', currentlocation);
+   formData.append('locationofwork', locationofwork);
+   formData.append('employeecount', employeecount);
+   formData.append('compdescription', compdescription);
+   formData.append('email', email);
+   formData.append('logo', values.logo, values.logo.name);
+    
+   console.log(formData);
+  //  return;
+   try{
+        return await axios.post(`${URL}/activate`,formData,{
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }}
+      
+            )
+    }
+    catch(error){
+        console.log(" Error in signup API : "+error);
+    }
 
   try{
     const json = JSON.stringify({

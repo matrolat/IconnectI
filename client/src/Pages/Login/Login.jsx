@@ -8,6 +8,8 @@ import { Link, useNavigate , useParams} from "react-router-dom";
 import { makeStyles } from '@material-ui/core'
 import { buttonStyles } from '../../Constants/Css'
 import { BeatLoader } from "react-spinners";
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
@@ -95,8 +97,10 @@ export default function Login() {
                     className="frame6-input"
                     onChange = {onChange}
                 />
-                <img src={eyeLogo} alt="eye-btn" style={{width:20, height:20, marginLeft: 360, marginTop:40, zIndex:1}}
+                {!eye ? <VisibilityIcon style={{width:20, height:20, marginLeft: 360, marginTop:43, zIndex:1,color:"rgba(120, 120, 120, 0.7)"}}
                 onClick={()=> setEye(!eye) }/> 
+                : <VisibilityOffIcon style={{width:20, height:20, marginLeft: 360, marginTop:43, zIndex:1,color:"rgba(120, 120, 120, 0.7)"}}
+                onClick={()=> setEye(!eye) }/> }
               </div>
 
             </div>

@@ -29,13 +29,13 @@ router.get("/", (req, res) => {
   });
 
 router.post('/login/',  login);
-router.post('/signup/', upload.single('logo'), companyRegistration);
+router.post('/signup/',  companyRegistration);
 router.get('/allUsers', allUsers);
 router.post('/otpVerify', otpVerify);
 router.get('/logout',logout);
 router.get('/getLoginDetails',Authenticate, mainScreen);
 router.post('/collegesignup',collegeRegistration);
-router.post('/activate',companyActivation);
+router.post('/activate', upload.single('logo'),companyActivation);
 router.post('/internPosting',internPosting);
 router.post('/getAllPosting',getAllPosting);
 router.post('/forgotPassword',forgotPassword);

@@ -44,6 +44,14 @@
     border-radius: 4px;
     background-color: var(--dl-color-gray-white);
   }
+  input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
+
+  /* input{
+    color: #000000;
+  } */
   .input {
     color: var(--dl-color-gray-black);
     cursor: auto;
@@ -210,7 +218,9 @@
     gap: 10px;
     top: 29px;
     left: 0px;
-    color: rgba(166, 160, 160, 1);
+    /* color: rgba(166, 160, 160, 1); */
+    color: black;
+    /* opacity: 70%; */
     width: 340px;
     padding: 15px 30px;
     display: flex;

@@ -14,6 +14,7 @@ import ViewPosting from "./Pages/ViewPosting/ViewPosting";
 import ActiveProfiles from "./Pages/ActiveProfiles/ActiveProfiles";
 import ResetPassword from "./Pages/Password/ResetPassword";
 import ForgotPassword from "./Pages/Password/ForgotPassword";
+import UploadStudent from "./Pages/UploadStudent/UploadStudent";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/ActiveProfiles" element={<ActiveProfiles/>} />
           <Route path="/ForgotPassword/:email" element={<ForgotPassword/>} />
           <Route path="/ResetPassword/:email" element={<ResetPassword/>} />
+          <Route path="/UploadStudent/" element={<UploadStudent/>} />
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}

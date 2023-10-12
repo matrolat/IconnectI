@@ -104,6 +104,7 @@ const companyActivation = async(req,res)=>{
 
         try {
           console.log(req.body);
+          const logo = req.file ? req.file.filename : null;
           const {
             websiteinfo,
             industrytype,
@@ -156,6 +157,7 @@ const companyActivation = async(req,res)=>{
               employeecount,
               compdescription,
               email,
+              logo
             });
             await user.save();
             // res.status(201).json({message : "Profile Updated successfully"});
