@@ -71,6 +71,7 @@ let [loading, setLoading] = useState(false);
             else if(data.message === "College"){
               window.alert("college otp verified")
               // navigate(`/collegeMainScreen/${email}`);
+              navigate(`/CollegeDashboard/${email}`);
             }
           }
 
