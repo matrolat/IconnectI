@@ -15,6 +15,7 @@ import ActiveProfiles from "./Pages/ActiveProfiles/ActiveProfiles";
 import ResetPassword from "./Pages/Password/ResetPassword";
 import ForgotPassword from "./Pages/Password/ForgotPassword";
 import UploadStudent from "./Pages/UploadStudent/UploadStudent";
+import CollegeDashboard from "./Pages/CollegeDashboard/CollegeDashboard";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
           <Route path="/ForgotPassword/:email" element={<ForgotPassword/>} />
           <Route path="/ResetPassword/:email" element={<ResetPassword/>} />
           <Route path="/UploadStudent/" element={<UploadStudent/>} />
+          <Route path="/CollegeDashboard/:email" element={<CollegeDashboard/>} />
+
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />
           <Route path="/editproducts/:id" exact={true} element={<EditProducts/>} /> */}
