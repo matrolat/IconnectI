@@ -168,9 +168,27 @@
   border-width: 0.791015625px;
   border-radius: 19.775390625px;
   background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   font-size: 15px;
-  /* background-color: green; */
 }
+.error{
+  /* background-color: green; */
+  width: 260px;
+  font-size: 15px;
+  color: red;
+  display: none;
+  text-align: left;
+  margin-left: 5%;
+}
+.input:invalid:focus + .error {
+  display: block;
+  color: red; 
+}
+
+/* input:invalid[focused = "true"] ~ span{
+  display: block;    
+} */
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;

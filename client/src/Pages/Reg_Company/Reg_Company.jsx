@@ -8,6 +8,7 @@ import { buttonStyles } from "../../Constants/Css";
 import { makeStyles } from "@material-ui/core";
 import { BeatLoader } from "react-spinners";
 import { styled } from '@mui/material/styles';
+import BackBtn from "../../Components/BackBtn/BackBtn";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +55,16 @@ export default function Reg_Company() {
 
   const postData = async()=>{
     setLoading(true);
+
+    //
+    // if (!isValidInput(values)) {
+    //   // If input is invalid, stop the registration process
+    //   window.alert("Invalid Registration");
+    //   setLoading(false); // Set loading to false
+    //   return; // Exit the function
+    // }
+
+
     const res = await companyRegistration(values);
     const data = JSON.stringify(res);
     
@@ -74,6 +85,7 @@ export default function Reg_Company() {
     <div>
       <div className="company-registration-container">
         <div className="company-registration-company-registration">
+      <BackBtn />
 
           <div className="company-registration-frame4">
             <MainLogo/>
@@ -108,6 +120,7 @@ export default function Reg_Company() {
               errorMessage = "Not a valid email"
               required = "true"
             />
+            <span className='error'>Not a valid email</span>
             </div>
             <div className="company-container">
             <span className="head">
@@ -125,23 +138,6 @@ export default function Reg_Company() {
             </div>
           
 
-            <div className="company-container">
-            {/* <span className="head">
-              <label className="head-text">Company Logo</label>
-            </span>
-            <input
-            onChange={imageUpload}
-              type="file"
-              name="logo"
-              placeholder=""
-              className="input"
-            /> */}
-             {/* <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
-             {values.logo ?  values.logo.name :" Upload file"}
-              <VisuallyHiddenInput name="logo" onChange={imageUpload} type="file" />
-            </Button> */}
-          </div>
-
             </div>
         <div className="company-inner-container">
 
@@ -158,8 +154,10 @@ export default function Reg_Company() {
               onChange = {onChange}
               errorMessage = "Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
               required= "true"
-              pattern= "`^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`"           
+              pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"           
             />
+            <span className='error'>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
+
           </div>
           <div className="company-container">
             <span className="head">
@@ -171,10 +169,11 @@ export default function Reg_Company() {
               placeholder=""
               className="input"
               onChange = {onChange}
-              errorMessage = "Passwords don't match!"
+              // errorMessage = "Passwords don't match!"
               required= "true"
-              pattern = "values.password"
+              pattern = {values.password}
             />
+            <span className='error'>Passwords don't match!</span>
           </div>
 
           </div>
@@ -194,10 +193,10 @@ export default function Reg_Company() {
               name="companyspocname"
               className="input"
               onChange = {onChange}
-              errorMessage = "Username should be of at least 3 letters and shouldn't include any special character!"
               required = "true"
-              pattern = "^[A-Za-z0-9]{3-}$"
+              pattern = "^[A-Za-z0-9]{3,}$"
             />
+            <span className='error'>Username should be of at least 3 letters and shouldn't include any special character!</span>
             </div>
 
           <div className="company-container">
@@ -205,17 +204,17 @@ export default function Reg_Company() {
               <label className="head-text">SPOC Phone Number *</label>
             </span>
             <input
-              type="number"
+              type="text"
               placeholder=""
               name="companyspocphone"
               className="input"
               onChange = {onChange}
-              errorMessage = "Phone number should be of 10 digits!"
+              // errorMessage = "Phone number should be of 10 digits!"
               required = "true"
               pattern = "^[0-9]{10}$"
             />
+            <span className='error'>Phone number should be of 10 digits!</span>
           </div>
-          
 
             </div>
         </div>
