@@ -212,7 +212,6 @@ function getStyles(name, personName, theme) {
 
         // const theme = useTheme();
         const [personName, setPersonName] = React.useState([]);
-
         const handleChange = (event) => {
           const {
             target: { value },
@@ -220,7 +219,11 @@ function getStyles(name, personName, theme) {
           setPersonName(
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
-          );
+            );
+            let temp = {...personName};
+            setValues([...values, skills:JSON.stringify(temp)])
+            console.log(temp);
+            console.log(personName);
         };
 
         const [values, setValues] = useState({
@@ -413,10 +416,7 @@ function getStyles(name, personName, theme) {
                     style={{
                       boxSizing:"border-box",
                       paddingLeft:12,
-                      // color: "#A7A1A1",
                       color: "black",
-                      // height: 32,
-                      // width: 309,
                       height:40,
                       width:318,
                       display: "flex",
@@ -444,6 +444,7 @@ function getStyles(name, personName, theme) {
                     onChange={handleChange}
                     input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
                     MenuProps={MenuProps}
+                    name='skills'
                     // color="white"
             
                   >
