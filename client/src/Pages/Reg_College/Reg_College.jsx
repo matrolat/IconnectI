@@ -38,10 +38,10 @@ export default function
   };
 
   const postData = async()=>{
-    setLoading(!loading);
+    setLoading(true);
     const res = await collegeSignup(values);
     const data = JSON.stringify(res);
-    setLoading(!loading);
+    setLoading(false);
     // console.log(data);
     if( !data || res.data.status === 422){
       window.alert("Invalid Registration");

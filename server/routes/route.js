@@ -9,6 +9,7 @@ const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, coll
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
 const { companyActivation, internPosting, getAllPosting } = require('../controller/companyController');
+const { downloadTemplate, studentUpload } = require('../controller/collegeController');
 
 
 const storage = multer.diskStorage({
@@ -40,6 +41,8 @@ router.post('/internPosting',internPosting);
 router.post('/getAllPosting',getAllPosting);
 router.post('/forgotPassword',forgotPassword);
 router.post('/resetPassword',resetPassword);
+router.get('/files/:filename', downloadTemplate);
+router.post('/studentUpload', studentUpload);
 // router.post('/getLoginDetails',);
 
 

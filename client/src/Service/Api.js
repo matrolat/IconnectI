@@ -338,13 +338,38 @@ export const forgotPWD =async(values)=>{
     const json = JSON.stringify({
       email,
     });
-    return await axios.post(`${URL}/forgotPassword`, json, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+    return await axios.post(`${URL}/forgotPassword`, json);
   }
   catch(error){
       console.log(" Error in Forget Password API : "+error);
   }
+}
+
+
+export const downloadTemplate =async()=>{
+  
+  const newTab = false;
+  window.open("http://localhost:4000/public/files/template.csv",newTab ? '' : '_self' );
+ 
+  
+}
+
+export const StudentUpload= async(items)=>{
+    try {
+      const response = await fetch(`${URL}/studentUpload`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ items }),
+      });
+      
+      if (response.status === 201) {
+        console.log('Items saved successfully');
+      } else {
+        console.error('Error saving items');
+      }
+    } catch (error) {
+      console.error('Error saving items:', error);
+    }
 }

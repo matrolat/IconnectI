@@ -2,6 +2,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require('cors');
 const bodyParser = require('body-parser')
+const fs = require('fs')
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
@@ -21,6 +22,19 @@ app.use(cookieParser());
 app.use(cors({origin:"http://localhost:3000",credentials:true}));
 // app.use(cors(corsOptions));
 // app.use(cors({credentials:true}));
+app.use((error, request, response, next) => {
+	if (request.file) {
+		fs.unlink(request.file.path, (error) => {
+			console.log(error)
+		})
+	}
+	if (response.headerSent) {
+		return next(error)
+	}
+	response.status(error.code || 500)
+	response.json({ Messages: error.message || 'An unknown error occured' })
+})
+
 
 app.use(require("./routes/route.js"));
 
