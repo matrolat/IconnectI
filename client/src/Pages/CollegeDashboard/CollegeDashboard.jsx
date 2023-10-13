@@ -152,7 +152,7 @@ export default function CollegeDashboard(){
            < MainLogo height={104} width={118}/>
            <button className={classes.btn} onClick={()=>{navigate(`/Activation/${email}`)}}>Update College Profile</button>
            <button className={classes.btn} onClick={()=>{navigate(`/ForgotPassword/${email}`)}}>Reset Password</button>
-           <button className={classes.btn} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>Upload New Profiles</button>
+           <button className={classes.btn} onClick={()=>{navigate(`/UploadStudent/${email}`)}}>Upload New Profiles</button>
            {/* <button className={classes.btn} >Update Posting</button> */}
            <button className={classes.btn} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Generate Report</button>
            <button className={classes.btn} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>Search Candidate</button>
