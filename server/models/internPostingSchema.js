@@ -12,7 +12,7 @@ const postingSchema = new mongoose.Schema({
     vacancy:Number,
     userID: String,
     uniqueID:String,
-    skills:String,
+    skills:[],
     jobdescription:String,
     postdate:String,
     

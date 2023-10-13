@@ -44,16 +44,12 @@ const theme = createTheme({
 });
 
 const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
+  'React JS',
+  'MongoDB',
+  'JAVA',
+  'C++',
+  'Node JS',
+  'Python',
 ];
 
 function getStyles(name, personName, theme) {
@@ -212,19 +208,6 @@ function getStyles(name, personName, theme) {
 
         // const theme = useTheme();
         const [personName, setPersonName] = React.useState([]);
-        const handleChange = (event) => {
-          const {
-            target: { value },
-          } = event;
-          setPersonName(
-            // On autofill we get a stringified value.
-            typeof value === 'string' ? value.split(',') : value,
-            );
-            let temp = {...personName};
-            setValues([...values, skills:JSON.stringify(temp)])
-            console.log(temp);
-            console.log(personName);
-        };
 
         const [values, setValues] = useState({
           name: "",
@@ -236,9 +219,42 @@ function getStyles(name, personName, theme) {
           locationofwork: "",
           typeofengagement: "",
           vacancy: "",
-          skills: "",
+          skills: [],
           jobdescription: "",
         });
+
+
+
+        const handleChange =async (event) => {
+          const {
+            target: { value },
+          } = event;
+
+              
+            //   setPersonName(
+            //     // On autofill we get a stringified value.
+            //     typeof value === 'string' ? value.split(',') : value,
+            //     );
+            
+          
+          
+            // setValues({
+            //   ...values,
+            //   ["skills"]: personName ,
+            // });
+            
+  const updatedPersonName = typeof value === 'string' ? value.split(',') : value;
+
+  await setPersonName(updatedPersonName);
+
+  setValues({
+    ...values,
+    ["skills"]: updatedPersonName,
+  });
+            console.log(values);
+        };
+
+     
         const postingemail = email;
         // const userID = userData._id;
         const user = getUser();
@@ -408,6 +424,7 @@ function getStyles(name, personName, theme) {
                   class={classes.inpText}
                   /> */}
                             {/* <InputLabel id="demo-multiple-chip-label">Chip</InputLabel> */}
+
                   <Select
                 
                     // id="demo-multiple-chip"
