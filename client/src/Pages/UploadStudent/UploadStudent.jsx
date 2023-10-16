@@ -87,7 +87,7 @@ const handleParse = async() => {
           await Promise.all(parsedData.map((dataRow) => {
             console.log(parsedData.length);
             console.log(parsedData);
-              setData((prevBig) => [...prevBig, {...Object.values(dataRow),3:"sameer"}]);
+              setData((prevBig) => [...prevBig, {...Object.values(dataRow),3:email}]);
             }));
             console.log(data);
 

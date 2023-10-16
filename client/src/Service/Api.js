@@ -215,6 +215,25 @@ export const GetLoginDetails =async()=>{
       console.log(" Error in get login details API : "+error);
   }
 }
+export const GetCollegeLoginDetails =async()=>{
+  
+  try{
+    // return await axios.get(`${URL}/getLoginDetails`, { withCredentials: true });
+    const res = await fetch(`${URL}/getCollegeLoginDetails`,{
+      method: 'GET',
+      headers:{
+        Accept: "application/json",
+        "Content-Type" : "application/json"
+      },
+      credentials: "include"
+    });
+     return await res.json();
+    // console.log(data);
+  }
+  catch(error){
+      console.log(" Error in get login details API : "+error);
+  }
+}
 
 
 
@@ -292,6 +311,40 @@ export const getAllPosting = async(userID)=>{
 
 }
 
+
+export const getActivePostings= async(userID)=>{
+  
+
+  try{
+    
+    return await axios.get(`${URL}/getActivePostings/${userID}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in get all postings API : "+error);
+  }
+
+}
+
+export const getEarlierPostings= async(userID)=>{
+  
+
+  try{
+    
+    return await axios.get(`${URL}/getEarlierPostings/${userID}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in get all postings API : "+error);
+  }
+
+}
 
 export const ResetPWD =async(values, email)=>{
   const { password, confirmPassword } = values;
@@ -372,4 +425,59 @@ export const StudentUpload= async(items)=>{
     } catch (error) {
       console.error('Error saving items:', error);
     }
+}
+
+export const filterStudents= async(userID)=>{
+    try {
+      return await fetch(`${URL}/filterStudents`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userID }),
+      });
+      
+     
+    } catch (error) {
+      console.error('Error saving items:', error);
+    }
+}
+
+
+
+export const getAllStudents =async(email)=>{
+  
+  try{
+    // return await axios.get(`${URL}/getLoginDetails`, { withCredentials: true });
+    const res = await fetch(`${URL}/getAllStudents/${email}`,{
+      method: 'GET',
+      headers:{
+        Accept: "application/json",
+        "Content-Type" : "application/json"
+      },
+    });
+     return await res.json();
+    // console.log(data);
+  }
+  catch(error){
+      console.log(" Error in get students API : "+error);
+  }
+}
+export const getActivationDetails =async(email)=>{
+  
+  try{
+    // return await axios.get(`${URL}/getLoginDetails`, { withCredentials: true });
+    const res = await fetch(`${URL}/getActivationDetails/${email}`,{
+      method: 'GET',
+      headers:{
+        Accept: "application/json",
+        "Content-Type" : "application/json"
+      },
+    });
+     return await res.json();
+    // console.log(data);
+  }
+  catch(error){
+      console.log(" Error in get students API : "+error);
+  }
 }

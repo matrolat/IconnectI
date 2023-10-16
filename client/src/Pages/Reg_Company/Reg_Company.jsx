@@ -32,6 +32,7 @@ const VisuallyHiddenInput = styled('input')({
 export default function Reg_Company() {
   const classes = useStyles();
   let [loading, setLoading] = useState(false);
+  let [valid, setValid] = useState(false);
   const navigate = useNavigate();
   const [values , setValues] = useState({
     username : "",
@@ -46,6 +47,13 @@ export default function Reg_Company() {
 
   const onChange =  (e) =>{
     setValues ({...values , [e.target.name]: e.target.value});
+    const input = e.target;
+    if (!input.checkValidity()) {
+      setValid(false);
+    } else {
+      setValid(true);
+      console.log("valid");
+    }
   };
 
   const imageUpload = (e) =>{
@@ -54,7 +62,15 @@ export default function Reg_Company() {
   }
 
   const postData = async()=>{
+    if(!valid)
+    {
+      window.alert("Pls Enter Valid Details");
+      return;
+    }
+    
     setLoading(true);
+
+
 
     //
     // if (!isValidInput(values)) {
@@ -91,7 +107,7 @@ export default function Reg_Company() {
             <MainLogo/>
             <div className="company-registration-frame7">
               <span className="company-registration-text">
-                <span>Register your account.</span>
+                <span>Register your account.{valid?"true":"false"}</span>
               </span>
               <span className="company-registration-text02">
                 <span className="company-registration-text03">
@@ -221,7 +237,7 @@ export default function Reg_Company() {
 
         <div className="company-registration-check" >
             
-          <button className={classes.btnStyles} disabled={loading} onClick={postData} style={{height:80, width:389,margin:30}}>
+          <button className={classes.btnStyles} id="click-btn" disabled={loading} onClick={postData} style={{height:80, width:389,margin:30}}>
             <span ><span>
             { loading?  
                  <BeatLoader 

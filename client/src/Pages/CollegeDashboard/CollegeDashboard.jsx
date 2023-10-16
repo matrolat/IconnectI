@@ -2,8 +2,9 @@ import React,{useEffect,useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate , useParams} from "react-router-dom";
-import { GetLoginDetails, logout } from '../../Service/Api';
+import { GetCollegeLoginDetails, GetLoginDetails, getAllStudents, logout } from '../../Service/Api';
 import { setUserSession,getToken, getUser } from '../../utils/session';
+import StudentTable from '../../Components/Table/StudentTable';
 
 const useStyles = makeStyles((theme)=>({
     outer:{
@@ -83,16 +84,18 @@ export default function CollegeDashboard(){
     const [activate,setActivate] = useState(false);
     const [imageURL,setImageURL] = useState("");
     const [userInfo,setUserInfo] = useState("");
+    const [data,setData] = useState([]);
 
     useEffect(()=>{
-		// getData();
+		getData();
         // checkActivation();
+        getStudents();
 	  },[]);
 
     const getData =async()=>{
-        const data = await GetLoginDetails();
+        const data = await GetCollegeLoginDetails();
         console.log(data);
-        if(data && data.companyspocemail === email){
+        if(data && data.collegespocemail === email){
             if( data.loggedin === 'YES' && data.count === 1){
               try {
                   const response = await fetch('/logout', {
@@ -112,7 +115,7 @@ export default function CollegeDashboard(){
             else if (data && data.deactivate === 'YES'){
                 const token = `${document.cookie}`;
                 setUserSession(token,data);
-                navigate(`/dashboard/${data.companyspocemail}`);
+                navigate(`/CollegeDashboard/${data.collegespocemail}`);
             }
             else{
                 const token = `${document.cookie}`;
@@ -123,9 +126,15 @@ export default function CollegeDashboard(){
             navigate('/');
           }
 
-        //   await checkActivation();
-          
-    }
+        }
+
+
+
+        const getStudents=async()=>{
+          const res = await getAllStudents(email);
+          console.log(res);
+          setData(res);
+        }
 
 
     // const checkActivation=async()=>{
@@ -197,8 +206,10 @@ export default function CollegeDashboard(){
                     <h5>Other details</h5>
                 </div>
             </div> */}
-            
+            <div style={{margin:60}}>
 
+            { data? <StudentTable data={data} /> : null}
+            </div>
         </div></div>
     </div>
   )

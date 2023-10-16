@@ -5,6 +5,9 @@ import { inputStyles,buttonStyles } from '../../Constants/Css'
 import StickyHeadTable from '../../Components/Table/StickyHeadTable';
 import { checkLogin } from '../../utils/checkLogin';
 import { useNavigate , useParams} from "react-router-dom";
+import { filterStudents } from '../../Service/Api';
+import { getUser } from '../../utils/session';
+import StudentTable from '../../Components/Table/StudentTable';
 const useStyles = makeStyles((theme) => ({
 
   inp: inputStyles,
@@ -39,13 +42,26 @@ export default function SearchCandidates() {
   const navigate = useNavigate();
   const {email} = useParams();
 
+  const [data,setData] = useState();
+
   useEffect(()=>{
+    getData();
     const res = checkLogin(email);
     if(!res){
       navigate('/');
     }
     },[]);
   
+    const getData=async()=>{
+      const val =getUser();
+      // console.log(val);
+      const res = await filterStudents(val._id);
+      // const datal = JSON.stringify(res.data);
+       const dat =await res.json();
+       console.log(dat[0]);
+      setData(dat);
+    }
+
 
   return (
     <div>
@@ -74,7 +90,8 @@ export default function SearchCandidates() {
         </div>
           <div className={classes.right}>
             {/* Candidates: */}
-            <StickyHeadTable />
+            { data? <StudentTable data={data} /> : null}
+            {/* <StickyHeadTable /> */}
           </div>
       </div>
     </div>

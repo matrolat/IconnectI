@@ -184,6 +184,10 @@
   display: block;
   color: red; 
 }
+.input:invalid:focus + #click-btn {
+  background-color: red;
+  
+}
 
 /* input:invalid[focused = "true"] ~ span{
   display: block;    

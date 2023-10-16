@@ -1,24 +1,24 @@
 import React,{useEffect,useState} from 'react'
 import Header from '../../Components/Header/Header'
 import StickyHeadTable from '../../Components/Table/StickyHeadTable'
-import { getAllPosting, getEarlierPostings } from '../../Service/Api';
+import { getActivePostings, getAllPosting } from '../../Service/Api';
 import CustomTable from '../../Components/Table/CustomTable';
 import { checkLogin } from '../../utils/checkLogin';
 
 import { useNavigate , useParams} from "react-router-dom";
 import { getUser } from '../../utils/session';
 
-export default function ViewPosting() {
+export default function ViewActivePostings() {
   const navigate = useNavigate();
   const {email} = useParams();
 
   useEffect(()=>{
 		getData();
         
-    const res = checkLogin(email);
-      if(!res){
-        navigate('/');
-      }
+    // const res = checkLogin(email);
+    //   if(!res){
+    //     navigate('/');
+    //   }
 
 	  },[]);
 
@@ -26,9 +26,10 @@ export default function ViewPosting() {
 
     const getData=async()=>{
       const val =getUser();
-      const res = await getEarlierPostings(val._id);
+    //   console.log(val._id);
+      const res = await getActivePostings(val._id);
       // const datal = JSON.stringify(res.data);
-      console.log(res.data);
+      await console.log(res.data);
       setData(res.data);
     }
 
@@ -36,7 +37,7 @@ export default function ViewPosting() {
 
   return (
     <div>
-        <Header title="View Earlier Posting" />
+        <Header title="View Active Posting" />
         <div style={{height:"auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginTop:50}}>
         <div>
        

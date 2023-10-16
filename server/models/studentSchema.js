@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const studentSchema = new mongoose.Schema({
   name:String,
   cgpa:Number,
-  skills:String,
+  skills:[],
   uploadedBy:String,
   
 });
