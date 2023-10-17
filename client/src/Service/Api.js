@@ -328,6 +328,22 @@ export const getActivePostings= async(userID)=>{
   }
 
 }
+export const getActiveStudents= async(userID)=>{
+  
+
+  try{
+    
+    return await axios.get(`${URL}/getActiveStudents/${userID}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in get all postings API : "+error);
+  }
+
+}
 
 export const getEarlierPostings= async(userID)=>{
   
@@ -480,4 +496,28 @@ export const getActivationDetails =async(email)=>{
   catch(error){
       console.log(" Error in get students API : "+error);
   }
+}
+
+
+export const updateStudentInternship = async(uniqueID, studentID)=>{
+
+  try{
+    const json = JSON.stringify({
+        uniqueID,
+        studentID
+       
+    });
+    return await axios.post(`${URL}/updateStudentInternship`, json, {
+      headers: {
+        // Overwrite Axios's automatically set Content-Type
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in update student internship API : "+error);
+  }
+
+
+
 }

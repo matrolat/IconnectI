@@ -6,6 +6,7 @@ const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const dotenv = require('dotenv');
 const Posting = require("../models/internPostingSchema")
+const Student = require("../models/studentSchema")
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
@@ -197,6 +198,7 @@ const getAllPosting=async(req,res)=>{
   }
 }
 
+
 const getActivationDetails=async(req,res)=>{
   try {
     const email = req.params.email;
@@ -247,6 +249,55 @@ const getEarlierPostings=async(req,res)=>{
   }
 }
 
+const updateStudentInternship=async(req,res)=>{
+  try {
+    const { uniqueID,studentID } = req.body;
+  
+
+
+    const updatedStudent = await Student.findByIdAndUpdate(
+      studentID,
+      { $push: { InternshipID: uniqueID } }, // Add uniqueID to the InternshipID array
+      { new: true } // Return the updated document
+    );
+
+    if (!updatedStudent) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+
+    return res.status(200).json(updatedStudent);
+
+
+
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const getActiveStudents =async(req,res)=>{
+  try {
+    const companyUserID  = req.params.id;
+
+    const companyPostings = await Posting.find({ userID: companyUserID });
+
+    if (companyPostings.length === 0) {
+      return res.status(404).json({ message: 'No internships found for the provided company userID' });
+    }
+    const uniqueIDs = companyPostings.map(posting => posting.uniqueID);
+
+    const students = await Student.find({ InternshipID: { $in: uniqueIDs } });
+
+    if (students.length === 0) {
+      return res.status(404).json({ message: 'No students found for the provided company userID' });
+    }
+
+    return res.status(200).json(students);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal server error' });
+  }
+}
 
 
   module.exports = {
@@ -255,7 +306,9 @@ const getEarlierPostings=async(req,res)=>{
     getAllPosting,
     getActivationDetails,
     getActivePostings,
-    getEarlierPostings
+    getEarlierPostings,
+    updateStudentInternship,
+    getActiveStudents
   };
 
 

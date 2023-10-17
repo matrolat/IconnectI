@@ -2,8 +2,9 @@ import React,{useEffect,useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate , useParams} from "react-router-dom";
-import { GetLoginDetails, getActivationDetails, logout } from '../../Service/Api';
+import { GetLoginDetails, getActivationDetails, getActivePostings, logout } from '../../Service/Api';
 import { setUserSession,getToken, getUser } from '../../utils/session';
+import CustomTable from '../../Components/Table/CustomTable';
 
 const useStyles = makeStyles((theme)=>({
     outer:{
@@ -45,7 +46,8 @@ const useStyles = makeStyles((theme)=>({
 
      row:{
         display:"flex",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
+        marginBottom:30
      },
      rowBox:{
         height:112,
@@ -66,8 +68,8 @@ const useStyles = makeStyles((theme)=>({
         display:"flex",
         justifyContent:"center",
         alignItems:"center",
-        marginTop:70,
-        marginBottom:70
+        marginTop:20,
+        marginBottom:40
      },
      comp_details:{
         marginLeft:40,
@@ -86,9 +88,22 @@ export default function Company_Dashboard(){
 
     useEffect(()=>{
 		getData();
+        getTableData();
         checkActivation();
         getActivationData();
 	  },[]);
+
+
+    const [tableData,setTableData] = useState();
+
+    const getTableData=async()=>{
+      const val =getUser();
+    //   console.log(val._id);
+      const res = await getActivePostings(val._id);
+      // const datal = JSON.stringify(res.data);
+      await console.log(res.data);
+      setTableData(res.data);
+    }
 
     const getData =async()=>{
         const data = await GetLoginDetails();
@@ -169,7 +184,7 @@ export default function Company_Dashboard(){
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
            {/* <button className={classes.btn} disabled={!activate} >Update Posting</button> */}
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
-           <button className={classes.btn} disabled={!activate}>View Active Postings</button>
+           <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewActivePostings/${email}`)}}>View Active Interns</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View Earlier Postings</button>
            <button className={classes.btn} onClick={handleLogout} >Logout</button>
         </div>
@@ -210,7 +225,10 @@ export default function Company_Dashboard(){
                         <p>11</p>
                     </span>
                 </div>
+
             </div>
+                
+            { tableData? <CustomTable data={tableData} /> : null}
 
         </div></div>
     </div>

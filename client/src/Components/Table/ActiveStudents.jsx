@@ -13,6 +13,13 @@ const columns = [
   // { id: 'name', label: 'Posting ID', minWidth: 120 },
   { id: 'code', label: 'Name', minWidth: 150 },
   {
+    id: 'size',
+    label: 'Name',
+    minWidth: 200,
+    align: 'left',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
     id: 'population',
     label: 'Cgpa',
     minWidth: 60,
@@ -20,15 +27,8 @@ const columns = [
     // format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'size',
-    label: 'Skills',
-    minWidth: 200,
-    align: 'right',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
-  {
     id: 'btn',
-    label: 'Shortlist/Reject',
+    label: 'Skills',
     minWidth: 200,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
@@ -59,7 +59,7 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-export default function StudentTable({data,postData}) {
+export default function ActiveStudents({data,postData}) {
   
 
   useEffect(()=>{
@@ -110,17 +110,18 @@ export default function StudentTable({data,postData}) {
             data.map((row)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
                 <TableCell>
+                         {row.InternshipID}
+                </TableCell>
+                <TableCell align={"left"}>
                          {row.name}
                 </TableCell>
                 <TableCell align='center'>
                          {row.cgpa}
                 </TableCell>
                 <TableCell align={"right"}>
-                         {row.skills}
-                </TableCell>
-                <TableCell align={"right"}>
-                         {/* {row._id} */}
-                         <Button color='primary' variant="outlined" onClick={()=>{ postData(row);}}>Accept</Button>
+                        
+                         {row.skills.toString()}
+                        
                 </TableCell>
 
                

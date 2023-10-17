@@ -5,9 +5,48 @@ import { inputStyles,buttonStyles } from '../../Constants/Css'
 import StickyHeadTable from '../../Components/Table/StickyHeadTable';
 import { checkLogin } from '../../utils/checkLogin';
 import { useNavigate , useParams} from "react-router-dom";
-import { filterStudents } from '../../Service/Api';
+import { filterStudents, getActivePostings, getAllPosting, updateStudentInternship } from '../../Service/Api';
 import { getUser } from '../../utils/session';
 import StudentTable from '../../Components/Table/StudentTable';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+       
+
+  };
+}
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffffff',
+    },
+ 
+  },
+});
+
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+   
+
+  },
+};
 const useStyles = makeStyles((theme) => ({
 
   inp: inputStyles,
@@ -15,22 +54,26 @@ const useStyles = makeStyles((theme) => ({
   mid:{
     display:"flex",
     justifyContent:"center",
-    alignItems:"center"
+    alignItems:"center",
   },
   left:{
     minHeight:425,
     minWidth:370,
     background:"#28CB8B",
     borderRadius:62,
+
   
 
 
   },
   right:{
-    backgroundColor:"red",
-    maxWidth:"60%",
+   
+    minWidth:"60%",
     marginLeft:30,
-    marginBottom:30
+    marginBottom:30,
+    height:"50vh",
+    // backgroundColor:"red"
+   
   }
 
 }));
@@ -43,6 +86,8 @@ export default function SearchCandidates() {
   const {email} = useParams();
 
   const [data,setData] = useState();
+  const [dropdown,setDropdown] = useState();
+  const [uniqueID,setuniqueID] = useState();
 
   useEffect(()=>{
     getData();
@@ -58,10 +103,42 @@ export default function SearchCandidates() {
       const res = await filterStudents(val._id);
       // const datal = JSON.stringify(res.data);
        const dat =await res.json();
-       console.log(dat[0]);
-      setData(dat);
+       setData(dat);
+       
+       const resp = await getActivePostings(val._id);
+      //  const info = await resp.json();
+      // await console.log(JSON.stringify(resp.data));
+      await setDropdown(resp.data);
+
     }
 
+
+    const handleChange =(e)=>{
+      setuniqueID(e.target.value);
+    }
+
+    const postData = async(data)=>{
+      if(!uniqueID)
+      {
+        alert("pls select the internship ID");
+        return;
+      }
+      
+      // setLoading(true);
+      const res = await updateStudentInternship( uniqueID, data._id);
+      const dat = JSON.stringify(res);
+      // setLoading(false);
+      // console.log(data);
+      if(!dat || res.data.status === 422 ){
+        window.alert("Invalid Registration");
+        console.log("Invalid Registration");
+       }else{
+        window.alert("Internship Posting Successful");
+        console.log("Internship Posting Successful");
+        // navigate('/dashboard/'+email);
+       }
+       getData();
+    }
 
   return (
     <div>
@@ -70,14 +147,65 @@ export default function SearchCandidates() {
 
       <div style={{display:"flex",justifyContent:"center",alignItems:"center",margin:30}}>
         <label>Internship Post Id</label>
-        <input
+        {/* <input
           type="text"
           placeholder="Enter"
           class={classes.inp}
           style={{ height: 40,
             width: 470, marginLeft:40 ,marginRight:40,paddingLeft:30 }}
-        />
-        <button className={classes.btn}>Search</button>
+        /> */}
+         <Select
+                style={{
+                  boxSizing:"border-box",
+                  paddingLeft:12,
+                  color: "black",
+                  height:40,
+                  width:318,
+                  display: "flex",
+                  padding: "11 16",
+                  overflow: "hidden",
+                  fontSize: 14,
+                  textAlign: "left",
+                  alignItems: "center",
+                  flexShrink: 0,
+                  fontWeight: 500,
+                  borderColor: "#D2CECE",
+                  borderStyle: "solid",
+                  bordeWidth: 0.791015625,
+                  borderRadius: 19.775390625,
+                  backgroundColor: "#FFFFFF",
+                  height: 40,
+            width: 470, marginLeft:40 ,marginRight:40,paddingLeft:30 
+                }}
+
+                // value={values.typeofengagement}
+                onChange={handleChange}
+                  name='typeofengagement'
+                input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                MenuProps={MenuProps}
+                >
+                
+               
+                  
+                  {dropdown &&
+                    dropdown.map((item)=>{
+                      return <MenuItem
+                      key="3"
+                      value={item.uniqueID}
+                      style={getStyles("name", "personName", theme)}
+                   
+                    >
+                     {item.uniqueID}
+                    </MenuItem>
+                    })
+
+                      
+                  }
+
+                  
+              
+              </Select>
+        {/* <button className={classes.btn}>Search</button> */}
       </div>
 
       <div className={classes.mid}>
@@ -88,9 +216,9 @@ export default function SearchCandidates() {
             <h2 style={{color:"white",textDecoration:"underline",textDecorationColor:"#90EE90"}}>Other Best Fit Candidates</h2>
           </div>
         </div>
-          <div className={classes.right}>
+          <div className={classes.right} >
             {/* Candidates: */}
-            { data? <StudentTable data={data} /> : null}
+            { data? <StudentTable data={data} postData={postData} /> : null}
             {/* <StickyHeadTable /> */}
           </div>
       </div>

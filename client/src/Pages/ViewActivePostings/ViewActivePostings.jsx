@@ -1,12 +1,13 @@
 import React,{useEffect,useState} from 'react'
 import Header from '../../Components/Header/Header'
 import StickyHeadTable from '../../Components/Table/StickyHeadTable'
-import { getActivePostings, getAllPosting } from '../../Service/Api';
+import { getActivePostings, getActiveStudents, getAllPosting } from '../../Service/Api';
 import CustomTable from '../../Components/Table/CustomTable';
 import { checkLogin } from '../../utils/checkLogin';
 
 import { useNavigate , useParams} from "react-router-dom";
 import { getUser } from '../../utils/session';
+import ActiveStudents from '../../Components/Table/ActiveStudents';
 
 export default function ViewActivePostings() {
   const navigate = useNavigate();
@@ -27,7 +28,8 @@ export default function ViewActivePostings() {
     const getData=async()=>{
       const val =getUser();
     //   console.log(val._id);
-      const res = await getActivePostings(val._id);
+      // const res = await getActivePostings(val._id);
+      const res = await getActiveStudents(val._id);
       // const datal = JSON.stringify(res.data);
       await console.log(res.data);
       setData(res.data);
@@ -37,11 +39,11 @@ export default function ViewActivePostings() {
 
   return (
     <div>
-        <Header title="View Active Posting" />
+        <Header title="View Active Interns" />
         <div style={{height:"auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginTop:50}}>
         <div>
        
-      { data? <CustomTable data={data} /> : null}
+      { data? <ActiveStudents data={data} /> : null}
         </div>
         </div>
     </div>

@@ -10,7 +10,7 @@ const {getPosting}=require("../controller/adminController");
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
 const CollegeAuthenticate = require('../middleware/collegeAuthenticate')
-const { companyActivation, internPosting, getAllPosting, getActivationDetails, getActivePostings, getEarlierPostings } = require('../controller/companyController');
+const { companyActivation, internPosting, getAllPosting, getActivationDetails, getActivePostings, getEarlierPostings, updateStudentInternship, getActiveStudents } = require('../controller/companyController');
 const { downloadTemplate, studentUpload, filterStudents, getAllStudents } = require('../controller/collegeController');
 
 
@@ -51,6 +51,8 @@ router.post('/filterStudents', filterStudents);
 router.get('/getAllStudents/:email',getAllStudents);
 router.get('/getActivePostings/:id',getActivePostings);
 router.get('/getEarlierPostings/:id',getEarlierPostings);
+router.post('/updateStudentInternship',updateStudentInternship);
+router.get('/getActiveStudents/:id',getActiveStudents)
 // router.post('/getLoginDetails',);
 
 

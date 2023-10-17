@@ -159,14 +159,14 @@ export default function CollegeDashboard(){
     <div className={classes.outer}>
         <div className={classes.left}>
            < MainLogo height={104} width={118}/>
-           <button className={classes.btn} onClick={()=>{navigate(`/Activation/${email}`)}}>Update College Profile</button>
+           {/* <button className={classes.btn} onClick={()=>{navigate(`/Activation/${email}`)}}>Update College Profile</button> */}
            <button className={classes.btn} onClick={()=>{navigate(`/ForgotPassword/${email}`)}}>Reset Password</button>
            <button className={classes.btn} onClick={()=>{navigate(`/UploadStudent/${email}`)}}>Upload New Profiles</button>
            {/* <button className={classes.btn} >Update Posting</button> */}
-           <button className={classes.btn} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Generate Report</button>
+           {/* <button className={classes.btn} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Generate Report</button>
            <button className={classes.btn} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>Search Candidate</button>
            <button className={classes.btn}>View active Working Profiles</button>
-           <button className={classes.btn} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View New Postings</button>
+           <button className={classes.btn} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View New Postings</button> */}
            <button className={classes.btn} onClick={handleLogout} >Logout</button>
         </div>
         <div className={classes.right}><div style={{paddingLeft:100,paddingRight:100,paddingTop:50,display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>

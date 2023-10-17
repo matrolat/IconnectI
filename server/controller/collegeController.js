@@ -78,7 +78,10 @@ const transporter = nodemailer.createTransport({
             resultArray = appendArraysAndRemoveDuplicates(resultArray, skills);
             
             }
-        const filteredDocuments = await Student.find({ skills: { $in: resultArray } });
+            const filteredDocuments = await Student.find({
+              skills: { $in: resultArray },
+              InternshipID: { $size: 0 } // Added condition for an empty InternshipID array
+            });
     
         res.json(filteredDocuments);
       } catch (err) {
