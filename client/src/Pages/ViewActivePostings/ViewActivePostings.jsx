@@ -31,8 +31,12 @@ export default function ViewActivePostings() {
       // const res = await getActivePostings(val._id);
       const res = await getActiveStudents(val._id);
       // const datal = JSON.stringify(res.data);
-      await console.log(res.data);
-      setData(res.data);
+      // await console.log(res.data);
+      if(res)
+      {
+
+        setData(res.data);
+      }
     }
 
 
@@ -43,7 +47,7 @@ export default function ViewActivePostings() {
         <div style={{height:"auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginTop:50}}>
         <div>
        
-      { data? <ActiveStudents data={data} /> : null}
+      { data!=undefined? <ActiveStudents data={data} /> : "No data"}
         </div>
         </div>
     </div>

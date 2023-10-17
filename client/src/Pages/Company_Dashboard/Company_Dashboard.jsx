@@ -100,7 +100,7 @@ export default function Company_Dashboard(){
     const [tableData,setTableData] = useState();
 
     const getTableData=async()=>{
-      const val =getUser();
+      const val =await getUser();
     //   console.log(val._id);
       const res = await getActivePostings(val._id);
       // const datal = JSON.stringify(res.data);
@@ -197,10 +197,13 @@ export default function Company_Dashboard(){
             <h1>Company Dashboard</h1>
             <div className={classes.details}>
                 {/* <MainLogo height={180}  /> */}
-                <img src={imageURL} alt="Logo" className="logo-image" height={150} />
+               {
+                imageURL!="" ?
+               <img src={imageURL} alt="Logo" className="logo-image" height={150} /> : null
+               } 
 
                 <div className={classes.comp_details}>
-                    <span style={{fontSize:36}}>{userInfo.companyname}  </span>
+                    <span style={{fontSize:36}}>{userInfo && userInfo.companyname}  </span>
                     <h5>Company Activated : {activate?"true":"false"}</h5>
                     <h5>Other details</h5>
                 </div>

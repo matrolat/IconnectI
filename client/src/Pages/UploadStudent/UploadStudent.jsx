@@ -9,6 +9,14 @@ import { StudentUpload, downloadTemplate } from '../../Service/Api';
 import { BeatLoader } from 'react-spinners';
 import Papa from "papaparse";
 import { useNavigate , useParams} from "react-router-dom";
+import { Table } from '@material-ui/core';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+// import { useNavigate , useParams} from "react-router-dom";
 
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
@@ -55,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
 export default function UploadStudent() {
 const classes = useStyles();
 const {email} = useParams();
+const navigate = useNavigate();
 // const email = "sameer";
 
 const [data, setData] = useState([]);
@@ -104,16 +113,17 @@ const postData =async()=>{
   const res = StudentUpload(data);
   const dat = JSON.stringify(res);
   
-  // console.log(data);
-  // if(!dat || res.data.status === 422 ){
-  //   //  setLoading(!loading);
-  //   window.alert("Invalid Registration");
-  //   console.log("Invalid Registration");
-  // }else{
-  //   window.alert("Registration Successful");
-  //   console.log("Registration Successful");
-  //   // navigate('/');
-  // }
+  console.log(dat);
+  if(!dat  ){
+    //  setLoading(!loading);
+    window.alert("Invalid Upload");
+    console.log("Invalid Upload");
+  }else{
+    window.alert("Upload Successful");
+    console.log("Upload Successful");
+    navigate(`/CollegeDashboard/${data.collegespocemail}`);
+    // navigate('/');
+  }
   setLoading(false);
 }
 
@@ -126,31 +136,67 @@ const postData =async()=>{
         <div className={classes.outer}> 
             <div className={classes.left}>
                 <div style={{margin:40}}>
-                    
-
-                    {!data ? "template preview" : data.map((item)=>{
-                        return <div>{item[0]  } { item[1]} {item[2] } {item[3]}</div>
-                    } )}
-                </div>
                 <button disabled={loading} onClick={handleDownload} className={classes.btnStyles}> { loading?  
                  <BeatLoader 
                 //  color="#36d7b7"
-                 color="white"
-                 loading={loading}
-                 // cssOverride={override}
-                 size={10}
-                 aria-label="Loading Spinner"
-                 data-testid="loader"
-                 />
-                 : "Download Sample Template"
+                color="white"
+                loading={loading}
+                // cssOverride={override}
+                size={10}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+                />
+                : "Download Sample Template"
                 
-                }</button>
+              }</button>
+
+              </div>
+
+{
+  data!="" && <TableContainer component={Paper}>
+  <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableHead>
+      <TableRow>
+        <TableCell align="right">Name</TableCell>
+        <TableCell align="right">CGPA</TableCell>
+        <TableCell align="right">Skills</TableCell>
+        <TableCell align="right">Email</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+{!data ? "template preview" : data.map((item)=>{
+  return <TableRow
+          
+          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+        >
+          
+          <TableCell align="right">{item[0]}</TableCell>
+          <TableCell align="right">{item[1]}</TableCell>
+          <TableCell align="right">{item[2]}</TableCell>
+          <TableCell align="right">{item[3]}</TableCell>
+        </TableRow>
+ 
+} )}
+    </TableBody>
+  </Table>
+</TableContainer>
+}
+
+                    
+
+
+
+
+
+
+
+                
             </div>
             <div className={classes.right}>
 
             <div style={{display:"flex",flexDirection:"column",alignItems:"center",width:"70%"}}>
 
-            <div className="company-container" style={{marginTop:30,marginBottom:30}}>
+            {/* <div className="company-container" style={{marginTop:30,marginBottom:30}}>
             <span className="head">
               <label className="head-text">Company name*</label>
             </span>
@@ -164,7 +210,7 @@ const postData =async()=>{
                 errorMessage = ""
                 required = "true"
                 />
-            </div>
+            </div> */}
 
 
             <div className="company-container" style={{marginTop:30,marginBottom:30}}>

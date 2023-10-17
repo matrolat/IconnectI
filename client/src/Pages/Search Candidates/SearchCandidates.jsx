@@ -133,8 +133,8 @@ export default function SearchCandidates() {
         window.alert("Invalid Registration");
         console.log("Invalid Registration");
        }else{
-        window.alert("Internship Posting Successful");
-        console.log("Internship Posting Successful");
+        window.alert("Intern has been accepted");
+        console.log("Intern has been accepted");
         // navigate('/dashboard/'+email);
        }
        getData();

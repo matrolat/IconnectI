@@ -4,7 +4,7 @@ import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate , useParams} from "react-router-dom";
 import { GetCollegeLoginDetails, GetLoginDetails, getAllStudents, logout } from '../../Service/Api';
 import { setUserSession,getToken, getUser } from '../../utils/session';
-import StudentTable from '../../Components/Table/StudentTable';
+import CollegeStudentTable from '../../Components/Table/CollegeStudentTable';
 
 const useStyles = makeStyles((theme)=>({
     outer:{
@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme)=>({
     },
     right:{
         width:"70%",
+        height:"100vh",
+        overflow:"scroll",
+        overflowX:"hidden"
         // backgroundColor:"yellow",
     },
     btn:{
@@ -208,7 +211,7 @@ export default function CollegeDashboard(){
             </div> */}
             <div style={{margin:60}}>
 
-            { data? <StudentTable data={data} /> : null}
+            { data? <CollegeStudentTable data={data} /> : null}
             </div>
         </div></div>
     </div>
