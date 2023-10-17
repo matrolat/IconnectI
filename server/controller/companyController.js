@@ -197,10 +197,65 @@ const getAllPosting=async(req,res)=>{
   }
 }
 
+const getActivationDetails=async(req,res)=>{
+  try {
+    const email = req.params.email;
+    console.log("email"+email);
+
+    const data = await Activation.find({ email: email });
+    console.log("data"+data);
+    res.json(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const getActivePostings=async(req,res)=>{
+  try {
+    const id= req.params.id;
+    console.log(id);
+    const currentDate = new Date();
+    const documents = await Posting.find({ userID: id }).exec();
+
+    // Filter documents with end dates greater than today
+    const filteredDocuments = documents.filter((doc) => {
+      const endDate = new Date(doc.enddate);
+      return endDate > currentDate;
+    });
+
+    res.json(filteredDocuments);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+const getEarlierPostings=async(req,res)=>{
+  try {
+    const id= req.params.id;
+    console.log(id);
+    const currentDate = new Date();
+    const documents = await Posting.find({ userID: id }).exec();
+
+    // Filter documents with end dates greater than today
+    const filteredDocuments = documents.filter((doc) => {
+      const endDate = new Date(doc.enddate);
+      return endDate < currentDate;
+    });
+
+    res.json(filteredDocuments);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
+
+
   module.exports = {
     companyActivation,
     internPosting,
     getAllPosting,
+    getActivationDetails,
+    getActivePostings,
+    getEarlierPostings
   };
 
 

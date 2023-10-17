@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate , useParams} from "react-router-dom";
-import { GetLoginDetails, logout } from '../../Service/Api';
+import { GetLoginDetails, getActivationDetails, logout } from '../../Service/Api';
 import { setUserSession,getToken, getUser } from '../../utils/session';
 
 const useStyles = makeStyles((theme)=>({
@@ -86,7 +86,8 @@ export default function Company_Dashboard(){
 
     useEffect(()=>{
 		getData();
-        // checkActivation();
+        checkActivation();
+        getActivationData();
 	  },[]);
 
     const getData =async()=>{
@@ -136,9 +137,22 @@ export default function Company_Dashboard(){
         {
             setActivate(true);
         }
-        setImageURL("http://localhost:4000/public/uploads/" +user.logo);
-        console.log(imageURL);
+        // console.log(imageURL);
     }
+    
+    const getActivationData = async()=>{
+        const activate =await getActivationDetails(email);
+        //  console.log("activate "+ await activate[0].logo);
+        
+       
+       
+            await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null));
+        
+
+   }
+
+
+
     const classes = useStyles();
     const navigate = useNavigate();
 
@@ -155,7 +169,7 @@ export default function Company_Dashboard(){
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
            {/* <button className={classes.btn} disabled={!activate} >Update Posting</button> */}
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
-           <button className={classes.btn} disabled={!activate}>View active Working Profiles</button>
+           <button className={classes.btn} disabled={!activate}>View Active Postings</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View Earlier Postings</button>
            <button className={classes.btn} onClick={handleLogout} >Logout</button>
         </div>

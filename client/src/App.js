@@ -16,6 +16,8 @@ import ResetPassword from "./Pages/Password/ResetPassword";
 import ForgotPassword from "./Pages/Password/ForgotPassword";
 import UploadStudent from "./Pages/UploadStudent/UploadStudent";
 import CollegeDashboard from "./Pages/CollegeDashboard/CollegeDashboard";
+import ViewActivePostings from "./Pages/ViewActivePostings/ViewActivePostings";
+import CompanyUpdate from "./Pages/CompanyUpdate/CompanyUpdate";
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path="/Registration/Company" element={<Reg_Company/>} />
           <Route path="/Registration/College" element={<Reg_College/>} />
           <Route path="/Activation/:email" element={<Company_Activation/>} />
+          <Route path="/CompanyUpdate/:email" element={<CompanyUpdate/>} />
           <Route path='/otp/:email' element={<Otp/>} />
           <Route path="/Intern_Posting/:email" element={<Intern_Posting/>} />
           <Route path="/dashboard/:email" element={<Company_Dashboard/>} />
@@ -41,6 +44,7 @@ function App() {
           <Route path="/ResetPassword/:email" element={<ResetPassword/>} />
           <Route path="/UploadStudent/:email" element={<UploadStudent/>} />
           <Route path="/CollegeDashboard/:email" element={<CollegeDashboard/>} />
+          <Route path="/ViewActivePostings/:email" element={<ViewActivePostings/>} />
 
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />

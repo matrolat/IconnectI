@@ -18,4 +18,4 @@ const collegeAuthenticate = async(req , res , next) =>{
     }
 }
 
-modules.exports = collegeAuthenticate;
+module.exports = collegeAuthenticate;

@@ -31,6 +31,7 @@ const MenuProps = {
       width: 250,
     },
    
+
   },
 };
 
@@ -279,6 +280,7 @@ function getStyles(name, personName, theme) {
           ...values,
           [name]: value,
         });
+       
       };
 
 
@@ -339,13 +341,74 @@ function getStyles(name, personName, theme) {
               </div>
               <div className={classes.inpContainer}>
                   <div className={classes.head}>Type of Engagement *</div>
-                  <input
+                  {/* <input
                   onChange={onChange}
                   name='typeofengagement'
                   type="text"
                   placeholder=""
                   class={classes.inpText}
-                  />
+                  /> */}
+                  <Select
+                style={{
+                  boxSizing:"border-box",
+                  paddingLeft:12,
+                  color: "black",
+                  height:40,
+                  width:318,
+                  display: "flex",
+                  padding: "11 16",
+                  overflow: "hidden",
+                  fontSize: 14,
+                  textAlign: "left",
+                  alignItems: "center",
+                  flexShrink: 0,
+                  fontWeight: 500,
+                  borderColor: "#D2CECE",
+                  borderStyle: "solid",
+                  bordeWidth: 0.791015625,
+                  borderRadius: 19.775390625,
+                  backgroundColor: "#FFFFFF",
+                  
+                }}
+
+                value={values.typeofengagement}
+                // onChange={handleChange}
+                onChange={onChange}
+                  name='typeofengagement'
+                input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                MenuProps={MenuProps}
+                // name='skills'
+                // color="white"
+        
+              >
+                
+                  <MenuItem
+                    key="1"             
+                    value={"WFH"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   WFH
+                  </MenuItem>
+                  <MenuItem
+                    key="2"
+                    
+                    value={"On Site"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   On Site
+                  </MenuItem>
+                  <MenuItem
+                    key="3"
+                    value={"Hybrid"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   Hybrid
+                  </MenuItem>
+              
+              </Select>
 
               </div>
           </div>

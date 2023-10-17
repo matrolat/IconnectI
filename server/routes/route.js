@@ -9,8 +9,9 @@ const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, coll
 const {getPosting}=require("../controller/adminController");
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
-const { companyActivation, internPosting, getAllPosting } = require('../controller/companyController');
-const { downloadTemplate, studentUpload } = require('../controller/collegeController');
+const CollegeAuthenticate = require('../middleware/collegeAuthenticate')
+const { companyActivation, internPosting, getAllPosting, getActivationDetails, getActivePostings, getEarlierPostings } = require('../controller/companyController');
+const { downloadTemplate, studentUpload, filterStudents, getAllStudents } = require('../controller/collegeController');
 
 
 const storage = multer.diskStorage({
@@ -36,14 +37,20 @@ router.get('/allUsers', allUsers);
 router.post('/otpVerify', otpVerify);
 router.get('/logout',logout);
 router.get('/getLoginDetails',Authenticate, mainScreen);
+router.get('/getCollegeLoginDetails',CollegeAuthenticate, mainScreen);
 router.post('/collegesignup',collegeRegistration);
 router.post('/activate', upload.single('logo'),companyActivation);
+router.get('/getActivationDetails/:email', getActivationDetails);
 router.post('/internPosting',internPosting);
 router.post('/getAllPosting',getAllPosting);
 router.post('/forgotPassword',forgotPassword);
 router.post('/resetPassword',resetPassword);
 router.get('/files/:filename', downloadTemplate);
 router.post('/studentUpload', studentUpload);
+router.post('/filterStudents', filterStudents);
+router.get('/getAllStudents/:email',getAllStudents);
+router.get('/getActivePostings/:id',getActivePostings);
+router.get('/getEarlierPostings/:id',getEarlierPostings);
 // router.post('/getLoginDetails',);
 
 

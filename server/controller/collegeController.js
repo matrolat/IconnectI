@@ -40,7 +40,8 @@ const transporter = nodemailer.createTransport({
         try {
             for (const item of items) {
             // Create a new item document and save it to the database
-            const newItem = new Student({ name: item[0] , cgpa: item[1],skills:item[2] ,  uploadedBy:item[3] });
+            var arrayOfItems = item[2].split(",");
+            const newItem = new Student({ name: item[0] , cgpa: item[1],skills:arrayOfItems ,  uploadedBy:item[3] });
             await newItem.save();
             }
             res.status(201).json({ message: 'Items saved successfully' });
@@ -50,9 +51,59 @@ const transporter = nodemailer.createTransport({
         }
   }
 
+  function appendArraysAndRemoveDuplicates(array1, array2) {
+    // Concatenate arrays
+    const concatenatedArray = array1.concat(array2);
+    
+    // Remove duplicates using a Set
+    const uniqueArray = [...new Set(concatenatedArray)];
+    
+    return uniqueArray;
+  }
+
+
+
+  const filterStudents =async(req,res)=>{
+    try {
+
+        const { userID } = req.body;
+        console.log(userID);
+    
+        const allUsers = await Posting.find({ userID: userID });
+
+        var resultArray = [];
+        for (const user of allUsers) {
+            // Create a new item document and save it to the database
+            var skills = user.skills;
+            resultArray = appendArraysAndRemoveDuplicates(resultArray, skills);
+            
+            }
+        const filteredDocuments = await Student.find({ skills: { $in: resultArray } });
+    
+        res.json(filteredDocuments);
+      } catch (err) {
+        res.status(500).json({ error: 'An error occurred' });
+      }
+  }
+
+  const getAllStudents =async(req,res)=>{
+    try {
+
+        const email = req.params.email;
+        // res.send(email);
+        // return;
+        const students = await Student.find({ uploadedBy: email });
+    
+        res.json(students);
+      } catch (err) {
+        res.status(500).json({ error: 'An error occurred' });
+      }
+  }
   module.exports = {
    downloadTemplate,
-   studentUpload
+   studentUpload,
+   filterStudents,
+   getAllStudents
   };
 
 
