@@ -471,6 +471,18 @@ const companyRegistration = async (req, res) =>{
     
   }
 
+  //admin routes 
+  const getPosting= async (req, res) => {
+    let id = req.params.id;
+
+    try{
+      const Company = await companyUser.findOne({ _id: id });
+      res.send(Company);
+    }catch(err){
+      console.log(err);
+    }
+  };
+
   module.exports = {
     companyRegistration,
     login,
@@ -482,6 +494,7 @@ const companyRegistration = async (req, res) =>{
     deleteData,
     forgotPassword,
     resetPassword,
+    getPosting
   };
 
 

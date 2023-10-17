@@ -6,6 +6,7 @@ app.use(express.urlencoded({ extended: true}));
 
 const router = express.Router();
 const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration, deleteData, forgotPassword,resetPassword} = require("../controller/userController")
+const {getPosting}=require("../controller/adminController");
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
 const { companyActivation, internPosting, getAllPosting } = require('../controller/companyController');
@@ -49,5 +50,9 @@ router.post('/studentUpload', studentUpload);
 //Tesing APi
 router.post('/deleteUserData',deleteData);
 
+//admin routes
+router.get('/getPosting/:id',getPosting);
+
 module.exports = router;
+
 
