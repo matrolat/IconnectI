@@ -566,7 +566,7 @@ function getStyles(name, personName, theme) {
                   <input
                   onChange={onChange}
                   name='stipend'
-                  type="text"
+                  type="number"
                   placeholder="Enter amount"
                   class={classes.inpText}
                 />

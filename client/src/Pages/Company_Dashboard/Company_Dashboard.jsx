@@ -9,10 +9,11 @@ import CustomTable from '../../Components/Table/CustomTable';
 const useStyles = makeStyles((theme)=>({
     outer:{
         display:"flex",
+        height:"100vh",
     },
     left:{
         width:"30%",
-        height:"100vh",
+        height:"100%",
         backgroundColor:"#6DC181",
         display:"flex",
         flexDirection:"column",
@@ -21,7 +22,9 @@ const useStyles = makeStyles((theme)=>({
     },
     right:{
         width:"70%",
-        // backgroundColor:"yellow",
+        height:"100vh",
+        overflow: 'scroll',
+        overflowX: 'hidden',
     },
     btn:{
         width:316,
@@ -227,8 +230,8 @@ export default function Company_Dashboard(){
                 </div>
 
             </div>
-                
             { tableData? <CustomTable data={tableData} /> : null}
+                
 
         </div></div>
     </div>
