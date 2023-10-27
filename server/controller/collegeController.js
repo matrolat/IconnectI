@@ -39,6 +39,11 @@ const transporter = nodemailer.createTransport({
         console.log(items);
         try {
             for (const item of items) {
+
+              if(!item[0] || !item[1]|| !item[2]|| !item[3]|| !item[4])
+              {
+                continue;
+              }
             // Create a new item document and save it to the database
             var arrayOfItems = item[3].split(",");
             const newItem = new Student({ studentID:item[0] , name: item[1] , cgpa: item[2],skills:arrayOfItems ,  uploadedBy:item[4] });
