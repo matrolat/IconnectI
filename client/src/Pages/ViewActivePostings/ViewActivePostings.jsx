@@ -43,7 +43,7 @@ export default function ViewActivePostings() {
 
   return (
     <div>
-        <Header title="View Active Interns" />
+        <Header title="View Shortlisted Interns" />
         <div style={{height:"auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginTop:50}}>
         <div>
        

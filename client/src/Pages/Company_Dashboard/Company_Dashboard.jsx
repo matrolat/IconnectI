@@ -187,7 +187,7 @@ export default function Company_Dashboard(){
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
            {/* <button className={classes.btn} disabled={!activate} >Update Posting</button> */}
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
-           <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewActivePostings/${email}`)}}>View Active Interns</button>
+           <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewActivePostings/${email}`)}}>View Shortlisted Interns</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View Earlier Postings</button>
            <button className={classes.btn} onClick={handleLogout} >Logout</button>
         </div>

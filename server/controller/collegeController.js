@@ -40,8 +40,8 @@ const transporter = nodemailer.createTransport({
         try {
             for (const item of items) {
             // Create a new item document and save it to the database
-            var arrayOfItems = item[2].split(",");
-            const newItem = new Student({ name: item[0] , cgpa: item[1],skills:arrayOfItems ,  uploadedBy:item[3] });
+            var arrayOfItems = item[3].split(",");
+            const newItem = new Student({ studentID:item[0] , name: item[1] , cgpa: item[2],skills:arrayOfItems ,  uploadedBy:item[4] });
             await newItem.save();
             }
             res.status(201).json({ message: 'Items saved successfully' });
