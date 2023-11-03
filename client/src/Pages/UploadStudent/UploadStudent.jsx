@@ -96,7 +96,7 @@ const handleParse = async() => {
           await Promise.all(parsedData.map((dataRow) => {
             console.log(parsedData.length);
             console.log(parsedData);
-              setData((prevBig) => [...prevBig, {...Object.values(dataRow),3:email}]);
+              setData((prevBig) => [...prevBig, {...Object.values(dataRow),4:email}]);
             }));
             console.log(data);
 
@@ -121,7 +121,7 @@ const postData =async()=>{
   }else{
     window.alert("Upload Successful");
     console.log("Upload Successful");
-    navigate(`/CollegeDashboard/${data.collegespocemail}`);
+    navigate(`/CollegeDashboard/${email}`);
     // navigate('/');
   }
   setLoading(false);
@@ -157,6 +157,7 @@ const postData =async()=>{
   <Table sx={{ minWidth: 650 }} aria-label="simple table">
     <TableHead>
       <TableRow>
+        <TableCell align="right">ID</TableCell>
         <TableCell align="right">Name</TableCell>
         <TableCell align="right">CGPA</TableCell>
         <TableCell align="right">Skills</TableCell>
@@ -174,6 +175,7 @@ const postData =async()=>{
           <TableCell align="right">{item[1]}</TableCell>
           <TableCell align="right">{item[2]}</TableCell>
           <TableCell align="right">{item[3]}</TableCell>
+          <TableCell align="right">{item[4]}</TableCell>
         </TableRow>
  
 } )}

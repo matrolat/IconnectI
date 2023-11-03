@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
+  studentID:{type:[String],required:true,unique:true, dropDups: true},
   name:String,
   cgpa:Number,
   skills:[],

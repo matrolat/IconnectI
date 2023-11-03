@@ -34,27 +34,41 @@ const transporter = nodemailer.createTransport({
   }
 
 
-  const studentUpload = async(req,res)=>{
-        const { items } = req.body; // Assuming the array is sent in the request body as { "items": ["item1", "item2", ...] }
-        console.log(items);
-        try {
-            for (const item of items) {
+  const studentUpload = async (req, res) => {
+    const { items } = req.body; // Assuming the array is sent in the request body as { "items": [["studentID1", "name1", cgpa1, "skill1,skill2", "uploadedBy1"], ["studentID2", "name2", cgpa2, "skill3,skill4", "uploadedBy2"], ...] }
 
-              if(!item[0] || !item[1]|| !item[2]|| !item[3]|| !item[4])
-              {
+    try {
+        for (const item of items) {
+            const studentID = item[0];
+
+            // Check if a document with the same studentID exists
+            const existingStudent = await Student.findOne({ studentID });
+
+            if (existingStudent) {
+                // If the studentID already exists, skip uploading this item
+                // console.log(Item with studentID ${studentID} already exists. Skipping.);
                 continue;
-              }
-            // Create a new item document and save it to the database
-            var arrayOfItems = item[3].split(",");
-            const newItem = new Student({ studentID:item[0] , name: item[1] , cgpa: item[2],skills:arrayOfItems ,  uploadedBy:item[4] });
-            await newItem.save();
             }
-            res.status(201).json({ message: 'Items saved successfully' });
-        } catch (error) {
-            console.error(error);
-            res.status(500).json({ error: 'Error saving items' });
+
+            // If the studentID doesn't exist, proceed to create and save a new item
+            var arrayOfItems = item[3].split(",");
+            const newItem = new Student({
+                studentID,
+                name: item[1],
+                cgpa: item[2],
+                skills: arrayOfItems,
+                uploadedBy: item[4]
+            });
+
+            await newItem.save();
         }
-  }
+
+        res.status(201).json({ message: 'Items saved successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error saving items' });
+    }
+}
 
   function appendArraysAndRemoveDuplicates(array1, array2) {
     // Concatenate arrays
