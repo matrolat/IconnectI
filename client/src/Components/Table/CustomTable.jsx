@@ -108,7 +108,7 @@ export default function CustomTable({data}) {
           </TableHead>
           <TableBody>
            {
-            data.map((row)=>{
+            data && data.map((row)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
                 <TableCell>
                          {row.uniqueID}

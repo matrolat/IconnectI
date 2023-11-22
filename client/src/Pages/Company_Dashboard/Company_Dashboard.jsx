@@ -88,6 +88,7 @@ export default function Company_Dashboard(){
     const [activate,setActivate] = useState(false);
     const [imageURL,setImageURL] = useState("");
     const [userInfo,setUserInfo] = useState("");
+    const [emptyTable,setemptyTable] = useState({});
 
     useEffect(()=>{
 		getData();
@@ -150,7 +151,7 @@ export default function Company_Dashboard(){
     const checkActivation=async()=>{
         const user = getUser();
         setUserInfo(user);
-        console.log("user"+user.logo);
+        // console.log("user"+user.logo);
         if(user.deactivate=="NO")
         {
             setActivate(true);
@@ -233,9 +234,10 @@ export default function Company_Dashboard(){
                 </div>
 
             </div>
-            { tableData? <CustomTable data={tableData} /> : null}
-                
-
+            
+            
+         
+            { tableData !== emptyTable ? <CustomTable data={tableData} /> : "No data"}
         </div></div>
     </div>
   )

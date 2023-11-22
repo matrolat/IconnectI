@@ -88,6 +88,8 @@ export default function SearchCandidates() {
   const [data,setData] = useState();
   const [dropdown,setDropdown] = useState();
   const [uniqueID,setuniqueID] = useState();
+  const [emp,empTable] = useState({});
+
 
   useEffect(()=>{
     getData();
@@ -218,7 +220,7 @@ export default function SearchCandidates() {
         </div>
           <div className={classes.right} >
             {/* Candidates: */}
-            { data? <StudentTable data={data} postData={postData} /> : null}
+            { data!==emp ? <StudentTable data={data} postData={postData} /> : "No data" }
             {/* <StickyHeadTable /> */}
           </div>
       </div>
