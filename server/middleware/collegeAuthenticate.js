@@ -1,21 +1,26 @@
 const jwt = require('jsonwebtoken');
-const College = require('../models/collegeUserSchema');
+const collegeUser = require('../models/collegeUserSchema');
 
-const collegeAuthenticate = async(req , res , next) =>{
-    try {
-        
-        const token = req.cookies.collegetoken;
-        const verifyToken = jwt.verify(token , process.env.SECRET_KEY);
-        const colleguser = await College.findOne({_id:verifyToken._id , "tokens.tokens": token});
 
-        req.token = token;
-        req.collegeuser = collegeuser;
-        req.userID = collegeuser._id;
-        next();
+const collegeAuthenticate = async (req,res ,next)=>{
+    
+  console.log("token:"+JSON.stringify(req.jwtoken));
+  try {
+    const token = req.cookies.jwtoken;
+    
+    const verifyToken = jwt.verify(token ,process.env.SECRET_KEY);
+    const rootUser = await collegeUser.findOne({_id: verifyToken._id , "tokens.token": token});
 
-    } catch (error) {
-        console.log(error);
-    }
+    req.token = token;
+    req.rootUser = rootUser;
+    req.userID = rootUser._id;
+
+    next();
+
+  } catch (error) {
+    res.status(401).send('Unauthorized: No token provided');
+     console.log(error); 
+  }
 }
 
 module.exports = collegeAuthenticate;

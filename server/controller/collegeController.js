@@ -37,12 +37,14 @@ const transporter = nodemailer.createTransport({
   const studentUpload = async (req, res) => {
     const { items } = req.body; // Assuming the array is sent in the request body as { "items": [["studentID1", "name1", cgpa1, "skill1,skill2", "uploadedBy1"], ["studentID2", "name2", cgpa2, "skill3,skill4", "uploadedBy2"], ...] }
 
+    console.log(items);
+    res.send("noice");
     try {
         for (const item of items) {
             const studentID = item[0];
 
             // Check if a document with the same studentID exists
-            const existingStudent = await Student.findOne({ studentID });
+            const existingStudent = await Student.findOne({ studentID: studentID });
 
             if (existingStudent) {
                 // If the studentID already exists, skip uploading this item
