@@ -52,7 +52,10 @@ export default function Login() {
         
       }
       setLoading(false);
-
+      
+    }
+    const handleForgotPassword=()=>{
+      navigate(`/ForgotPassword/`);
     }
 
 
@@ -86,9 +89,7 @@ export default function Login() {
             </div>
             <div className="frame6-frame8">
               <div className="frame6-email" >
-              <span className="frame6-text05">
-                <span className="frame6-text06">Password *</span>
-              </span>
+              <span className="frame6-text05">Password *</span>
               <div className="pwd-input" style={{display: 'flex'}}>
                 <input
                     name='password'
@@ -106,14 +107,11 @@ export default function Login() {
             </div>
               <div className="frame6-check">
                 <span className="frame6-text11">
-                  <span>Forgotten password?</span>
+                  <span onClick={handleForgotPassword}>Forgot password?</span>
                 </span>
               </div>
             </div>
-            
-            {/* <button className='frame6-frame1' onClick={handleSubmit}>
-                <span className="frame6-text13"><span>Log In</span></span>
-            </button> */}
+          
             <button onClick={handleSubmit} disabled={loading} className={classes.btnStyles} style={{height:47, width:400}}>
                 <span><span>{ loading?  
                  <BeatLoader 

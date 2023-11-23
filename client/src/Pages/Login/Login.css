@@ -210,9 +210,6 @@
     font-stretch: normal;
     text-decoration: none;
   }
-  .frame6-text06 {
-    color: rgba(68, 68, 68, 1);
-  }
   .frame6-input {
     /* box-sizing: border-box; */
     gap: 10px;
@@ -306,17 +303,19 @@
   }
   .frame6-check {
     width: 116px;
+    width: 97%;
     height: 17px;
     display: flex;
     position: relative;
-    align-items: flex-start;
+    justify-content: end;
+    align-items: flex-end;
     flex-shrink: 1;
   }
   .frame6-text11 {
     color: rgba(68, 68, 68, 1);
     height: auto;
     position: absolute;
-    font-size: 11px;
+    font-size: 14px;
     font-style: Regular;
     text-align: left;
     font-family: Poppins;
@@ -324,6 +323,7 @@
     line-height: normal;
     font-stretch: normal;
     text-decoration: underline;
+    cursor: pointer;
   }
   .frame6-frame1 {
     gap: 10px;
