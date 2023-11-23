@@ -107,7 +107,7 @@ export default function Reg_Company() {
             <MainLogo/>
             <div className="company-registration-frame7">
               <span className="company-registration-text">
-                <span>Register your account.{valid?"true":"false"}</span>
+                <span>Register your account</span>
               </span>
               <span className="company-registration-text02">
                 <span className="company-registration-text03">
@@ -210,7 +210,7 @@ export default function Reg_Company() {
               className="input"
               onChange = {onChange}
               required = "true"
-              pattern = "^[A-Za-z0-9]{3,}$"
+              pattern = "^[A-Za-z0-9\s]{3,}$"
             />
             <span className='error'>Username should be of at least 3 letters and shouldn't include any special character!</span>
             </div>

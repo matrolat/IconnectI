@@ -210,3 +210,20 @@
     text-decoration: none;
   }
   
+  .error{
+    /* background-color: green; */
+    width: 260px;
+    font-size: 15px;
+    color: red;
+    display: none;
+    text-align: left;
+    margin-left: 5%;
+  }
+  .input-box:invalid:focus + .error {
+    display: block;
+    color: red; 
+  }
+  .input-box:invalid:focus + #click-btn {
+    background-color: red;
+    
+  }

@@ -91,6 +91,7 @@ export default function
                 label="College name"
               />
             </div>
+
             <div class="name">
               <span class="text">
                 <span class="head-text">Password*</span>
@@ -103,8 +104,11 @@ export default function
                 class="input-box"
                 errorMessage="Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
                 required="true"
+                pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"           
               />
+            <span className='error'>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
             </div>
+
             <div class="name">
               <span class="text">
                 <span class="head-text">Confirm Password *</span>
@@ -115,10 +119,11 @@ export default function
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
-                errorMessage="Passwords don't match!"
+                // errorMessage="Passwords don't match!"
                 required={true}
-                pattern={values.password}
+                pattern={values.password}         
               />
+            <span className='error'>Passwords don't match!</span>
             </div>
            
           </div>
@@ -129,22 +134,23 @@ export default function
                 <span class="head-text"> SPOC name *</span>
               </span>
               <input
-                // type="text"
+                type="text"
                 name='collegespocname'
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
-                type= "email"
-                errorMessage= "Not a valid email"
                 required= {true}
+                pattern = "^[A-Za-z0-9\s]{3,}$"
               />
+            <span className='error'>Username should be of at least 3 letters and shouldn't include any special character!</span>
             </div>
+
             <div class="name">
               <span class="text">
                 <span class="head-text">SPOC email *</span>
               </span>
               <input
-                type="text"
+                type="email"
                 name='collegespocemail'
                 onChange = {onChange}
                 placeholder=""
@@ -153,23 +159,24 @@ export default function
                 required={true}
                 label="College SPOC Email"
               />
+            <span className='error'>Not a valid email</span>
             </div>
             <div class="name">
               <span class="text">
                 <span class="head-text">SPOC phone number *</span>
               </span>
               <input
-                type="text"
+                type="number"
                 name='collegespocphone'
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
-                errorMessage="Phone number should be of 10 digits!"
+                // errorMessage="Phone number should be of 10 digits!"
                 required={true}
                 pattern='^[0-9]{10}$'
                 label="College SPOC phone"
-              
               />
+            <span className='error'>Phone number should be of 10 digits!</span>
             </div>
          
           </div>
@@ -201,7 +208,6 @@ export default function
                 class="input-box"
                 errorMessage=""
                 required={true}
-
               />
             </div>
             <div class="name">
