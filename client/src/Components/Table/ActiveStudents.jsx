@@ -11,7 +11,7 @@ import { Button } from '@material-ui/core';
 
 const columns = [
   // { id: 'name', label: 'Posting ID', minWidth: 120 },
-  { id: 'code', label: 'Name', minWidth: 150 },
+  { id: 'code', label: 'ID', minWidth: 150 },
   {
     id: 'size',
     label: 'Name',

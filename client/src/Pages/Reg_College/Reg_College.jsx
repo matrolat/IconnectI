@@ -96,7 +96,7 @@ export default function
                 <span class="head-text">Password*</span>
               </span>
               <input
-                type="text"
+                type="password"
                 name="password"
                 onChange = {onChange}
                 placeholder=""
@@ -110,7 +110,7 @@ export default function
                 <span class="head-text">Confirm Password *</span>
               </span>
               <input
-                type="text"
+                type="password"
                 name="confirmPassword"
                 onChange = {onChange}
                 placeholder=""

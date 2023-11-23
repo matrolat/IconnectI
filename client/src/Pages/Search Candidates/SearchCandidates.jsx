@@ -161,8 +161,6 @@ export default function SearchCandidates() {
                   boxSizing:"border-box",
                   paddingLeft:12,
                   color: "black",
-                  height:40,
-                  width:318,
                   display: "flex",
                   padding: "11 16",
                   overflow: "hidden",
@@ -177,7 +175,11 @@ export default function SearchCandidates() {
                   borderRadius: 19.775390625,
                   backgroundColor: "#FFFFFF",
                   height: 40,
-            width: 470, marginLeft:40 ,marginRight:40,paddingLeft:30 
+                  width: 470,
+                  width:"50%", 
+                  marginLeft:40 ,
+                  marginRight:40,
+                  paddingLeft:30 
                 }}
 
                 // value={values.typeofengagement}

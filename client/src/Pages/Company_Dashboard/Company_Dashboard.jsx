@@ -103,10 +103,12 @@ export default function Company_Dashboard(){
     const getTableData=async()=>{
       const val =await getUser();
     //   console.log(val._id);
-      const res = await getActivePostings(val._id);
-      // const datal = JSON.stringify(res.data);
-      await console.log(res.data);
-      setTableData(res.data);
+    if(val){
+        const res = await getActivePostings(val._id);
+        // const datal = JSON.stringify(res.data);
+        await console.log(res.data);
+        setTableData(res.data);
+    }
     }
 
     const getData =async()=>{
@@ -149,10 +151,10 @@ export default function Company_Dashboard(){
 
 
     const checkActivation=async()=>{
-        const user = getUser();
+        const user = await getUser();
         setUserInfo(user);
         // console.log("user"+user.logo);
-        if(user.deactivate=="NO")
+        if(user && user.deactivate=="NO")
         {
             setActivate(true);
         }

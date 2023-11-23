@@ -37,7 +37,7 @@ let [loading, setLoading] = useState(false);
     //     }
     //   };
       
-
+    
       const verifyOTP = async (email , otp)=>{
              setLoading(true);
         const res = await fetch("http://localhost:4000/otpVerify", {
