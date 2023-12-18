@@ -8,7 +8,6 @@ import { buttonStyles } from "../../Constants/Css";
 import { makeStyles } from "@material-ui/core";
 import { BeatLoader } from "react-spinners";
 import { styled } from '@mui/material/styles';
-import BackBtn from "../../Components/BackBtn/BackBtn";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -101,7 +100,6 @@ export default function Reg_Company() {
     <div>
       <div className="company-registration-container">
         <div className="company-registration-company-registration">
-      <BackBtn />
 
           <div className="company-registration-frame4">
             <MainLogo/>

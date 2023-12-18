@@ -112,7 +112,7 @@ export default function Login() {
               </div>
             </div>
           
-            <button onClick={handleSubmit} disabled={loading} className={classes.btnStyles} style={{height:47, width:400}}>
+            <button onClick={handleSubmit} disabled={loading} className={classes.btnStyles} style={{height:47, width:400}} type='submit'>
                 <span><span>{ loading?  
                  <BeatLoader 
                 //  color="#36d7b7"
