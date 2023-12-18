@@ -183,14 +183,15 @@ export default function
                 <span class="head-text">SPOC phone number *</span>
               </span>
               <input
-                type="number"
+                type="text"
                 name='collegespocphone'
                 onChange = {onChange}
                 placeholder=""
                 class="input-box"
                 // errorMessage="Phone number should be of 10 digits!"
                 required={true}
-                pattern='^[0-9]{10}$'
+                pattern='^[1-9][0-9]{9}$'
+
                 label="College SPOC phone"
               />
             <span className='error'>Phone number should be of 10 digits!</span>

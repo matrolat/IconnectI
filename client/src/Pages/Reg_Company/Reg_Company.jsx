@@ -105,7 +105,7 @@ export default function Reg_Company() {
             <MainLogo/>
             <div className="company-registration-frame7">
               <span className="company-registration-text">
-                <span>Register your account</span>
+                <span>Register your account {valid?"yes":"no"}</span>
               </span>
               <span className="company-registration-text02">
                 <span className="company-registration-text03">
@@ -168,7 +168,8 @@ export default function Reg_Company() {
               onChange = {onChange}
               errorMessage = "Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
               required= "true"
-              pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"           
+              pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"  
+         
             />
             <span className='error'>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
 
@@ -215,7 +216,7 @@ export default function Reg_Company() {
 
           <div className="company-container">
             <span className="head">
-              <label className="head-text">SPOC Phone Number *</label>
+              <label className="head-text">SPOC Phone Number*</label>
             </span>
             <input
               type="text"
@@ -223,12 +224,12 @@ export default function Reg_Company() {
               name="companyspocphone"
               className="input"
               onChange = {onChange}
-              // errorMessage = "Phone number should be of 10 digits!"
               required = "true"
-              pattern = "^[0-9]{10}$"
+              pattern = "^[1-9][0-9]{9}$"
             />
             <span className='error'>Phone number should be of 10 digits!</span>
-          </div>
+            </div>
+         
 
             </div>
         </div>
