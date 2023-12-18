@@ -38,7 +38,7 @@ const transporter = nodemailer.createTransport({
     const { items } = req.body; // Assuming the array is sent in the request body as { "items": [["studentID1", "name1", cgpa1, "skill1,skill2", "uploadedBy1"], ["studentID2", "name2", cgpa2, "skill3,skill4", "uploadedBy2"], ...] }
 
     console.log(items);
-    res.send("noice");
+    // res.send("noice");
     try {
         for (const item of items) {
             const studentID = item[0];
@@ -53,13 +53,15 @@ const transporter = nodemailer.createTransport({
             }
 
             // If the studentID doesn't exist, proceed to create and save a new item
-            var arrayOfItems = item[3].split(",");
+            var arrayOfItems = item[5].split(",");
             const newItem = new Student({
                 studentID,
                 name: item[1],
-                cgpa: item[2],
+                email: item[2],
+                phone: item[3],
+                cgpa: item[4],
                 skills: arrayOfItems,
-                uploadedBy: item[4]
+                uploadedBy: item[6]
             });
 
             await newItem.save();

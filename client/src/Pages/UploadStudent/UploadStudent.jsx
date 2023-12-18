@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     left:{
-        width:"50%",
+        width:"75%",
         height:"75vh",
         display:"flex",
         flexDirection:"column",
@@ -96,7 +96,7 @@ const handleParse = async() => {
           await Promise.all(parsedData.map((dataRow) => {
             console.log(parsedData.length);
             console.log(parsedData);
-              setData((prevBig) => [...prevBig, {...Object.values(dataRow),4:email}]);
+              setData((prevBig) => [...prevBig, {...Object.values(dataRow),6:email}]);
             }));
             console.log(data);
 
@@ -159,9 +159,10 @@ const postData =async()=>{
       <TableRow>
         <TableCell align="right">ID</TableCell>
         <TableCell align="right">Name</TableCell>
+        <TableCell align="right">Email</TableCell>
+        <TableCell align="right">Phone</TableCell>
         <TableCell align="right">CGPA</TableCell>
         <TableCell align="right">Skills</TableCell>
-        <TableCell align="right">Email</TableCell>
       </TableRow>
     </TableHead>
     <TableBody>
@@ -176,6 +177,8 @@ const postData =async()=>{
           <TableCell align="right">{item[2]}</TableCell>
           <TableCell align="right">{item[3]}</TableCell>
           <TableCell align="right">{item[4]}</TableCell>
+          <TableCell align="right">{item[5]}</TableCell>
+          
         </TableRow>
  
 } )}

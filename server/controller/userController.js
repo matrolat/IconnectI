@@ -418,8 +418,8 @@ const companyRegistration = async (req, res) =>{
   }
 
   const forgotPassword = async(req,res)=>{
-    const email = req.body.email;
-    
+    const {email} = req.body;
+    console.log("right now"+ JSON.stringify(req.body));
     try{
       if (!email) {
         return res.status(422).json({ error: "Please Fill the fields" });

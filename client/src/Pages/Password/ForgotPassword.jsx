@@ -100,6 +100,7 @@ export default function ForgotPassword() {
 
 		const postData = async() =>{
             setLoading(true);
+		
                 const res = await forgotPWD(values);
                 const data = JSON.stringify(res);
                 if(!data || res.data.status === 422 ){

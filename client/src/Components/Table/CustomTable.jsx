@@ -108,7 +108,7 @@ export default function CustomTable({data}) {
           </TableHead>
           <TableBody>
            {
-            data && data.map((row)=>{
+            data && data.slice(0, rowsPerPage).map((row)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
                 <TableCell>
                          {row.uniqueID}
@@ -140,7 +140,7 @@ export default function CustomTable({data}) {
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={rows.length}
+        count={data.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}

@@ -107,7 +107,7 @@ export default function ActiveStudents({data,postData}) {
           </TableHead>
           <TableBody>
            {
-            data.map((row)=>{
+            data.slice(0,rowsPerPage).map((row)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
                 <TableCell>
                          {row.InternshipID}
@@ -136,7 +136,7 @@ export default function ActiveStudents({data,postData}) {
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={rows.length}
+        count={data.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}

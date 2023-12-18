@@ -47,7 +47,10 @@ export default function ViewActivePostings() {
         <div style={{height:"auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginTop:50}}>
         <div>
        
-      { data!=undefined? <ActiveStudents data={data} /> : "No data"}
+       
+       {data && Object.keys(data).length !== 0 ? <ActiveStudents data={data} /> : <div>To view shortlisted candidates, accept candidates from the "Search Candidates" page.
+</div>}
+      {/* { data!=undefined? <ActiveStudents data={data} /> : "No data"} */}
         </div>
         </div>
     </div>

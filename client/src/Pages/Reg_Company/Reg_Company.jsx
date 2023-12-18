@@ -71,7 +71,7 @@ export default function Reg_Company() {
 
 
 
-    //
+    
     // if (!isValidInput(values)) {
     //   // If input is invalid, stop the registration process
     //   window.alert("Invalid Registration");

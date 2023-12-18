@@ -138,7 +138,7 @@ export const companyActivate = async(values,companysopcemail)=>{
     !locationofwork ||
     !employeecount ||
     !compdescription ||
-    !email
+    !companysopcemail
   ) 
   {
     return;
@@ -419,10 +419,15 @@ export const logout =async()=>{
 export const forgotPWD =async(values)=>{
   const { email } = values;
   try{
-    const json = JSON.stringify({
-      email,
-    });
-    return await axios.post(`${URL}/forgotPassword`, json);
+    const json = JSON.stringify(
+   {   email}
+    );
+    return await axios.post(`${URL}/forgotPassword`, json,{
+      headers: {
+        // Overwrite Axios's automatically set Content-Type
+        'Content-Type': 'application/json'
+      }
+    } );
   }
   catch(error){
       console.log(" Error in Forget Password API : "+error);

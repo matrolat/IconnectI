@@ -40,7 +40,9 @@ export default function ViewPosting() {
         <div style={{height:"auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginTop:50}}>
         <div style={{display:"flex", alignItems:"center",justifyContent:"center",width:"80%" }}>
        
-      { data? <CustomTable data={data} /> : null}
+
+        {data && Object.keys(data).length !== 0 ? <CustomTable data={data} /> : "No earlier internship postings found."}
+      {/* { data? <CustomTable data={data} /> : null} */}
         </div>
         </div>
     </div>

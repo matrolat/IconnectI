@@ -242,8 +242,8 @@ export default function Company_Dashboard(){
             </div>
             
             
-         
-            { tableData !== emptyTable ? <CustomTable data={tableData} /> : "No data"}
+            {tableData && Object.keys(tableData).length !== 0 ? <CustomTable data={tableData} /> : ""}
+     
         </div></div>
     </div>
   )

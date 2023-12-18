@@ -189,7 +189,13 @@ export default function SearchCandidates() {
                 MenuProps={MenuProps}
                 >
                 
-               
+                  {!dropdown && <MenuItem
+                     
+                      style={getStyles("name", "personName", theme)}
+                   
+                    >
+                    No Internships have been posted yet
+                    </MenuItem>}
                   
                   {dropdown &&
                     dropdown.map((item)=>{
@@ -222,7 +228,8 @@ export default function SearchCandidates() {
         </div>
           <div className={classes.right} >
             {/* Candidates: */}
-            { data!==emp ? <StudentTable data={data} postData={postData} /> : "No data" }
+            {data && Object.keys(data).length !== 0 ? <StudentTable data={data} /> : "Select an internship from above to view candidates."}
+            {/* { data!==emp ? <StudentTable data={data} postData={postData} /> : "No data" } */}
             {/* <StickyHeadTable /> */}
           </div>
       </div>

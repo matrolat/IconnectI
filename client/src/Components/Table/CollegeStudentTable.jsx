@@ -13,6 +13,20 @@ const columns = [
   // { id: 'name', label: 'Posting ID', minWidth: 120 },
   { id: 'code', label: 'Name', minWidth: 150 },
   {
+    id: 'email',
+    label: 'email',
+    minWidth: 60,
+    align: 'center',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'phone',
+    label: 'phone',
+    minWidth: 60,
+    align: 'center',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
     id: 'population',
     label: 'Cgpa',
     minWidth: 60,
@@ -101,10 +115,16 @@ export default function CollegeStudentTable({data,postData}) {
           </TableHead>
           <TableBody>
            {
-            data.map((row)=>{
+            data.slice(0,rowsPerPage).map((row)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
                 <TableCell>
                          {row.name}
+                </TableCell>
+                <TableCell>
+                         {row.email}
+                </TableCell>
+                <TableCell align='center'>
+                         {row.phone}
                 </TableCell>
                 <TableCell align='center'>
                          {row.cgpa}
@@ -126,7 +146,7 @@ export default function CollegeStudentTable({data,postData}) {
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={rows.length}
+        count={data.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}

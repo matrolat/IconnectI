@@ -172,7 +172,7 @@ export default function CollegeDashboard(){
            <button className={classes.btn} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View New Postings</button> */}
            <button className={classes.btn} onClick={handleLogout} >Logout</button>
         </div>
-        <div className={classes.right}><div style={{paddingLeft:100,paddingRight:100,paddingTop:50,display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
+        <div className={classes.right}><div style={{paddingLeft:80,paddingRight:80,paddingTop:50,display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
 
         
             <h1>College Dashboard</h1>
@@ -209,9 +209,10 @@ export default function CollegeDashboard(){
                     <h5>Other details</h5>
                 </div>
             </div> */}
-            <div style={{margin:60}}>
+            <div style={{marginTop:60}}>
 
-            { data? <CollegeStudentTable data={data} /> : null}
+            {/* { data? <CollegeStudentTable data={data} /> : null} */}
+            {data && Object.keys(data).length !== 0 ? <CollegeStudentTable data={data} /> : "Upload students to view the list here."}
             </div>
         </div></div>
     </div>

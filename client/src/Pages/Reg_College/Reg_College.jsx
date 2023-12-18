@@ -17,6 +17,7 @@ export default function
 
   const classes = useStyles();
   let [loading, setLoading] = useState(false);
+  let [valid, setValid] = useState(false);
 
   const navigate = useNavigate();
   const [values , setValues] = useState({
@@ -34,10 +35,26 @@ export default function
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+    const input = e.target;
+    if (!input.checkValidity()) {
+      setValid(false);
+    } else {
+      setValid(true);
+      console.log("valid");
+    }
+  
     // console.log(values);
   };
 
   const postData = async()=>{
+
+    if(!valid)
+    {
+      window.alert("Pls Enter Valid Details");
+      return;
+    }
+    
+
     setLoading(true);
     const res = await collegeSignup(values);
     const data = JSON.stringify(res);
