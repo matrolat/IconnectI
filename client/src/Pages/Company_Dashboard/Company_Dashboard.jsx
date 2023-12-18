@@ -165,9 +165,12 @@ export default function Company_Dashboard(){
         const activate =await getActivationDetails(email);
         //  console.log("activate "+ await activate[0].logo);
         
-       
-       
-            await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null));
+        if(activate[0])
+        {
+            await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null))
+        }
+           
+           // await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null));
         
 
    }
@@ -190,7 +193,7 @@ export default function Company_Dashboard(){
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
            {/* <button className={classes.btn} disabled={!activate} >Update Posting</button> */}
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
-           <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewActivePostings/${email}`)}}>View Shortlisted Interns</button>
+           <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewActivePostings/${email}`)}}>View Shortlisted Candidates</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View Earlier Postings</button>
            <button className={classes.btn} onClick={handleLogout} >Logout</button>
         </div>
@@ -200,8 +203,9 @@ export default function Company_Dashboard(){
             <h1>Company Dashboard</h1>
             <div className={classes.details}>
                 {/* <MainLogo height={180}  /> */}
+               
                {
-                imageURL!="" ?
+                imageURL ?
                <img src={imageURL} alt="Logo" className="logo-image" height={150} /> : null
                } 
 

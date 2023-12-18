@@ -127,7 +127,22 @@ export const companyActivate = async(values,companysopcemail)=>{
     employeecount,
     compdescription,
   } = values;
-
+  
+  if (
+    !websiteinfo ||
+    !industrytype ||
+    !areaofwork ||
+    !registeredoffice ||
+    !companyregno ||
+    !currentlocation ||
+    !locationofwork ||
+    !employeecount ||
+    !compdescription ||
+    !email
+  ) 
+  {
+    return;
+  }
   const email = companysopcemail;
 
 

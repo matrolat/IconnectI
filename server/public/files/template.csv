@@ -1,3 +1,3 @@
-ID, Name,    Cgpa, Skills
-12, Sameer,9,"React JS,MongoDB"
-13, Nikita,9.2,"JAVA,CPP"
+ID, Name, Email, Phone,    Cgpa, Skills
+12, Sameer,sameerswankar96@gmail.com,1231231230, 9,"React JS,MongoDB"
+13, Nikita,nikitabirajdar12@gmail,1321321321, 9.2,"JAVA,CPP"

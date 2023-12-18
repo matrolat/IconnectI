@@ -263,12 +263,33 @@ const companyRegistration = async (req, res) =>{
   const user = await companyUser.findOne({ companyspocemail: email });
   const collegeUser = await College.findOne({collegespocemail : email});
   const userExist = await UserOtp.find({ email: email });
-  console.log("userexits ====="+userExist);
+  console.log("userexits ====="+userExist[0]);
   console.log("comp ====="+user);
   console.log("college ====="+collegeUser);
   // return;
+  if(userExist[0]==null)
+  {
+    return res.status(422).json({ error: "Invalid OTP" });
+  }
+  const currentTime = new Date();
+  const expirationTime = new Date(userExist[0].createdAt.getTime() + 5 * 60 * 1000);
+  console.log(currentTime + " " +expirationTime);
+    if (currentTime > expirationTime) {
+      // OTP has expired
+      console.log("expired");
+      await UserOtp.deleteMany({ email: email });
+      return res.status(422).json({ error: "expired OTP" });
+    }
+
+
+
   if (user && !collegeUser) {
-    if (userExist[0].emailotp === otp) {
+    if (userExist && userExist[0].emailotp === otp) {
+
+      
+      
+    
+
       token = await user.generateAuthToken();
       console.log("tokencreate:"+token);
       res.cookie("jwtoken", token, {
@@ -288,7 +309,10 @@ const companyRegistration = async (req, res) =>{
     }
   } else if (!user && collegeUser) {
     console.log("inside college");
-    if (userExist[0].emailotp === otp) {
+    if (userExist && userExist[0].emailotp === otp) {
+
+    
+
       token = await collegeUser.generateAuthToken();
       res.cookie("jwtoken", token, {
         expires: new Date(Date.now() + 14400000),

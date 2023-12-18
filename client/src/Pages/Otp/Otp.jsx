@@ -54,7 +54,7 @@ let [loading, setLoading] = useState(false);
           const data = await res.json();
           setLoading(false);
           
-          console.log(data);
+          console.log("data"+data);
           console.log("otp verifited heres cookie");
           const value = `${document.cookie}`;
           console.log(value);
