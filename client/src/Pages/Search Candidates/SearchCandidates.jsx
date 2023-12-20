@@ -228,7 +228,7 @@ export default function SearchCandidates() {
         </div>
           <div className={classes.right} >
             {/* Candidates: */}
-            {data && Object.keys(data).length !== 0 ? <StudentTable data={data} /> : "Select an internship from above to view candidates."}
+            {data && Object.keys(data).length !== 0 ? <StudentTable data={data} postData={postData} /> : "Select an internship from above to view candidates."}
             {/* { data!==emp ? <StudentTable data={data} postData={postData} /> : "No data" } */}
             {/* <StickyHeadTable /> */}
           </div>

@@ -176,22 +176,24 @@
   width: 260px;
   font-size: 15px;
   color: red;
-  display: none;
+  display: block;
   text-align: left;
   margin-left: 5%;
 }
-.input:invalid:focus + .error {
+/* .input:invalid:focus + .error {
   display: block;
   color: red; 
-}
+} */
 .input:invalid:focus + #click-btn {
   background-color: red;
   
 }
 
-
-input:invalid[focused = "true"] ~ span{
+/* input:invalid[focused = "true"] ~ span{
   display: block;    
+} */
+.invisible{
+  display: none;
 }
 
 input[type=number]::-webkit-inner-spin-button, 

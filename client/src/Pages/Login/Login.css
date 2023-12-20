@@ -307,7 +307,7 @@
     height: 17px;
     display: flex;
     position: relative;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: flex-end;
     flex-shrink: 1;
   }

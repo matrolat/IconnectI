@@ -43,28 +43,59 @@ export default function Reg_Company() {
     companyspocphone : "",
     logo : ""
   });
+  const [validFields,SetValidFields] = useState({    
+    password: true,
+    confirmPassword: true,
+    companyname: true,
+    companyspocname: true,
+    companyspocemail: true,
+    companyspocphone: true,
+  });
+
 
   const onChange =  (e) =>{
     setValues ({...values , [e.target.name]: e.target.value});
     const input = e.target;
     if (!input.checkValidity()) {
-      setValid(false);
+      SetValidFields({ ...validFields, [e.target.name]: false });
+      
     } else {
-      setValid(true);
+   
+      SetValidFields({ ...validFields, [e.target.name]: true });
       console.log("valid");
     }
+  
   };
 
+
+  const checkAllValid = ()=>{
+
+    for (const prop in validFields) {
+      if(validFields[prop]==false)
+      {
+        return false;
+      }
+     // console.log(`obj.${prop} = ${obj[prop]}`);
+    }
+    return true;
+  }
+  const validity = checkAllValid();
   const imageUpload = (e) =>{
     console.log(e.target.files[0]);
     setValues ({...values , logo: e.target.files[0]});
   }
 
   const postData = async()=>{
-    if(!valid)
+    if(validity==false)
     {
+      setValid(false);
       window.alert("Pls Enter Valid Details");
       return;
+    }
+    else{
+      setValid(true);
+      // window.alert("go");
+      // return
     }
     
     setLoading(true);
@@ -134,7 +165,7 @@ export default function Reg_Company() {
               errorMessage = "Not a valid email"
               required = "true"
             />
-            <span className='error'>Not a valid email</span>
+            <span className={validFields.companyspocemail?"invisible":"error"}>Not a valid email</span>
             </div>
             <div className="company-container">
             <span className="head">
@@ -171,7 +202,7 @@ export default function Reg_Company() {
               pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"  
          
             />
-            <span className='error'>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
+            <span className={validFields.password?"invisible":"error"}>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
 
           </div>
           <div className="company-container">
@@ -188,7 +219,7 @@ export default function Reg_Company() {
               required= "true"
               pattern = {values.password}
             />
-            <span className='error'>Passwords don't match!</span>
+            <span className={validFields.confirmPassword?"invisible":"error"}>Passwords don't match!</span>
           </div>
 
           </div>
@@ -211,7 +242,7 @@ export default function Reg_Company() {
               required = "true"
               pattern = "^[A-Za-z0-9\s]{3,}$"
             />
-            <span className='error'>Username should be of at least 3 letters and shouldn't include any special character!</span>
+            <span className={validFields.companyspocname?"invisible":"error"}>Username should be of at least 3 letters and shouldn't include any special character!</span>
             </div>
 
           <div className="company-container">
@@ -227,7 +258,7 @@ export default function Reg_Company() {
               required = "true"
               pattern = "^[1-9][0-9]{9}$"
             />
-            <span className='error'>Phone number should be of 10 digits!</span>
+            <span className={validFields.companyspocphone?"invisible":"error"}>Phone number should be of 10 digits!</span>
             </div>
          
 

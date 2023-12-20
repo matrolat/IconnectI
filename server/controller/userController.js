@@ -46,8 +46,11 @@ const companyRegistration = async (req, res) =>{
       const userExist = await companyUser.findOne({
         companyspocemail: companyspocemail,
       });
+      const userExistCollege = await College.findOne({
+        collegespocemail: companyspocemail,
+      });
 
-      if (userExist) {
+      if (userExist|| userExistCollege) {
         return res.status(422).json({ error: "User already Exists" });
       } else {
         const user = new companyUser({
@@ -371,8 +374,12 @@ const companyRegistration = async (req, res) =>{
       const userExists = await College.findOne({
         collegespocemail: collegespocemail,
       });
+      const userExistsCompany = await companyUser.findOne({
+        companyspocemail: collegespocemail,
+      });
+
   
-      if (userExists) {
+      if (userExists || userExistsCompany) {
         return res.status(422).json({ error: "User already Exists" });
       } else {
         const user = new College({

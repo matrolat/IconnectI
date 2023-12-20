@@ -17,9 +17,22 @@ export default function
 
   const classes = useStyles();
   let [loading, setLoading] = useState(false);
-  let [valid, setValid] = useState(false);
+  let [valid, setValid] = useState(true);
 
   const navigate = useNavigate();
+  const [validFields,SetValidFields] = useState({
+
+    
+    password: true,
+    confirmPassword: true,
+    collegename: true,
+    collegeaddress: true,
+    collegespocname: true,
+    collegespocemail: true,
+    collegespocphone: true,
+    collegeregid: true,
+    degreeoffered: true,
+  });
   const [values , setValues] = useState({
     username: "",
     password: "",
@@ -32,27 +45,51 @@ export default function
     collegeregid: "",
     degreeoffered: "",
   });
+  
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
     const input = e.target;
     if (!input.checkValidity()) {
-      setValid(false);
+      SetValidFields({ ...validFields, [e.target.name]: false });
+      
     } else {
-      setValid(true);
+   
+      SetValidFields({ ...validFields, [e.target.name]: true });
       console.log("valid");
     }
   
     // console.log(values);
   };
 
+  const checkAllValid = ()=>{
+
+    for (const prop in validFields) {
+      if(validFields[prop]==false)
+      {
+        return false;
+      }
+     // console.log(`obj.${prop} = ${obj[prop]}`);
+    }
+    return true;
+  }
+  const validity = checkAllValid();
   const postData = async()=>{
 
-    if(!valid)
+
+    if(validity==false)
     {
+      setValid(false);
       window.alert("Pls Enter Valid Details");
       return;
     }
+    else{
+      setValid(true);
+      // window.alert("go");
+      // return
+    }
+
+
     
 
     setLoading(true);
@@ -78,7 +115,7 @@ export default function
             <MainLogo/>
             <div class="college-registration-frame7">
               <span class="college-registration-text32">
-                <span>Register your account.</span>
+                <span>Register your account</span>
               </span>
               <span class="college-registration-text34">
                 <span class="college-registration-text35">
@@ -123,7 +160,7 @@ export default function
                 required="true"
                 pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"           
               />
-            <span className='error'>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
+            <span className= {validFields.password?"invisible":"error"}>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
             </div>
 
             <div class="name">
@@ -140,7 +177,7 @@ export default function
                 required={true}
                 pattern={values.password}         
               />
-            <span className='error'>Passwords don't match!</span>
+            <span className={validFields.confirmPassword?"invisible":"error"}>Passwords don't match!</span>
             </div>
            
           </div>
@@ -159,7 +196,7 @@ export default function
                 required= {true}
                 pattern = "^[A-Za-z0-9\s]{3,}$"
               />
-            <span className='error'>Username should be of at least 3 letters and shouldn't include any special character!</span>
+            <span className={validFields.collegespocname?"invisible":"error"}>Username should be of at least 3 letters and shouldn't include any special character!</span>
             </div>
 
             <div class="name">
@@ -176,7 +213,7 @@ export default function
                 required={true}
                 label="College SPOC Email"
               />
-            <span className='error'>Not a valid email</span>
+            <span className={validFields.collegespocemail?"invisible":"error"}>Not a valid email</span>
             </div>
             <div class="name">
               <span class="text">
@@ -194,7 +231,7 @@ export default function
 
                 label="College SPOC phone"
               />
-            <span className='error'>Phone number should be of 10 digits!</span>
+            <span className={validFields.collegespocphone?"invisible":"error"}>Phone number should be of 10 digits!</span>
             </div>
          
           </div>
