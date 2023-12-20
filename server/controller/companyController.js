@@ -46,14 +46,14 @@ const transporter = nodemailer.createTransport({
           !areaofwork ||
           !startdate ||
           !enddate ||
-          !stipend ||
           !hoursweek ||
           !typeofengagement ||
           !locationofwork ||
           !vacancy ||
           !skills ||
           !jobdescription ||
-          !userID
+          !userID || 
+          startdate>enddate
         ) {
           return res.status(422).json({ error: "Please Fill the fields" });
         } else {

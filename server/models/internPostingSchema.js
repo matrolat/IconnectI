@@ -5,7 +5,11 @@ const postingSchema = new mongoose.Schema({
     areaofwork: String,
     startdate:String,
     enddate:String,
-    stipend:String,
+    stipend: {
+        type: Number,
+        default: 0,
+        required: false, // Set required to false
+    },
     hoursweek:Number,
     locationofwork : String,
     typeofengagement:String,

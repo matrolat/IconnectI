@@ -107,7 +107,7 @@ export default function StudentTable({data,postData}) {
           </TableHead>
           <TableBody>
            {
-            data && data.map((row)=>{
+            data.length>0 && data.map((row)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
                 <TableCell>
                          {row.name}

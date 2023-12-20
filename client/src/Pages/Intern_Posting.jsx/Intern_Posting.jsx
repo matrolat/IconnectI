@@ -197,6 +197,7 @@ function getStyles(name, personName, theme) {
     const navigate = useNavigate();
     const {email} = useParams();
     let [loading, setLoading] = useState(false);
+    let [stipend, setStipend] = useState(false);
 
     useEffect(()=>{
       const res = checkLogin(email);
@@ -551,17 +552,21 @@ function getStyles(name, personName, theme) {
                       <input
                       name='stipend'
                       type="radio"
+                      checked={stipend}
                       className={classes.radio}
+                      onChange={()=>{setStipend(true)}}
                   />
-                  <label htmlFor="" style={{marginRight:10}}>Yes</label>
+                  <label htmlFor="" style={{marginRight:10,background:"red"}} onClick={()=>{setStipend(true)}}>Yes</label>
                  
                   <input
                   className={classes.radio}
                       type="radio"
                       name='stipend'
+                      checked = {!stipend}
                       placeholder="No"
+                      onChange={()=>{setStipend(false)}}
                   />
-                  <label htmlFor="">No</label>
+                  <label htmlFor="" onClick={()=>{setStipend(false)}}>No</label>
                   </div> 
                   <input
                   onChange={onChange}
@@ -569,6 +574,7 @@ function getStyles(name, personName, theme) {
                   type="number"
                   placeholder="Enter amount"
                   class={classes.inpText}
+                  disabled = {!stipend}
                 />
               
               
