@@ -18,6 +18,8 @@ import UploadStudent from "./Pages/UploadStudent/UploadStudent";
 import CollegeDashboard from "./Pages/CollegeDashboard/CollegeDashboard";
 import ViewActivePostings from "./Pages/ViewActivePostings/ViewActivePostings";
 import CompanyUpdate from "./Pages/CompanyUpdate/CompanyUpdate";
+import Reporting from "./Pages/Reporting/Reporting";
+
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
           <Route path="/UploadStudent/:email" element={<UploadStudent/>} />
           <Route path="/CollegeDashboard/:email" element={<CollegeDashboard/>} />
           <Route path="/ViewActivePostings/:email" element={<ViewActivePostings/>} />
+          <Route path="/Reporting/:email" element={<Reporting/>} />
+          
 
 
           {/* <Route path="/addproducts" element={<AddProducts/>} />

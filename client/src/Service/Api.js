@@ -541,3 +541,25 @@ export const updateStudentInternship = async(uniqueID, studentID)=>{
 
 
 }
+
+//api reporting
+
+export const GetReports =async(id)=>{
+  
+  try{
+    // return await axios.get(`${URL}/getLoginDetails`, { withCredentials: true });
+    const res = await fetch(`${URL}/getPosting/${id}`,{
+      method: 'GET',
+      headers:{
+        Accept: "application/json",
+        "Content-Type" : "application/json"
+      },
+      credentials: "include"
+    });
+     return await res.json();
+    // console.log(data);
+  }
+  catch(error){
+      console.log(" Error in get login details API : "+error);
+  }
+}

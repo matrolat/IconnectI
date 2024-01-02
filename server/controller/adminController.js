@@ -53,9 +53,6 @@ const transporter = nodemailer.createTransport({
 
   
 
-
-  
-
   module.exports = {
     getPosting,
   };
