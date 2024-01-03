@@ -11,6 +11,23 @@ import { BeatLoader } from "react-spinners";
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import { styled } from '@mui/material/styles';
+import Select from '@mui/material/Select';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import MenuItem from '@mui/material/MenuItem';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    }, 
+  },
+};
+
 const VisuallyHiddenInput = styled('input')({
   clip: 'rect(0 0 0 0)',
   clipPath: 'inset(50%)',
@@ -28,6 +45,28 @@ const VisuallyHiddenInput = styled('input')({
 const useStyles = makeStyles((theme) => ({
   btnStyles: buttonStyles
 }));
+
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffffff',
+    },
+ 
+  },
+});
+
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+       
+
+  };
+}
 
 export default function 
 () {
@@ -47,7 +86,7 @@ export default function
 
 
 
-  
+  const [personName, setPersonName] = React.useState([]);
 
 
   const [values, setValues] = useState({
@@ -132,12 +171,8 @@ export default function
               <span class="activation-container-text">
                 <span class="activation-text">Area of Work *</span>
               </span>
-              {/* <input
-                type="text"
-                placeholder=""
-                class="activation-input"
-              /> */}
-              <select
+              
+              {/* <select
                 name="areaofwork"
                 // value={values.areaofwork}
                 class="activation-input"
@@ -149,7 +184,69 @@ export default function
                 <option value="Software">Software</option>
                 <option value="Hardware">Hardware</option>
                 
-              </select>
+              </select> */}
+              <Select
+                style={{
+                  boxSizing:"border-box",
+                  paddingLeft:12,
+                  color: "black",
+                  height:40,
+                  width:318,
+                  width:375,
+                  display: "flex",
+                  padding: "11 16",
+                  overflow: "hidden",
+                  fontSize: 14,
+                  textAlign: "left",
+                  alignItems: "center",
+                  flexShrink: 0,
+                  fontWeight: 500,
+                  borderColor: "#D2CECE",
+                  borderStyle: "solid",
+                  bordeWidth: 0.791015625,
+                  borderRadius: 19.775390625,
+                  backgroundColor: "#FFFFFF",
+                  
+                }}
+
+                name='areaofwork'
+                className="activation-input"
+                onChange={onChange}
+                input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                MenuProps={MenuProps}
+                // name='skills'
+                // color="white"
+
+        
+              >
+                
+                  <MenuItem
+                    key="1"             
+                    value={"WFH"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   WFH
+                  </MenuItem>
+                  <MenuItem
+                    key="2"
+                    
+                    value={"On Site"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   On Site
+                  </MenuItem>
+                  <MenuItem
+                    key="3"
+                    value={"Hybrid"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   Hybrid
+                  </MenuItem>
+              
+              </Select>
             </div>
             <div class="activation-container">
               <span class="activation-container-text">
@@ -261,7 +358,7 @@ export default function
                 <span class="activation-text">No of Employees *</span>
               </span>
               <input
-                type="text"
+                type="number"
                 placeholder=""
                 class="activation-input"
                 name='employeecount'
@@ -383,3 +480,4 @@ export default function
     </div>
   )
 }
+

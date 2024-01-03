@@ -7,7 +7,7 @@ import Reg_Company from "./Pages/Reg_Company/Reg_Company";
 import Reg_College from "./Pages/Reg_College/Reg_College";
 import Company_Activation from "./Pages/Company_Activation/Company_Activation";
 import Otp from "./Pages/Otp/Otp";
-import Intern_Posting from "./Pages/Intern_Posting.jsx/Intern_Posting";
+import Intern_Posting from "./Pages/Intern_Posting/Intern_Posting";
 import Company_Dashboard from "./Pages/Company_Dashboard/Company_Dashboard";
 import SearchCandidates from "./Pages/Search Candidates/SearchCandidates";
 import ViewPosting from "./Pages/ViewPosting/ViewPosting";
