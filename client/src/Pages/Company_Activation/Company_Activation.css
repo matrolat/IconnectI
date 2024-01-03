@@ -79,7 +79,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-
+  
   /* margin-top: 20%; */
 }
 .activation-container {
@@ -99,7 +99,7 @@
   color: rgba(68, 68, 68, 1);
   height: auto;
   /* position: absolute; */
-  font-size: 11.07421875px;
+  font-size: 14px;
   font-style: Regular;
   text-align: left;
   font-family: Poppins;
@@ -123,11 +123,11 @@
   overflow: hidden;
   /* position: absolute; */
   /* font-size: 9.4921875px; */
-  font-size: 14;
+  font-size: 15px;
   text-align: left;
   align-items: center;
   flex-shrink: 0;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   border-color: rgba(210, 205, 205, 1);
   border-style: solid;

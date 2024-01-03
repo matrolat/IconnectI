@@ -106,7 +106,7 @@ function getStyles(name, personName, theme) {
           // color: "#444444",
           color: "black",
           // fontSize: 11,
-          fontSize: 13,
+          fontSize: 14,
           fontStyle: "Regular",
           textAlign: "left",
           fontFamily: "Poppins",
@@ -155,7 +155,7 @@ function getStyles(name, personName, theme) {
           // padding: "11 16",
           overflow: "hidden",
           overflowY:"scroll",
-          fontSize: 12,
+          fontSize: 14,
           textAlign: "left",
           alignItems: "center",
           flexShrink: 0,
@@ -334,7 +334,7 @@ function getStyles(name, personName, theme) {
                   <input
                   onChange={onChange}
                   name='vacancy'
-                  type="text"
+                  type="number"
                   placeholder=""
                   class={classes.inpText}
                   />
@@ -572,7 +572,7 @@ function getStyles(name, personName, theme) {
                   onChange={onChange}
                   name='stipend'
                   type="number"
-                  placeholder="Enter amount"
+                  placeholder={stipend?"Enter amount": "Unpaid"}
                   class={classes.inpText}
                   disabled = {!stipend}
                 />

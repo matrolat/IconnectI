@@ -221,29 +221,21 @@ export default function
                 
                   <MenuItem
                     key="1"             
-                    value={"WFH"}
+                    value={"Software"}
                     style={getStyles(name, personName, theme)}
                  
                   >
-                   WFH
+                   Software
                   </MenuItem>
                   <MenuItem
                     key="2"
-                    
-                    value={"On Site"}
+                    value={"Hardware"}
                     style={getStyles(name, personName, theme)}
                  
                   >
-                   On Site
+                   Hardware
                   </MenuItem>
-                  <MenuItem
-                    key="3"
-                    value={"Hybrid"}
-                    style={getStyles(name, personName, theme)}
-                 
-                  >
-                   Hybrid
-                  </MenuItem>
+                  
               
               </Select>
               </div>
@@ -258,7 +250,7 @@ export default function
                 class="activation-input"
                 
               /> */}
-              <select
+              {/* <select
                 name="locationofwork"
                 // value={values.locationofwork}
                 onChange={onChange}
@@ -270,7 +262,48 @@ export default function
                 </option>
                 <option value="On Site">On Site</option>
                 
-              </select>
+              </select> */}
+               <Select
+                style={{
+                  boxSizing:"border-box",
+                  paddingLeft:12,
+                  color: "black",
+                  height:40,
+                  width:318,
+                  width:375,
+                  display: "flex",
+                  padding: "11 16",
+                 overflow: "hidden",
+                  fontSize: 14,
+                  textAlign: "left",
+                  alignItems: "center",
+                   flexShrink: 0,
+                  fontWeight: 500,
+                  borderColor: "#D2CECE",
+                  borderStyle: "solid",
+                  bordeWidth: 0.791015625,
+                  borderRadius: 19.775390625,
+                  backgroundColor: "#FFFFFF",
+                  
+                }}
+                inputProps={{MenuProps: {disableScrollLock: true}}}
+                name='locationofwork'
+                className="activation-input"
+                onChange={onChange}
+                input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                MenuProps={MenuProps}
+              >
+                
+                  <MenuItem
+                    key="1"             
+                    value={"On Site"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   On Site
+                  </MenuItem>
+           
+              </Select>
             </div>
             <div class="activation-container">
               <span class="activation-container-text">
@@ -310,7 +343,7 @@ export default function
                 placeholder=""
                 class="activation-input"
               /> */}
-              <select
+              {/* <select
                 name="industrytype"
               
                 onChange={onChange}
@@ -322,7 +355,64 @@ export default function
                 <option value="pvt">pvt</option>
                 <option value="Govt">Govt</option>
                 <option value="Public">Public</option>
-              </select>
+              </select> */}
+               <Select
+                style={{
+                  boxSizing:"border-box",
+                  paddingLeft:12,
+                  color: "black",
+                  height:40,
+                  width:318,
+                  width:375,
+                  display: "flex",
+                  padding: "11 16",
+                 overflow: "hidden",
+                  fontSize: 14,
+                  textAlign: "left",
+                  alignItems: "center",
+                   flexShrink: 0,
+                  fontWeight: 500,
+                  borderColor: "#D2CECE",
+                  borderStyle: "solid",
+                  bordeWidth: 0.791015625,
+                  borderRadius: 19.775390625,
+                  backgroundColor: "#FFFFFF",
+                  
+                }}
+                inputProps={{MenuProps: {disableScrollLock: true}}}
+                name='industrytype'
+                className="activation-input"
+                onChange={onChange}
+                input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                MenuProps={MenuProps}
+              >
+                
+                  <MenuItem
+                    key="1"             
+                    value={"Private"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   Private
+                  </MenuItem>
+                  <MenuItem
+                    key="2"             
+                    value={"Govt"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   Govt
+                  </MenuItem>
+                  <MenuItem
+                    key="3"             
+                    value={"Public"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   Public
+                  </MenuItem>
+              </Select>
+
             </div>
             <div class="activation-container">
               <span class="activation-container-text">
@@ -385,19 +475,20 @@ export default function
                 name='compdescription'
                 type="text"
                 // placeholder="abc"
-                rows="12"
+                rows="10"
                 // class={classes.inpTextArea}
                 style={{
                   boxSizing:"border-box",
-          paddingLeft:12,
-          color: "#A7A1A1",
+          padding:15,
+          color: "black",
           // height: 100,
           width: 370,
           // display: "block",
           // overflow: "hidden",
-          fontSize: 12,
+          fontSize: 14,
           textAlign: "left",
           alignItems: "center",
+          fontFamily: "Arial",
           flexShrink: 0,
           fontWeight: 500,
           borderColor: "#D2CECE",
@@ -421,14 +512,73 @@ export default function
                 placeholder=""
                 class="activation-input"
               /> */}
-              <select name="modeofpayment" class="activation-input">
+              {/* <select name="modeofpayment" class="activation-input">
               <option value="" selected>
                 --Payment Mode--
               </option>
               <option value="Net Banking">Net Banking</option>
               <option value="UPI">UPI</option>
               <option value="Google Pay">Google Pay</option>
-            </select>
+            </select> */}
+             <Select
+                style={{
+                  boxSizing:"border-box",
+                  paddingLeft:12,
+                  color: "black",
+                  height:40,
+                  width:318,
+                  width:375,
+                  display: "flex",
+                  padding: "11 16",
+                 overflow: "hidden",
+                  fontSize: 14,
+                  textAlign: "left",
+                  alignItems: "center",
+                   flexShrink: 0,
+                  fontWeight: 500,
+                  borderColor: "#D2CECE",
+                  borderStyle: "solid",
+                  bordeWidth: 0.791015625,
+                  borderRadius: 19.775390625,
+                  backgroundColor: "#FFFFFF",
+                  
+                }}
+                inputProps={{MenuProps: {disableScrollLock: true}}}
+                name='modeofpayment'
+                className="activation-input"
+                onChange={onChange}
+                input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                MenuProps={MenuProps}
+              >
+                
+                  <MenuItem
+                    key="1"             
+                    value={"Net Banking"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   Net Banking
+                  </MenuItem>
+                  <MenuItem
+                    key="2"             
+                    value={"UPI"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   UPI
+                  </MenuItem>
+                  <MenuItem
+                    key="3"             
+                    value={"Google Pay"}
+                    style={getStyles(name, personName, theme)}
+                 
+                  >
+                   Google Pay
+                  </MenuItem>
+                  
+                  
+              
+              </Select>
             </div>
             
             
