@@ -445,7 +445,7 @@ function getStyles(name, personName, theme) {
                   <input
                   onChange={onChange}
                   name='hoursweek'
-                  type="text"
+                  type="number"
                   placeholder=""
                   class={classes.inpText}
                 />
@@ -556,7 +556,7 @@ function getStyles(name, personName, theme) {
                       className={classes.radio}
                       onChange={()=>{setStipend(true)}}
                   />
-                  <label htmlFor="" style={{marginRight:10,background:"red"}} onClick={()=>{setStipend(true)}}>Yes</label>
+                  <label htmlFor="" style={{marginRight:10}} onClick={()=>{setStipend(true)}}>Yes</label>
                  
                   <input
                   className={classes.radio}

@@ -43,7 +43,7 @@ function App() {
 
           <Route path="/ActiveProfiles" element={<ActiveProfiles/>} />
           {/* <Route path="/ForgotPassword/:email" element={<ForgotPassword/>} /> */}
-          <Route path="/ForgotPassword/:email" element={<ForgotPassword/>} />
+          <Route path="/ForgotPassword/" element={<ForgotPassword/>} />
           <Route path="/ResetPassword/:email" element={<ResetPassword/>} />
           <Route path="/UploadStudent/:email" element={<UploadStudent/>} />
           <Route path="/CollegeDashboard/:email" element={<CollegeDashboard/>} />
