@@ -25,7 +25,7 @@ export default function Reporting() {
 
       const val =getUser();
       //console.log(val);
-      const res = await GetReports(val._id);
+      const res = await GetReports(email);
       console.log(res);
       const datal = JSON.stringify(res.data);
       //console.log(res.data);

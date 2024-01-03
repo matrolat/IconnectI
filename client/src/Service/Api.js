@@ -544,11 +544,11 @@ export const updateStudentInternship = async(uniqueID, studentID)=>{
 
 //api reporting
 
-export const GetReports =async(id)=>{
+export const GetReports =async(email)=>{
   
   try{
     // return await axios.get(`${URL}/getLoginDetails`, { withCredentials: true });
-    const res = await fetch(`${URL}/getPosting/${id}`,{
+    const res = await fetch(`${URL}/getPosting/${email}`,{
       method: 'GET',
       headers:{
         Accept: "application/json",

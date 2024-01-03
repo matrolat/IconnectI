@@ -116,7 +116,7 @@ export default function StudentTable({data,postData}) {
                          {row.cgpa}
                 </TableCell>
                 <TableCell align={"right"}>
-                         {row.skills}
+                         {row.skills.toString()}
                 </TableCell>
                 <TableCell align={"right"}>
                          {/* {row._id} */}

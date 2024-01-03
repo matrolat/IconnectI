@@ -60,7 +60,7 @@ router.get('/getActiveStudents/:id',getActiveStudents)
 router.post('/deleteUserData',deleteData);
 
 //admin routes
-router.get('/getPosting/:id',getPosting);
+router.get('/getPosting/:email',getPosting);
 
 module.exports = router;
 

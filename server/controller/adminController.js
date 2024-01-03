@@ -24,12 +24,14 @@ const transporter = nodemailer.createTransport({
 
  //admin routes 
   const getPosting = async (req, res) => {
-    let id=req.params.id;
-    console.log(id);
+    let email=req.params.email;
+    console.log(email);
     
     try{
-      
-        const UserId = await InternPosting.find({ userID: id});
+        const User = await companyUser.find({companyspocemail:email});
+        console.log(User[0]._id);
+        const UserId = await InternPosting.find({ userID: User[0]._id});
+        console.log("User"+UserId);
   
       res.send(UserId);
     }catch(err){
