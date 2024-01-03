@@ -185,6 +185,9 @@ export default function
                 <option value="Hardware">Hardware</option>
                 
               </select> */}
+
+              <div >
+
               <Select
                 style={{
                   boxSizing:"border-box",
@@ -195,11 +198,11 @@ export default function
                   width:375,
                   display: "flex",
                   padding: "11 16",
-                  overflow: "hidden",
+                 overflow: "hidden",
                   fontSize: 14,
                   textAlign: "left",
                   alignItems: "center",
-                  flexShrink: 0,
+                   flexShrink: 0,
                   fontWeight: 500,
                   borderColor: "#D2CECE",
                   borderStyle: "solid",
@@ -208,16 +211,12 @@ export default function
                   backgroundColor: "#FFFFFF",
                   
                 }}
-
+                inputProps={{MenuProps: {disableScrollLock: true}}}
                 name='areaofwork'
-                className="activation-input"
+                 className="activation-input"
                 onChange={onChange}
                 input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
                 MenuProps={MenuProps}
-                // name='skills'
-                // color="white"
-
-        
               >
                 
                   <MenuItem
@@ -247,6 +246,7 @@ export default function
                   </MenuItem>
               
               </Select>
+              </div>
             </div>
             <div class="activation-container">
               <span class="activation-container-text">
