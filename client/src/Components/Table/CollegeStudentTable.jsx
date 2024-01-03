@@ -130,7 +130,7 @@ export default function CollegeStudentTable({data,postData}) {
                          {row.cgpa}
                 </TableCell>
                 <TableCell align={"right"}>
-                         {row.skills}
+                         {row.skills.toString()}
                 </TableCell>
                
 

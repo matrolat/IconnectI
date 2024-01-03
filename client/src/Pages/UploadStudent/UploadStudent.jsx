@@ -201,26 +201,12 @@ const postData =async()=>{
 
             <div style={{display:"flex",flexDirection:"column",alignItems:"center",width:"70%"}}>
 
-            {/* <div className="company-container" style={{marginTop:30,marginBottom:30}}>
-            <span className="head">
-              <label className="head-text">Company name*</label>
-            </span>
-            <input
-              type="text"
-              placeholder=""
-              name="companyname"
-              className="input"
-            //   onChange = {onChange}
-                style={{width:318}}
-                errorMessage = ""
-                required = "true"
-                />
-            </div> */}
+            
 
 
             <div className="company-container" style={{marginTop:30,marginBottom:30}}>
             <span className="head">
-              <label className="head-text">Company name*</label>
+              
             </span>
             <Button component="label" variant="contained" class="input" startIcon={<CloudUploadIcon />} style={{width:318,display:"flex",justifyContent:"center"}}>
              {file ?  file.name :" Upload file"}

@@ -37,20 +37,6 @@ const transporter = nodemailer.createTransport({
     }
   };
 
- /*const getCompany = async (req, res) => {
-    let id = req.params.id;
-    console.log(id);
-    
-    try{
-      
-        const Id = await companyUser.find({ _id: id});
-  
-      res.send(Id);
-    }catch(err){
-      console.log(err);
-    }
-};*/
-
   
 
   module.exports = {
