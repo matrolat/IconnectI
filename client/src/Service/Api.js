@@ -271,6 +271,13 @@ export const internPosting = async(values, userID, uniqueID, postdate, postingem
           // postingemail,
   } = values;
 
+  const isValidDates = new Date(startdate) < new Date(enddate) && new Date(startdate) >= new Date();
+  
+  if (!isValidDates) {
+    console.error('Invalid date range. Please ensure the start date is before the end date and both are greater than or equal to today.');
+    return; // Stop execution if date validation fails
+  }
+
 
   // const email = companysopcemail;
 
