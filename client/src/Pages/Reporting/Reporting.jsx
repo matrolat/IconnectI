@@ -8,6 +8,7 @@ import { useNavigate , useParams} from "react-router-dom";
 import { getUser } from '../../utils/session';
 
 
+
 export default function Reporting() {
   const navigate = useNavigate();
   const {email} = useParams();
@@ -36,7 +37,7 @@ export default function Reporting() {
 
   return (
     <div>
-        <Header title="Reports" />
+        <Header title="Reports"  />
         <div style={{height:"auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginTop:50}}>
         <div>
        
@@ -46,3 +47,4 @@ export default function Reporting() {
     </div>
   )
 }
+

@@ -127,7 +127,7 @@ export default function CustomTable({data}) {
                          {row.vacancy}
                 </TableCell>
                 <TableCell align={"right"}>
-                         {row.skills}
+                         {row.skills.toString()}
                 </TableCell>
 
 

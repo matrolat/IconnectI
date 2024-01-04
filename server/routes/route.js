@@ -6,7 +6,7 @@ app.use(express.urlencoded({ extended: true}));
 
 const router = express.Router();
 const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration, deleteData, forgotPassword,resetPassword} = require("../controller/userController")
-const {getPosting}=require("../controller/adminController");
+const {getPosting,getActivations,getCollegeList,getCompanyList,getStudents}=require("../controller/adminController");
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
 const CollegeAuthenticate = require('../middleware/collegeAuthenticate')
@@ -61,6 +61,11 @@ router.post('/deleteUserData',deleteData);
 
 //admin routes
 router.get('/getPosting/:email',getPosting);
+router.get('/getCollegeList',getCollegeList);
+router.get('/getCompanyList',getCompanyList);
+router.get('/getStudents',getStudents);
+router.get('/getActivations',getActivations);
+
 
 module.exports = router;
 
