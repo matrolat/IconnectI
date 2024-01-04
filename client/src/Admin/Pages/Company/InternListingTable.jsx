@@ -7,46 +7,43 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { Button } from '@material-ui/core';
 
 const columns = [
-  // { id: 'name', label: 'Posting ID', minWidth: 120 },
-  { id: 'code', label: 'Name', minWidth: 150 },
-  {
-    id: 'email',
-    label: 'email',
-    minWidth: 60,
-    align: 'center',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'phone',
-    label: 'phone',
-    minWidth: 60,
-    align: 'center',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
+  { id: 'name', label: 'Posting ID', minWidth: 120 },
+  { id: 'code', label: 'Area of Work', minWidth: 60 },
   {
     id: 'population',
-    label: 'Cgpa',
-    minWidth: 60,
-    align: 'center',
+    label: 'Start Date',
+    minWidth: 150,
+    align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'size',
-    label: 'Skills',
-    minWidth: 200,
+    label: 'End Date',
+    minWidth: 170,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
   },
- 
-  
+  {
+    id: 'density',
+    label: 'Vacancies Available',
+    minWidth: 170,
+    align: 'right',
+    // format: (value) => value.toFixed(2),
+  },
+  {
+    id: 'test',
+    label: 'Skills',
+    minWidth: 170,
+    align: 'right',
+    // format: (value) => value.toFixed(2),
+  },
 ];
 
-function createData( code, population, size) {
+function createData(name, code, population, size) {
   const density = population / size;
-  return { code, population, size };
+  return { name, code, population, size, density };
 }
 
 const rows = [
@@ -67,7 +64,7 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-export default function CollegeStudentTable({data,postData}) {
+export default function InternListingTable({data}) {
   
 
   useEffect(()=>{
@@ -91,10 +88,6 @@ export default function CollegeStudentTable({data,postData}) {
     setPage(0);
   };
 
-  const handleClick =()=>{
-    postData();
-  }
-
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
   
@@ -115,25 +108,27 @@ export default function CollegeStudentTable({data,postData}) {
           </TableHead>
           <TableBody>
            {
-            data.slice(0,rowsPerPage).map((row)=>{
+            data && data.slice(0, rowsPerPage).map((row)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
+                <TableCell>
+                         {row.uniqueID}
+                </TableCell>
                 <TableCell>
                          {row.name}
                 </TableCell>
-                <TableCell>
-                         {row.email}
+                <TableCell align={"right"}>
+                         {row.startdate}
                 </TableCell>
-                <TableCell align='center'>
-                         {row.phone}
+
+                <TableCell align={"right"}>
+                         {row.enddate}
                 </TableCell>
-                <TableCell align='center'>
-                         {row.cgpa}
+                <TableCell align={"right"}>
+                         {row.vacancy}
                 </TableCell>
                 <TableCell align={"right"}>
                          {row.skills.toString()}
                 </TableCell>
-               
-
 
 
               </TableRow>

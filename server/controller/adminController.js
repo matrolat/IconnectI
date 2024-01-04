@@ -25,13 +25,13 @@ const transporter = nodemailer.createTransport({
 
  //admin routes 
   const getPosting = async (req, res) => {
+    console.log("email");
     let email=req.params.email;
-    console.log(email);
     
     try{
-        const User = await companyUser.find({companyspocemail:email});
-        console.log(User[0]._id);
-        const UserId = await InternPosting.find({ userID: User[0]._id});
+        const user = await User.find({companyspocemail:email});
+        console.log(user[0]._id);
+        const UserId = await InternPosting.find({ userID: user[0]._id});
         console.log("User"+UserId);
   
       res.send(UserId);
@@ -60,7 +60,15 @@ const getCompanyList=async(req,res)=>{
     console.log("Hello");    
 
     const CompanyList = await User.find(); 
-    res.json(CompanyList);
+    console.log(CompanyList);
+    const limitedData = CompanyList.map(({ companyname,companyspocname, companyspocemail,companyspocphone }) => ({
+      companyname,
+      companyspocname,
+      companyspocemail,
+      companyspocphone
+    }));
+    
+    res.json(limitedData);
   } catch (error) {
     console.log(error);
   }
@@ -78,6 +86,7 @@ const getStudents=async(req,res)=>{
     console.log(error);
   }
 }
+
 const getActivations=async(req,res)=>{
   try {
     const { email } = req.body;

@@ -64,7 +64,7 @@ router.get('/getPosting/:email',getPosting);
 router.get('/getCollegeList',getCollegeList);
 router.get('/getCompanyList',getCompanyList);
 router.get('/getStudents',getStudents);
-router.get('/getActivations',getActivations);
+router.post('/getActivations',getActivations);
 
 
 module.exports = router;

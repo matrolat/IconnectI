@@ -8,39 +8,58 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { Button } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import IconButton from '@mui/material/IconButton';
+import PreviewIcon from '@mui/icons-material/Preview';
+import { useNavigate , useParams} from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+  iconButton: {
+    '&:hover': {
+      color: "primary", // Change to the color you want on hover
+    },
+  },
+}));
+
 
 const columns = [
   // { id: 'name', label: 'Posting ID', minWidth: 120 },
-  { id: 'code', label: 'Name', minWidth: 150 },
-  {
-    id: 'email',
-    label: 'email',
-    minWidth: 60,
-    align: 'center',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'phone',
-    label: 'phone',
-    minWidth: 60,
-    align: 'center',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'population',
-    label: 'Cgpa',
-    minWidth: 60,
-    align: 'center',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
+  { id: 'code', label: 'ID', minWidth: 60 },
   {
     id: 'size',
-    label: 'Skills',
+    label: 'CompanyName',
     minWidth: 200,
+    align: 'left',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'Name',
+    label: 'Name',
+    minWidth: 200,
+    align: 'left',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'Email',
+    label: 'Email',
+    minWidth: 200,
+    align: 'left',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'Phone',
+    label: 'Phone',
+    minWidth: 100,
+    align: 'center',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'btn',
+    label: 'View',
+    minWidth: 40,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
   },
- 
   
 ];
 
@@ -67,17 +86,19 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-export default function CollegeStudentTable({data,postData}) {
+export default function CompanyUserTable({data,postData}) {
   
+  const navigate = useNavigate();
 
+  const classes = useStyles();
   useEffect(()=>{
-		getData();
+		// getData();
         
 	  },[]);
-    const getData=()=>{
-      console.log("hjre");
-      console.log(data);
-    }
+    // const getData=()=>{
+    //   console.log("hjre");
+    //   console.log(data);
+    // }
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -115,25 +136,36 @@ export default function CollegeStudentTable({data,postData}) {
           </TableHead>
           <TableBody>
            {
-            data.slice(0,rowsPerPage).map((row)=>{
+            data.slice(0,rowsPerPage).map((row,index)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
                 <TableCell>
-                         {row.name}
+                         {index+1}
                 </TableCell>
                 <TableCell>
-                         {row.email}
+                         {row.companyname}
+                </TableCell>
+                <TableCell align={"left"}>
+                         {row.companyspocname}
                 </TableCell>
                 <TableCell align='center'>
-                         {row.phone}
-                </TableCell>
-                <TableCell align='center'>
-                         {row.cgpa}
+                         {row.companyspocemail}
                 </TableCell>
                 <TableCell align={"right"}>
-                         {row.skills.toString()}
+                        
+                         {row.companyspocphone}
+                        
                 </TableCell>
-               
+                <TableCell align={"right"}>
+                        
+                  <IconButton className={classes.iconButton} onClick={()=>{navigate(`/ViewCompanyDetails/${row.companyspocemail}`)}}>
+                <PreviewIcon color='primary' />
+                </IconButton>
+                  {/* <PreviewIcon /> */}
+       
+                        
+                </TableCell>
 
+               
 
 
               </TableRow>
