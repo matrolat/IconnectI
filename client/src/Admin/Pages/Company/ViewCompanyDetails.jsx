@@ -5,6 +5,8 @@ import { useNavigate , useParams} from "react-router-dom";
 import { JsonToExcel } from 'react-json-to-excel';
 import CompanyUserTable from './CompanyUserTable';
 import InternListingTable from './InternListingTable';
+import {Route, Link, Routes} from 'react-router-dom';
+
 
 export default function ViewCompanyDetails() {
 
@@ -13,6 +15,7 @@ export default function ViewCompanyDetails() {
 		getData();
 
 	  },[]);
+    const navigate = useNavigate();
     const {email} = useParams();
     const [data,setData] = useState(
      
@@ -44,10 +47,10 @@ export default function ViewCompanyDetails() {
           
         }
     }
-
+    const handleBackButtonClick=()=>{navigate(-1);};
   return (
     <div style={{display:"flex",alignItems:"center",width:"100%",flexDirection:"column",background:"#F5F7FA"}}>
-
+        <button  style={{width:70, height:30, position:"absolute", left: 60,color:'black',background:'aquamarine',borderRadius:50}} onClick={handleBackButtonClick}>Back</button>
       <div style={{borderWidth:4,borderColor:"black",borderStyle:"solid",borderRadius:30, width:"90%",minHeight:300,margin:30,background:"#28CB8B"}}>
       <div style={{textAlign:"left",margin:20}}>
         <h2>Activation Details :</h2>
