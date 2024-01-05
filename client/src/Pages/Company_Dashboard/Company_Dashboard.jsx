@@ -167,7 +167,8 @@ export default function Company_Dashboard(){
         
         if(activate[0])
         {
-            await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null))
+            // await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null))
+            await setImageURL("https://iconnecti.onrender.com/public/uploads/" +(activate[0] ?activate[0].logo : null))
         }
            
            // await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null));
