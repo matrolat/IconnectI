@@ -19,8 +19,8 @@ app.use('/public', express.static('public'));
 // };
 // app.use(cors());
 app.use(cookieParser());
-// app.use(cors({origin:"http://localhost:3000",credentials:true}));
-app.use(cors({origin:"https://6597779b2209f16c37ce16b6--fanciful-faun-8a8e65.netlify.app",credentials:true}));
+ app.use(cors({origin:"http://localhost:3000",credentials:true}));
+// app.use(cors({origin:"https://6597779b2209f16c37ce16b6--fanciful-faun-8a8e65.netlify.app",credentials:true}));
 // app.use(cors(corsOptions));
 // app.use(cors({credentials:true}));
 app.use((error, request, response, next) => {

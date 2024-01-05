@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const URL = "http://localhost:4000";
-const URL = "https://iconnecti.onrender.com";
+const URL = "http://localhost:4000";
+// const URL = "https://iconnecti.onrender.com";
 
 
 
@@ -447,8 +447,8 @@ export const forgotPWD =async(values)=>{
 export const downloadTemplate =async()=>{
   
   const newTab = false;
-  // window.open("http://localhost:4000/public/files/template.csv",newTab ? '' : '_self' );
-  window.open("https://iconnecti.onrender.com/public/files/template.csv",newTab ? '' : '_self' );
+  window.open("http://localhost:4000/public/files/template.csv",newTab ? '' : '_self' );
+  // window.open("https://iconnecti.onrender.com/public/files/template.csv",newTab ? '' : '_self' );
  
   
 }

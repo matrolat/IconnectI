@@ -28,8 +28,8 @@ export default function ViewCompanyDetails() {
         if(res!=undefined)
         {
             await setData(res.data[0]);
-          //  setImageURL("http://localhost:4000/public/uploads/" +(res.data[0]?res.data[0].logo : null))
-           setImageURL("https://iconnecti.onrender.com/public/uploads/" +(res.data[0]?res.data[0].logo : null))
+           setImageURL("http://localhost:4000/public/uploads/" +(res.data[0]?res.data[0].logo : null))
+          //  setImageURL("https://iconnecti.onrender.com/public/uploads/" +(res.data[0]?res.data[0].logo : null))
         
         }
         console.log(res);

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const URL = "http://localhost:4000";
-const URL = "https://iconnecti.onrender.com";
+const URL = "http://localhost:4000";
+// const URL = "https://iconnecti.onrender.com";
 
 
 export const getCollegeUsers= async()=>{

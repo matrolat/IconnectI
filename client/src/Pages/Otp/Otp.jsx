@@ -40,8 +40,8 @@ let [loading, setLoading] = useState(false);
     
       const verifyOTP = async (email , otp)=>{
              setLoading(true);
-        // const res = await fetch("http://localhost:4000/otpVerify", {
-        const res = await fetch("https://iconnecti.onrender.com/otpVerify", {
+        const res = await fetch("http://localhost:4000/otpVerify", {
+        // const res = await fetch("https://iconnecti.onrender.com/otpVerify", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
