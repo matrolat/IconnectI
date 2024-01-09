@@ -76,7 +76,7 @@ const getCompanyList=async(req,res)=>{
 
 const getStudents=async(req,res)=>{
   try {
-    const { uploadedBy } = req.body;
+    const { uploadedBy } = req.params;
     console.log("Hello");
 
     const students = await Student.find({ uploadedBy: uploadedBy});

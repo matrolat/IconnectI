@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@progress/kendo-theme-material": "^7.0.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
+    "chart.js": "^4.4.1",
     "connect": "^3.7.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -20,11 +22,13 @@
     "express": "^4.18.2",
     "file-saver": "^2.0.5",
     "fs": "^0.0.1-security",
+    "hammerjs": "^2.0.8",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.2",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.5",
     "nodemon": "^3.0.1",
+    "react-chartjs-2": "^5.2.0",
     "react-json-to-excel": "^1.0.7",
     "xlsx": "^0.18.5"
   }

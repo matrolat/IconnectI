@@ -8,6 +8,7 @@ import InternListingTable from './InternListingTable';
 import {Route, Link, Routes} from 'react-router-dom';
 
 
+
 export default function ViewCompanyDetails() {
 
   useEffect(()=>{
@@ -47,17 +48,18 @@ export default function ViewCompanyDetails() {
           
         }
     }
-    const handleBackButtonClick=()=>{navigate(-1);};
+    const handleBackButtonClick=()=>{navigate("/Reporting/company");};
   return (
     <div style={{display:"flex",alignItems:"center",width:"100%",flexDirection:"column",background:"#F5F7FA"}}>
-        <button  style={{width:70, height:30, position:"absolute", left: 60,color:'black',background:'aquamarine',borderRadius:50}} onClick={handleBackButtonClick}>Back</button>
+        <button  style={{width:70, height:30, position:"absolute", left: 10,color:'black',background:'aquamarine',borderRadius:50}} onClick={handleBackButtonClick}>&#8592;</button>
       <div style={{borderWidth:4,borderColor:"black",borderStyle:"solid",borderRadius:30, width:"90%",minHeight:300,margin:30,background:"#28CB8B"}}>
       <div style={{textAlign:"left",margin:20}}>
         <h2>Activation Details :</h2>
+  
 
 {
   data ?
-
+          
           <div style={{width:"100%",backgroundColor:"",minHeight:"100%" ,display:"flex",justifyContent:"space-around"}}>
 
               <div style={{ width:"35%",minHeight:200,display:"flex",flexDirection:"column",justifyContent:"space-evenly"}}>
@@ -92,9 +94,9 @@ export default function ViewCompanyDetails() {
           </div>
   : "Profile is not activated yet"
 }
+  
       </div>
       </div>
-
        <div style={{width:"90%",display:"flex",flexDirection:"column"}}>
         <div style={{margin:10,display:"flex",justifyContent:"space-between"}}>
 
@@ -116,5 +118,7 @@ export default function ViewCompanyDetails() {
 
 
     </div>
+  
   )
+  
 }

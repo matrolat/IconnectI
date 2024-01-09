@@ -20,6 +20,9 @@ import ViewActivePostings from "./Pages/ViewActivePostings/ViewActivePostings";
 import CompanyUpdate from "./Pages/CompanyUpdate/CompanyUpdate";
 import Reporting from "./Admin/Pages/Reporting/Reporting";
 import ViewCompanyDetails from './Admin/Pages/Company/ViewCompanyDetails' 
+import ViewCollegeDetails from './Admin/Pages/College/ViewCollegeDetails' 
+
+
 
 function App() {
   return (
@@ -49,7 +52,10 @@ function App() {
           <Route path="/CollegeDashboard/:email" element={<CollegeDashboard/>} />
           <Route path="/ViewActivePostings/:email" element={<ViewActivePostings/>} />
           <Route path="/Reporting" element={<Reporting/>} />
+          <Route path="/Reporting/:page" element={<Reporting/>} />
+
           <Route path="/ViewCompanyDetails/:email" element={<ViewCompanyDetails/>} />
+          <Route path="/ViewCollegeDetails/:email" element={<ViewCollegeDetails/>} />
           
 
 

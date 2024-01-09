@@ -8,58 +8,39 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { Button } from '@material-ui/core';
-import { makeStyles } from '@mui/styles';
-import IconButton from '@mui/material/IconButton';
-import PreviewIcon from '@mui/icons-material/Preview';
-import { useNavigate , useParams} from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  iconButton: {
-    '&:hover': {
-      color: "primary", // Change to the color you want on hover
-    },
-  },
-}));
-
 
 const columns = [
   // { id: 'name', label: 'Posting ID', minWidth: 120 },
-  { id: 'code', label: 'ID', minWidth: 60 },
+  { id: 'code', label: 'Name', minWidth: 150 },
   {
-    id: 'size',
-    label: 'CompanyName',
-    minWidth: 200,
-    align: 'left',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'Name',
-    label: 'Name',
-    minWidth: 200,
-    align: 'left',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'Email',
-    label: 'Email',
-    minWidth: 200,
-    align: 'left',
-    // format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'Phone',
-    label: 'Phone',
-    minWidth: 100,
+    id: 'email',
+    label: 'email',
+    minWidth: 60,
     align: 'center',
     // format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'btn',
-    label: 'View',
-    minWidth: 40,
+    id: 'phone',
+    label: 'phone',
+    minWidth: 60,
+    align: 'center',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'population',
+    label: 'Cgpa',
+    minWidth: 60,
+    align: 'center',
+    // format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'size',
+    label: 'Skills',
+    minWidth: 200,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
   },
+ 
   
 ];
 
@@ -86,19 +67,17 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-export default function CompanyUserTable({data,postData}) {
+export default function StudentsListingTable({data,postData}) {
   
-  const navigate = useNavigate();
 
-  const classes = useStyles();
   useEffect(()=>{
-		// getData();
+		getData();
         
 	  },[]);
-    // const getData=()=>{
-    //   console.log("hjre");
-    //   console.log(data);
-    // }
+    const getData=()=>{
+      console.log("hjre");
+      console.log(data);
+    }
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -136,36 +115,25 @@ export default function CompanyUserTable({data,postData}) {
           </TableHead>
           <TableBody>
            {
-            data.slice(0,rowsPerPage).map((row,index)=>{
+            data.slice(0,rowsPerPage).map((row)=>{
               return  <TableRow hover role="checkbox" tabIndex={-1} >
                 <TableCell>
-                         {index+1}
+                         {row.name}
                 </TableCell>
                 <TableCell>
-                         {row.companyname}
+                         {row.email}
                 </TableCell>
-                <TableCell align={"left"}>
-                         {row.companyspocname}
+                <TableCell align='center'>
+                         {row.phone}
                 </TableCell>
-                <TableCell align='left'>
-                         {row.companyspocemail}
-                </TableCell>
-                <TableCell align={"right"}>
-                        
-                         {row.companyspocphone}
-                        
+                <TableCell align='center'>
+                         {row.cgpa}
                 </TableCell>
                 <TableCell align={"right"}>
-                        
-                  <IconButton className={classes.iconButton} onClick={()=>{navigate(`/ViewCompanyDetails/${row.companyspocemail}`)}}>
-                <PreviewIcon color='primary' />
-                </IconButton>
-                  {/* <PreviewIcon /> */}
-       
-                        
+                         {row.skills.toString()}
                 </TableCell>
-
                
+
 
 
               </TableRow>

@@ -88,7 +88,7 @@ export default function Reporting() {
 
 
   const navigate = useNavigate();
-  const {email} = useParams();
+  const {page} = useParams();
 
   const [data,setData] = useState();
   const [dropdown,setDropdown] = useState();
@@ -97,7 +97,7 @@ export default function Reporting() {
 
 
 
-  const [selectedLink, setSelectedLink] = useState("college");
+  const [selectedLink, setSelectedLink] = useState(page?page:"college");
 
   const handleLinkClick = (link) => {
     setSelectedLink(link);

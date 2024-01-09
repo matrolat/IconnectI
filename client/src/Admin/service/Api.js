@@ -67,3 +67,20 @@ export const getPosting= async(email)=>{
     }
   
   }
+
+export const getStudents= async(uploadedBy)=>{
+    try{
+      
+      return await axios.get(`${URL}/getStudents/${uploadedBy}`, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    }
+    catch(error){
+        console.log(" Error in get all postings API : "+error);
+    }
+  
+  }
+
+

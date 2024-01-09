@@ -27,7 +27,7 @@ const columns = [
   { id: 'code', label: 'ID', minWidth: 60 },
   {
     id: 'size',
-    label: 'CompanyName',
+    label: 'CollegeName',
     minWidth: 200,
     align: 'left',
     // format: (value) => value.toLocaleString('en-US'),
@@ -86,7 +86,7 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-export default function CompanyUserTable({data,postData}) {
+export default function CollegeUserTable({data,postData}) {
   
   const navigate = useNavigate();
 
@@ -142,22 +142,22 @@ export default function CompanyUserTable({data,postData}) {
                          {index+1}
                 </TableCell>
                 <TableCell>
-                         {row.companyname}
+                         {row.collegename}
                 </TableCell>
                 <TableCell align={"left"}>
-                         {row.companyspocname}
+                         {row.collegespocname}
                 </TableCell>
                 <TableCell align='left'>
-                         {row.companyspocemail}
+                         {row.collegespocemail}
                 </TableCell>
                 <TableCell align={"right"}>
                         
-                         {row.companyspocphone}
+                         {row.collegespocphone}
                         
                 </TableCell>
                 <TableCell align={"right"}>
                         
-                  <IconButton className={classes.iconButton} onClick={()=>{navigate(`/ViewCompanyDetails/${row.companyspocemail}`)}}>
+                  <IconButton className={classes.iconButton} onClick={()=>{navigate(`/ViewCollegeDetails/${row.collegespocemail}`)}}>
                 <PreviewIcon color='primary' />
                 </IconButton>
                   {/* <PreviewIcon /> */}
