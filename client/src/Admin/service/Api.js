@@ -82,5 +82,19 @@ export const getStudents= async(uploadedBy)=>{
     }
   
   }
+export const getAllInternships= async()=>{
+    try{
+      
+      return await axios.get(`${URL}/getAllInternships`, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    }
+    catch(error){
+        console.log(" Error in get all postings API : "+error);
+    }
+  
+  }
 
 

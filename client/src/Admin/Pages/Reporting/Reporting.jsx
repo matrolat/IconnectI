@@ -14,6 +14,7 @@ import Select from '@mui/material/Select';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import College from '../College/College';
 import Company from '../Company/Company';
+import AllInternships from '../AllInternships/AllInternships';
 
 function getStyles(name, personName, theme) {
   return {
@@ -130,11 +131,15 @@ export default function Reporting() {
             <div onClick={() => handleLinkClick('company')} style={{cursor:"pointer"}}>
             <h2  style={{color:"white",textDecoration:selectedLink === 'company' &&"underline" ,textDecorationColor:"#90EE90"}}>Company Users</h2>
             </div>
+            <div onClick={() => handleLinkClick('allInternships')} style={{cursor:"pointer"}}>
+            <h2  style={{color:"white",textDecoration:selectedLink === 'allInternships' &&"underline" ,textDecorationColor:"#90EE90"}}>All Internships</h2>
+            </div>
           </div>
         </div>
           <div className={classes.right} >
             {selectedLink === 'college' && <College/>}
             {selectedLink === 'company' && <Company/>}
+            {selectedLink === 'allInternships' && <AllInternships/>}
           </div>
       </div>
     </div>

@@ -100,6 +100,18 @@ const getActivations=async(req,res)=>{
   }
 }
 
+const getAllInternships = async(req, res)=>{
+  try{
+    console.log("Hello active");
+
+    const allInternships = await InternPosting.find();
+      console.log(allInternships);
+    res.json(allInternships);
+  }catch (error) {
+    console.log(error);
+  }
+
+}
   
 
   module.exports = {
@@ -107,7 +119,8 @@ const getActivations=async(req,res)=>{
     getCollegeList,
     getCompanyList,
     getStudents,
-    getActivations
+    getActivations,
+    getAllInternships
   };
 
 
