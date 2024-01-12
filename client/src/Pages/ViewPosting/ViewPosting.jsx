@@ -36,7 +36,7 @@ export default function ViewPosting() {
 
   return (
     <div>
-        <Header title="View Earlier Posting" />
+        <Header title="Inactive Posting" />
         <div style={{height:"auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginTop:50}}>
         <div style={{display:"flex", alignItems:"center",justifyContent:"center",width:"80%" }}>
        
