@@ -116,7 +116,7 @@ const postData =async()=>{
   console.log(dat);
   if(!dat  ){
     //  setLoading(!loading);
-    window.alert("Invalid Upload");
+    // window.alert("Invalid Upload");
     console.log("Invalid Upload");
   }else{
     window.alert("Upload Successful");

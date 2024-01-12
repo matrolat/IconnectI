@@ -38,7 +38,8 @@ export const companyRegistration = async(values) => {
     });
   }
   catch(error){
-      console.log(" Error in login API : "+error);
+    window.alert(error.response.data.error)
+      console.log(" Error in login API : "+ JSON.stringify(error.response.data.error));
   }
     
     
@@ -59,6 +60,11 @@ export const companyRegistration = async(values) => {
       });
     }
     catch(error){
+      if(error.response.data.error)
+      {
+        window.alert(error.response.data.error)
+
+      }
         console.log(" Error in login API : "+error);
     }
   }
@@ -112,6 +118,7 @@ export const companyRegistration = async(values) => {
       });
     }
     catch(error){
+      window.alert(error.response.data.error)
         console.log(" Error in login API : "+error);
     }
   }
@@ -143,6 +150,7 @@ export const companyActivate = async(values,companysopcemail)=>{
     !companysopcemail
   ) 
   {
+    // window.alert("Pls fill all the valid fields")
     return;
   }
   const email = companysopcemail;
@@ -172,6 +180,7 @@ export const companyActivate = async(values,companysopcemail)=>{
             )
     }
     catch(error){
+      window.alert(error.response.data.error);
         console.log(" Error in signup API : "+error);
     }
 
@@ -273,13 +282,7 @@ export const internPosting = async(values, userID, uniqueID, postdate, postingem
           // postingemail,
   } = values;
 
-  const isValidDates = new Date(startdate) < new Date(enddate) && new Date(startdate) >= new Date();
   
-  if (!isValidDates) {
-    console.error('Invalid date range. Please ensure the start date is before the end date and both are greater than or equal to today.');
-    return; // Stop execution if date validation fails
-  }
-
 
   // const email = companysopcemail;
 
@@ -310,6 +313,11 @@ export const internPosting = async(values, userID, uniqueID, postdate, postingem
     });
   }
   catch(error){
+    if(error.response)
+    {
+      window.alert(error.response.data.error)
+
+    }
       console.log(" Error in activation API : "+error);
   }
 
@@ -469,6 +477,7 @@ export const StudentUpload= async(items)=>{
         console.error('Error saving items');
       }
     } catch (error) {
+      window.alert(error.response.data.error)
       console.error('Error saving items:', error);
     }
 }

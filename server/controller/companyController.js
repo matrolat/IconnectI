@@ -52,11 +52,20 @@ const transporter = nodemailer.createTransport({
           !vacancy ||
           !skills ||
           !jobdescription ||
-          !userID || 
-          startdate>enddate
+          !userID 
         ) {
-          return res.status(422).json({ error: "Please Fill the fields" });
+          return res.status(422).json({ error: "Please Fill all the fields" });
         } else {
+          
+          const isValidDates = new Date(startdate) < new Date(enddate) && new Date(startdate) >= new Date();
+          
+          if (!isValidDates) {
+            
+            return res.status(422).json({ error: "Invalid date range. Please ensure the start date is before the end date and both are greater than or equal to today" });
+          }
+
+
+
           const user = new Posting({
             name,
             areaofwork,
@@ -131,7 +140,7 @@ const companyActivation = async(req,res)=>{
             !compdescription ||
             !email
           ) {
-            return res.status(422).json({ error: "Please Fill the fields" });
+            return res.status(422).json({ error: "Please Fill all the fields" });
           }
           const userExists = await Activation.findOne({ companyregno: companyregno });
       

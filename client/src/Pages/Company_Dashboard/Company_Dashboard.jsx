@@ -181,8 +181,21 @@ export default function Company_Dashboard(){
     const classes = useStyles();
     const navigate = useNavigate();
 
-        const handleLogout=()=>{
-            navigate('/');
+        const handleLogout=async()=>{
+            try {
+                const response = await fetch('/logout', {
+                  method: 'GET',
+                });
+            
+                if (response.ok) {
+                  console.log('Cookie deleted successfully');
+                  navigate('/');
+                } else {
+                  console.log('Failed to delete cookie');
+                }
+              } catch (error) {
+                console.error('Error occurred while deleting cookie:', error);
+              }
         }
 
   return (

@@ -114,10 +114,10 @@ export default function Reg_Company() {
     const res = await companyRegistration(values);
     const data = JSON.stringify(res);
     
-    // console.log(data);
+    console.log("response->"+data);
     if(!data || res.data.status === 422 ){
       //  setLoading(!loading);
-      window.alert("Invalid Registration");
+      // window.alert("Invalid Registration");
       console.log("Invalid Registration");
     }else{
       window.alert("Registration Successful");
@@ -128,7 +128,7 @@ export default function Reg_Company() {
   }
 
   return (
-    <div>
+    <form>
       <div className="company-registration-container">
         <div className="company-registration-company-registration">
 
@@ -136,7 +136,7 @@ export default function Reg_Company() {
             <MainLogo/>
             <div className="company-registration-frame7">
               <span className="company-registration-text">
-                <span>Register your account {valid?"yes":"no"}</span>
+                <span>Register your account </span>
               </span>
               <span className="company-registration-text02">
                 <span className="company-registration-text03">
@@ -163,7 +163,7 @@ export default function Reg_Company() {
               className="input"
               onChange = {onChange}
               errorMessage = "Not a valid email"
-              required = "true"
+              required = {true}
             />
             <span className={validFields.companyspocemail?"invisible":"error"}>Not a valid email</span>
             </div>
@@ -178,7 +178,7 @@ export default function Reg_Company() {
               className="input"
               onChange = {onChange}
               errorMessage = ""
-              required = "true"
+              required = {true}
             />
             </div>
           
@@ -198,7 +198,7 @@ export default function Reg_Company() {
               className="input"
               onChange = {onChange}
               errorMessage = "Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
-              required= "true"
+              required= {true}
               pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"  
          
             />
@@ -216,7 +216,7 @@ export default function Reg_Company() {
               className="input"
               onChange = {onChange}
               // errorMessage = "Passwords don't match!"
-              required= "true"
+              required= {true}
               pattern = {values.password}
             />
             <span className={validFields.confirmPassword?"invisible":"error"}>Passwords don't match!</span>
@@ -239,7 +239,7 @@ export default function Reg_Company() {
               name="companyspocname"
               className="input"
               onChange = {onChange}
-              required = "true"
+              required = {true}
               pattern = "^[A-Za-z0-9\s]{3,}$"
             />
             <span className={validFields.companyspocname?"invisible":"error"}>Username should be of at least 3 letters and shouldn't include any special character!</span>
@@ -255,7 +255,7 @@ export default function Reg_Company() {
               name="companyspocphone"
               className="input"
               onChange = {onChange}
-              required = "true"
+              required = {true}
               pattern = "^[1-9][0-9]{9}$"
             />
             <span className={validFields.companyspocphone?"invisible":"error"}>Phone number should be of 10 digits!</span>
@@ -288,6 +288,6 @@ export default function Reg_Company() {
            
         </div>
       </div>
-    </div>
+    </form>
   );
 }

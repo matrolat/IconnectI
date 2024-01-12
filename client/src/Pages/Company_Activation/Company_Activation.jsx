@@ -130,7 +130,7 @@ export default function
     setLoading(false);
     // console.log(data);
     if(!data || res.data.status === 422 ){
-      window.alert("Invalid Registration");
+      // window.alert("Invalid Registration");
       console.log("Invalid Registration");
      }else{
       window.alert("Activation Successful");
@@ -140,7 +140,7 @@ export default function
   }
 
   return (
-    <div>
+    <form>
         <div class="company-activation-container">
         <div class="company-activation-company-activation">
           <div class="company-activation-header" >
@@ -163,6 +163,7 @@ export default function
                 placeholder=""
                 class="activation-input"
                 name='websiteinfo'
+                required={true}
                 // value={values.websiteinfo}              
                 onChange={onChange}
               />
@@ -217,6 +218,7 @@ export default function
                 onChange={onChange}
                 input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
                 MenuProps={MenuProps}
+                required={true}
               >
                 
                   <MenuItem
@@ -291,6 +293,7 @@ export default function
                 className="activation-input"
                 onChange={onChange}
                 input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                required={true}
                 MenuProps={MenuProps}
               >
                 
@@ -314,6 +317,7 @@ export default function
                 placeholder=""
                 class="activation-input"
                 name='currentlocation'
+                required={true}
                 // name={values.currentlocation}               
                 onChange={onChange}
               />
@@ -329,6 +333,7 @@ export default function
                 placeholder=""
                 name='companyregno'
                 class="activation-input"
+                required={true}
                 // value={values.companyregno}
                 
                 onChange={onChange}
@@ -383,7 +388,8 @@ export default function
                 name='industrytype'
                 className="activation-input"
                 onChange={onChange}
-                input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />}
+                input={ <OutlinedInput label="Name" className={classes.root} theme={theme} />} 
+                required={true}
                 MenuProps={MenuProps}
               >
                 
@@ -424,7 +430,7 @@ export default function
                 class="activation-input"
                 name='registeredoffice'
                 // value={values.registeredoffice}
-        
+                required={true}
                 onChange={onChange}
               />
             </div>
@@ -453,6 +459,7 @@ export default function
                 class="activation-input"
                 name='employeecount'
                 // value={values.employeecount}
+                required={true}
                
                 onChange={onChange}
               />
@@ -471,6 +478,7 @@ export default function
               /> */}
 
             <textarea
+            required={true}
                 onChange={onChange}
                 name='compdescription'
                 type="text"
@@ -496,6 +504,7 @@ export default function
           bordeWidth: 0.791015625,
           borderRadius: 19.775390625,
           backgroundColor: "#FFFFFF",
+          
                 }}
               >
 
@@ -627,7 +636,7 @@ export default function
         </div>
       </div>
 
-    </div>
+    </form>
   )
 }
 

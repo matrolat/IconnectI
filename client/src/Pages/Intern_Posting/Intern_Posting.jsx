@@ -292,7 +292,7 @@ function getStyles(name, personName, theme) {
         setLoading(false);
         // console.log(data);
         if(!data || res.data.status === 422 ){
-          window.alert("Invalid Registration");
+          // window.alert("Invalid Registration");
           console.log("Invalid Registration");
          }else{
           window.alert("Internship Posting Successful");

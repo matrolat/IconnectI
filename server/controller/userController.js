@@ -5,7 +5,8 @@ const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const dotenv = require('dotenv');
 const Activation = require("../models/activationSchema");
-const InternPosting = require("../models/internPostingSchema")
+const InternPosting = require("../models/internPostingSchema");
+const Admin = require("../models/adminSchema");
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
@@ -82,7 +83,14 @@ const companyRegistration = async (req, res) =>{
       console.log(req.body);
   
       if (!email || !password) {
-        return res.status(422).json({ error: "Please Fill the fields" });
+        return res.status(422).json({ error: "Please Fill all the fields" });
+      }
+      const adminUser = await Admin.findOne({ adminemail: email, adminpassword:password });
+      console.log("admmin"+ adminUser);
+      if(adminUser)
+      {
+        console.log("admin user");
+        return res.status(200).json(adminUser);
       }
       const userExist = await companyUser.findOne({ companyspocemail: email });
         const collegeUser = await College.findOne({ collegespocemail: email });
@@ -99,8 +107,7 @@ const companyRegistration = async (req, res) =>{
           if (emailExist) {
             const updateData = await UserOtp.findByIdAndUpdate(
               { _id: emailExist._id },
-              { emailotp: OTP1 },
-              { phoneotp: OTP2 },
+              { emailotp: OTP1, phoneotp: OTP2, createdAt: new Date() },
               { new: true }
             );
             await updateData.save();
@@ -180,7 +187,7 @@ const companyRegistration = async (req, res) =>{
   
           // return res.status(201).json({ message: "company" });
         } else {
-          return res.status(422).json({ message: "Invalid Credentials" });
+          return res.status(422).json({ error: "Invalid Credentials" });
         }
       } else if (!userExist && collegeUser) {
         console.log("hiiiii");
@@ -238,10 +245,10 @@ const companyRegistration = async (req, res) =>{
           }
           // return res.status(201).json({ message: "college" });
         } else {
-          return res.status(422).json({ message: "Invalid Credentials" });
+          return res.status(422).json({ error: "Invalid Credentials" });
         }
       } else {
-        return res.status(422).json({ message: "Invalid Credentials" });
+        return res.status(422).json({ error: "Invalid Credentials" });
       }
     } catch (err) {
       console.log(err);
@@ -276,11 +283,11 @@ const companyRegistration = async (req, res) =>{
   }
   const currentTime = new Date();
   const expirationTime = new Date(userExist[0].createdAt.getTime() + 5 * 60 * 1000);
-  console.log(currentTime + " " +expirationTime);
+  console.log(new Date(userExist[0].createdAt.getTime()) +" "+ currentTime + " " +expirationTime);
     if (currentTime > expirationTime) {
       // OTP has expired
       console.log("expired");
-      await UserOtp.deleteMany({ email: email });
+      // await UserOtp.deleteMany({ email: email });
       return res.status(422).json({ error: "expired OTP" });
     }
 
@@ -369,7 +376,7 @@ const companyRegistration = async (req, res) =>{
         !degreeoffered ||
         confirmPassword != password
       ) {
-        return res.status(422).json({ error: "Please Fill the fields" });
+        return res.status(422).json({ error: "Please Fill all the fields" });
       }
       const userExists = await College.findOne({
         collegespocemail: collegespocemail,
@@ -429,7 +436,7 @@ const companyRegistration = async (req, res) =>{
     console.log("right now"+ JSON.stringify(req.body));
     try{
       if (!email) {
-        return res.status(422).json({ error: "Please Fill the fields" });
+        return res.status(422).json({ error: "Please Fill all the fields" });
       }
       const userExist = await companyUser.findOne({ companyspocemail: email });
         const collegeUser = await College.findOne({ collegespocemail: email });

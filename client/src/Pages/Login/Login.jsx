@@ -39,15 +39,20 @@ export default function Login() {
       // const data = await res.data;
       const data = JSON.stringify(res);
       if ( !data || res.status === 422 ) {
-        window.alert("Invalid Credentials");
+        // window.alert("Invalid Credentials");
         console.log("Invalid Credentials");
       } else {
-        if(!res.data.companyspocemail){
-          window.alert("college");
-          navigate(`/otp/${res.data.collegespocemail}`);
-        }else{
-          window.alert("company");
+      
+        if(res.data.companyspocemail){
+          // window.alert("college");
           navigate(`/otp/${res.data.companyspocemail}`);
+        }else if(res.data.collegespocemail){
+          // window.alert("company");
+          navigate(`/otp/${res.data.collegespocemail}`);
+        }
+        else{
+          navigate(`/Reporting`);
+
         }
         
       }

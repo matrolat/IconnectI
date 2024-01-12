@@ -98,7 +98,7 @@ export default function
     setLoading(false);
     // console.log(data);
     if( !data || res.data.status === 422){
-      window.alert("Invalid Registration");
+      // window.alert("Invalid Registration");
       console.log("Invalid Registration");
      }else{
       window.alert("Registration Successful");
@@ -157,7 +157,7 @@ export default function
                 placeholder=""
                 class="input-box"
                 errorMessage="Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
-                required="true"
+                required={true}
                 pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"           
               />
             <span className= {validFields.password?"invisible":"error"}>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
