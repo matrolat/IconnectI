@@ -121,7 +121,7 @@ export default function ResetPassword() {
         }
 
   return (
-    <div className={classes.page}>
+    <form className={classes.page}>
         <div className={classes.outerContainer}>
             <MainLogo />
             <span>New Password</span>
@@ -139,6 +139,10 @@ export default function ResetPassword() {
                 className={classes.inputBox} 
                 name= "password"
                 onChange={onChange}
+                required={true}
+                maxlength="50"
+                pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$" 
+                errorMessage="Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
                 />
                 <div className={classes.head}>
                     Confirm password
@@ -170,6 +174,6 @@ export default function ResetPassword() {
                 
                 }
             </button>
-    </div>
+    </form>
   )
 }
