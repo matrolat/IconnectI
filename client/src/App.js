@@ -21,6 +21,7 @@ import CompanyUpdate from "./Pages/CompanyUpdate/CompanyUpdate";
 import Reporting from "./Admin/Pages/Reporting/Reporting";
 import ViewCompanyDetails from './Admin/Pages/Company/ViewCompanyDetails' 
 import ViewCollegeDetails from './Admin/Pages/College/ViewCollegeDetails' 
+import LoggedInForgotPwd from "./Pages/Password/LoggedInForgotPwd";
 
 
 
@@ -48,6 +49,8 @@ function App() {
           {/* <Route path="/ForgotPassword/:email" element={<ForgotPassword/>} /> */}
           <Route path="/ForgotPassword/" element={<ForgotPassword/>} />
           <Route path="/ResetPassword/:email" element={<ResetPassword/>} />
+          <Route path="/ForgotPWD/:email" element={<LoggedInForgotPwd/>} />
+          
           <Route path="/UploadStudent/:email" element={<UploadStudent/>} />
           <Route path="/CollegeDashboard/:email" element={<CollegeDashboard/>} />
           <Route path="/ViewActivePostings/:email" element={<ViewActivePostings/>} />
