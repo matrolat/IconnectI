@@ -179,6 +179,7 @@ export default function
                 class="activation-input"
                 name='websiteinfo'
                 required={true}
+                maxLength="50"
                 // value={values.websiteinfo}              
                 onChange={onChange}
               />
@@ -333,6 +334,7 @@ export default function
                 class="activation-input"
                 name='currentlocation'
                 required={true}
+                maxLength="200"
                 // name={values.currentlocation}               
                 onChange={onChange}
               />
@@ -348,6 +350,7 @@ export default function
                 placeholder=""
                 name='companyregno'
                 class="activation-input"
+                maxLength="50"
                 required={true}
                 // value={values.companyregno}
                 
@@ -444,6 +447,7 @@ export default function
                 placeholder=""
                 class="activation-input"
                 name='registeredoffice'
+                maxLength="200"
                 // value={values.registeredoffice}
                 required={true}
                 onChange={onChange}
@@ -495,6 +499,7 @@ export default function
             <textarea
             required={true}
                 onChange={onChange}
+                
                 name='compdescription'
                 type="text"
                 // placeholder="abc"

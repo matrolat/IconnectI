@@ -85,6 +85,7 @@ const handleDownload =async()=>{
 }
 
 const handleParse = async() => {
+  setData([]);
   // if (!file) return setError("Enter a valid file");
   const reader = new FileReader();
 
@@ -109,6 +110,12 @@ const handleParse = async() => {
 };
 
 const postData =async()=>{
+  if(data.length===0)
+  {
+    
+    alert("Please parse the data to upload");
+    return
+  }
   setLoading(true);
   const res = StudentUpload(data);
   const dat = JSON.stringify(res);
