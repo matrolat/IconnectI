@@ -41,16 +41,18 @@ const useStyles = makeStyles((theme) => ({
   },
   inpText: {
 	color: "#A7A1A1",
+	color: "black",
 	height: 50,
 	width: 370,
 	display: "flex",
 	padding: "11 16",
 	overflow: "hidden",
+	fontSize: 16,
 	
 	textAlign: "left",
 	alignItems: "center",
 	flexShrink: 0,
-	fontWeight: 400,
+	fontWeight: 500,
 	borderColor: "#D2CECE",
 	
 	borderStyle: "solid",
@@ -138,6 +140,7 @@ export default function ForgotPassword() {
 				  
                   type="text"
                   placeholder="Enter Email"
+				  maxLength={50}
                   class={classes.inpText}
                 />
 
