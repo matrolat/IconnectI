@@ -31,8 +31,8 @@ export default function ViewCollegeDetails() {
     <div style={{ display: "flex", alignItems: "center", width: "100%", flexDirection: "column", background: "#F5F7FA" }}>
       <button style={{ width: 70, height: 30, position: "absolute", left: 10, color: 'black', background: 'green', borderRadius: 60 }} onClick={handleBackButtonClick}>&#8592;</button>
       <div style={{ width: "90%", display: "flex", flexDirection: "column" }}>
-        <div style={{ width: "90%", display: "flex", flexDirection: "column", margin: 100, alignContent: 'center' }}>
-          Hello
+        <div style={{ width: "90%", display: "flex", flexDirection: "column", margin: 50, alignContent: 'center' }}>
+         
         </div>
         <div style={{ margin: 10, display: "flex", justifyContent: "space-between" }}>
           <h2>Profiles Uploaded :</h2>
@@ -43,7 +43,7 @@ export default function ViewCollegeDetails() {
             btnClassName="custom-classname"
           />
         </div>
-        {data && Object.keys(data).length !== 0 ? <StudentsListingTable data={data} /> : <div>No data</div>}
+        {data && Object.keys(data).length !== 0 ? <StudentsListingTable data={data} /> : <div style={{height:"90vh"}}>No students data available</div>}
 
         {/* Integrate the BarChart component here */}
         {/* <BarChart data={data} /> */}
