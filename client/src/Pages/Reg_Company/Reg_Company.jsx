@@ -267,7 +267,7 @@ export default function Reg_Company() {
 
         <div className="company-registration-check" >
             
-          <button className={classes.btnStyles} id="click-btn" disabled={loading} onClick={postData} style={{height:80, width:389,margin:30}}>
+          <button type='submit' className={classes.btnStyles} id="click-btn" disabled={loading} onClick={postData} style={{height:80, width:389,margin:30}}>
             <span ><span>
             { loading?  
                  <BeatLoader 

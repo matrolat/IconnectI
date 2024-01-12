@@ -58,14 +58,14 @@ export default function Login() {
       }
       setLoading(false);
       
-    }
+    } 
     const handleForgotPassword=()=>{
       navigate(`/ForgotPassword/`);
     }
 
 
   return (
-    <div className="body">
+    <form className="body">
         <div className="frame6-container">
         <div className="frame6-frame6">
           <div className="frame6-social"></div>
@@ -90,6 +90,7 @@ export default function Login() {
                 placeholder="Example@gmail.com"
                 className="frame6-input"
                 onChange = {onChange}
+                required={true}
               />
             </div>
             <div className="frame6-frame8">
@@ -102,6 +103,7 @@ export default function Login() {
                     placeholder="Enter Password"
                     className="frame6-input"
                     onChange = {onChange}
+                    
                 />
                 {!eye ? <VisibilityIcon style={{width:20, height:20, marginLeft: 360, marginTop:43, zIndex:1,color:"rgba(120, 120, 120, 0.7)"}}
                 onClick={()=> setEye(!eye) }/> 
@@ -135,6 +137,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   )
 }

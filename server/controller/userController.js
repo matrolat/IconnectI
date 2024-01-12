@@ -200,7 +200,7 @@ const companyRegistration = async (req, res) =>{
             console.log("updating");
             const updateData = await UserOtp.findByIdAndUpdate(
               { _id: emailExist._id },
-              { emailotp: OTP },
+              { emailotp: OTP, phoneotp: OTP, createdAt: new Date() },
               { new: true }
             );
             await updateData.save();
