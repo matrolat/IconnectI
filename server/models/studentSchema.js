@@ -1,20 +1,44 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
-  studentID:{type:String,required:true,unique:true, dropDups: true},
-  name:String,
-  email:{type:String,required:true,unique:true, dropDups: true},
-  phone:String,
-  cgpa:Number,
-  skills:[],
-  InternshipID: {
-    type: [String], // This defines that InternshipID is an array of strings
-    default: [], // Default value is an empty array
-    required: false, // Not required
+  studentID: { type: String, required: true, unique: true, dropDups: true },
+  name: { type: String, required: true },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    dropDups: true,
+    match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   },
-  uploadedBy:String,
-  
+  phone: {
+    type: String,
+    required: true,
+    validate: {
+      validator: function (v) {
+        return /\d{10}/.test(v);
+      },
+      message: props => `${props.value} is not a valid phone number!`,
+    },
+  },
+  cgpa: {
+    type: Number,
+    required: true,
+    validate: {
+      validator: function (v) {
+        return v >= 0 && v <= 10;
+      },
+      message: props => `${props.value} is not a valid CGPA! It should be between 0 and 10.`,
+    },
+  },
+  skills: { type: Array, required: true, default: [] },
+  InternshipID: {
+    type: [String],
+    default: [],
+    required: false,
+  },
+  uploadedBy: { type: String, required: true },
 });
+
 
 const Student = mongoose.model("student", studentSchema);
 
