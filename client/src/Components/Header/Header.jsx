@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import MainLogo from '../Main_Logo/MainLogo';
+import BackBtn from '../BackBtn/BackBtn';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -25,6 +26,7 @@ export default function Header(props) {
   return (
     
     <div className={classes.content}>
+      <BackBtn/>
         <MainLogo />
         {props.title}
     </div>

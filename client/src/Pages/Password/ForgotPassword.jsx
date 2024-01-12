@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { buttonStyles } from '../../Constants/Css';
-import { forgotPWD } from '../../Service/Api';
+import { forgotPWD, logout } from '../../Service/Api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { BeatLoader } from "react-spinners";
 
@@ -110,8 +110,10 @@ export default function ForgotPassword() {
                 window.alert("Invalid email");
                 console.log("Invalid email");
                 }else{
+
                 window.alert("Email has been sent Successfully");
                 console.log("Email has been sent Successfully");
+				await logout();
                 // await logout();
                 navigate('/');
 

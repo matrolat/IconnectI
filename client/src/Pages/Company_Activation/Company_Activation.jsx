@@ -116,10 +116,25 @@ export default function
   };
 
 
-  const imageUpload = (e) =>{
-    console.log(e.target.files[0]);
-    setValues ({...values , logo: e.target.files[0]});
-  }
+  const imageUpload = (e) => {
+    const selectedFile = e.target.files[0];
+  
+    // Check if a file is selected
+    if (selectedFile) {
+      // Check if the selected file is an image (you may need to refine this check)
+      if (selectedFile.type.startsWith('image/')) {
+        console.log('Selected file is an image:', selectedFile);
+        setValues({...values, logo: selectedFile});
+      } else {
+        window.alert('Selected file is not an image.');
+        // You might want to show a user-friendly error message here
+      }
+    } else {
+      console.error('No file selected.');
+      // You might want to show a user-friendly error message here
+    }
+  };
+  
   
 
 
@@ -439,7 +454,7 @@ export default function
             <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
              {values.logo ?  values.logo.name :" Upload file"}
           
-              <VisuallyHiddenInput required={true} name="logo" onChange={imageUpload} type="file" />
+              <VisuallyHiddenInput required={true} name="logo" onChange={imageUpload} type="file" accept="image/*" />
             </Button>
             </div>
 
