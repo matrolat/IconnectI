@@ -147,7 +147,8 @@ export const companyActivate = async(values,companysopcemail)=>{
     !locationofwork ||
     !employeecount ||
     !compdescription ||
-    !companysopcemail
+    !companysopcemail||
+    !values.logo
   ) 
   {
     // window.alert("Pls fill all the valid fields")

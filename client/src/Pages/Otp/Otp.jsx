@@ -2,6 +2,7 @@ import React , {useState , useEffect } from 'react'
 import './Otp.css';
 import { useNavigate , useParams} from "react-router-dom";
 import { BeatLoader } from "react-spinners";
+import { logout } from '../../Service/Api';
 
 
 const Otp = () => {
@@ -39,6 +40,7 @@ let [loading, setLoading] = useState(false);
       
     
       const verifyOTP = async (email , otp)=>{
+            await logout();
              setLoading(true);
         const res = await fetch("http://localhost:4000/otpVerify", {
         // const res = await fetch("https://iconnecti.onrender.com/otpVerify", {
@@ -56,6 +58,7 @@ let [loading, setLoading] = useState(false);
           setLoading(false);
           
           console.log("data"+data);
+        
           console.log("otp verifited heres cookie");
           const value = `${document.cookie}`;
           console.log(value);

@@ -3,7 +3,7 @@ import './Login.css'
 import MainLogo from '../../Components/Main_Logo/MainLogo'
 import eyeLogo from '../../Assets/eye.svg'
 import { useState } from 'react'
-import { login } from '../../Service/Api'
+import { login, logout } from '../../Service/Api'
 import { Link, useNavigate , useParams} from "react-router-dom";
 import { makeStyles } from '@material-ui/core'
 import { buttonStyles } from '../../Constants/Css'
@@ -33,6 +33,7 @@ export default function Login() {
 
     const handleSubmit =async()=>{
       setLoading(true);
+      await logout();
       // return;
       const res = await login(values);
       console.log(res);

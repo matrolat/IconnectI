@@ -143,6 +143,7 @@ export default function
                 errorMessage="Pls enter college name"
                 required={true}
                 label="College name"
+                maxlength="50"
               />
             </div>
 
@@ -158,6 +159,7 @@ export default function
                 class="input-box"
                 errorMessage="Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!"
                 required={true}
+                maxlength="50"
                 pattern= "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"           
               />
             <span className= {validFields.password?"invisible":"error"}>Password should be 8-20 characters and include atleast 1 letter, 1 number and 1 special character!</span>
@@ -174,6 +176,7 @@ export default function
                 placeholder=""
                 class="input-box"
                 // errorMessage="Passwords don't match!"
+                maxlength="50"
                 required={true}
                 pattern={values.password}         
               />
@@ -195,6 +198,7 @@ export default function
                 class="input-box"
                 required= {true}
                 pattern = "^[A-Za-z0-9\s]{3,}$"
+                maxlength="100"
               />
             <span className={validFields.collegespocname?"invisible":"error"}>Username should be of at least 3 letters and shouldn't include any special character!</span>
             </div>
@@ -212,6 +216,7 @@ export default function
                 errorMessage="Not a valid email"
                 required={true}
                 label="College SPOC Email"
+                maxlength="50"
               />
             <span className={validFields.collegespocemail?"invisible":"error"}>Not a valid email</span>
             </div>
@@ -228,6 +233,7 @@ export default function
                 // errorMessage="Phone number should be of 10 digits!"
                 required={true}
                 pattern='^[1-9][0-9]{9}$'
+                maxlength="10"
 
                 label="College SPOC phone"
               />
@@ -249,6 +255,7 @@ export default function
                 class="input-box"
                 required={true}
                 label="College Registration ID"
+                maxlength="100"
               />
             </div>
             <div class="name">
@@ -263,6 +270,7 @@ export default function
                 class="input-box"
                 errorMessage=""
                 required={true}
+                maxlength="50"
               />
             </div>
             <div class="name">
@@ -276,6 +284,7 @@ export default function
                 placeholder=""
                 class="input-box"
                 errorMessage=""
+                maxlength="200"
                 required={true}
               />
             </div>
