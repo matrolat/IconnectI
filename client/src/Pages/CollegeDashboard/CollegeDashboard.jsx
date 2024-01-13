@@ -115,14 +115,19 @@ export default function CollegeDashboard(){
                   console.error('Error occurred while deleting cookie:', error);
                 }
             }
-            else if (data && data.deactivate === 'YES'){
+            else if (data && data.deactivate === "YES"){
                 const token = `${document.cookie}`;
                 setUserSession(token,data);
+                console.log("token"+document.cookie);
                 navigate(`/CollegeDashboard/${data.collegespocemail}`);
             }
             else{
                 const token = `${document.cookie}`;
-                setUserSession(token,data);
+                if(token)
+                {
+                    setUserSession(token,data);
+
+                }
                
             }
           }else{

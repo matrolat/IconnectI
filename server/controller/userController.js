@@ -327,7 +327,8 @@ const companyRegistration = async (req, res) =>{
       token = await collegeUser.generateAuthToken();
       res.cookie("jwtoken", token, {
         expires: new Date(Date.now() + 14400000),
-        httpOnly: true,
+        httpOnly: false,
+        SameSite:"None"
       });
       await College.updateOne(
         { collegespocemail: email },

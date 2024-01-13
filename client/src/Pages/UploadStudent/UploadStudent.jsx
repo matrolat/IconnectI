@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Header from '../../Components/Header/Header'
 import { makeStyles } from '@material-ui/core/styles';
 import { buttonStyles } from '../../Constants/Css';
@@ -16,6 +16,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { checkCollegeLogin, checkLogin } from '../../utils/checkLogin';
 // import { useNavigate , useParams} from "react-router-dom";
 
 const VisuallyHiddenInput = styled('input')({
@@ -70,6 +71,15 @@ const [data, setData] = useState([]);
 const [file, setFile] = useState("");
 const [loading, setLoading] = useState(false);
 
+useEffect(()=>{
+      
+  const res = checkCollegeLogin(email);
+    if(!res){
+      console.log("not"+res);
+      navigate('/');
+    }
+
+  },[]);
 
 const imageUpload = (e) =>{
     console.log(e.target.files[0]);
