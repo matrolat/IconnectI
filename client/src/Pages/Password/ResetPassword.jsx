@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { buttonStyles } from '../../Constants/Css';
 import MainLogo from '../../Components/Main_Logo/MainLogo';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ResetPWD, logout } from '../../Service/Api';
+import { ResetPWD, checkReset, logout } from '../../Service/Api';
 import { BeatLoader } from "react-spinners";
 
 
@@ -69,9 +69,30 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ResetPassword() {
+
     const classes = useStyles();
     const navigate = useNavigate();
     const {email} = useParams();
+
+    useEffect(()=>{
+		checkResetData();
+        
+	  },[]);
+
+      const checkResetData=async()=>{
+        const res = await checkReset( email);
+                const data = JSON.stringify(res);
+                if(!data || res.data.status === 422 ){
+                setLoading(false);
+                window.alert("This Link is expired");
+                console.log("Reset Password link expires after 5 min");
+                navigate('/');
+                // await logout();
+                }else{
+                // window.alert("Password Updated Successful");
+                console.log("verified");
+                }
+      }
     
     const [pwd, setPwd] = useState();
     let [loading, setLoading] = useState(false);

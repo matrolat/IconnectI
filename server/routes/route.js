@@ -5,7 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
 const router = express.Router();
-const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration, deleteData, forgotPassword,resetPassword} = require("../controller/userController")
+const {companyRegistration, login, allUsers, otpVerify, logout, mainScreen, collegeRegistration, deleteData, forgotPassword,resetPassword, checkReset} = require("../controller/userController")
 const {getPosting,getActivations,getCollegeList,getCompanyList,getStudents,getAllInternships}=require("../controller/adminController");
 const multer = require('multer');
 const Authenticate = require('../middleware/authenticate');
@@ -53,6 +53,7 @@ router.get('/getActivePostings/:id',getActivePostings);
 router.get('/getEarlierPostings/:id',getEarlierPostings);
 router.post('/updateStudentInternship',updateStudentInternship);
 router.get('/getActiveStudents/:id',getActiveStudents)
+router.get('/checkReset/:email',checkReset);
 // router.post('/getLoginDetails',);
 
 

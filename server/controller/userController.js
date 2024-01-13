@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 const Activation = require("../models/activationSchema");
 const InternPosting = require("../models/internPostingSchema");
 const Admin = require("../models/adminSchema");
+const ResetPassword = require("../models/resetPasswordSchema");
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
@@ -444,6 +445,27 @@ const companyRegistration = async (req, res) =>{
         res.status(422).json({ error: "User does not exist" });
       }
       else{
+
+        const resetUser = await ResetPassword.findOne({email:email});
+        if(resetUser)
+        {
+          const updateData = await ResetPassword.findByIdAndUpdate(
+            { _id: resetUser._id },
+            { email: email, createdAt: new Date() },
+            { new: true }
+          );
+          await updateData.save();
+          console.log("date changed");
+        }
+        else{
+          const saveData = new ResetPassword({
+            email,
+          });
+          await saveData.save();
+          console.log("reset added");
+        }
+
+
         const mailOptions = {
           from: process.env.EMAIL,
           to: email,
@@ -466,12 +488,32 @@ const companyRegistration = async (req, res) =>{
       console.log(err);
     }
   }
+  
+  const checkReset = async(req,res) =>{
+    const {email} = req.params;
+    if(!email)
+    {
+      return res.status(422).json({ error: "Email is not available" });
+      
+    }
+    const resetUser = await ResetPassword.findOne({email:email});
+    const currentTime = new Date();
+    const expirationTime = new Date(resetUser.createdAt.getTime() + 5 * 60 * 1000);
+    console.log(new Date(resetUser.createdAt.getTime()) +" "+ currentTime + " " +expirationTime);
+    if (currentTime > expirationTime) {
+      
+      return res.status(422).json({ error: "This link is expired" });
+    }
+    else{
+        return res.status(200).json({ message: "Reset Password link is valid" }); 
+      }
+  }
 
   const resetPassword = async(req, res) => {
     let email = req.body.email;
     let password = req.body.password;
     let confirmPassword = req.body.confirmPassword;
-   
+    
 
 
     try{
@@ -532,7 +574,8 @@ const companyRegistration = async (req, res) =>{
     deleteData,
     forgotPassword,
     resetPassword,
-    getPosting
+    getPosting,
+    checkReset
   };
 
 

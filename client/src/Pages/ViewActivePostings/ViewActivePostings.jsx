@@ -16,10 +16,10 @@ export default function ViewActivePostings() {
   useEffect(()=>{
 		getData();
         
-    // const res = checkLogin(email);
-    //   if(!res){
-    //     navigate('/');
-    //   }
+    const res = checkLogin(email);
+      if(!res){
+        navigate('/');
+      }
 
 	  },[]);
 

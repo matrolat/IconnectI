@@ -584,3 +584,20 @@ export const GetReports =async(email)=>{
   }
 }
 
+
+export const checkReset= async(email)=>{
+  
+
+  try{
+    
+    return await axios.get(`${URL}/checkReset/${email}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  catch(error){
+      console.log(" Error in get all reset API : "+error);
+  }
+
+}
