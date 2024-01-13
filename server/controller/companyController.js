@@ -57,7 +57,10 @@ const transporter = nodemailer.createTransport({
           return res.status(422).json({ error: "Please Fill all the fields" });
         } else {
           
-          const isValidDates = new Date(startdate) < new Date(enddate) && new Date(startdate) >= new Date();
+        
+          // const isValidDates = new Date(startdate) < new Date(enddate) && new Date(startdate) >= new Date();
+          const isValidDates = new Date(startdate).setHours(0, 0, 0, 0) < new Date(enddate).setHours(0, 0, 0, 0) && new Date(startdate).setHours(0, 0, 0, 0) >= new Date().setHours(0, 0, 0, 0);
+
           
           if (!isValidDates) {
             
