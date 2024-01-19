@@ -13,14 +13,14 @@ const columns = [
   // { id: 'name', label: 'Posting ID', minWidth: 120 },
   { id: 'code', label: 'ID', minWidth: 150 },
   {
-    id: 'size',
+    id: 'name',
     label: 'Name',
     minWidth: 200,
     align: 'left',
     // format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'population',
+    id: 'cgpa',
     label: 'Cgpa',
     minWidth: 60,
     align: 'center',
@@ -59,7 +59,7 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-export default function ActiveStudents({data,postData}) {
+export default function ActiveStudents({data,postData,sortByColumn}) {
   
 
   useEffect(()=>{
@@ -99,8 +99,13 @@ export default function ActiveStudents({data,postData}) {
                   key={column.id}
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
+                  onClick={()=>{sortByColumn(column.id)}}
+              
                 >
-                  {column.label}
+                 <b>
+                   {column.label}
+                  
+                  </b>
                 </TableCell>
               ))}
             </TableRow>

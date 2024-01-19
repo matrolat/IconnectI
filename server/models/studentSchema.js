@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
-  studentID: { type: String, required: true, unique: true, dropDups: true },
+  studentID: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   email: {
     type: String,
     required: true,
     unique: true,
-    dropDups: true,
     match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   },
   phone: {
@@ -39,6 +38,8 @@ const studentSchema = new mongoose.Schema({
   uploadedBy: { type: String, required: true },
 });
 
+// Create a unique index on the email field
+studentSchema.index({ email: 1 }, { unique: true });
 
 const Student = mongoose.model("student", studentSchema);
 

@@ -118,7 +118,7 @@ export default function CollegeDashboard(){
             else if (data && data.deactivate === "YES"){
                 const token = `${document.cookie}`;
                 setUserSession(token,data);
-                console.log("token"+document.cookie);
+                // console.log("token"+document.cookie);
                 navigate(`/CollegeDashboard/${data.collegespocemail}`);
             }
             else{
@@ -143,6 +143,20 @@ export default function CollegeDashboard(){
           console.log(res);
           setData(res);
         }
+
+        const sortByColumn = (columnName) => {
+            console.log("sort");
+            const sortetData = [...data].sort((a, b) => {
+              if (a[columnName] < b[columnName]) {
+                return -1;
+              }
+              if (a[columnName] > b[columnName]) {
+                return 1;
+              }
+              return 0;
+            });
+            setData(sortetData);
+          };
 
 
     // const checkActivation=async()=>{
@@ -217,7 +231,7 @@ export default function CollegeDashboard(){
             <div style={{marginTop:60}}>
 
             {/* { data? <CollegeStudentTable data={data} /> : null} */}
-            {data && Object.keys(data).length !== 0 ? <CollegeStudentTable data={data} /> : "Upload students to view the list here."}
+            {data && Object.keys(data).length !== 0 ? <CollegeStudentTable data={data} sortByColumn={sortByColumn}/> : "Upload students to view the list here."}
             </div>
         </div></div>
     </div>

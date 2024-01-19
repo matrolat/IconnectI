@@ -39,6 +39,19 @@ export default function ViewActivePostings() {
       }
     }
 
+    const sortByColumn = (columnName) => {
+      console.log("sort");
+      const sortetData = [...data].sort((a, b) => {
+        if (a[columnName] < b[columnName]) {
+          return -1;
+        }
+        if (a[columnName] > b[columnName]) {
+          return 1;
+        }
+        return 0;
+      });
+      setData(sortetData);
+    };
 
 
   return (
@@ -48,7 +61,7 @@ export default function ViewActivePostings() {
         <div>
        
        
-       {data && Object.keys(data).length !== 0 ? <ActiveStudents data={data} /> : <div>To view shortlisted candidates, accept candidates from the "Search Candidates" page.
+       {data && Object.keys(data).length !== 0 ? <ActiveStudents data={data} sortByColumn={sortByColumn} /> : <div>To view shortlisted candidates, accept candidates from the "Search Candidates" page.
 </div>}
       {/* { data!=undefined? <ActiveStudents data={data} /> : "No data"} */}
         </div>

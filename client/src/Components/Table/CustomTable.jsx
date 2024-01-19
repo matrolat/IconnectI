@@ -9,24 +9,24 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
 const columns = [
-  { id: 'name', label: 'Posting ID', minWidth: 120 },
-  { id: 'code', label: 'Area of Work', minWidth: 60 },
+  { id: 'uniqueID', label: 'Posting ID', minWidth: 120 },
+  { id: 'name', label: 'Name', minWidth: 60 },
   {
-    id: 'population',
+    id: 'startdate',
     label: 'Start Date',
     minWidth: 100,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'size',
+    id: 'enddate',
     label: 'End Date',
     minWidth: 100,
     align: 'right',
     // format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'density',
+    id: 'vacancy',
     label: 'Vacancies Available',
     minWidth: 50,
     align: 'right',
@@ -64,7 +64,7 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-export default function CustomTable({data}) {
+export default function CustomTable({data,sortByColumn}) {
   
 
   useEffect(()=>{
@@ -100,8 +100,12 @@ export default function CustomTable({data}) {
                   key={column.id}
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
+                  onClick={()=>{sortByColumn(column.id)}}
                 >
+                 <b>
+                  
                   {column.label}
+                  </b> 
                 </TableCell>
               ))}
             </TableRow>
@@ -114,7 +118,7 @@ export default function CustomTable({data}) {
                          {row.uniqueID}
                 </TableCell>
                 <TableCell>
-                         {row.areaofwork}
+                         {row.name}
                 </TableCell>
                 <TableCell align={"right"}>
                          {row.startdate}

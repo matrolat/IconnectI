@@ -32,6 +32,20 @@ export default function ViewPosting() {
       setData(res.data);
     }
 
+    const sortByColumn = (columnName) => {
+      console.log("sort");
+      const sortetData = [...data].sort((a, b) => {
+        if (a[columnName] < b[columnName]) {
+          return -1;
+        }
+        if (a[columnName] > b[columnName]) {
+          return 1;
+        }
+        return 0;
+      });
+      setData(sortetData);
+    };
+
 
 
   return (
@@ -41,7 +55,7 @@ export default function ViewPosting() {
         <div style={{display:"flex", alignItems:"center",justifyContent:"center",width:"80%" }}>
        
 
-        {data && Object.keys(data).length !== 0 ? <CustomTable data={data} /> : "No earlier internship postings found."}
+        {data && Object.keys(data).length !== 0 ? <CustomTable data={data} sortByColumn={sortByColumn} /> : "No earlier internship postings found."}
       {/* { data? <CustomTable data={data} /> : null} */}
         </div>
         </div>

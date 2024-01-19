@@ -11,9 +11,9 @@ import { Button } from '@material-ui/core';
 
 const columns = [
   // { id: 'name', label: 'Posting ID', minWidth: 120 },
-  { id: 'code', label: 'Name', minWidth: 150 },
+  { id: 'name', label: 'Name', minWidth: 150 },
   {
-    id: 'population',
+    id: 'cgpa',
     label: 'Cgpa',
     minWidth: 60,
     align: 'center',
@@ -59,7 +59,7 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-export default function StudentTable({data,postData}) {
+export default function StudentTable({data,postData,sortByColumn}) {
   
 
   useEffect(()=>{
@@ -99,8 +99,12 @@ export default function StudentTable({data,postData}) {
                   key={column.id}
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
+                  onClick={()=>{sortByColumn(column.id)}}
                 >
-                  {column.label}
+                  <b>
+                   {column.label}
+                  
+                  </b>
                 </TableCell>
               ))}
             </TableRow>

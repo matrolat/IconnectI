@@ -90,19 +90,40 @@ export default function Company_Dashboard(){
     const [userInfo,setUserInfo] = useState("");
     const [emptyTable,setemptyTable] = useState({});
 
-    useEffect(()=>{
-		getData();
+    useEffect(() => {
+      const fetchData = async () => {
+        await getData();
         getTableData();
         checkActivation();
         getActivationData();
-	  },[]);
+      };
+    
+      fetchData();
+    }, []);
 
 
+    
     const [tableData,setTableData] = useState();
+    const sortByColumn = (columnName) => {
+      console.log("sort");
+      const sortetData = [...tableData].sort((a, b) => {
+        if (a[columnName] < b[columnName]) {
+          return -1;
+        }
+        if (a[columnName] > b[columnName]) {
+          return 1;
+        }
+        return 0;
+      });
+      setTableData(sortetData);
+    };
 
+    const [userData,setUserData] = useState();
     const getTableData=async()=>{
+      console.log("get table");
       const val =await getUser();
-    //   console.log(val._id);
+      setUserData(val);
+      // console.log("get val0"+val);
     if(val){
         const res = await getActivePostings(val._id);
         // const datal = JSON.stringify(res.data);
@@ -214,7 +235,7 @@ export default function Company_Dashboard(){
         <div className={classes.right}><div style={{paddingLeft:100,paddingRight:100,paddingTop:50,display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
 
         
-            <h1>Company Dashboard</h1>
+            <h1>Company Dashboard </h1>
             <div className={classes.details}>
                 {/* <MainLogo height={180}  /> */}
                
@@ -256,7 +277,7 @@ export default function Company_Dashboard(){
             </div>
             
             
-            {tableData && Object.keys(tableData).length !== 0 ? <CustomTable data={tableData} /> : ""}
+            {tableData && Object.keys(tableData).length !== 0 ? <CustomTable data={tableData} sortByColumn={sortByColumn} /> : ""}
      
         </div></div>
     </div>

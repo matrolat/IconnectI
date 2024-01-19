@@ -91,6 +91,22 @@ export default function SearchCandidates() {
   const [emp,empTable] = useState({});
 
 
+  const sortByColumn = (columnName) => {
+    console.log("sort");
+    const sortetData = [...data].sort((a, b) => {
+      if (a[columnName] < b[columnName]) {
+        return -1;
+      }
+      if (a[columnName] > b[columnName]) {
+        return 1;
+      }
+      return 0;
+    });
+    setData(sortetData);
+  };
+
+
+
   useEffect(()=>{
     getData();
     const res = checkLogin(email);
@@ -228,7 +244,7 @@ export default function SearchCandidates() {
         </div>
           <div className={classes.right} >
             {/* Candidates: */}
-            {data && Object.keys(data).length !== 0 ? <StudentTable data={data} postData={postData} /> : "Select an internship from above to view candidates."}
+            {data && Object.keys(data).length !== 0 ? <StudentTable data={data} postData={postData} sortByColumn = {sortByColumn} /> : "Select an internship from above to view candidates."}
             {/* { data!==emp ? <StudentTable data={data} postData={postData} /> : "No data" } */}
             {/* <StickyHeadTable /> */}
           </div>
