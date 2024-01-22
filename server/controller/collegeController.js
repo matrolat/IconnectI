@@ -90,7 +90,7 @@ const transporter = nodemailer.createTransport({
     try {
 
         const { userID } = req.body;
-        console.log(userID);
+        console.log("flter"+userID);
     
         const allUsers = await Posting.find({ userID: userID });
 

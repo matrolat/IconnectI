@@ -4,7 +4,8 @@ const companyUser = require('../models/companyUserSchema');
 
 const Authenticate = async (req,res ,next)=>{
     
-  console.log("token:"+JSON.stringify(req.jwtoken));
+  // console.log("token:"+JSON.stringify(req.jwtoken));
+  console.log("token2:"+JSON.stringify(req.cookies.jwtoken));
   try {
     const token = req.cookies.jwtoken;
     

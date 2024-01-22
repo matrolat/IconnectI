@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+axios.defaults.withCredentials = true;
 const URL = "http://localhost:4000";
 // const URL = "https://iconnecti.onrender.com";
 
@@ -487,9 +487,11 @@ export const filterStudents= async(userID)=>{
     try {
       return await fetch(`${URL}/filterStudents`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+        headers:{
+          Accept: "application/json",
+          "Content-Type" : "application/json"
         },
+        credentials: "include",
         body: JSON.stringify({ userID }),
       });
       
@@ -529,6 +531,7 @@ export const getActivationDetails =async(email)=>{
         Accept: "application/json",
         "Content-Type" : "application/json"
       },
+      credentials: "include"
     });
      return await res.json();
     // console.log(data);

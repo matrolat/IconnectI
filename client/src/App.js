@@ -22,6 +22,7 @@ import Reporting from "./Admin/Pages/Reporting/Reporting";
 import ViewCompanyDetails from './Admin/Pages/Company/ViewCompanyDetails' 
 import ViewCollegeDetails from './Admin/Pages/College/ViewCollegeDetails' 
 import LoggedInForgotPwd from "./Pages/Password/LoggedInForgotPwd";
+import Error from "./Pages/Error/Error";
 
 
 
@@ -59,6 +60,7 @@ function App() {
 
           <Route path="/ViewCompanyDetails/:email" element={<ViewCompanyDetails/>} />
           <Route path="/ViewCollegeDetails/:email" element={<ViewCollegeDetails/>} />
+          <Route path="/error" element={<Error/>} />
           
 
 

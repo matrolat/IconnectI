@@ -9,20 +9,10 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 const PORT = 4000;
 app.use('/public', express.static('public'));
-// const corsOptions = {
-//      origin: '', 
-//     credentials: true, 
-//   };
-//   const corsConfig = {
-//   credentials: true,
- 
-// };
-// app.use(cors());
+
 app.use(cookieParser());
  app.use(cors({origin:"http://localhost:3000",credentials:true}));
-// app.use(cors({origin:"https://6597779b2209f16c37ce16b6--fanciful-faun-8a8e65.netlify.app",credentials:true}));
-// app.use(cors(corsOptions));
-// app.use(cors({credentials:true}));
+
 app.use((error, request, response, next) => {
 	if (request.file) {
 		fs.unlink(request.file.path, (error) => {
