@@ -154,12 +154,12 @@ export default function Company_Dashboard(){
             }
             else if (data && data.deactivate === 'YES'){
                 const token = `${document.cookie}`;
-                setUserSession(token,{_id:data._id ,companyspocemail: data.companyspocemail,deactivate:data.deactivate});
+                setUserSession(token,{_id:data._id ,companyspocemail: data.companyspocemail,deactivate:data.deactivate,companyname:data.companyname});
                 navigate(`/dashboard/${data.companyspocemail}`);
             }
             else{
                 const token = `${document.cookie}`;
-                setUserSession(token,{_id:data._id ,companyspocemail: data.companyspocemail,deactivate:data.deactivate});
+                setUserSession(token,{_id:data._id ,companyspocemail: data.companyspocemail,deactivate:data.deactivate,companyname:data.companyname});
               
             }
           }else{

@@ -456,7 +456,7 @@ export default function
             <div style={{display:"flex",width:"50%",justifyContent:"flex-end"}}>
 
             <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} style={{backgroundColor:"rgba(29, 166, 132, 1)",borderRadius:62}}>
-             {values.logo ?  values.logo.name :" Upload file"}
+             {values.logo ?  values.logo.name :" Upload Logo*"}
           
               <VisuallyHiddenInput required={true} name="logo" onChange={imageUpload} type="file" accept="image/*" />
             </Button>

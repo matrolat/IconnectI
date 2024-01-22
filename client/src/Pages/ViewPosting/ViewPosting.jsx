@@ -1,24 +1,76 @@
 import React,{useEffect,useState} from 'react'
 import Header from '../../Components/Header/Header'
 import StickyHeadTable from '../../Components/Table/StickyHeadTable'
-import { getAllPosting, getEarlierPostings } from '../../Service/Api';
+import { GetLoginDetails, getAllPosting, getEarlierPostings } from '../../Service/Api';
 import CustomTable from '../../Components/Table/CustomTable';
 import { checkLogin } from '../../utils/checkLogin';
 
 import { useNavigate , useParams} from "react-router-dom";
-import { getUser } from '../../utils/session';
+import { getUser, setUserSession } from '../../utils/session';
 
 export default function ViewPosting() {
   const navigate = useNavigate();
   const {email} = useParams();
 
-  useEffect(()=>{
-		getData();
-        
-    const res = checkLogin(email);
-      if(!res){
-        navigate('/');
+  const getLoginData = async () => {
+    const data = await GetLoginDetails();
+    console.log(data);
+    if (data && data.companyspocemail === email) {
+      if (data.loggedin === 'YES' && data.count === 1) {
+        try {
+          const response = await fetch('/logout', {
+            method: 'GET',
+          });
+
+          if (response.ok) {
+            console.log('Cookie deleted successfully');
+            navigate('/');
+          } else {
+            console.log('Failed to delete cookie');
+          }
+        } catch (error) {
+          console.error('Error occurred while deleting cookie:', error);
+        }
       }
+      else if (data && data.deactivate === 'YES') {
+        const token = `${document.cookie}`;
+        setUserSession(token, { _id: data._id, companyspocemail: data.companyspocemail, deactivate: data.deactivate, companyname: data.companyname });
+        navigate(`/dashboard/${data.companyspocemail}`);
+      }
+      else {
+        const token = `${document.cookie}`;
+        setUserSession(token, { _id: data._id, companyspocemail: data.companyspocemail, deactivate: data.deactivate, companyname: data.companyname });
+
+      }
+    } else {
+      navigate('/');
+    }
+
+    await checkActivation();
+
+  }
+
+  const checkActivation = async () => {
+    const user = await getUser();
+
+    if (user && user.deactivate == "YES") {
+      navigate('/');
+    }
+    // console.log(imageURL);
+  }
+
+
+  useEffect(()=>{
+    const fetchData = async () => {
+      const isLoggedIn = await checkLogin(email);
+  
+      if (!isLoggedIn) {
+        await getLoginData();
+      }
+      await getData();
+    };
+  
+    fetchData();
 
 	  },[]);
 
@@ -26,6 +78,7 @@ export default function ViewPosting() {
 
     const getData=async()=>{
       const val =getUser();
+      if(!val) return;
       const res = await getEarlierPostings(val._id);
       // const datal = JSON.stringify(res.data);
       console.log(res.data);
