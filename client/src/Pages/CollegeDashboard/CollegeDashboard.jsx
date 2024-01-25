@@ -117,7 +117,7 @@ export default function CollegeDashboard(){
             }
             else if (data && data.deactivate === "YES"){
                 const token = `${document.cookie}`;
-                setUserSession(token,data);
+                setUserSession(token,{collegespocemail:data.collegespocemail});
                 // console.log("token"+document.cookie);
                 navigate(`/CollegeDashboard/${data.collegespocemail}`);
             }
@@ -125,7 +125,7 @@ export default function CollegeDashboard(){
                 const token = `${document.cookie}`;
                 if(token)
                 {
-                    setUserSession(token,data);
+                    setUserSession(token,{collegespocemail:data.collegespocemail});
 
                 }
                

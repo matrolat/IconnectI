@@ -5,7 +5,7 @@ import { buttonStyles } from '../../Constants/Css';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import { StudentUpload, downloadTemplate } from '../../Service/Api';
+import { GetCollegeLoginDetails, StudentUpload, downloadTemplate } from '../../Service/Api';
 import { BeatLoader } from 'react-spinners';
 import Papa from "papaparse";
 import { useNavigate , useParams} from "react-router-dom";
@@ -17,6 +17,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { checkCollegeLogin, checkLogin } from '../../utils/checkLogin';
+import { setUserSession } from '../../utils/session';
 // import { useNavigate , useParams} from "react-router-dom";
 
 const VisuallyHiddenInput = styled('input')({
@@ -73,13 +74,51 @@ const [loading, setLoading] = useState(false);
 
 useEffect(()=>{
       
-  const res = checkCollegeLogin(email);
-    if(!res){
-      console.log("not"+res);
-      navigate('/');
-    }
+  // const res = checkCollegeLogin(email);
+  //   if(!res){
+  //     console.log("not"+res);
+  //     navigate('/');
+  //   }
+
+    getData();
 
   },[]);
+
+  const getData =async()=>{
+    const data = await GetCollegeLoginDetails();
+    console.log(data);
+    if(data && data.collegespocemail === email){
+        if( data.loggedin === 'YES' && data.count === 1){
+          try {
+              const response = await fetch('/logout', {
+                method: 'GET',
+              });
+          
+              if (response.ok) {
+                console.log('Cookie deleted successfully');
+                navigate('/');
+              } else {
+                console.log('Failed to delete cookie');
+              }
+            } catch (error) {
+              console.error('Error occurred while deleting cookie:', error);
+            }
+        }       
+        else{
+            const token = `${document.cookie}`;
+            if(token)
+            {
+                setUserSession(token,{collegespocemail:data.collegespocemail});
+
+            }
+           
+        }
+      }else{
+        navigate('/');
+      }
+
+    }
+
 
 const imageUpload = (e) =>{
     console.log(e.target.files[0]);

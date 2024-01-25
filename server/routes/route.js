@@ -46,7 +46,7 @@ router.post('/getAllPosting',Authenticate,getAllPosting);
 router.post('/forgotPassword',forgotPassword);
 router.post('/resetPassword',resetPassword);
 router.get('/files/:filename', downloadTemplate);
-router.post('/studentUpload', studentUpload);
+router.post('/studentUpload', CollegeAuthenticate,studentUpload);
 router.post('/filterStudents',Authenticate, filterStudents);
 router.get('/getAllStudents/:email',getAllStudents);
 router.get('/getActivePostings/:id',Authenticate,getActivePostings);
