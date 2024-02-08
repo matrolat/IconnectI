@@ -16,13 +16,13 @@ export const checkLogin=(email)=>{
 
 export const checkCollegeLogin=(email)=>{
 
-  const token = getToken();
+  // const token = getToken();
   const user = getUser();
-  const value = `${document.cookie}`;
+  // const value = `${document.cookie}`;
   // console.log("token"+token);
   // console.log("user"+user);
   // console.log("cookie"+value);
-  if(user && token && value && user.collegespocemail === email  && token===value)
+  if(user  && user.collegespocemail === email  )
   {
     console.log("verified");
     return true;

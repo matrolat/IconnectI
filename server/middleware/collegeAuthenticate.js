@@ -4,7 +4,9 @@ const collegeUser = require('../models/collegeUserSchema');
 
 const collegeAuthenticate = async (req,res ,next)=>{
     
-  console.log("token:"+JSON.stringify(req.jwtoken));
+  console.log("token is here:"+JSON.stringify(req.cookies.jwtoken));
+  var verifyToke = jwt.verify(req.cookies.jwtoken ,process.env.SECRET_KEY);
+  console.log("token is verify:"+JSON.stringify(verifyToke));
   try {
     const token = req.cookies.jwtoken;
     

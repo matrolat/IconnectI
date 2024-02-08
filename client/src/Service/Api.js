@@ -470,6 +470,7 @@ export const StudentUpload= async(items)=>{
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: "include",
         body: JSON.stringify({ items }),
       });
       
