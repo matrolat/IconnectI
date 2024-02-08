@@ -190,7 +190,8 @@ export default function Company_Dashboard(){
     
     const getActivationData = async()=>{
         try{
-            const activate =await getActivationDetails(email);          
+            const activate =await getActivationDetails(email);     
+            console.log(activate);     
             if(activate[0])
             {
                 await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null))
