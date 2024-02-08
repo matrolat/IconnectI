@@ -90,6 +90,7 @@ export default function Company_Dashboard(){
     const [imageURL,setImageURL] = useState("");
     const [userInfo,setUserInfo] = useState("");
     const [popup,setPopup] = useState(false);
+    const [showActivate,setShowActivate] = useState(false);
 
     useEffect(() => {
       const fetchData = async () => {
@@ -184,6 +185,11 @@ export default function Company_Dashboard(){
         if(user && user.deactivate=="NO")
         {
             setActivate(true);
+            setShowActivate(true);
+          }
+          else{
+            
+            setShowActivate(true);
         }
         // console.log(imageURL);
     }
@@ -239,7 +245,7 @@ export default function Company_Dashboard(){
     <div className={classes.outer}>
         <div className={classes.left}>
            < MainLogo height={104} width={118}/>
-           <button className={classes.btn}  disabled={activate} onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>
+          {showActivate && <button className={classes.btn}  disabled={activate} onClick={()=>{navigate(`/Activation/${email}`)}}>Activate Profile</button>}
            <button className={classes.btn} onClick={()=>{navigate(`/ForgotPWD/${email}`)}}>Reset Password</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/Intern_Posting/${email}`)}}>New Posting</button>
            {/* <button className={classes.btn} disabled={!activate} >Update Posting</button> */}
