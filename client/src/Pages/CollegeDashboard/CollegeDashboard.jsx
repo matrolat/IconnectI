@@ -5,6 +5,7 @@ import { useNavigate , useParams} from "react-router-dom";
 import { GetCollegeLoginDetails, GetLoginDetails, getAllStudents, logout } from '../../Service/Api';
 import { setUserSession,getToken, getUser } from '../../utils/session';
 import CollegeStudentTable from '../../Components/Table/CollegeStudentTable';
+import LogoutDialog from '../../Components/LogoutDialog/LogoutDialog';
 
 const useStyles = makeStyles((theme)=>({
     outer:{
@@ -84,27 +85,35 @@ const useStyles = makeStyles((theme)=>({
 
 export default function CollegeDashboard(){
     const {email} = useParams();
-    const [activate,setActivate] = useState(false);
-    const [imageURL,setImageURL] = useState("");
-    const [userInfo,setUserInfo] = useState("");
+    const [popup,setPopup] = useState(false);
     const [data,setData] = useState([]);
 
     useEffect(()=>{
-		getData();
-        // checkActivation();
-        getStudents();
+      checkData();
+      
+      
 	  },[]);
+
+    const checkData=async()=>{
+      try{
+        await getData();
+        getStudents();
+      }
+      catch(error)
+      {
+        console.log(error);
+      }
+    }
+
 
     const getData =async()=>{
         const data = await GetCollegeLoginDetails();
-        console.log(data);
+        
         if(data && data.collegespocemail === email){
             if( data.loggedin === 'YES' && data.count === 1){
               try {
-                  const response = await fetch('/logout', {
-                    method: 'GET',
-                  });
-              
+               
+                  const response = await logout();
                   if (response.ok) {
                     console.log('Cookie deleted successfully');
                     navigate('/');
@@ -132,6 +141,7 @@ export default function CollegeDashboard(){
             }
           }else{
             navigate('/');
+            throw new Error("Unauthorized");
           }
 
         }
@@ -173,9 +183,27 @@ export default function CollegeDashboard(){
     const classes = useStyles();
     const navigate = useNavigate();
 
-        const handleLogout=()=>{
-            navigate('/');
-        }
+    const handlePopup=async()=>{
+      setPopup(true);
+      
+    }
+
+    const handleLogout=async()=>{
+      setPopup(false);
+      
+        try {
+            const response = await logout();
+        
+            if (response.ok) {
+              console.log('Cookie deleted successfully');
+              navigate('/');
+            } else {
+              console.log('Failed to delete cookie');
+            }
+          } catch (error) {
+            console.error('Error occurred while deleting cookie:', error);
+          }
+    }
 
   return (
     <div className={classes.outer}>
@@ -189,7 +217,7 @@ export default function CollegeDashboard(){
            <button className={classes.btn} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>Search Candidate</button>
            <button className={classes.btn}>View active Working Profiles</button>
            <button className={classes.btn} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>View New Postings</button> */}
-           <button className={classes.btn} onClick={handleLogout} >Logout</button>
+           <button className={classes.btn} onClick={handlePopup} >Logout</button>
         </div>
         <div className={classes.right}><div style={{paddingLeft:80,paddingRight:80,paddingTop:50,display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
 
@@ -234,6 +262,10 @@ export default function CollegeDashboard(){
             {data && Object.keys(data).length !== 0 ? <CollegeStudentTable data={data} sortByColumn={sortByColumn}/> : "Upload students to view the list here."}
             </div>
         </div></div>
+        {
+          popup &&
+        <LogoutDialog setPopup={setPopup} handleLogout={handleLogout}/>
+        }
     </div>
   )
 }

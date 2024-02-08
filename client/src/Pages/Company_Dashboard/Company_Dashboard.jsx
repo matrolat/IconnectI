@@ -5,6 +5,7 @@ import { useNavigate , useParams} from "react-router-dom";
 import { GetLoginDetails, getActivationDetails, getActivePostings, logout } from '../../Service/Api';
 import { setUserSession,getToken, getUser } from '../../utils/session';
 import CustomTable from '../../Components/Table/CustomTable';
+import LogoutDialog from '../../Components/LogoutDialog/LogoutDialog';
 
 const useStyles = makeStyles((theme)=>({
     outer:{
@@ -88,7 +89,7 @@ export default function Company_Dashboard(){
     const [activate,setActivate] = useState(false);
     const [imageURL,setImageURL] = useState("");
     const [userInfo,setUserInfo] = useState("");
-    const [emptyTable,setemptyTable] = useState({});
+    const [popup,setPopup] = useState(false);
 
     useEffect(() => {
       const fetchData = async () => {
@@ -120,16 +121,23 @@ export default function Company_Dashboard(){
 
     const [userData,setUserData] = useState();
     const getTableData=async()=>{
-      console.log("get table");
-      const val =await getUser();
-      setUserData(val);
-      // console.log("get val0"+val);
-    if(val){
-        const res = await getActivePostings(val._id);
-        // const datal = JSON.stringify(res.data);
-        await console.log(res.data);
-        setTableData(res.data);
-    }
+      try{
+          console.log("get table");
+          const val =await getUser();
+          setUserData(val);
+          // console.log("get val0"+val);
+        if(val){
+            const res = await getActivePostings(val._id);
+            // const datal = JSON.stringify(res.data);
+            // await console.log(res.data);
+            setTableData(res.data);
+        }
+
+      }
+      catch(error)
+      {
+        console.log("Unauthorized");
+      }
     }
 
     const getData =async()=>{
@@ -138,9 +146,7 @@ export default function Company_Dashboard(){
         if(data && data.companyspocemail === email){
             if( data.loggedin === 'YES' && data.count === 1){
               try {
-                  const response = await fetch('/logout', {
-                    method: 'GET',
-                  });
+                const response = await logout();
               
                   if (response.ok) {
                     console.log('Cookie deleted successfully');
@@ -183,13 +189,17 @@ export default function Company_Dashboard(){
     }
     
     const getActivationData = async()=>{
-        const activate =await getActivationDetails(email);
-        //  console.log("activate "+ await activate[0].logo);
-        
-        if(activate[0])
+        try{
+            const activate =await getActivationDetails(email);          
+            if(activate[0])
+            {
+                await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null))
+            }
+
+        }
+        catch(error)
         {
-            await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null))
-            // await setImageURL("https://iconnecti.onrender.com/public/uploads/" +(activate[0] ?activate[0].logo : null))
+            console.log("activation error");
         }
            
            // await setImageURL("http://localhost:4000/public/uploads/" +(activate[0] ?activate[0].logo : null));
@@ -202,11 +212,16 @@ export default function Company_Dashboard(){
     const classes = useStyles();
     const navigate = useNavigate();
 
+
+        const handlePopup=async()=>{
+          setPopup(true);
+          
+        }
         const handleLogout=async()=>{
+          setPopup(false);
+          
             try {
-                const response = await fetch('/logout', {
-                  method: 'GET',
-                });
+                const response = await logout();
             
                 if (response.ok) {
                   console.log('Cookie deleted successfully');
@@ -230,7 +245,7 @@ export default function Company_Dashboard(){
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/SearchCandidates/${email}`)}}>Search Candidate</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewActivePostings/${email}`)}}>View Shortlisted Candidates</button>
            <button className={classes.btn} disabled={!activate} onClick={()=>{navigate(`/ViewPosting/${email}`)}}>Inactive Postings</button>
-           <button className={classes.btn} onClick={handleLogout} >Logout</button>
+           <button className={classes.btn} onClick={handlePopup} >Logout</button>
         </div>
         <div className={classes.right}><div style={{paddingLeft:100,paddingRight:100,paddingTop:50,display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
 
@@ -280,6 +295,10 @@ export default function Company_Dashboard(){
             {tableData && Object.keys(tableData).length !== 0 ? <CustomTable data={tableData} sortByColumn={sortByColumn} /> : ""}
      
         </div></div>
+        {
+          popup &&
+        <LogoutDialog setPopup={setPopup} handleLogout={handleLogout}/>
+        }
     </div>
   )
 }

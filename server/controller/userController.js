@@ -342,10 +342,18 @@ const companyRegistration = async (req, res) =>{
   }
   }
 
-  const logout = async(req, res) =>{
-    res.clearCookie("jwtoken");
-    res.send("Cookie deleted");
-  }
+  const logout = async (req, res) => {
+  
+    try {
+      // res.clearCookie('jwtoken',{path:'/',domain:'localhost:3000'}); 
+        res.clearCookie("jwtoken");
+        res.status(200).json("Cookie deleted");
+    } catch (error) {
+        console.error("Error while clearing cookie:", error);
+        res.status(500).send("Internal Server Error");
+    }
+}
+
   
   const mainScreen = async(req,res)=>{
     console.log("lol");

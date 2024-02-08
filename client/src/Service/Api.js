@@ -426,8 +426,9 @@ export const logout =async()=>{
       },
       credentials: "include"
     });
-     return await res.json();
-    // console.log(data);
+
+    // console.log("log res"+res);
+     return res;
   }
   catch(error){
       console.log(" Error in logout API : "+error);
