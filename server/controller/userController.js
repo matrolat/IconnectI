@@ -305,7 +305,7 @@ const companyRegistration = async (req, res) =>{
       console.log("tokencreate:"+token);
       res.cookie("jwtoken", token, {
         expires: new Date(Date.now() + 14400000),
-        httpOnly: false,
+        httpOnly: true,
         SameSite:"None"
       });
       // res.cookie("KEY", "Value", { expires: new Date((new Date()).getTime() + (10 * 86400000))});
@@ -327,7 +327,7 @@ const companyRegistration = async (req, res) =>{
       token = await collegeUser.generateAuthToken();
       res.cookie("jwtoken", token, {
         expires: new Date(Date.now() + 14400000),
-        httpOnly: false,
+        httpOnly: true,
         SameSite:"None"
       });
       await College.updateOne(
